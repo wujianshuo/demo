@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://10.7.54.106:18120/sites/shj/renliziyuan.html -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人力资源 - 中交第四航务工程局有限公司</title>
+  <link rel="icon" href="http://10.7.54.106:18120/sites/shj/renliziyuan.html">
+  <link rel="stylesheet" href="./7_人力资源_files/main.css">
+  <style>
+    .cat-header { text-align:left; margin-bottom:28px; }
+    .cat-header h2 { font-size:28px; font-weight:700; color:var(--text); margin-bottom:6px; }
+    .cat-header .cat-underline { width:50px; height:2px; background:var(--primary); margin:0 0 8px; border-radius: 0; }
+    .cat-header .cat-desc { font-size:14px; color:var(--text-light,#999); max-width:700px; margin:0; line-height:1.6; }
+
+    /* outer: sidebar + (main+deco wrapper) */
+    .hr-outer { width:1350px; max-width:100%; margin:0 auto; display:flex; gap:2%; align-items:flex-start; padding:24px 0 48px; }
+    /* 2026-09-10：侧边栏统一样式（14% ≈182px，全站一致）；margin-top:77px 为人力资源管理页顶部对齐补偿，保留 */
+    .hr-side { width:14%; min-width:160px; flex-shrink:0; position:sticky; top:100px; background:#fff; padding:2% 1.5%; font-size:clamp(14px,1.2vw,17px); border:1px solid var(--border); border-radius: 0; box-sizing:border-box; margin-top:77px; }
+    .hr-side h4 { font-size:clamp(16px,1.5vw,20px); color:var(--primary); margin-bottom:14px; padding-bottom:10px; border-bottom:2px solid var(--primary); word-wrap:break-word; overflow-wrap:break-word; }
+    .hr-side a { display:block; padding:clamp(8px,0.8vw,12px); color:var(--text); text-decoration:none; border-radius: 0; transition:all 0.2s; word-wrap:break-word; overflow-wrap:break-word; white-space:normal; text-align:left; margin-bottom:4px; box-shadow:0 1px 2px rgba(0,0,0,0.06); line-height:1.4; }
+    .hr-side a:hover { background:var(--primary-light); color:var(--primary); box-shadow:0 2px 6px rgba(0,0,0,0.12); }
+    .hr-side a.active { background:var(--primary); color:#fff; font-weight:600; box-shadow:0 2px 8px rgba(0,0,0,0.15); }
+
+    /* main + deco 紧密排列 wrapper */
+    .hr-content-row { flex:1; min-width:0; display:flex; gap:0; align-items:stretch; }
+    .hr-main { flex:1; min-width:0; }
+
+    /* Tab */
+    .task-tabs { display:flex; justify-content:center; gap:0; margin-bottom:0; background:#0d47a1; overflow:hidden; }
+    .task-tab { flex:1; text-align:center; cursor:pointer; transition:all 0.2s; border-right:1px solid rgba(255,255,255,0.15); padding:0; min-width:0; }
+    .task-tab:last-child { border-right:none; }
+    .task-tab .tab-top { padding:10px 6px 4px; font-size:12px; color:rgba(255,255,255,0.8); background:#0d47a1; transition:background 0.2s; line-height:1.3; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .task-tab .tab-sub { padding:4px 6px 12px; font-size:16px; font-weight:700; color:#fff; background:#0d47a1; transition:background 0.2s; line-height:1.3; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .task-tab:hover .tab-top, .task-tab:hover .tab-sub { background:#1565c0; }
+    .task-tab.active .tab-top { color:#fff; background:var(--primary); }
+    .task-tab.active .tab-sub { color:#fff; background:var(--primary); }
+
+    /* 内容面板 — 右侧无圆角 */
+    .task-panel { background:#fff; border:1px solid var(--border); min-height:420px; }
+    .task-content { padding:36px 40px; }
+    .task-content h3 { font-size:22px; font-weight:700; color:var(--text); margin-bottom:6px; }
+    .task-content .subtitle { font-size:15px; color:var(--primary); margin-bottom:18px; font-weight:500; }
+    .task-content .content-body { font-size:14px; color:#666; line-height:1.9; text-align:justify; margin-bottom:20px; }
+    .task-content .content-body img { max-width:100%; height:auto; display:block; margin:8px auto; }
+    .task-content .more-btn { display:inline-block; padding:8px 20px; background:var(--primary); color:#fff; border-radius:4px; text-decoration:none; font-size:13px; transition:opacity 0.2s; }
+    .task-content .more-btn:hover { opacity:0.85; }
+
+    /* 装饰区 — 紧贴面板，左侧无圆角 */
+    .task-deco { width:200px; flex-shrink:0; background:linear-gradient(135deg, #e8f0fe 0%, #d4e4fc 100%); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+    .task-deco .deco-svg { width:70%; height:70%; opacity:0.25; }
+
+    .task-empty { text-align:center; color:#999; padding:80px 0; font-size:16px; }
+
+    /* 关键举措 banner */
+    .banner-section { width:100%; overflow:hidden; display:block; padding:0; box-sizing:border-box; border:1px solid var(--border); }
+    .banner-section img { width:100%; height:auto; display:block; }
+    .banner-section a { display:block; }
+
+    @media (max-width:1200px){ .hr-side{display:none;} }
+    @media (max-width:900px){
+      .hr-content-row { flex-direction:column; }
+      .task-deco { width:100%; height:140px; }
+      .task-panel { }
+    }
+    @media (max-width:768px){
+      .task-tabs { flex-wrap:wrap; }
+      .task-tab { flex:1 1 33%; min-width:100px; }
+      .task-content { padding:24px 20px; }
+      .hr-outer { width:96%; }
+    }
+  </style>
+<style>
+
+/* 2026-09-15：非首页统一为新闻中心页的扁平外观（页底浅灰 + 面板去边框/去阴影 + 内容区与顶部大图同宽） */
+
+body { background:#f5f6f8; }
+
+.section { background:transparent; width:100%; max-width:1350px; }
+
+[class*="-outer"], .content-body, .topics-wrapper, .business-section, .global-page { width:100%; max-width:1350px; }
+
+.breadcrumb { max-width:1350px !important; }
+
+[class*="-sidebar"], [class*="-side"], .detail-main, .page-main, .article-wrapper, .task-panel,
+
+.news-card, .quick-link-card, .resp-card, .resp-report, .tech-stat, .culture-card, .stat-box, .project-card,
+
+.honor-banner, .honor-card, .tech-result-card, .report-card, .honor-panel, .banner-section, .task-deco, .biz-sub-card { border:none; }
+
+[class*="-sidebar"] a, [class*="-side"] a { box-shadow:none; }
+
+[class*="-sidebar"] a:hover, [class*="-sidebar"] a.active, [class*="-side"] a:hover, [class*="-side"] a.active,
+
+.honor-card:hover, .tech-result-card:hover, .resp-card:hover, .project-card:hover, .quick-link-card:hover { box-shadow:none; }
+
+</style>
+
+<style>#site-cat-banner{width:100%;max-width:1350px;height:260px;margin:0 auto;overflow:hidden;background:#e8f0fe;display:none;box-sizing:border-box;}#site-cat-banner img{width:100%;height:100%;object-fit:cover;display:block;}#site-cat-banner .scb-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#eef3fb,#dfe9f7);color:#9db3cf;font-size:20px;letter-spacing:2px;}@media (max-width:900px){#site-cat-banner{height:180px;}#site-cat-banner .scb-ph{font-size:16px;}}@media (max-width:768px){#site-cat-banner{height:140px;}}</style></head>
+<body data-site="shj" data-root-cat-name="人力资源">
+
+<div class="page-wrap" style="flex:1;">
+
+
+    <!-- 导航栏开始 -->
+
+  <header class="header">
+    <div class="header-top">
+      <div class="header-nav">
+        <a href="/1_首页_files/logo.png" class="logo">
+          <img src="./1_首页_files/logo.png" alt="中交四航局第三工程有限公司" onerror="this.style.display=&#39;none&#39;">
+        </a>
+        <button class="mobile-toggle">☰</button>
+        <ul class="nav" id="main-nav">
+          <li>
+            <a href="http://10.7.54.106:18120/sites/shj/index.html">首页</a>
+          </li>
+          
+          <li>
+            <a href="D:\xiaowu\design_work\demo\2_关于四航三.html?cat=about-overview" >关于四航三</a>
+            <ul class="dropdown">
+              <li>
+                <a href="D:\xiaowu\design_work\demo\2_关于四航三.html?cat=about-overview">公司概况</a>
+              </li>
+
+              <li>
+                <a href="D:\xiaowu\design_work\demo\2_关于四航三.html?cat=about-history">历史传承</a>
+              </li>
+
+              <li>
+                <a href="D:\xiaowu\design_work\demo\2_关于四航三.html?cat=about-structure">组织架构</a>
+              </li>
+              
+              <li>
+                <a href="D:\xiaowu\design_work\demo\2_关于四航三.html?cat=about-online">全球分布</a>
+              </li>
+              
+              <li>
+                <a href="D:\xiaowu\design_work\demo\2_关于四航三.html?cat=about-layout">经营布局</a>
+              </li>
+              
+              <li>
+                <a href="http://10.7.54.106:18120/sites/shj/about-honors.html">企业荣誉</a>
+              </li>
+
+              <li>
+                <a href="D:\xiaowu\design_work\demo\2_关于四航三.html?cat=about-band">品牌理念</a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="D:\xiaowu\design_work\demo\3_新闻中心.html">新闻中心</a>
+            <ul class="dropdown">
+              <li>
+                <a href="D:\xiaowu\design_work\demo\3_新闻中心.html?cat=news-yaowen">公司要闻</a>
+              </li>
+              <li>
+                <a href="D:\xiaowu\design_work\demo\3_新闻中心.html?cat=news-media">媒体聚焦</a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="D:\xiaowu\design_work\demo\4_公司业务.html?cat=biz-contract">公司业务</a>
+            <ul class="dropdown">
+              <li>
+                <a href="D:\xiaowu\design_work\demo\4_公司业务.html?cat=biz-contract">工程承包业务</a>
+              </li>
+              <li>
+                <a href="D:\xiaowu\design_work\demo\4_公司业务.html?cat=biz-invest">投融资业务</a>
+              </li>
+              <li>
+                <a href="http://10.7.54.106:18120/sites/shj/global.html">海外业务</a>
+              </li>
+              <li>
+                <a href="D:\xiaowu\design_work\demo\4_公司业务.html?cat=biz-design">勘察设计</a>
+              </li>
+              <li>
+                <a href="D:\xiaowu\design_work\demo\4_公司业务.html?cat=biz-equip">装备制造</a>
+              </li>
+              <li>
+                <a href="D:\xiaowu\design_work\demo\4_公司业务.html?cat=biz-cat-mtmanvps">科技研发</a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="D:\xiaowu\design_work\demo\5_党的建设.html">党的建设</a>
+            <ul class="dropdown">
+              <li>
+                <a href="D:\xiaowu\design_work\demo\5_党的建设.html?cat=party-news">综合动态</a>
+              </li>
+              <li>
+                <a href="D:\xiaowu\design_work\demo\5_党的建设.html?cat=party-brand">党建品牌</a>
+              </li>
+              <li>
+                <a href="D:\xiaowu\design_work\demo\5_党的建设.html?cat=party-union">工团工作</a>
+              </li>
+              <li>
+                <a href="D:\xiaowu\design_work\demo\2_关于四航三.html?cat=party-report">信访举报</a>
+              </li>
+            </ul>
+          </li>
+          
+          <li>
+            <a href="D:\xiaowu\design_work\demo\2_关于四航三.html?cat=tech">科技创新</a>
+            <ul class="dropdown">
+              <li>
+                <a href="D:\xiaowu\design_work\demo\2_关于四航三.html?cat=tech-research">科技动态</a>
+              </li>
+              <li>
+                <a href="D:\xiaowu\design_work\demo\2_关于四航三.html?cat=tech-results">科技成果</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="active">
+            <a href="D:\xiaowu\design_work\demo\7_人力资源.html" style="color: var(--primary); font-weight: 700;">人力资源</a>
+            <ul class="dropdown">
+              <li>
+                <a href="D:\xiaowu\design_work\demo\7_人力资源.html">企业专家</a>
+              </li>
+              <li>
+                <a href="https://www.ccccltd.cn/">招聘信息</a>
+              </li>
+              <li>
+                <a href="D:\xiaowu\design_work\demo\7_人力资源.html?cat=hr-train">人才队伍结构</a>
+              </li>
+              <li>
+                <a href="D:\xiaowu\design_work\demo\7_人力资源.html?cat=hr-team">校招职位管理</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="lang-switch">
+        <a href="http://10.7.54.106:18120/sites/shj/news.html" class="active">中</a>
+        <a href="http://10.7.54.106:18120/sites/en/news.html">EN</a>
+      </div>
+    </div>
+  </header><div id="site-cat-banner" style="display: block;"><img src="./7_人力资源_files/6_1789883346026393018.jpg" alt="人力资源"></div>
+
+  <!-- 导航栏结束 -->
+
+
+
+  <div class="hr-outer">
+    <!-- 左侧边栏 — 独立 -->
+    <aside class="hr-side" id="hr-side">
+      <h4>人力资源</h4>
+      <a href="http://10.7.54.106:18120/sites/shj/renliziyuan.html" class=" active">企业专家</a>
+      <a href="https://www.ccccltd.cn/" class="">招聘信息</a>
+      <a href="http://10.7.54.106:18120/sites/shj/lmxq.html?cat=hr-train" class="">人才队伍结构</a>
+      <a href="http://10.7.54.106:18120/sites/shj/lmxq.html?cat=hr-team" class="">校招职位管理</a>
+    </aside>
+
+    <!-- 中间整体区域 -->
+    <div style="flex:1; min-width:0;">
+
+      <!-- 主要任务标题 -->
+      <div class="cat-header" id="hr-header" style="margin-bottom:24px;">
+        <h2>主要任务</h2>
+        <div class="cat-underline"></div>
+        <p class="cat-desc" id="hr-desc"></p>
+      </div>
+
+      <!-- 主要任务: tabs + panel + deco -->
+      <div class="hr-content-row">
+        <div class="hr-main">
+          <div class="task-tabs" id="task-tabs"><div class="task-tab active" data-idx="0" onclick="window._hrSwitch(0)"><div class="tab-top" title="领导人员队伍">领导人员队伍</div><div class="tab-sub" title="头雁工程1">头雁工程1</div></div><div class="task-tab" data-idx="1" onclick="window._hrSwitch(1)"><div class="tab-top" title="科技人才队伍">科技人才队伍</div><div class="tab-sub" title="鲲鹏工程">鲲鹏工程</div></div><div class="task-tab" data-idx="2" onclick="window._hrSwitch(2)"><div class="tab-top" title="经营管理人才队伍">经营管理人才队伍</div><div class="tab-sub" title="鹰隼工程">鹰隼工程</div></div><div class="task-tab" data-idx="3" onclick="window._hrSwitch(3)"><div class="tab-top" title="海外人才队伍">海外人才队伍</div><div class="tab-sub" title="海鸥工程">海鸥工程</div></div><div class="task-tab" data-idx="4" onclick="window._hrSwitch(4)"><div class="tab-top" title="党群人才队伍">党群人才队伍</div><div class="tab-sub" title="鸿鹄工程">鸿鹄工程</div></div><div class="task-tab" data-idx="5" onclick="window._hrSwitch(5)"><div class="tab-top" title="技能人才队伍">技能人才队伍</div><div class="tab-sub" title="雨燕工程">雨燕工程</div></div></div>
+          <div class="task-panel">
+            <div class="task-content" id="task-content"><div class="content-body"><h3><strong>党管干部原则与市场化选人用人相结合</strong></h3><p><strong>头雁领航 群雁齐飞</strong></p><p>坚持党管干部原则与市场化选人用人相结合，打造政治过硬、具备领导现代化建设能力的领导人员队伍。深入实施"头雁工程"，建立完善领导干部选拔任用、考核评价、监督管理全链条机制。</p><p>加强领导人员政治能力训练和实践锻炼，推动领导干部在改革发展主战场、生产经营第一线、服务群众最前沿经受历练、增长才干。持续优化领导班子结构，大力发现培养选拔优秀年轻干部，统筹做好女干部、少数民族干部和党外干部培养选拔工作。</p></div></div>
+          </div>
+        </div>
+        <div class="task-deco">
+          <svg class="deco-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#1a56db" stroke-width="2"></circle>
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#1a56db" stroke-width="1.5"></circle>
+            <circle cx="100" cy="100" r="30" fill="#1a56db" opacity="0.3"></circle>
+            <line x1="30" y1="100" x2="170" y2="100" stroke="#1a56db" stroke-width="0.5" opacity="0.5"></line>
+            <line x1="100" y1="30" x2="100" y2="170" stroke="#1a56db" stroke-width="0.5" opacity="0.5"></line>
+            <path d="M70 30 L100 15 L130 30" fill="none" stroke="#1a56db" stroke-width="1.5"></path>
+            <path d="M55 140 Q100 160 145 140" fill="none" stroke="#1a56db" stroke-width="1.5"></path>
+          </svg>
+        </div>
+      </div>
+
+      <!-- 关键举措1 — 与主要任务宽度一致 -->
+      <div style="padding-top:40px;padding-bottom:48px;">
+        <div class="cat-header" style="margin-bottom:20px;" id="kj-header">
+          <h2 id="kj-title">员工发展</h2>
+          <div class="cat-underline"></div>
+          <p class="cat-desc" id="kj-desc"></p>
+        </div>
+        <div class="banner-section" id="kj-banner"><a href="http://10.7.54.106:18120/sites/shj/lmxq.html?cat=hr-mqtd00o3"><img src="./人力资源 - 中交第四航务工程局有限公司_files/cat20181106095223_1782383323504721056.jpg" alt="员工发展"></a></div>
+      </div>
+
+    </div><!-- /中间区域 -->
+  </div>
+</div><!-- /.page-wrap -->
+
+<footer class="footer" style="background:var(--text);color:rgba(255,255,255,0.7);padding:48px 5% 32px;">
+  <div class="footer-grid" style="display:flex;gap:48px;flex-wrap:wrap;max-width:1200px;margin:0 auto;">
+    <div style="flex:22;min-width:0;" id="footer-quick"><h4 style="color:#fff;margin-bottom:12px;font-size:16px;">快速链接</h4><ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;font-size:15px;" class="footer-links"><li><a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中国交建中国交建中国交建">中国交建中国交建中国交建</a></li><li><a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中国交建中国交建">中国交建中国交建</a></li><li><a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中国交建中国交建">中国交建中国交建</a></li><li><span onclick="showMoreLinks(this)" data-links="%5B%7B%22id%22%3A1%2C%22site_id%22%3A%22shj%22%2C%22name%22%3A%22%E4%B8%AD%E5%9B%BD%E4%BA%A4%E5%BB%BA%22%2C%22url%22%3A%22https%3A%2F%2Fwww.ccccltd.cn%2F%22%2C%22logo%22%3A%22%22%2C%22sort_order%22%3A1%2C%22link_type%22%3A%22quick%22%2C%22created_at%22%3A%222026-06-11T07%3A31%3A17.691%2B08%3A00%22%7D%5D" style="color:rgba(255,255,255,0.5);font-size:13px;cursor:pointer;display:block;">查看更多 ▸</span></li></ul></div>
+    <div style="flex:22;min-width:0;padding-top:37.6px;" id="footer-nav"><ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;font-size:15px;" class="footer-links"><li><a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="lwj科技有限公司">lwj科技有限公司</a></li><li><a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中国交建">中国交建</a></li><li><a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中国交建中国交建">中国交建中国交建</a></li><li><span onclick="showMoreLinks(this)" data-links="%5B%7B%22id%22%3A9%2C%22site_id%22%3A%22shj%22%2C%22name%22%3A%22%E4%B8%AD%E5%9B%BD%E4%BA%A4%E5%BB%BA%E4%B8%AD%E5%9B%BD%E4%BA%A4%E5%BB%BA%22%2C%22url%22%3A%22https%3A%2F%2Fwww.ccccltd.cn%2F%22%2C%22logo%22%3A%22%22%2C%22sort_order%22%3A0%2C%22link_type%22%3A%22nav%22%2C%22created_at%22%3A%222026-06-25T05%3A34%3A48.509%2B08%3A00%22%7D%5D" style="color:rgba(255,255,255,0.5);font-size:13px;cursor:pointer;display:block;">查看更多 ▸</span></li></ul></div>
+    <div style="flex:22;min-width:0;padding-top:37.6px;" id="footer-friend"><ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;font-size:15px;" class="footer-links"><li><a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交集团">中交集团</a></li><li><a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中国交建中国交建中国交建">中国交建中国交建中国交建</a></li><li><a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中国交建中国交建中国交建">中国交建中国交建中国交建</a></li><li><span onclick="showMoreLinks(this)" data-links="%5B%7B%22id%22%3A12%2C%22site_id%22%3A%22shj%22%2C%22name%22%3A%22%E4%B8%AD%E5%9B%BD%E4%BA%A4%E5%BB%BA%E4%B8%AD%E5%9B%BD%E4%BA%A4%E5%BB%BA%E4%B8%AD%E5%9B%BD%E4%BA%A4%E5%BB%BA%22%2C%22url%22%3A%22https%3A%2F%2Fwww.ccccltd.cn%2F%22%2C%22logo%22%3A%22%22%2C%22sort_order%22%3A0%2C%22link_type%22%3A%22friend%22%2C%22created_at%22%3A%222026-06-25T05%3A35%3A07.531%2B08%3A00%22%7D%5D" style="color:rgba(255,255,255,0.5);font-size:13px;cursor:pointer;display:block;">查看更多 ▸</span></li></ul></div>
+    <div style="flex:34;min-width:0;" id="footer-contact-wrap"><h4 style="color:#fff;margin-bottom:12px;font-size:16px;">企业联系方式</h4><p style="line-height: 1.8; margin: 0px; font-size: 15px; white-space: pre-wrap;" id="footer-contact">地址：广州市海珠区沥滘路368号广州之窗商务港
+邮编：xxxx
+电话：xxxxxxx
+技术支持：中交第四航务工程局有限公司信息中心</p></div>
+  </div>
+  <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.4);font-size:13px;display:flex;justify-content:space-between;align-items:center;">
+    <span id="footer-copyright">Copyright ©2026 中交第四航务工程局有限公司 版权所有 All Rights Reserved</span>
+    <span id="footer-icp">备案号:粤ICP备05060342号 | 粤公网安备44010502000178号</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var siteId = document.body.getAttribute("data-site");
+  if (!siteId) return;
+  var base = "/api/public/" + siteId;
+
+  function loadLinks(type, elId){
+    var el = document.getElementById(elId);
+    if (!el) return;
+    var ul = el.querySelector(".footer-links");
+    if (!ul) return;
+    fetch(base + "/links?type=" + type)
+      .then(function(r){ return r.json(); })
+      .then(function(links){
+        if (!links || !links.length) { ul.innerHTML = '<li style="color:rgba(255,255,255,0.4);font-size:13px;">暂无</li>'; return; }
+        var show = links.slice(0, 3);
+        var rest = links.slice(3);
+        var html = "";
+        var styleA = "color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;";
+        show.forEach(function(l){
+          var safeName = (l.name||"").replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+          html += '<li><a href="' + (l.url||"#") + '" target="_blank" style="' + styleA + '" title="' + safeName + '">' + safeName + '</a></li>';
+        });
+        if (rest.length > 0) {
+          html += '<li><span onclick="showMoreLinks(this)" data-links="' + encodeURIComponent(JSON.stringify(rest)) + '" style="color:rgba(255,255,255,0.5);font-size:13px;cursor:pointer;display:block;">查看更多 ▸</span></li>';
+        }
+        ul.innerHTML = html;
+      });
+  }
+
+  loadLinks("quick", "footer-quick");
+  loadLinks("nav", "footer-nav");
+  loadLinks("friend", "footer-friend");
+
+  window.showMoreLinks = function(el) {
+    var data = decodeURIComponent(el.getAttribute("data-links"));
+    var links = JSON.parse(data);
+    var rect = el.getBoundingClientRect();
+    var box = document.createElement("div");
+    box.style.cssText = "position:absolute;left:" + (rect.left + window.scrollX) + "px;bottom:" + (window.innerHeight - rect.top - window.scrollY + 4) + "px;background:#fff;border-radius:8px;padding:16px 20px;box-shadow:0 4px 16px rgba(0,0,0,0.15);z-index:9999;min-width:200px;max-height:300px;overflow-y:auto;";
+    box.onclick = function(e){ e.stopPropagation(); };
+    var title = document.createElement("div");
+    title.style.cssText = "font-size:14px;font-weight:600;color:#1a56db;margin-bottom:8px;";
+    title.textContent = "更多链接";
+    box.appendChild(title);
+    links.forEach(function(l){
+      var wrap = document.createElement("div");
+      wrap.style.cssText = "padding:6px 0;border-bottom:1px solid #f0f0f0;";
+      var a = document.createElement("a");
+      a.href = l.url || "#";
+      a.target = "_blank";
+      a.style.cssText = "color:#333;text-decoration:none;font-size:13px;word-break:break-all;";
+      a.textContent = l.name || "";
+      wrap.appendChild(a);
+      box.appendChild(wrap);
+    });
+    document.body.appendChild(box);
+    function closePop(e) {
+      if (!box.contains(e.target)) {
+        document.removeEventListener("click", closePop);
+        if (box.parentNode) box.parentNode.removeChild(box);
+      }
+    }
+    setTimeout(function(){ document.addEventListener("click", closePop); }, 0);
+  };
+
+  // 联系我们
+  fetch(base + "/contact-info")
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var el = document.getElementById("footer-contact");
+      if (el && d.contact_info) { el.style.whiteSpace = "pre-wrap"; el.textContent = d.contact_info; }
+    var copyrightEl = document.getElementById("footer-copyright");
+    if (copyrightEl) copyrightEl.textContent = d.copyright_text || "Copyright ©2026 版权所有 All Rights Reserved";
+    var icpEl = document.getElementById("footer-icp"); if (icpEl) icpEl.textContent = d.icp_number || "";
+    });
+})();
+</script>
+
+<script>
+(function loadAll(){
+  var siteId = document.body.getAttribute('data-site');
+  if (!siteId) return;
+
+  fetch('/api/public/' + siteId + '/categories').then(function(r){ return r.json(); }).then(function(cats){
+    var taskCat = cats.find(function(c){ return c.id === 121; });
+    if (!taskCat) return null;
+    // 先获取文章列表（content为空），再并行获取每篇详情
+    return fetch('/api/public/' + siteId + '/articles?category_id=' + taskCat.id + '&page_size=500')
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        var list = (res && res.data) || res || [];
+        if (!list.length) return { cats: cats, taskCat: taskCat, articles: [] };
+        // 并行获取每篇文章的详情（包含content）
+        var detailPromises = list.map(function(a){
+          return fetch('/api/public/' + siteId + '/articles/' + a.id)
+            .then(function(r){ return r.json(); })
+            .catch(function(){ return a; }); // 失败回退用列表数据
+        });
+        return Promise.all(detailPromises).then(function(details){
+          return { cats: cats, taskCat: taskCat, articles: details };
+        });
+      });
+  }).then(function(results){
+    if (!results) return;
+    var cats = results.cats;
+    var taskCat = results.taskCat;
+    var allArticles = results.articles;
+    if (taskCat && taskCat.description) {
+      document.getElementById('hr-desc').textContent = taskCat.description;
+    }
+
+    // 侧边栏：固定以顶级栏目（人力资源）为父级，始终展示其二级子栏目
+    var side = document.getElementById('hr-side');
+    if (side && taskCat) {
+      // 由当前内容栏目向上回溯到顶级栏目
+      var rootCat = taskCat, up;
+      while (rootCat.parent_id) {
+        up = cats.find(function(c){ return c.id === rootCat.parent_id; });
+        if (!up) break;
+        rootCat = up;
+      }
+      var parentId = rootCat.id || taskCat.parent_id || taskCat.id;
+      var parentCat = rootCat;
+      // 当前内容栏目在侧边栏中所属的项（同层祖先），用于高亮
+      var node = taskCat, anc;
+      while (node.parent_id && node.parent_id !== parentId) {
+        anc = cats.find(function(c){ return c.id === node.parent_id; });
+        if (!anc) break;
+        node = anc;
+      }
+      var activeId = (node.parent_id === parentId) ? node.id : taskCat.id;
+      var siblings = cats.filter(function(c){ return c.parent_id === parentId; });
+      siblings.sort(function(a,b){ return (a.sort_order||0)-(b.sort_order||0); });
+      var sideHtml = '<h4>'+parentCat.name+'</h4>';
+      siblings.forEach(function(s){
+        var isActive = s.id === activeId ? ' active' : '';
+        var href = '#';
+        if (s.page_url) { href = s.page_url; }
+        else if (s.nav_type === 'LINK' && s.link_url) { href = s.link_url; }
+        else if (s.nav_type === 'DYNAMIC') { href = 'dynamic.html?cat=' + encodeURIComponent(s.slug); }
+        else if (s.nav_type === 'PAGE') { href = s.slug + '.html'; }
+        else if (s.name === '品牌文化') { href = 'lmxq.html?cat=' + encodeURIComponent((cats.find(function(x){ return x.name === '品牌理念'; }) || s).slug); }
+        else { href = 'lmxq.html?cat='+encodeURIComponent(s.slug); }
+        sideHtml += '<a href="'+href+'" class="'+isActive+'">'+s.name+'</a>';
+      });
+      side.innerHTML = sideHtml;
+    }
+
+    // 文章 — 排序与后台一致：is_top DESC, sort_order DESC, created_at DESC
+    var taskArticles = [];
+    if (taskCat) {
+      taskArticles = allArticles;
+      taskArticles.sort(function(a,b){
+        if (a.is_top && !b.is_top) return -1;
+        if (!a.is_top && b.is_top) return 1;
+        if ((a.sort_order||0) !== (b.sort_order||0)) return (b.sort_order||0) - (a.sort_order||0);
+        return (new Date(b.published_at|| b.created_at))-(new Date(a.published_at|| a.created_at));
+      });
+    }
+
+    var maxTabs = 6;
+    var displayArticles = taskArticles.slice(0, maxTabs);
+
+    if (!displayArticles.length) {
+      document.getElementById('task-tabs').innerHTML = '';
+      document.getElementById('task-content').innerHTML = '<div class="task-empty">暂无文章</div>';
+      return;
+    }
+
+    var tabsHtml = '';
+    displayArticles.forEach(function(a, i){
+      var summary = (a.summary || '').slice(0, 20);
+      tabsHtml += '<div class="task-tab'+(i===0?' active':'')+'" data-idx="'+i+'" onclick="window._hrSwitch('+i+')">' +
+        '<div class="tab-top" title="'+(a.summary||'').replace(/"/g,'&quot;')+'">'+(summary||'&nbsp;')+'</div>' +
+        '<div class="tab-sub" title="'+a.title.replace(/"/g,'&quot;')+'">'+a.title+'</div></div>';
+    });
+    document.getElementById('task-tabs').innerHTML = tabsHtml;
+
+    window._hrArticles = displayArticles;
+
+    window._hrSwitch = function(idx){
+      if (idx === window._hrIdx && document.querySelector('.task-tab.active')) return;
+      window._hrIdx = idx;
+      var a = window._hrArticles[idx];
+      var tabs = document.querySelectorAll('.task-tab');
+      tabs.forEach(function(t, i){ t.classList.toggle('active', i === idx); });
+
+      // 保留原始 HTML 格式，只处理超长截断
+      var rawContent = a.content || '';
+      var plainLen = rawContent.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').trim().length;
+      var contentLong = plainLen > 600;
+      var displayContent = contentLong ? rawContent + '<p style="color:#999;margin-top:16px;">…内容较长，请点击下方按钮查看完整文章</p>' : rawContent;
+      var btnHtml = contentLong ? '<a class="more-btn" href="article.html?aid='+a.hash_id+'">查看详情 →</a>' : '';
+
+      document.getElementById('task-content').innerHTML =
+        '<div class="content-body">'+displayContent+'</div>' +
+        btnHtml;
+    };
+
+    window._hrSwitch(0);
+
+    // ========== 关键举措 Banner ==========
+    var kjCat = cats.find(function(c){ return c.id === 122; });
+    if (kjCat) {
+      document.getElementById('kj-title').textContent = kjCat.name;
+      if (kjCat.description) {
+        document.getElementById('kj-desc').textContent = kjCat.description;
+      }
+      var banner = document.getElementById('kj-banner');
+      if (banner) {
+        var kjImg = kjCat.images ? kjCat.images.split(',')[0].trim() : '';
+        if (kjImg) {
+          var kjHref = 'lmxq.html?cat='+encodeURIComponent(kjCat.slug);
+          banner.innerHTML = '<a href="'+kjHref+'"><img src="'+kjImg.trim()+'" alt="'+kjCat.name+'"></a>';
+        } else {
+          banner.innerHTML = '<div style="height:650px;display:flex;align-items:center;justify-content:center;background:#e8f0fe;color:#999;font-size:16px;">'+kjCat.name+'</div>';
+        }
+      }
+    }
+  });
+})();
+</script>
+
+<script src="./人力资源 - 中交第四航务工程局有限公司_files/nav.js.下载"></script>
+<script src="./人力资源 - 中交第四航务工程局有限公司_files/cat-banner.js.下载"></script>
+
+
+</body></html>

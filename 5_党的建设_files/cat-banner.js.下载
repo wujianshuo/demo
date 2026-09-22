@@ -1,0 +1,142 @@
+/* 一级栏目顶部大图（宽 1350px × 高 260px）
+ * 2026-09-15 新增需求：除首页外，每个栏目页面在导航栏正下方显示其「一级栏目」的栏目图片。
+ *
+ * 行为：
+ *  1. 在 <header class="header"> 之后自动插入 #site-cat-banner 容器（无需改页面 HTML）
+ *  2. 页面已自带栏目大图容器时（#honor-banner / #cat-banner / .honor-banner / .page-banner）不重复插入
+ *  3. 栏目定位优先级：
+ *     ?cat=<slug> / ?catId=<id>  →  body[data-root-cat-name]  →  页面文件名匹配 category.page_url
+ *     →  页面文件名（去扩展名）匹配 category.slug
+ *  4. 命中栏目后回溯到「一级栏目」（顶级）取图：images 第一张 或 cover_image
+ *     一级栏目无图时，向上取最近的「有图祖先」；仍无图则显示占位（渐变底 + 栏目名）
+ *  5. 若栏目数据中定位不到（栏目被停用等），但页面用 data-root-cat-name 声明了一级栏目名称，
+ *     则显示该名称的占位，便于后台补图后自动生效
+ *  6. 完全无法判断时不显示（保持页面原样）
+ */
+(function () {
+  var siteId = document.body ? document.body.getAttribute('data-site') : '';
+  if (!siteId || siteId.indexOf('{') >= 0) return;
+
+  // 已有栏目大图的页面跳过（business.html / about-honors.html / global.html / article.html 等）
+  if (document.getElementById('site-cat-banner')) return;
+  if (document.getElementById('honor-banner') || document.querySelector('.honor-banner')) return;
+  if (document.getElementById('cat-banner') || document.querySelector('.page-banner')) return;
+
+  var headerEl = document.querySelector('header.header') || document.querySelector('header');
+  if (!headerEl || !headerEl.parentNode) return;
+
+  // 容器样式（1600×260，移动端收窄）
+  var style = document.createElement('style');
+  style.textContent =
+    '#site-cat-banner{width:100%;max-width:1350px;height:260px;margin:0 auto;overflow:hidden;' +
+    'background:#e8f0fe;display:none;box-sizing:border-box;}' +
+    '#site-cat-banner img{width:100%;height:100%;object-fit:cover;display:block;}' +
+    '#site-cat-banner .scb-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;' +
+    'background:linear-gradient(135deg,#eef3fb,#dfe9f7);color:#9db3cf;font-size:20px;letter-spacing:2px;}' +
+    '@media (max-width:900px){#site-cat-banner{height:180px;}#site-cat-banner .scb-ph{font-size:16px;}}' +
+    '@media (max-width:768px){#site-cat-banner{height:140px;}}';
+  document.head.appendChild(style);
+
+  var wrap = document.createElement('div');
+  wrap.id = 'site-cat-banner';
+  headerEl.parentNode.insertBefore(wrap, headerEl.nextSibling);
+
+  function catImg(cat) {
+    if (!cat) return '';
+    var arr = (cat.images || '').split(',').map(function (s) { return s.trim(); })
+      .filter(function (s) { return !!s; });
+    return arr.length ? arr[0] : (cat.cover_image || '');
+  }
+
+  // 页面声明的所属一级栏目名称（过滤未被替换的模板变量）
+  function declaredRootName() {
+    var v = (document.body ? document.body.getAttribute('data-root-cat-name') : '') || '';
+    v = v.trim();
+    if (!v || v.indexOf('{') >= 0 || v.indexOf('}') >= 0) return '';
+    return v;
+  }
+
+  function baseName(u) {
+    if (!u) return '';
+    var s = String(u).split('?')[0].split('/').pop() || '';
+    return s.toLowerCase();
+  }
+
+  function topFirst(list) {
+    var tops = list.filter(function (c) { return !c.parent_id; });
+    return (tops.length ? tops : list)[0];
+  }
+
+  function locate(cats) {
+    var q = new URLSearchParams(window.location.search);
+    var cid = q.get('catId');
+    if (cid) {
+      var byId = cats.find(function (c) { return String(c.id) === String(cid); });
+      if (byId) return byId;
+    }
+    var slug = q.get('cat');
+    if (slug) {
+      var bySlug = cats.find(function (c) { return c.slug === slug; });
+      if (bySlug) return bySlug;
+    }
+    var rootName = declaredRootName();
+    if (rootName) {
+      // 只与「一级栏目」(顶级) 比对，避免与同名的二级栏目混淆
+      var byName = cats.find(function (c) { return !c.parent_id && c.name === rootName; });
+      if (byName) return byName;
+    }
+    var base = (window.location.pathname.split('/').pop() || '').toLowerCase();
+    if (!base) return null;
+    var byPage = cats.filter(function (c) { return baseName(c.page_url) === base; });
+    if (byPage.length) return topFirst(byPage);
+    var stem = base.replace(/\.html?$/, '');
+    if (!stem) return null;
+    var byStem = cats.filter(function (c) { return (c.slug || '').toLowerCase() === stem; });
+    if (byStem.length) return topFirst(byStem);
+    return null;
+  }
+
+  function show(img, name) {
+    wrap.style.display = 'block';
+    if (img) {
+      wrap.innerHTML = '<img src="' + img + '" alt="' + (name || '') + '">';
+    } else {
+      wrap.innerHTML = '<div class="scb-ph">' + (name || '') + '</div>';
+    }
+  }
+
+  fetch('/api/public/' + siteId + '/categories')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var cats = Array.isArray(data) ? data : (data && data.data ? data.data : []);
+      if (!cats.length) return;
+
+      var hit = locate(cats);
+      if (!hit) {
+        // 数据中定位不到（栏目停用等）：按页面声明的一级栏目名显示占位
+        var fallback = declaredRootName();
+        if (fallback) show('', fallback);
+        return;
+      }
+
+      // 回溯到一级栏目
+      var root = hit, guard = 0;
+      while (root && root.parent_id && guard++ < 30) {
+        var p = cats.find(function (c) { return c.id === root.parent_id; });
+        if (!p) break;
+        root = p;
+      }
+
+      // 取图：一级栏目优先，其次向上取最近的有图祖先
+      var img = catImg(root);
+      var node = hit;
+      guard = 0;
+      while (!img && node && node.parent_id && guard++ < 30) {
+        node = cats.find(function (c) { return c.id === node.parent_id; });
+        img = catImg(node);
+      }
+
+      show(img, root ? root.name : '');
+    })
+    .catch(function () { /* 静默失败，不影响页面 */ });
+})();
