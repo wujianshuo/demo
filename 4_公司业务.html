@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0065)./4_公司业务.html?cat=biz-contract -->
+<!-- saved from url=(0065)./4_公司业务.html?cat=business-port -->
 <html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,34 +22,34 @@
   .honor-banner .ph { width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:#999; font-size:18px; }
   .page-main h1 { font-size:28px; color:var(--text); margin-bottom:24px; padding-bottom:16px; border-bottom:2px solid var(--primary); text-align:left; }
   /* 2026-09-16：右侧内容区上部「子栏目图片」固定高度 300px（与企业荣誉页一致；宽度不变，超出部分裁切） */
-  .biz-catimg { width:100%; height:300px; margin-bottom:28px; background:#e8f0fe; border-radius: 0; overflow:hidden; }
-  .biz-catimg img { width:100%; height:300px; object-fit:cover; display:block; }
-  .biz-catimg .ph { width:100%; height:300px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#eef3fb,#dfe9f7); color:#9db3cf; font-size:16px; }
-  .biz-sub-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:26px 14px; }
-  .biz-sub-card { border:1px solid #e8eef7; border-radius: 0; overflow:hidden;  background:#fff; }
-  .biz-sub-card .sub-name { font-size:17px; font-weight:600; color:var(--primary); text-align:center; padding:14px 10px; background:var(--primary-light); cursor:pointer; transition:background 0.2s; word-wrap:break-word; }
-  .biz-sub-card .sub-name:hover { background:#dce8fa; }
-  .biz-slider { position:relative; background:#f6f9fe; }
-  .biz-track { display:flex; transition:transform 0.45s ease; }
-  .biz-slide { flex:0 0 100%; width:100%; }
+  .business-catimg { width:100%; height:300px; margin-bottom:28px; background:#e8f0fe; border-radius: 0; overflow:hidden; }
+  .business-catimg img { width:100%; height:300px; object-fit:cover; display:block; }
+  .business-catimg .ph { width:100%; height:300px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#eef3fb,#dfe9f7); color:#9db3cf; font-size:16px; }
+  .business-sub-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:26px 14px; }
+  .business-sub-card { border:1px solid #e8eef7; border-radius: 0; overflow:hidden;  background:#fff; }
+  .business-sub-card .sub-name { font-size:17px; font-weight:600; color:var(--primary); text-align:center; padding:14px 10px; background:var(--primary-light); cursor:pointer; transition:background 0.2s; word-wrap:break-word; }
+  .business-sub-card .sub-name:hover { background:#dce8fa; }
+  .business-slider { position:relative; background:#f6f9fe; }
+  .business-track { display:flex; transition:transform 0.45s ease; }
+  .business-slide { flex:0 0 100%; width:100%; }
   /* 图片比例参照首页「专题专栏」模块（约 8:5，object-fit:cover） */
-  .biz-slide .simg { display:block; width:100%; aspect-ratio:8/5; overflow:hidden; background:#eef3fb; }
-  .biz-slide .simg img { width:100%; height:100%; object-fit:cover; display:block; }
-  .biz-slide .simg-ph { width:100%; aspect-ratio:8/5; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#eef3fb,#dfe9f7); color:#9db3cf; font-size:14px; }
+  .business-slide .simg { display:block; width:100%; aspect-ratio:8/5; overflow:hidden; background:#eef3fb; }
+  .business-slide .simg img { width:100%; height:100%; object-fit:cover; display:block; }
+  .business-slide .simg-ph { width:100%; aspect-ratio:8/5; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#eef3fb,#dfe9f7); color:#9db3cf; font-size:14px; }
   /* 切换按钮：参照专题专栏，背景透明 + 白色 SVG 箭头 */
-  .biz-arrow { position:absolute; top:0; bottom:44px; width:32px; display:flex; align-items:center; justify-content:center; color:#fff; background:transparent; cursor:pointer; user-select:none; filter:drop-shadow(0 1px 3px rgba(0,0,0,0.55)); transition:opacity 0.2s; }
-  .biz-arrow:hover { background:transparent; opacity:0.75; }
-  .biz-arrow.left { left:0; }
-  .biz-arrow.right { right:0; }
+  .business-arrow { position:absolute; top:0; bottom:44px; width:32px; display:flex; align-items:center; justify-content:center; color:#fff; background:transparent; cursor:pointer; user-select:none; filter:drop-shadow(0 1px 3px rgba(0,0,0,0.55)); transition:opacity 0.2s; }
+  .business-arrow:hover { background:transparent; opacity:0.75; }
+  .business-arrow.left { left:0; }
+  .business-arrow.right { right:0; }
   .slide-name { height:44px; display:flex; align-items:center; justify-content:center; padding:0 12px; background:#fff; border-top:1px solid #eef2f8; }
   .slide-name a { font-size:14px; color:var(--text); text-decoration:none; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; text-align:center; }
   .slide-name a:hover { color:var(--primary); }
   .sub-empty { width:100%; aspect-ratio:8/5; display:flex; align-items:center; justify-content:center; color:#9db3cf; font-size:15px; background:linear-gradient(135deg,#eef3fb,#dfe9f7); }
-  .biz-pager { display:flex; justify-content:center; align-items:center; gap:10px; margin-top:34px; }
-  .biz-pager button { min-width:40px; height:38px; padding:0 14px; border:1px solid #d9e3f2; background:#fff; color:var(--text); font-size:14px; border-radius:4px; cursor:pointer; transition:all 0.2s; }
-  .biz-pager button:hover:not(:disabled) { border-color:var(--primary); color:var(--primary); }
-  .biz-pager button.active { background:var(--primary); border-color:var(--primary); color:#fff; font-weight:600; }
-  .biz-pager button:disabled { opacity:0.45; cursor:not-allowed; }
+  .business-pager { display:flex; justify-content:center; align-items:center; gap:10px; margin-top:34px; }
+  .business-pager button { min-width:40px; height:38px; padding:0 14px; border:1px solid #d9e3f2; background:#fff; color:var(--text); font-size:14px; border-radius:4px; cursor:pointer; transition:all 0.2s; }
+  .business-pager button:hover:not(:disabled) { border-color:var(--primary); color:var(--primary); }
+  .business-pager button.active { background:var(--primary); border-color:var(--primary); color:#fff; font-weight:600; }
+  .business-pager button:disabled { opacity:0.45; cursor:not-allowed; }
   /* 文章图文列表（勘察设计/装备制造）：2×2 布局（每页 4 张，2 列 2 行），图片比例 8:5 与全页一致 */
   .honor-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:26px 14px; }
   .honor-card { background:#fff; overflow:hidden; border:1px solid var(--border); transition:transform 0.2s,box-shadow 0.2s; cursor:pointer; }
@@ -59,9 +59,9 @@
   .honor-card .card-noimg { width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#eef3fb,#dfe9f7); color:#9db3cf; font-size:14px; }
   .honor-card .card-body { padding:16px 12px; text-align:center; }
   .honor-card .card-body h3 { font-size:15px; color:var(--text); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; line-height:1.4; word-break:break-word; overflow-wrap:anywhere; }
-  .honor-empty, .biz-empty { grid-column:1/-1; text-align:center; color:#999; padding:60px 0; font-size:16px; }
+  .honor-empty, .business-empty { grid-column:1/-1; text-align:center; color:#999; padding:60px 0; font-size:16px; }
   @media (max-width:1200px){ .page-side{display:none;} }
-  @media (max-width:900px){ .biz-sub-grid{grid-template-columns:1fr;} }
+  @media (max-width:900px){ .business-sub-grid{grid-template-columns:1fr;} }
   @media (max-width:768px){ .page-main{padding:20px;} .page-main h1{font-size:22px;} .honor-grid{grid-template-columns:1fr;} }
   </style>
 <style>
@@ -80,7 +80,7 @@ body { background:#f5f6f8; }
 
 .news-card, .quick-link-card, .resp-card, .resp-report, .tech-stat, .culture-card, .stat-box, .project-card,
 
-.honor-banner, .honor-card, .tech-result-card, .report-card, .honor-panel, .banner-section, .task-deco, .biz-sub-card { border:none; }
+.honor-banner, .honor-card, .tech-result-card, .report-card, .honor-panel, .banner-section, .task-deco, .business-sub-card { border:none; }
 
 [class*="-sidebar"] a, [class*="-side"] a { box-shadow:none; }
 
@@ -108,7 +108,7 @@ body { background:#f5f6f8; }
         </li>
         
         <li>
-          <a href="./2_关于四航三.html?cat=about-overview" >关于四航三</a>
+          <a href="./2_关于四航三.html">关于四航三</a>
           <ul class="dropdown">
             <li>
               <a href="./2_关于四航三.html?cat=about-overview">公司概况</a>
@@ -131,7 +131,7 @@ body { background:#f5f6f8; }
             </li>
             
             <li>
-              <a href="./2_关于四航三.html">企业荣誉</a>
+              <a href="./2_关于四航三.html?cat=about-honor">企业荣誉</a>
             </li>
 
             <li>
@@ -153,25 +153,46 @@ body { background:#f5f6f8; }
         </li>
 
         <li class="active">
-          <a href="./4_公司业务.html?cat=biz-contract" style="color: var(--primary); font-weight: 700;">公司业务</a>
+          <a href="./4_公司业务.html?cat=business-port" style="color: var(--primary); font-weight: 700;">公司业务</a>
           <ul class="dropdown">
             <li>
-              <a href="./4_公司业务.html?cat=biz-contract">工程承包业务</a>
+              <a href="./4_公司业务.html?cat=business-port">港口及航运设施工程</a>
             </li>
             <li>
-              <a href="./4_公司业务.html?cat=biz-invest">投融资业务</a>
+              <a href="./4_公司业务.html?cat=business-road">公路工程</a>
             </li>
             <li>
-              <a href="./4_公司业务.html">海外业务</a>
+              <a href="./4_公司业务.html?cat=business-railway">铁路工程</a>
             </li>
             <li>
-              <a href="./4_公司业务.html?cat=biz-design">勘察设计</a>
+              <a href="./4_公司业务.html?cat=business-rail">城市轨道交通工程</a>
             </li>
             <li>
-              <a href="./4_公司业务.html?cat=biz-equip">装备制造</a>
+              <a href="./4_公司业务.html?cat=business-admin">市政工程</a>
             </li>
             <li>
-              <a href="./4_公司业务.html?cat=biz-cat-mtmanvps">科技研发</a>
+              <a href="./4_公司业务.html?cat=business-cat-bridge">隧道和桥梁工程</a>
+            </li>
+            <li>
+              <a href="./4_公司业务.html?cat=business-cat-ship">水利、船闸、船坞工程</a>
+            </li>
+            <li>
+              <a href="./4_公司业务.html?cat=business-cat-house">房屋建筑工程</a>
+            </li>
+            <li>
+              <a href="./4_公司业务.html?cat=business-cat-ecology">生态保护工程</a>
+            </li>
+            <li>
+              <a href="./4_公司业务.html?cat=business-cat-river">河湖治理工程</a>
+            </li>
+            <li>
+              <a href="./4_公司业务.html?cat=business-cat-utility">综合管廊工程</a>
+            </li>
+            <li>
+              <a href="./4_公司业务.html?cat=business-cat-wind">海外风能发电工程</a>
+            </li>
+            <li>
+              <a href="./4_公司业务.html?cat=business-cat-port_overseas">海外港口及航运设施工程</a>
             </li>
           </ul>
         </li>
@@ -195,10 +216,10 @@ body { background:#f5f6f8; }
         </li>
         
         <li>
-          <a href="./6_科技创新.html?cat=tech">科技创新</a>
+          <a href="./6_科技创新.html">科技创新</a>
           <ul class="dropdown">
             <li>
-              <a href="./6_科技创新.html?cat=tech-research">科技动态</a>
+              <a href="./6_科技创新.html?cat=tech-dynamic">科技动态</a>
             </li>
             <li>
               <a href="./6_科技创新.html?cat=tech-results">科技成果</a>
@@ -210,16 +231,16 @@ body { background:#f5f6f8; }
           <a href="./7_人力资源.html">人力资源</a>
           <ul class="dropdown">
             <li>
-              <a href="./7_人力资源.html">企业专家</a>
+              <a href="./7_人力资源.html?cat=hr-expert">企业专家</a>
             </li>
             <li>
-              <a href="https://www.ccccltd.cn/">招聘信息</a>
+              <a href="./7_人力资源.html?cat=hr-info">招聘信息</a>
             </li>
             <li>
-              <a href="./7_人力资源.html?cat=hr-train">人才队伍结构</a>
+              <a href="./7_人力资源.html?cat=hr-team">人才队伍结构</a>
             </li>
             <li>
-              <a href="./7_人力资源.html?cat=hr-team">校招职位管理</a>
+              <a href="./7_人力资源.html?cat=hr-post">校招职位管理</a>
             </li>
           </ul>
         </li>
@@ -243,22 +264,126 @@ body { background:#f5f6f8; }
 
   <div style="width:100%;max-width:1350px;margin:0 auto;display:flex;gap:2%;align-items:flex-start;padding:32px 0;">
     <!-- 侧边栏：业务领域子栏目（不含「全部」按钮） -->
-    <aside class="page-side" id="biz-side"><h4>业务领域</h4><a href="./4_公司业务.html?cat=biz-contract" class="active">工程承包业务</a><a href="./4_公司业务.html?cat=biz-invest" class="">投融资业务</a><a href="./4_公司业务.html" class="">海外业务</a><a href="./4_公司业务.html?cat=biz-design" class="">勘察设计</a><a href="./4_公司业务.html?cat=biz-equip" class="">装备制造</a><a href="./4_公司业务.html?cat=biz-cat-mtmanvps" class="">科技研发</a></aside>
+    <aside class="page-side" id="business-side">
+      <h4>业务领域</h4>
+      <a href="./4_公司业务.html?cat=business-port" class="active">港口及航运设施工程</a>
+      <a href="./4_公司业务.html?cat=business-road" class="">公路工程</a>
+      <a href="./4_公司业务.html?cat=business-railway" class="">铁路工程</a>
+      <a href="./4_公司业务.html?cat=business-rail" class="">城市轨道交通工程</a>
+      <a href="./4_公司业务.html?cat=business-admin" class="">市政工程</a>
+      <a href="./4_公司业务.html?cat=business-bridge" class="">隧道和桥梁工程</a>
+      <a href="./4_公司业务.html?cat=business-ship" class="">水利、船闸、船坞工程</a>
+      <a href="./4_公司业务.html?cat=business-house" class="">房屋建筑工程</a>
+      <a href="./4_公司业务.html?cat=business-ecology" class="">生态保护工程</a>
+      <a href="./4_公司业务.html?cat=business-river" class="">河湖治理工程</a>
+      <a href="./4_公司业务.html?cat=business-utility" class="">综合管廊工程</a>
+      <a href="./4_公司业务.html?cat=business-wind" class="">海外风能发电工程</a>
+      <a href="./4_公司业务.html?cat=business-port_overseas" class="">海外港口及航运设施工程</a>
+    </aside>
 
     <div class="page-main">
-      <h1 id="biz-title">工程承包业务</h1>
+      <h1 id="business-title">工程承包业务</h1>
 
       <!-- 当前子栏目的栏目图片 -->
-      <div class="biz-catimg" id="biz-catimg"><img src="./4_公司业务_files/upload_1789886368304789615.jpg" alt=""></div>
+      <div class="business-catimg" id="business-catimg">
+        <img src="./4_公司业务_files/upload_1789886368304789615.jpg" alt="">
+      </div>
 
       <!-- 三级子栏目区（每页四个，卡片内为该子栏目文章封面轮播） -->
-      <div class="biz-sub-grid" id="biz-sub-grid"><div class="biz-sub-card"><div class="sub-name" onclick="location.href=&#39;./4_公司业务.html?cat=biz-contract-cat-mtwok9jo&#39;">疏浚工程</div><div class="biz-slider"><div class="biz-track" id="tk-1113"><div class="biz-slide"><a class="simg" href="./4_公司业务.html?aid=yyYc9R182g0"><img src="./4_公司业务_files/upload_1789886368304789615.jpg" alt=""></a></div></div><div class="slide-name" id="nm-1113"><a href="./4_公司业务.html?aid=yyYc9R182g0">11111111111111</a></div></div></div><div class="biz-sub-card"><div class="sub-name" onclick="location.href=&#39;./4_公司业务.html?cat=biz-contract-cat-mtwnpg7p&#39;">道路工程</div><div class="biz-slider"><div class="biz-track" id="tk-1109"><div class="biz-slide"><a class="simg" href="./4_公司业务.html?aid=SupP9poujVc"><img src="./4_公司业务_files/upload_1789886368304789615.jpg" alt=""></a></div></div><div class="slide-name" id="nm-1109"><a href="./4_公司业务.html?aid=SupP9poujVc">测试111111111111111</a></div></div></div><div class="biz-sub-card"><div class="sub-name" onclick="location.href=&#39;./4_公司业务.html?cat=biz-contract-cat-mtwnq4c6&#39;">岛隧工程</div><div class="biz-slider"><div class="biz-track" id="tk-1110"><div class="biz-slide"><a class="simg" href="./4_公司业务.html?aid=m51C8tRWwIQ"><img src="./4_公司业务_files/upload_1789886368304789615.jpg" alt=""></a></div></div><div class="slide-name" id="nm-1110"><a href="./4_公司业务.html?aid=m51C8tRWwIQ">测试1111111</a></div></div></div><div class="biz-sub-card"><div class="sub-name" onclick="location.href=&#39;./4_公司业务.html?cat=biz-contract-cat-mtwnqjey&#39;">港口码头</div><div class="biz-slider"><div class="biz-track" id="tk-1111" style="transform: translateX(-100%);"><div class="biz-slide"><a class="simg" href="./4_公司业务.html?aid=JQ0MUzL2O_4"><img src="./4_公司业务_files/upload_1789886368304789615.jpg" alt=""></a></div><div class="biz-slide"><a class="simg" href="./4_公司业务.html?aid=6Q7msmetY-o"><img src="./4_公司业务_files/upload_1789886368304789615.jpg" alt=""></a></div></div><div class="biz-arrow left" onclick="BIZ_SLIDE(1111,-1)"><svg width="18" height="28" viewBox="0 0 16 24" fill="none"><path d="M12 4L5 12L12 20" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div class="biz-arrow right" onclick="BIZ_SLIDE(1111,1)"><svg width="18" height="28" viewBox="0 0 16 24" fill="none"><path d="M4 4L11 12L4 20" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><div class="slide-name" id="nm-1111"><a href="./4_公司业务.html?aid=6Q7msmetY-o">测试11111111111111111111</a></div></div></div></div>
+      <div class="business-sub-grid" id="business-sub-grid">
+        <div class="business-sub-card">
+          <div class="sub-name" onclick="location.href=&#39;./4_公司业务.html?cat=business-port-cat-mtwok9jo&#39;">疏浚工程</div>
+          <div class="business-slider">
+            <div class="business-track" id="tk-1113">
+              <div class="business-slide">
+                <a class="simg" href="./4_公司业务.html?aid=yyYc9R182g0">
+                  <img src="./4_公司业务_files/upload_1789886368304789615.jpg" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="slide-name" id="nm-1113">
+              <a href="./4_公司业务.html?aid=yyYc9R182g0">11111111111111</a>
+            </div>
+          </div>
+        </div>
+        <div class="business-sub-card">
+          <div class="sub-name" onclick="location.href=&#39;./4_公司业务.html?cat=business-port-cat-mtwnpg7p&#39;">道路工程</div>
+          <div class="business-slider">
+            <div class="business-track" id="tk-1109">
+              <div class="business-slide">
+                <a class="simg" href="./4_公司业务.html?aid=SupP9poujVc">
+                  <img src="./4_公司业务_files/upload_1789886368304789615.jpg" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="slide-name" id="nm-1109">
+              <a href="./4_公司业务.html?aid=SupP9poujVc">测试111111111111111</a>
+            </div>
+          </div>
+        </div>
+        <div class="business-sub-card">
+          <div class="sub-name" onclick="location.href=&#39;./4_公司业务.html?cat=business-port-cat-mtwnq4c6&#39;">岛隧工程</div>
+          <div class="business-slider">
+            <div class="business-track" id="tk-1110">
+              <div class="business-slide">
+                <a class="simg" href="./4_公司业务.html?aid=m51C8tRWwIQ">
+                  <img src="./4_公司业务_files/upload_1789886368304789615.jpg" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="slide-name" id="nm-1110">
+              <a href="./4_公司业务.html?aid=m51C8tRWwIQ">测试1111111</a>
+            </div>
+          </div>
+        </div>
+        <div class="business-sub-card">
+          <div class="sub-name" onclick="location.href=&#39;./4_公司业务.html?cat=business-port-cat-mtwnqjey&#39;">港口码头</div>
+          <div class="business-slider">
+            <div class="business-track" id="tk-1111" style="transform: translateX(-100%);">
+              <div class="business-slide">
+                <a class="simg" href="./4_公司业务.html?aid=JQ0MUzL2O_4">
+                  <img src="./4_公司业务_files/upload_1789886368304789615.jpg" alt="">
+                </a>
+              </div>
+              <div class="business-slide">
+                <a class="simg" href="./4_公司业务.html?aid=6Q7msmetY-o">
+                  <img src="./4_公司业务_files/upload_1789886368304789615.jpg" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="business-arrow left" onclick="business_SLIDE(1111,-1)">
+              <svg width="18" height="28" viewBox="0 0 16 24" fill="none">
+                <path d="M12 4L5 12L12 20" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+
+                </path>
+              </svg>
+            </div>
+            <div class="business-arrow right" onclick="business_SLIDE(1111,1)">
+              <svg width="18" height="28" viewBox="0 0 16 24" fill="none">
+                <path d="M4 4L11 12L4 20" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+
+                </path>
+              </svg>
+            </div>
+            <div class="slide-name" id="nm-1111">
+              <a href="./4_公司业务.html?aid=6Q7msmetY-o">测试11111111111111111111</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- 文章图文列表区（每页四张文章图片和名称，不轮播） -->
-      <div class="honor-grid" id="honor-grid" style="display:none;"></div>
+      <div class="honor-grid" id="honor-grid" style="display:none;">
+
+      </div>
 
       <!-- 底部切换按钮 -->
-      <div class="biz-pager" id="biz-pager"><button disabled="" onclick="BIZ_PAGE(0)">上一页</button><button class="active" onclick="BIZ_PAGE(1)">1</button><button class="" onclick="BIZ_PAGE(2)">2</button><button onclick="BIZ_PAGE(2)">下一页</button></div>
+      <div class="business-pager" id="business-pager">
+        <button disabled="" onclick="business_PAGE(0)">上一页</button>
+        <button class="active" onclick="business_PAGE(1)">1</button>
+        <button class="" onclick="business_PAGE(2)">2</button>
+        <button onclick="business_PAGE(2)">下一页</button>
+      </div>
     </div>
   </div>
 </div>
@@ -277,7 +402,7 @@ body { background:#f5f6f8; }
   // 布局分类：按栏目身份固定指定（不依赖是否已有三级子栏目数据）
   //   工程承包业务 / 投融资业务 → 三级子栏目卡片（每页 4 个，卡片内文章封面轮播）
   //   勘察设计 / 装备制造       → 文章图文列表（上部栏目图片 + 下部每页 4 张文章图片和名称）
-  var CAROUSEL_SLUGS = ['biz-contract', 'biz-invest'];
+  var CAROUSEL_SLUGS = ['business-port', 'business-invest'];
   function isCarouselCat(cat){
     if (!cat) return false;
     if (CAROUSEL_SLUGS.indexOf(String(cat.slug||'').toLowerCase()) !== -1) return true;
@@ -339,13 +464,13 @@ body { background:#f5f6f8; }
   }
 
   // 手动切换（箭头）：切换后重置计时
-  window.BIZ_SLIDE = function(catId, dir){
+  window.business_SLIDE = function(catId, dir){
     doSlide(catId, dir);
     resetAutoSlide();
   };
 
   // 底部切换按钮（三级子栏目翻页 / 文章列表翻页，按当前模式分派）
-  window.BIZ_PAGE = function(p){
+  window.business_PAGE = function(p){
     if (mode === 'art') {
       if (p < 1 || p > artPages || p === artPage) return;
       artPage = p;
@@ -355,51 +480,51 @@ body { background:#f5f6f8; }
       curPage = p;
       renderSub();
     }
-    var t = document.getElementById('biz-title');
+    var t = document.getElementById('business-title');
     if (t && t.scrollIntoView) t.scrollIntoView({behavior:'smooth', block:'start'});
   };
 
   function renderPager(){
-    var el = document.getElementById('biz-pager');
+    var el = document.getElementById('business-pager');
     if (!el) return;
     var total = (mode === 'art') ? artPages : subPages;
     var cur = (mode === 'art') ? artPage : curPage;
     if (total <= 1) { el.innerHTML = ''; return; }
-    var h = '<button '+ (cur<=1?'disabled':'') +' onclick="BIZ_PAGE('+(cur-1)+')">上一页</button>';
-    for (var i=1;i<=total;i++) h += '<button class="'+(i===cur?'active':'')+'" onclick="BIZ_PAGE('+i+')">'+i+'</button>';
-    h += '<button '+ (cur>=total?'disabled':'') +' onclick="BIZ_PAGE('+(cur+1)+')">下一页</button>';
+    var h = '<button '+ (cur<=1?'disabled':'') +' onclick="business_PAGE('+(cur-1)+')">上一页</button>';
+    for (var i=1;i<=total;i++) h += '<button class="'+(i===cur?'active':'')+'" onclick="business_PAGE('+i+')">'+i+'</button>';
+    h += '<button '+ (cur>=total?'disabled':'') +' onclick="business_PAGE('+(cur+1)+')">下一页</button>';
     el.innerHTML = h;
   }
 
   // 三级子栏目卡片（每页 4 个，卡片内文章封面轮播）
   function renderSub(){
-    var grid = document.getElementById('biz-sub-grid');
+    var grid = document.getElementById('business-sub-grid');
     if (!grid) return;
     subPages = Math.max(1, Math.ceil(subList.length/PAGE_SIZE));
     if (curPage > subPages) curPage = subPages;
-    if (!subList.length) { grid.innerHTML = '<div class="biz-empty">暂无相关内容</div>'; renderPager(); slideIds = []; resetAutoSlide(); return; }
+    if (!subList.length) { grid.innerHTML = '<div class="business-empty">暂无相关内容</div>'; renderPager(); slideIds = []; resetAutoSlide(); return; }
     var start = (curPage-1)*PAGE_SIZE;
     var html = '';
     subList.slice(start, start+PAGE_SIZE).forEach(function(s){
       var arts = artsMap[s.id] || [];
       trackIdx[s.id] = 0;
-      html += '<div class="biz-sub-card">';
+      html += '<div class="business-sub-card">';
       // 与导航栏保持一致：业务领域子栏目统一用 ?cat=<slug>（父栏目为 business.html 容器页）
       var sHref = s.page_url ? s.page_url : ('business.html?cat=' + encodeURIComponent(s.slug||s.id));
       html += '<div class="sub-name" onclick="location.href=\''+sHref+'\'">'+s.name+'</div>';
-      html += '<div class="biz-slider">';
+      html += '<div class="business-slider">';
       if (!arts.length) {
         html += '<div class="sub-empty">暂无相关内容</div>';
       } else {
-        html += '<div class="biz-track" id="tk-'+s.id+'">';
+        html += '<div class="business-track" id="tk-'+s.id+'">';
         arts.forEach(function(a){
           var inner = a.cover_image ? '<img src="'+a.cover_image+'" alt="">' : '<div class="simg-ph">暂无配图</div>';
-          html += '<div class="biz-slide"><a class="simg" href="article.html?aid='+a.hash_id+'">'+inner+'</a></div>';
+          html += '<div class="business-slide"><a class="simg" href="article.html?aid='+a.hash_id+'">'+inner+'</a></div>';
         });
         html += '</div>';
         if (arts.length > 1) {
-          html += '<div class="biz-arrow left" onclick="BIZ_SLIDE('+s.id+',-1)">'+ARROW_L+'</div>';
-          html += '<div class="biz-arrow right" onclick="BIZ_SLIDE('+s.id+',1)">'+ARROW_R+'</div>';
+          html += '<div class="business-arrow left" onclick="business_SLIDE('+s.id+',-1)">'+ARROW_L+'</div>';
+          html += '<div class="business-arrow right" onclick="business_SLIDE('+s.id+',1)">'+ARROW_R+'</div>';
         }
         html += '<div class="slide-name" id="nm-'+s.id+'"><a href="article.html?aid='+arts[0].hash_id+'">'+arts[0].title+'</a></div>';
       }
@@ -418,7 +543,7 @@ body { background:#f5f6f8; }
     if (!grid) return;
     artPages = Math.max(1, Math.ceil(artList.length/PAGE_SIZE));
     if (artPage > artPages) artPage = artPages;
-    if (!artList.length) { grid.innerHTML = '<div class="biz-empty">暂无相关内容</div>'; renderPager(); return; }
+    if (!artList.length) { grid.innerHTML = '<div class="business-empty">暂无相关内容</div>'; renderPager(); return; }
     var start = (artPage-1)*PAGE_SIZE;
     var html = '';
     artList.slice(start, start+PAGE_SIZE).forEach(function(a){
@@ -455,7 +580,7 @@ body { background:#f5f6f8; }
     if (targetCat && targetCat.page_url && !/^business\.html/i.test(targetCat.page_url)) { location.replace(targetCat.page_url); return; }
     var viewCat = targetCat || children[0] || topCat;
 
-    var titleEl = document.getElementById('biz-title');
+    var titleEl = document.getElementById('business-title');
     if (titleEl) titleEl.textContent = viewCat.name;
     var tail = document.title.split(' - ')[1];
     if (tail) document.title = viewCat.name + ' - ' + tail;
@@ -468,14 +593,14 @@ body { background:#f5f6f8; }
     }
 
     // 上部：当前子栏目的栏目图片
-    var catimgEl = document.getElementById('biz-catimg');
+    var catimgEl = document.getElementById('business-catimg');
     if (catimgEl) {
       var cImg = firstImg(viewCat);
       catimgEl.innerHTML = cImg ? '<img src="'+cImg+'" alt="">' : '<div class="ph">'+viewCat.name+'</div>';
     }
 
     // 侧边栏：顶级栏目名 + 同级子栏目（按需求去掉「全部」按钮）
-    var sideEl = document.getElementById('biz-side');
+    var sideEl = document.getElementById('business-side');
     if (sideEl) {
       var sideHtml = '<h4>'+topCat.name+'</h4>';
       children.forEach(function(s){
@@ -487,7 +612,7 @@ body { background:#f5f6f8; }
       sideEl.innerHTML = sideHtml;
     }
 
-    var subGrid = document.getElementById('biz-sub-grid');
+    var subGrid = document.getElementById('business-sub-grid');
     var artGrid = document.getElementById('honor-grid');
 
     // 布局按栏目身份固定判定：工程承包业务/投融资业务 → 三级子栏目卡片轮播
@@ -502,7 +627,7 @@ body { background:#f5f6f8; }
       var subs = catsArr.filter(function(c){ return c.parent_id === viewCat.id; })
         .sort(function(a,b){ return (a.sort_order||0)-(b.sort_order||0); });
       subList = subs;
-      if (subGrid) subGrid.innerHTML = '<div class="biz-empty">加载中...</div>';
+      if (subGrid) subGrid.innerHTML = '<div class="business-empty">加载中...</div>';
       if (!subs.length) { curPage = 1; renderSub(); return; }
       return Promise.all(subs.map(function(s){
         return fetchArticles(s.id).then(function(list){ artsMap[s.id] = sortArticles(list); });
