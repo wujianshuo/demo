@@ -133,7 +133,7 @@
                                 <a href="./5_党的建设.html?cat=party-union">工团工作</a>
                             </li>
                             <li>
-                                <a href="./2_关于四航三.html?cat=party-report">信访举报</a>
+                                <a href="./5_党的建设.html?cat=party-report">信访举报</a>
                             </li>
                         </ul>
                     </li>
@@ -410,7 +410,7 @@
                     </ul>
                 </div>
                 <div style="padding:8px 16px 0;flex-shrink:0;">
-                    <a id="news-more-btn" href="./3_新闻中心.html?catId=16" style="display:inline-block;padding:8px 20px;background:var(--primary);color:#fff;text-decoration:none;font-size:13px;">查看更多 →</a>
+                    <a id="news-more-btn" href="./3_新闻中心.html?cat=news-yaowen" style="display:inline-block;padding:8px 20px;background:var(--primary);color:#fff;text-decoration:none;font-size:13px;">查看更多 →</a>
                 </div>
             </div>
         </div>
@@ -602,7 +602,8 @@
                             document.getElementById('tab-content').innerHTML = renderTabContent(catId);
                             var moreBtn = document.getElementById('news-more-btn');
                             if (moreBtn) {
-                                moreBtn.href = 'news.html?catId=' + catId;
+                                var mc = tabCats.filter(function(x) { return x.id === catId; })[0];
+                                moreBtn.href = mc ? './3_新闻中心.html?cat=' + encodeURIComponent(mc.slug) : './3_新闻中心.html';
                             }
                         }
                         var tabsHtml = '<style>.news-item:hover .news-dot{background:var(--primary)!important}.news-item:hover{font-size:19px!important}.news-item:hover span{color:#c9a84c!important}.news-item:hover .date{font-size:19px!important}.ntab-btn:hover{color:#c9a84c!important}</style>' +
@@ -613,7 +614,7 @@
                                 return '<button class="ntab-btn" data-cat="' + c.id + '" style="border:none;background:none;font-size:' + (isActive ? '25px' : '20px') + ';font-weight:' + (isActive ? '700' : '600') + ';cursor:pointer;color:' + (isActive ? '#c9a84c' : 'var(--text)') + ';padding:10px 12px;border-bottom:2px solid ' + (isActive ? '#c9a84c' : 'transparent') + ';margin-bottom:-2px;transition:all 0.2s;" onmouseenter="this.parentNode.parentNode._switch(' + c.id + ')">' + c.name + '</button>' + slash;
                             }).join('') +
                             '</div><div id="tab-content" style="flex:1;overflow-y:hidden;min-height:0;padding:12px 16px;">' + renderTabContent(activeTab) + '</div>' +
-                            '<div style="padding:8px 16px 0;flex-shrink:0;"><a id="news-more-btn" href="news.html?catId=' + activeTab + '" style="display:inline-block;padding:8px 20px;background:var(--primary);color:#fff;text-decoration:none;font-size:13px;">查看更多 →</a></div>';
+                            '<div style="padding:8px 16px 0;flex-shrink:0;"><a id="news-more-btn" href="./3_新闻中心.html?cat=' + encodeURIComponent(tabCats[0].slug) + '" style="display:inline-block;padding:8px 20px;background:var(--primary);color:#fff;text-decoration:none;font-size:13px;">查看更多 →</a></div>';
                         right.innerHTML = tabsHtml;
                         right._switch = switchTab;
                     } else if (right) {
@@ -823,7 +824,7 @@
                 })
                 .then(function(cats) {
                     var matrixCat = cats.find(function(c) {
-                        return c.id === 48;
+                        return c.id === 480;
                     });
                     if (!matrixCat) return;
                     document.getElementById('media-matrix-title').textContent = matrixCat.name;
@@ -910,49 +911,27 @@
     <footer class="footer" style="background:var(--text);color:rgba(255,255,255,0.7);padding:48px 5% 32px;">
         <div class="footer-grid" style="display:flex;gap:48px;flex-wrap:wrap;max-width:1200px;margin:0 auto;">
             <div style="flex:22;min-width:0;" id="footer-quick">
-                <h4 style="color:#fff;margin-bottom:12px;font-size:16px;">快速链接</h4>
-                <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;font-size:15px;" class="footer-links">
-                    <li>
-                        <a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中国交建">中国交建</a>
-                    </li>
-                    <li>
-                        <a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中国交建">中国交建</a>
-                    </li>
-                    <li>
-                        <a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中国交建">中国交建</a>
-                    </li>
-
-                </ul>
-            </div>
-            <div style="flex:22;min-width:0;padding-top:37.6px;" id="footer-nav">
-                <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;font-size:15px;" class="footer-links">
-                    <li>
-                        <a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交四航局">中交四航局</a>
-                    </li>
-                    <li>
-                        <a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中国交建">中国交建</a>
-                    </li>
-                    <li>
-                        <a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中国交建">中国交建</a>
-                    </li>
-
-                </ul>
-            </div>
-            <div style="flex:22;min-width:0;padding-top:37.6px;" id="footer-friend">
-                <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;font-size:15px;" class="footer-links">
-                    <li>
-                        <a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交集团">中交集团</a>
-                    </li>
-                    <li>
-                        <a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中国交建">中国交建</a>
-                    </li>
-                    <li>
-                        <a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中国交建">中国交建</a>
-                    </li>
-
-                </ul>
-            </div>
-            <div style="flex:34;min-width:0;" id="footer-contact-wrap">
+    <h4 style="color:#fff;margin-bottom:12px;font-size:16px;">快速链接</h4>
+    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;font-size:15px;" class="footer-links">
+        <li><a href="./2_关于四航三.html" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="关于四航三">关于四航三</a></li>
+        <li><a href="./3_新闻中心.html" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="新闻中心">新闻中心</a></li>
+        <li><a href="./4_公司业务.html" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="公司业务">公司业务</a></li>
+    </ul>
+</div>
+<div style="flex:22;min-width:0;padding-top:37.6px;" id="footer-nav">
+    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;font-size:15px;" class="footer-links">
+        <li><a href="./5_党的建设.html" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="党的建设">党的建设</a></li>
+        <li><a href="./6_科技创新.html" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="科技创新">科技创新</a></li>
+        <li><a href="./7_人力资源.html" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="人力资源">人力资源</a></li>
+    </ul>
+</div>
+<div style="flex:22;min-width:0;padding-top:37.6px;" id="footer-friend">
+    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;font-size:15px;" class="footer-links">
+        <li><a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中国交建">中国交建</a></li>
+        <li><a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交四航局">中交四航局</a></li>
+        <li><a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;max-width:10em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交集团">中交集团</a></li>
+    </ul>
+</div><div style="flex:34;min-width:0;" id="footer-contact-wrap">
                 <h4 style="color:#fff;margin-bottom:12px;font-size:16px;">企业联系方式</h4>
                 <p style="line-height: 1.8; margin: 0px; font-size: 15px; white-space: pre-wrap;" id="footer-contact">
                     地址：广州市海珠区沥滘路368号广州之窗商务港 技术支持：中交四航局第三工程有限公司信息中心

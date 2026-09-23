@@ -1,6 +1,11 @@
 /**
  * 四航三官网 - 本地静态数据（模拟后端 API 返回，驱动轮播/列表/tab 等交互）
  * 结构模拟原后端 /api/public/shj/categories 与 /api/public/shj/articles 的返回格式。
+ *
+ * 说明（离线本地版）：
+ *  1. 顶级栏目 page_url 统一为本地相对路径（1_首页.html ~ 7_人力资源.html）。
+ *  2. 各二级子栏目均带 page_url = 其容器页 + ?cat=<slug>，供侧边栏/卡片正确跳转。
+ *  3. 栏目 id 已消除重复：媒体矩阵=480，党的建设子栏目=551~554。
  */
 window.SITE_CATEGORIES = [
     // ===== 顶级栏目 =====
@@ -12,7 +17,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 1,
         nav_type: 'PAGE',
-        page_url: 'D:\\xiaowu\\design_work\\demo\\1_首页.html'
+        page_url: './1_首页.html'
     },
     {
         id: 2,
@@ -22,7 +27,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 2,
         nav_type: 'PAGE',
-        page_url: 'D:\\xiaowu\\design_work\\demo\\2_关于四航三.html'
+        page_url: './2_关于四航三.html'
     },
     {
         id: 3,
@@ -32,7 +37,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 3,
         nav_type: 'PAGE',
-        page_url: 'D:\\xiaowu\\design_work\\demo\\3_新闻中心.html'
+        page_url: './3_新闻中心.html'
     },
     {
         id: 4,
@@ -42,7 +47,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 4,
         nav_type: 'PAGE',
-        page_url: 'D:\\xiaowu\\design_work\\demo\\4_公司业务.html',
+        page_url: './4_公司业务.html',
         images: './4_公司业务_files/3_1789883289902347209.jpg'
     },
     {
@@ -53,7 +58,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 5,
         nav_type: 'PAGE',
-        page_url: 'D:\\xiaowu\\design_work\\demo\\5_党的建设.html'
+        page_url: './5_党的建设.html'
     },
     {
         id: 6,
@@ -63,7 +68,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 6,
         nav_type: 'PAGE',
-        page_url: 'D:\\xiaowu\\design_work\\demo\\6_科技创新.html'
+        page_url: './6_科技创新.html'
     },
     {
         id: 7,
@@ -73,7 +78,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 7,
         nav_type: 'PAGE',
-        page_url: 'D:\\xiaowu\\design_work\\demo\\7_人力资源.html'
+        page_url: './7_人力资源.html'
     },
 
     // ===== 关于四航三（id=2） =====
@@ -83,7 +88,11 @@ window.SITE_CATEGORIES = [
         slug: 'about-overview',
         parent_id: 2,
         is_nav: true,
-        sort_order: 1
+        sort_order: 1,
+        page_url: './2_关于四航三.html?cat=about-overview',
+        images: './2_关于四航三_files/cat20181106095223_1789611037336865189.jpg',
+        description: '公司基本情况、资质实力与企业发展概况',
+        content: '<p>中交四航局第三工程有限公司是世界500强企业——中国交通建设股份有限公司旗下中交第四航务工程局有限公司的全资子公司，成立于1951年，是一家以港口及航运设施工程、公路工程、铁路工程、市政工程、隧道和桥梁工程等为主营业务的大型综合性施工企业。</p><p>公司拥有港口与航道工程施工总承包特级资质，以及公路工程、市政公用工程、建筑工程等多个施工总承包壹级资质，具备大型深水码头、跨海桥梁、海底隧道、大型水利枢纽等工程的全过程建造能力。</p><p>历经七十余载砥砺奋进，公司已发展成为业务遍及海内外、年施工生产能力超百亿元的大型骨干企业，先后荣获国家优质工程金奖、鲁班奖、詹天佑奖等百余项省部级以上荣誉。</p>'
     },
     {
         id: 22,
@@ -91,7 +100,11 @@ window.SITE_CATEGORIES = [
         slug: 'about-history',
         parent_id: 2,
         is_nav: true,
-        sort_order: 2
+        sort_order: 2,
+        page_url: './2_关于四航三.html?cat=about-history',
+        images: './2_关于四航三_files/cat20181106095223_1789611037336865189.jpg',
+        description: '七十余年奋斗历程与企业文化传承',
+        content: '<p>公司前身可追溯至新中国成立初期组建的交通建设队伍，1951年在广东正式组建，是新中国最早从事水运工程建设的骨干力量之一。</p><p>从珠江口到伶仃洋，从粤西沿海到海外市场，一代代三航人艰苦奋斗、开拓进取，先后参与建设了黄埔港、湛江港、深圳蛇口港等一大批国家重点项目，为国家水运事业发展作出了重要贡献。</p><p>进入新时代，公司传承红色基因，赓续奋斗精神，在粤港澳大湾区建设、交通强国建设等国家战略中勇当先锋，续写高质量发展新篇章。</p>'
     },
     {
         id: 23,
@@ -99,7 +112,11 @@ window.SITE_CATEGORIES = [
         slug: 'about-structure',
         parent_id: 2,
         is_nav: true,
-        sort_order: 3
+        sort_order: 3,
+        page_url: './2_关于四航三.html?cat=about-structure',
+        images: './2_关于四航三_files/cat20181106095223_1789611037336865189.jpg',
+        description: '公司治理结构与组织管理体系',
+        content: '<p>公司实行“总部—事业部—项目部”三级管控体系，设有市场开发、工程管理、安全质量、科技信息、人力资源、财务管理、党群工作等职能管理部门，并下设若干工程分公司、区域公司和专业公司。</p><p>公司持续优化组织架构，推进管理扁平化、专业化，构建与高质量发展要求相适应的现代企业治理体系，全面提升总部管控能力和基层执行能力。</p>'
     },
     {
         id: 24,
@@ -107,7 +124,11 @@ window.SITE_CATEGORIES = [
         slug: 'about-online',
         parent_id: 2,
         is_nav: true,
-        sort_order: 4
+        sort_order: 4,
+        page_url: './2_关于四航三.html?cat=about-online',
+        images: './2_关于四航三_files/cat20181106095223_1789611037336865189.jpg',
+        description: '立足华南、辐射全国、走向世界的市场版图',
+        content: '<p>公司立足华南、辐射全国、走向世界，经营版图覆盖粤港澳大湾区、长三角、环渤海以及东南亚、非洲、中东等多个国家和地区。</p><p>在国内，公司在广东、广西、海南、福建、江西等地设有区域经营机构；在海外，公司在“一带一路”沿线国家承建了多个港口、码头、桥梁等重点工程。</p>'
     },
     {
         id: 25,
@@ -115,7 +136,11 @@ window.SITE_CATEGORIES = [
         slug: 'about-layout',
         parent_id: 2,
         is_nav: true,
-        sort_order: 5
+        sort_order: 5,
+        page_url: './2_关于四航三.html?cat=about-layout',
+        images: './2_关于四航三_files/cat20181106095223_1789611037336865189.jpg',
+        description: '多元化业务格局与国内外市场布局',
+        content: '<p>公司坚持“水运主业为基、相关多元发展”的经营方针，形成了港口及航运设施、公路、铁路、市政、隧道桥梁、房建、水利、生态环保等多元化业务格局。</p><p>公司深入实施“走出去”战略，构建国内国际双循环相互促进的市场布局，加快培育海外业务增长极，不断提升企业核心竞争力和抗风险能力。</p>'
     },
     {
         id: 26,
@@ -123,7 +148,11 @@ window.SITE_CATEGORIES = [
         slug: 'about-honor',
         parent_id: 2,
         is_nav: true,
-        sort_order: 6
+        sort_order: 6,
+        page_url: './2_关于四航三.html?cat=about-honor',
+        images: './2_关于四航三_files/cat20181106095223_1789611037336865189.jpg',
+        description: '国家级、省部级荣誉与行业认可',
+        content: '<p>公司先后荣获国家优质工程金奖、中国建设工程鲁班奖、中国土木工程詹天佑奖等国家级奖项数十项，省部级优质工程奖百余项。</p><p>公司连续多年获评全国“守合同重信用”企业、全国优秀施工企业、广东省优秀企业等荣誉称号，企业品牌影响力和社会美誉度持续提升。</p>'
     },
     {
         id: 27,
@@ -131,7 +160,11 @@ window.SITE_CATEGORIES = [
         slug: 'about-band',
         parent_id: 2,
         is_nav: true,
-        sort_order: 7
+        sort_order: 7,
+        page_url: './2_关于四航三.html?cat=about-band',
+        images: './2_关于四航三_files/cat20181106095223_1789611037336865189.jpg',
+        description: '企业精神、核心价值观与经营理念',
+        content: '<p>企业精神：交融天下，建者无疆。</p><p>核心价值观：公平、包容、务实、创新。</p><p>公司始终秉持“让世界更畅通、让城市更宜居、让生活更美好”的企业愿景，坚持“品质立业、诚信履约、安全至上、绿色低碳”的经营理念，致力于建设让业主放心、让社会满意的精品工程。</p>'
     },
 
     // ===== 新闻中心（id=3） =====
@@ -141,7 +174,8 @@ window.SITE_CATEGORIES = [
         slug: 'news-yaowen',
         parent_id: 3,
         is_nav: true,
-        sort_order: 1
+        sort_order: 1,
+        page_url: './3_新闻中心.html?cat=news-yaowen'
     },
     {
         id: 33,
@@ -149,7 +183,8 @@ window.SITE_CATEGORIES = [
         slug: 'news-media',
         parent_id: 3,
         is_nav: true,
-        sort_order: 2
+        sort_order: 2,
+        page_url: './3_新闻中心.html?cat=news-media'
     },
 
     // ===== 公司业务（id=4） =====
@@ -160,7 +195,9 @@ window.SITE_CATEGORIES = [
         parent_id: 4,
         is_nav: true,
         sort_order: 1,
-        images: './4_公司业务_files/upload_1789886368304789615.jpg'
+        page_url: './4_公司业务.html?cat=business-port',
+        images: './4_公司业务_files/upload_1789886368304789615.jpg',
+        description: '大型深水码头、航道整治、疏浚吹填、岛隧工程等港口及航运设施建设'
     },
     {
         id: 42,
@@ -169,7 +206,9 @@ window.SITE_CATEGORIES = [
         parent_id: 4,
         is_nav: true,
         sort_order: 2,
-        images: './1_首页_files/1637910591_1781250399781234770.jpg'
+        page_url: './4_公司业务.html?cat=business-road',
+        images: './1_首页_files/1637910591_1781250399781234770.jpg',
+        description: '高速公路、国省道、市政道路等公路工程建设'
     },
     {
         id: 43,
@@ -178,7 +217,9 @@ window.SITE_CATEGORIES = [
         parent_id: 4,
         is_nav: true,
         sort_order: 3,
-        images: './1_首页_files/1637910591_1781250424599483335.jpg'
+        page_url: './4_公司业务.html?cat=business-railway',
+        images: './1_首页_files/1637910591_1781250424599483335.jpg',
+        description: '高速铁路、普速铁路及站场工程建设'
     },
     {
         id: 44,
@@ -187,7 +228,9 @@ window.SITE_CATEGORIES = [
         parent_id: 4,
         is_nav: true,
         sort_order: 4,
-        images: './1_首页_files/1637910591_1781250448084972356.jpg'
+        page_url: './4_公司业务.html?cat=business-rail',
+        images: './1_首页_files/1637910591_1781250448084972356.jpg',
+        description: '城市地铁、轻轨等轨道交通工程建设'
     },
     {
         id: 45,
@@ -196,7 +239,9 @@ window.SITE_CATEGORIES = [
         parent_id: 4,
         is_nav: true,
         sort_order: 5,
-        images: './1_首页_files/1637910591_1781250467957046340.jpg'
+        page_url: './4_公司业务.html?cat=business-admin',
+        images: './1_首页_files/1637910591_1781250467957046340.jpg',
+        description: '城市道路、桥梁、管网等市政基础设施建设'
     },
     {
         id: 46,
@@ -205,7 +250,9 @@ window.SITE_CATEGORIES = [
         parent_id: 4,
         is_nav: true,
         sort_order: 6,
-        images: './1_首页_files/cat20181106095223_1782209593225684892.jpg'
+        page_url: './4_公司业务.html?cat=business-cat-bridge',
+        images: './1_首页_files/cat20181106095223_1782209593225684892.jpg',
+        description: '跨海大桥、长大隧道、沉管隧道等桥隧工程建设'
     },
     {
         id: 47,
@@ -214,7 +261,9 @@ window.SITE_CATEGORIES = [
         parent_id: 4,
         is_nav: true,
         sort_order: 7,
-        images: './1_首页_files/1637910591_1781250399781234770.jpg'
+        page_url: './4_公司业务.html?cat=business-cat-ship',
+        images: './1_首页_files/1637910591_1781250399781234770.jpg',
+        description: '水利枢纽、船闸、船坞等水工建筑物建设'
     },
     {
         id: 48,
@@ -223,7 +272,9 @@ window.SITE_CATEGORIES = [
         parent_id: 4,
         is_nav: true,
         sort_order: 8,
-        images: './1_首页_files/1637910591_1781250424599483335.jpg'
+        page_url: './4_公司业务.html?cat=business-cat-house',
+        images: './1_首页_files/1637910591_1781250424599483335.jpg',
+        description: '工业与民用建筑、城市更新等房建工程'
     },
     {
         id: 49,
@@ -232,7 +283,9 @@ window.SITE_CATEGORIES = [
         parent_id: 4,
         is_nav: true,
         sort_order: 9,
-        images: './1_首页_files/1637910591_1781250448084972356.jpg'
+        page_url: './4_公司业务.html?cat=business-cat-ecology',
+        images: './1_首页_files/1637910591_1781250448084972356.jpg',
+        description: '生态修复、环境治理等绿色工程'
     },
     {
         id: 50,
@@ -241,16 +294,20 @@ window.SITE_CATEGORIES = [
         parent_id: 4,
         is_nav: true,
         sort_order: 10,
-        images: './1_首页_files/1637910591_1781250467957046340.jpg'
+        page_url: './4_公司业务.html?cat=business-cat-river',
+        images: './1_首页_files/1637910591_1781250467957046340.jpg',
+        description: '河湖整治、水环境综合治理工程'
     },
     {
         id: 51,
         name: '综合管廊工程',
-        slug: 'business-cat-cat-utility',
+        slug: 'business-cat-utility',
         parent_id: 4,
         is_nav: true,
         sort_order: 11,
-        images: './1_首页_files/cat20181106095223_1782209593225684892.jpg'
+        page_url: './4_公司业务.html?cat=business-cat-utility',
+        images: './1_首页_files/cat20181106095223_1782209593225684892.jpg',
+        description: '城市地下综合管廊等基础设施工程'
     },
     {
         id: 52,
@@ -259,7 +316,9 @@ window.SITE_CATEGORIES = [
         parent_id: 4,
         is_nav: true,
         sort_order: 12,
-        images: './1_首页_files/1637910591_1781250399781234770.jpg'
+        page_url: './4_公司业务.html?cat=business-cat-wind',
+        images: './1_首页_files/1637910591_1781250399781234770.jpg',
+        description: '海上风电等新能源工程'
     },
     {
         id: 53,
@@ -268,7 +327,9 @@ window.SITE_CATEGORIES = [
         parent_id: 4,
         is_nav: true,
         sort_order: 13,
-        images: './1_首页_files/1637910591_1781250424599483335.jpg'
+        page_url: './4_公司业务.html?cat=business-cat-port_overseas',
+        images: './1_首页_files/1637910591_1781250424599483335.jpg',
+        description: '海外港口、码头等国际工程'
     },
 
     // ===== 工程承包业务三级子栏目（parent_id=41） =====
@@ -278,7 +339,8 @@ window.SITE_CATEGORIES = [
         slug: 'business-port-cat-mtwok9jo',
         parent_id: 41,
         is_nav: false,
-        sort_order: 1
+        sort_order: 1,
+        page_url: './4_公司业务.html?cat=business-port'
     },
     {
         id: 412,
@@ -286,7 +348,8 @@ window.SITE_CATEGORIES = [
         slug: 'business-port-cat-mtwnpg7p',
         parent_id: 41,
         is_nav: false,
-        sort_order: 2
+        sort_order: 2,
+        page_url: './4_公司业务.html?cat=business-port'
     },
     {
         id: 413,
@@ -294,7 +357,8 @@ window.SITE_CATEGORIES = [
         slug: 'business-port-cat-mtwnq4c6',
         parent_id: 41,
         is_nav: false,
-        sort_order: 3
+        sort_order: 3,
+        page_url: './4_公司业务.html?cat=business-port'
     },
     {
         id: 414,
@@ -302,41 +366,46 @@ window.SITE_CATEGORIES = [
         slug: 'business-port-cat-mtwnqjey',
         parent_id: 41,
         is_nav: false,
-        sort_order: 4
+        sort_order: 4,
+        page_url: './4_公司业务.html?cat=business-port'
     },
 
     // ===== 党的建设（id=5） =====
     {
-        id: 51,
+        id: 551,
         name: '综合动态',
         slug: 'party-news',
         parent_id: 5,
         is_nav: true,
-        sort_order: 1
+        sort_order: 1,
+        page_url: './5_党的建设.html?cat=party-news'
     },
     {
-        id: 52,
+        id: 552,
         name: '党建品牌',
         slug: 'party-brand',
         parent_id: 5,
         is_nav: true,
-        sort_order: 2
+        sort_order: 2,
+        page_url: './5_党的建设.html?cat=party-brand'
     },
     {
-        id: 53,
+        id: 553,
         name: '工团工作',
         slug: 'party-union',
         parent_id: 5,
         is_nav: true,
-        sort_order: 3
+        sort_order: 3,
+        page_url: './5_党的建设.html?cat=party-union'
     },
     {
-        id: 54,
+        id: 554,
         name: '信访举报',
         slug: 'party-report',
         parent_id: 5,
         is_nav: true,
-        sort_order: 4
+        sort_order: 4,
+        page_url: './5_党的建设.html?cat=party-report'
     },
 
     // ===== 科技创新（id=6） =====
@@ -346,7 +415,11 @@ window.SITE_CATEGORIES = [
         slug: 'tech-dynamic',
         parent_id: 6,
         is_nav: true,
-        sort_order: 1
+        sort_order: 1,
+        page_url: './6_科技创新.html?cat=tech-dynamic',
+        images: './6_科技创新_files/4_1789883330222183060.jpg',
+        description: '科技创新动态与研发进展',
+        content: '<p>公司深入学习贯彻习近平总书记关于科技创新的重要论述，坚持创新驱动发展战略，围绕水运工程、公路桥梁、市政工程、水环境治理等核心业务，持续加大科技研发投入。</p><p>公司依托国家高新技术企业、省级企业技术中心、博士后创新实践基地等平台，聚焦疏浚吹填、跨海大桥、深水港口码头、隧道与地下工程等关键技术方向，组织开展重大科技攻关。</p><p>近年来，公司在智能建造、绿色施工、BIM技术应用、数字化转型等方面取得新突破，一批科研成果在生产一线落地转化，有力支撑了重点工程建设。</p>'
     },
     {
         id: 62,
@@ -354,7 +427,11 @@ window.SITE_CATEGORIES = [
         slug: 'tech-results',
         parent_id: 6,
         is_nav: true,
-        sort_order: 2
+        sort_order: 2,
+        page_url: './6_科技创新.html?cat=tech-results',
+        images: './6_科技创新_files/4_1789883330222183060.jpg',
+        description: '专利、工法、标准与科技奖项',
+        content: '<p>公司累计获得国家专利数百项，主编或参编多项行业及地方标准，形成了一大批国家级、省部级工法。</p><p>公司多项科技成果达到国际先进、国内领先水平，先后获得中国水运建设行业协会科学技术奖、中国公路学会科学技术奖等多项科技奖励。</p><p>公司积极推动成果转化，自主研发的大型沉管隧道施工成套技术、深水软基处理技术、环保疏浚技术等在深中通道、港珠澳大桥等重大工程中得到成功应用。</p>'
     },
 
     // ===== 人力资源（id=7） =====
@@ -365,6 +442,7 @@ window.SITE_CATEGORIES = [
         parent_id: 7,
         is_nav: true,
         sort_order: 1,
+        page_url: './7_人力资源.html?cat=hr-expert',
         description: '深入实施人才强企战略，着力打造六支人才队伍'
     },
     {
@@ -374,8 +452,10 @@ window.SITE_CATEGORIES = [
         parent_id: 7,
         is_nav: true,
         sort_order: 2,
+        page_url: './7_人力资源.html?cat=hr-info',
         description: '健全员工成长成才机制，畅通职业发展通道',
-        images: './7_人力资源_files/cat20181106095223_1782383323504721056.jpg'
+        images: './7_人力资源_files/cat20181106095223_1782383323504721056.jpg',
+        content: '<p>公司坚持市场化选人用人导向，面向社会公开招聘各类优秀人才，提供富有竞争力的薪酬待遇和广阔的职业发展平台。</p><p>招聘岗位涵盖工程技术、经营管理、科技研发、财务管理、海外业务等多个序列，欢迎有志之士加入中交四航局第三工程有限公司，共创美好未来。</p>'
     },
     {
         id: 73,
@@ -383,7 +463,10 @@ window.SITE_CATEGORIES = [
         slug: 'hr-team',
         parent_id: 7,
         is_nav: true,
-        sort_order: 3
+        sort_order: 3,
+        page_url: './7_人力资源.html?cat=hr-team',
+        description: '优化人才队伍结构，激发人才创新活力',
+        content: '<p>公司持续优化人才队伍结构，构建经营管理、专业技术、技能操作等各类人才协调发展的队伍格局。</p><p>深入实施人才强企战略，着力打造领导人员、科技人才、经营管理人才、海外人才、党群人才、技能人才六支队伍，为企业高质量发展提供坚强人才保障。</p>'
     },
     {
         id: 74,
@@ -391,12 +474,36 @@ window.SITE_CATEGORIES = [
         slug: 'hr-post',
         parent_id: 7,
         is_nav: true,
-        sort_order: 4
+        sort_order: 4,
+        page_url: './7_人力资源.html?cat=hr-post',
+        description: '面向高校毕业生的校园招聘职位',
+        content: '<p>公司高度重视高校毕业生引进和培养，每年面向全国重点高校开展校园招聘。</p><p>校招岗位涵盖工程技术、科技研发、财务管理、企业管理等方向，为应届毕业生提供完善的培养体系和职业发展通道。</p>'
     },
 
-    // ===== 其他栏目（首页媒体矩阵、人力资源内容栏目） =====
+    // ===== 人力资源内容栏目（挂在“企业专家”下，供页面7驱动主要任务/员工发展） =====
     {
-        id: 48,
+        id: 121,
+        name: '主要任务',
+        slug: 'hr-task',
+        parent_id: 71,
+        is_nav: false,
+        sort_order: 1,
+        description: '深入实施人才强企战略，着力打造六支人才队伍'
+    },
+    {
+        id: 122,
+        name: '员工发展',
+        slug: 'hr-dev',
+        parent_id: 71,
+        is_nav: false,
+        sort_order: 2,
+        description: '健全员工成长成才机制，畅通职业发展通道',
+        images: './7_人力资源_files/cat20181106095223_1782383323504721056.jpg'
+    },
+
+    // ===== 其他栏目（首页媒体矩阵） =====
+    {
+        id: 480,
         name: '媒体矩阵',
         slug: 'media-matrix',
         parent_id: 0,
@@ -456,7 +563,7 @@ window.SITE_ARTICLES = [
         hash_id: 'news-yaowen-2',
         category_id: 31,
         title: '深度解读企业战略与发展聚焦重点领域',
-        summary: '围绕企业"十四五"发展战略，系统梳理重点领域攻坚方向与实施路径。',
+        summary: '围绕企业“十四五”发展战略，系统梳理重点领域攻坚方向与实施路径。',
         author: '办公室',
         source: '本站',
         cover_image: './1_首页_files/1637910591_1781250424599483335.jpg',
@@ -602,11 +709,205 @@ window.SITE_ARTICLES = [
         published_at: '2026-06-06'
     },
 
-    // ===== 党的建设 - 综合动态（category_id=51） =====
+    // ===== 业务领域二级子栏目文章（category_id=42~53，用于页面4图文列表） =====
+    {
+        id: 421,
+        hash_id: 'business-road-1',
+        category_id: 42,
+        title: '高速公路建设项目',
+        cover_image: './1_首页_files/1637910591_1781250399781234770.jpg',
+        published_at: '2026-06-15'
+    },
+    {
+        id: 422,
+        hash_id: 'business-road-2',
+        category_id: 42,
+        title: '国省道干线公路工程',
+        cover_image: './1_首页_files/1637910591_1781250424599483335.jpg',
+        published_at: '2026-06-06'
+    },
+    {
+        id: 431,
+        hash_id: 'business-railway-1',
+        category_id: 43,
+        title: '高速铁路站前工程',
+        cover_image: './1_首页_files/1637910591_1781250448084972356.jpg',
+        published_at: '2026-06-12'
+    },
+    {
+        id: 432,
+        hash_id: 'business-railway-2',
+        category_id: 43,
+        title: '铁路站场改扩建工程',
+        cover_image: './1_首页_files/1637910591_1781250467957046340.jpg',
+        published_at: '2026-06-04'
+    },
+    {
+        id: 441,
+        hash_id: 'business-rail-1',
+        category_id: 44,
+        title: '城市轨道交通线路工程',
+        cover_image: './1_首页_files/cat20181106095223_1782209593225684892.jpg',
+        published_at: '2026-06-13'
+    },
+    {
+        id: 442,
+        hash_id: 'business-rail-2',
+        category_id: 44,
+        title: '地铁车站及区间工程',
+        cover_image: './1_首页_files/1637910591_1781250399781234770.jpg',
+        published_at: '2026-06-03'
+    },
+    {
+        id: 451,
+        hash_id: 'business-admin-1',
+        category_id: 45,
+        title: '城市主干道改造工程',
+        cover_image: './1_首页_files/1637910591_1781250424599483335.jpg',
+        published_at: '2026-06-11'
+    },
+    {
+        id: 452,
+        hash_id: 'business-admin-2',
+        category_id: 45,
+        title: '市政管网综合工程',
+        cover_image: './1_首页_files/1637910591_1781250448084972356.jpg',
+        published_at: '2026-06-02'
+    },
+    {
+        id: 461,
+        hash_id: 'business-bridge-1',
+        category_id: 46,
+        title: '跨海特大桥工程',
+        cover_image: './1_首页_files/1637910591_1781250467957046340.jpg',
+        published_at: '2026-06-14'
+    },
+    {
+        id: 462,
+        hash_id: 'business-bridge-2',
+        category_id: 46,
+        title: '长大隧道工程',
+        cover_image: './1_首页_files/cat20181106095223_1782209593225684892.jpg',
+        published_at: '2026-06-05'
+    },
+    {
+        id: 471,
+        hash_id: 'business-ship-1',
+        category_id: 47,
+        title: '大型船闸工程',
+        cover_image: './1_首页_files/1637910591_1781250399781234770.jpg',
+        published_at: '2026-06-13'
+    },
+    {
+        id: 472,
+        hash_id: 'business-ship-2',
+        category_id: 47,
+        title: '水利枢纽工程',
+        cover_image: './1_首页_files/1637910591_1781250424599483335.jpg',
+        published_at: '2026-06-04'
+    },
+    {
+        id: 481,
+        hash_id: 'business-house-1',
+        category_id: 48,
+        title: '大型公共建筑工程',
+        cover_image: './1_首页_files/1637910591_1781250448084972356.jpg',
+        published_at: '2026-06-12'
+    },
+    {
+        id: 482,
+        hash_id: 'business-house-2',
+        category_id: 48,
+        title: '城市更新项目',
+        cover_image: './1_首页_files/1637910591_1781250467957046340.jpg',
+        published_at: '2026-06-03'
+    },
+    {
+        id: 491,
+        hash_id: 'business-ecology-1',
+        category_id: 49,
+        title: '生态修复工程',
+        cover_image: './1_首页_files/cat20181106095223_1782209593225684892.jpg',
+        published_at: '2026-06-11'
+    },
+    {
+        id: 492,
+        hash_id: 'business-ecology-2',
+        category_id: 49,
+        title: '环境治理工程',
+        cover_image: './1_首页_files/1637910591_1781250399781234770.jpg',
+        published_at: '2026-06-02'
+    },
+    {
+        id: 501,
+        hash_id: 'business-river-1',
+        category_id: 50,
+        title: '河湖综合整治工程',
+        cover_image: './1_首页_files/1637910591_1781250424599483335.jpg',
+        published_at: '2026-06-13'
+    },
+    {
+        id: 502,
+        hash_id: 'business-river-2',
+        category_id: 50,
+        title: '水环境治理工程',
+        cover_image: './1_首页_files/1637910591_1781250448084972356.jpg',
+        published_at: '2026-06-04'
+    },
     {
         id: 511,
-        hash_id: 'party-news-1',
+        hash_id: 'business-utility-1',
         category_id: 51,
+        title: '城市综合管廊工程',
+        cover_image: './1_首页_files/1637910591_1781250467957046340.jpg',
+        published_at: '2026-06-12'
+    },
+    {
+        id: 512,
+        hash_id: 'business-utility-2',
+        category_id: 51,
+        title: '地下综合管廊配套工程',
+        cover_image: './1_首页_files/cat20181106095223_1782209593225684892.jpg',
+        published_at: '2026-06-03'
+    },
+    {
+        id: 521,
+        hash_id: 'business-wind-1',
+        category_id: 52,
+        title: '海上风电场工程',
+        cover_image: './1_首页_files/1637910591_1781250399781234770.jpg',
+        published_at: '2026-06-11'
+    },
+    {
+        id: 522,
+        hash_id: 'business-wind-2',
+        category_id: 52,
+        title: '风电场配套基础工程',
+        cover_image: './1_首页_files/1637910591_1781250424599483335.jpg',
+        published_at: '2026-06-02'
+    },
+    {
+        id: 531,
+        hash_id: 'business-port-overseas-1',
+        category_id: 53,
+        title: '海外港口建设项目',
+        cover_image: './1_首页_files/1637910591_1781250448084972356.jpg',
+        published_at: '2026-06-12'
+    },
+    {
+        id: 532,
+        hash_id: 'business-port-overseas-2',
+        category_id: 53,
+        title: '海外码头改扩建工程',
+        cover_image: './1_首页_files/1637910591_1781250467957046340.jpg',
+        published_at: '2026-06-03'
+    },
+
+    // ===== 党的建设 - 综合动态（category_id=551） =====
+    {
+        id: 5511,
+        hash_id: 'party-news-1',
+        category_id: 551,
         title: '四航局党委召开2026年第一次书记例会',
         summary: '总结上半年党建工作，部署下半年重点任务，推动全面从严治党向纵深发展。',
         author: '党委工作部',
@@ -616,9 +917,9 @@ window.SITE_ARTICLES = [
         is_top: true
     },
     {
-        id: 512,
+        id: 5512,
         hash_id: 'party-news-2',
-        category_id: 51,
+        category_id: 551,
         title: '聚焦重点领域，深度解读企业战略与发展',
         summary: '党建引领聚合力，把党的政治优势转化为企业发展优势。',
         author: '党委工作部',
@@ -627,9 +928,9 @@ window.SITE_ARTICLES = [
         published_at: '2026-06-26'
     },
     {
-        id: 513,
+        id: 5513,
         hash_id: 'party-news-3',
-        category_id: 51,
+        category_id: 551,
         title: '公司党委理论学习中心组开展集体学习',
         summary: '深入学习贯彻党的二十届四中全会精神，凝聚思想共识。',
         author: '党委工作部',
@@ -638,9 +939,9 @@ window.SITE_ARTICLES = [
         published_at: '2026-06-19'
     },
     {
-        id: 514,
+        id: 5514,
         hash_id: 'party-news-4',
-        category_id: 51,
+        category_id: 551,
         title: '基层党组织开展主题党日活动',
         summary: '传承红色基因，砥砺初心使命，激发干事创业热情。',
         author: '党委工作部',
@@ -648,14 +949,81 @@ window.SITE_ARTICLES = [
         published_at: '2026-06-12'
     },
     {
-        id: 515,
+        id: 5515,
         hash_id: 'party-news-5',
-        category_id: 51,
+        category_id: 551,
         title: '公司召开2026年党风廉政建设工作会议',
         summary: '持之以恒正风肃纪，营造风清气正的良好政治生态。',
         author: '纪委办公室',
         source: '本站',
         published_at: '2026-06-05'
+    },
+
+    // ===== 党的建设 - 党建品牌（category_id=552） =====
+    {
+        id: 5521,
+        hash_id: 'party-brand-1',
+        category_id: 552,
+        title: '擦亮“中交蓝·党旗红”党建品牌',
+        summary: '推动党建工作与生产经营深度融合，以高质量党建引领高质量发展。',
+        author: '党委工作部',
+        source: '本站',
+        cover_image: './5_党的建设_files/cat20181106095223_1782117288265921549.jpg',
+        published_at: '2026-06-24'
+    },
+    {
+        id: 5522,
+        hash_id: 'party-brand-2',
+        category_id: 552,
+        title: '公司党委打造基层党建示范点',
+        summary: '以点带面推动基层党建工作全面进步、全面过硬。',
+        author: '党委工作部',
+        source: '本站',
+        published_at: '2026-06-09'
+    },
+
+    // ===== 党的建设 - 工团工作（category_id=553） =====
+    {
+        id: 5531,
+        hash_id: 'party-union-1',
+        category_id: 553,
+        title: '公司召开2026年群团工作会议',
+        summary: '凝聚群团组织合力，服务企业中心工作。',
+        author: '工会',
+        source: '本站',
+        published_at: '2026-05-22'
+    },
+    {
+        id: 5532,
+        hash_id: 'party-union-2',
+        category_id: 553,
+        title: '青年突击队奋战项目一线当先锋',
+        summary: '党旗所指就是团旗所向，青年突击队在急难险重任务中冲锋在前。',
+        author: '团委',
+        source: '本站',
+        published_at: '2026-05-10'
+    },
+
+    // ===== 党的建设 - 信访举报（category_id=554） =====
+    {
+        id: 5541,
+        hash_id: 'party-report-1',
+        category_id: 554,
+        title: '信访举报渠道公告',
+        summary: '畅通监督举报渠道，欢迎广大职工群众和社会各界依法依规反映问题。',
+        author: '纪委办公室',
+        source: '本站',
+        published_at: '2026-06-18'
+    },
+    {
+        id: 5542,
+        hash_id: 'party-report-2',
+        category_id: 554,
+        title: '公司公布监督举报方式',
+        summary: '进一步健全监督机制，主动接受群众监督。',
+        author: '纪委办公室',
+        source: '本站',
+        published_at: '2026-06-01'
     },
 
     // ===== 人力资源 - 主要任务（category_id=121，6支人才队伍，含 content） =====
@@ -665,7 +1033,7 @@ window.SITE_ARTICLES = [
         category_id: 121,
         title: '头雁工程',
         summary: '领导人员队伍',
-        content: '<h3><strong>党管干部原则与市场化选人用人相结合</strong></h3><p><strong>头雁领航 群雁齐飞</strong></p><p>坚持党管干部原则与市场化选人用人相结合，打造政治过硬、具备领导现代化建设能力的领导人员队伍。深入实施"头雁工程"，建立完善领导干部选拔任用、考核评价、监督管理全链条机制。</p><p>加强领导人员政治能力训练和实践锻炼，推动领导干部在改革发展主战场、生产经营第一线、服务群众最前沿经受历练、增长才干。</p>',
+        content: '<h3><strong>党管干部原则与市场化选人用人相结合</strong></h3><p><strong>头雁领航 群雁齐飞</strong></p><p>坚持党管干部原则与市场化选人用人相结合，打造政治过硬、具备领导现代化建设能力的领导人员队伍。深入实施“头雁工程”，建立完善领导干部选拔任用、考核评价、监督管理全链条机制。</p><p>加强领导人员政治能力训练和实践锻炼，推动领导干部在改革发展主战场、生产经营第一线、服务群众最前沿经受历练、增长才干。</p>',
         published_at: '2026-06-01'
     },
     {
@@ -674,7 +1042,7 @@ window.SITE_ARTICLES = [
         category_id: 121,
         title: '鲲鹏工程',
         summary: '科技人才队伍',
-        content: '<h3><strong>加快高水平科技自立自强</strong></h3><p><strong>鲲鹏展翅 志存高远</strong></p><p>聚焦国家重大战略和行业前沿技术，打造结构合理、素质优良的科技人才队伍。深入实施"鲲鹏工程"，完善科技人才引进培养、评价激励和使用机制。</p><p>加强科技创新平台建设，鼓励科技人才承担重大科研任务，在关键核心技术攻关中挑大梁、当主角。</p>',
+        content: '<h3><strong>加快高水平科技自立自强</strong></h3><p><strong>鲲鹏展翅 志存高远</strong></p><p>聚焦国家重大战略和行业前沿技术，打造结构合理、素质优良的科技人才队伍。深入实施“鲲鹏工程”，完善科技人才引进培养、评价激励和使用机制。</p><p>加强科技创新平台建设，鼓励科技人才承担重大科研任务，在关键核心技术攻关中挑大梁、当主角。</p>',
         published_at: '2026-06-01'
     },
     {
@@ -683,7 +1051,7 @@ window.SITE_ARTICLES = [
         category_id: 121,
         title: '鹰隼工程',
         summary: '经营管理人才队伍',
-        content: '<h3><strong>培养市场化经营管理的行家里手</strong></h3><p><strong>鹰隼试翼 风尘翕张</strong></p><p>围绕企业改革发展需要，打造懂经营、善管理、会创新的经营管理人才队伍。深入实施"鹰隼工程"，加强经营管理人员市场意识、效益意识和风险意识培养。</p><p>健全经营管理人才职业发展通道，激发干事创业活力，为企业高质量发展提供坚强支撑。</p>',
+        content: '<h3><strong>培养市场化经营管理的行家里手</strong></h3><p><strong>鹰隼试翼 风尘翕张</strong></p><p>围绕企业改革发展需要，打造懂经营、善管理、会创新的经营管理人才队伍。深入实施“鹰隼工程”，加强经营管理人员市场意识、效益意识和风险意识培养。</p><p>健全经营管理人才职业发展通道，激发干事创业活力，为企业高质量发展提供坚强支撑。</p>',
         published_at: '2026-06-01'
     },
     {
@@ -692,7 +1060,7 @@ window.SITE_ARTICLES = [
         category_id: 121,
         title: '海鸥工程',
         summary: '海外人才队伍',
-        content: '<h3><strong>服务高水平对外开放</strong></h3><p><strong>海鸥展翅 逐浪远航</strong></p><p>围绕海外业务发展需要，打造具有国际视野、通晓国际规则的海外人才队伍。深入实施"海鸥工程"，加强海外人才国际化能力和跨文化沟通能力培养。</p><p>完善海外人才激励保障机制，让海外人才安心、安身、安业，为共建"一带一路"贡献力量。</p>',
+        content: '<h3><strong>服务高水平对外开放</strong></h3><p><strong>海鸥展翅 逐浪远航</strong></p><p>围绕海外业务发展需要，打造具有国际视野、通晓国际规则的海外人才队伍。深入实施“海鸥工程”，加强海外人才国际化能力和跨文化沟通能力培养。</p><p>完善海外人才激励保障机制，让海外人才安心、安身、安业，为共建“一带一路”贡献力量。</p>',
         published_at: '2026-06-01'
     },
     {
@@ -701,7 +1069,7 @@ window.SITE_ARTICLES = [
         category_id: 121,
         title: '鸿鹄工程',
         summary: '党群人才队伍',
-        content: '<h3><strong>建设高素质党群工作队伍</strong></h3><p><strong>鸿鹄高飞 一举千里</strong></p><p>围绕新时代党的建设总要求，打造忠诚干净担当的党群人才队伍。深入实施"鸿鹄工程"，加强党群人才政治素质和业务能力建设。</p><p>推动党群人才在基层党建、宣传思想、纪检监督等岗位历练成长，为企业改革发展提供坚强组织保证。</p>',
+        content: '<h3><strong>建设高素质党群工作队伍</strong></h3><p><strong>鸿鹄高飞 一举千里</strong></p><p>围绕新时代党的建设总要求，打造忠诚干净担当的党群人才队伍。深入实施“鸿鹄工程”，加强党群人才政治素质和业务能力建设。</p><p>推动党群人才在基层党建、宣传思想、纪检监督等岗位历练成长，为企业改革发展提供坚强组织保证。</p>',
         published_at: '2026-06-01'
     },
     {
@@ -710,7 +1078,7 @@ window.SITE_ARTICLES = [
         category_id: 121,
         title: '雨燕工程',
         summary: '技能人才队伍',
-        content: '<h3><strong>弘扬工匠精神 锻造大国工匠</strong></h3><p><strong>雨燕凌云 匠心筑梦</strong></p><p>围绕企业高质量发展需要，打造知识型、技能型、创新型技能人才队伍。深入实施"雨燕工程"，完善技能人才培养、使用、评价、激励机制。</p><p>广泛开展岗位练兵、技能比武，大力弘扬劳模精神、劳动精神、工匠精神，培育更多大国工匠。</p>',
+        content: '<h3><strong>弘扬工匠精神 锻造大国工匠</strong></h3><p><strong>雨燕凌云 匠心筑梦</strong></p><p>围绕企业高质量发展需要，打造知识型、技能型、创新型技能人才队伍。深入实施“雨燕工程”，完善技能人才培养、使用、评价、激励机制。</p><p>广泛开展岗位练兵、技能比武，大力弘扬劳模精神、劳动精神、工匠精神，培育更多大国工匠。</p>',
         published_at: '2026-06-01'
     },
 
@@ -724,72 +1092,72 @@ window.SITE_ARTICLES = [
         published_at: '2026-06-01'
     },
 
-    // ===== 媒体矩阵（category_id=48，首页媒体矩阵图标） =====
+    // ===== 媒体矩阵（category_id=480，首页媒体矩阵图标） =====
     {
-        id: 481,
+        id: 4801,
         hash_id: 'media-1',
-        category_id: 48,
+        category_id: 480,
         title: '官方微信公众号',
         cover_image: './1_首页_files/2_1789883604813454065.jpg',
         published_at: '2026-06-01'
     },
     {
-        id: 482,
+        id: 4802,
         hash_id: 'media-2',
-        category_id: 48,
+        category_id: 480,
         title: '官方微博',
         cover_image: './1_首页_files/upload_1789885907524298167.png',
         published_at: '2026-06-01'
     },
     {
-        id: 483,
+        id: 4803,
         hash_id: 'media-3',
-        category_id: 48,
+        category_id: 480,
         title: '抖音号',
         published_at: '2026-06-01'
     },
     {
-        id: 484,
+        id: 4804,
         hash_id: 'media-4',
-        category_id: 48,
+        category_id: 480,
         title: '视频号',
         published_at: '2026-06-01'
     },
     {
-        id: 485,
+        id: 4805,
         hash_id: 'media-5',
-        category_id: 48,
+        category_id: 480,
         title: '知乎号',
         published_at: '2026-06-01'
     },
     {
-        id: 486,
+        id: 4806,
         hash_id: 'media-6',
-        category_id: 48,
+        category_id: 480,
         title: '交建通',
         cover_image: './1_首页_files/__logo___1782372657051071516.png',
         published_at: '2026-06-01'
     },
     {
-        id: 487,
+        id: 4807,
         hash_id: 'media-7',
-        category_id: 48,
+        category_id: 480,
         title: '中交四航局',
         cover_image: './1_首页_files/B__1782372189008058349.png',
         published_at: '2026-06-01'
     },
     {
-        id: 488,
+        id: 4808,
         hash_id: 'media-8',
-        category_id: 48,
+        category_id: 480,
         title: '中国交建',
         cover_image: './1_首页_files/___1782372153161248504.png',
         published_at: '2026-06-01'
     },
     {
-        id: 489,
+        id: 4809,
         hash_id: 'media-9',
-        category_id: 48,
+        category_id: 480,
         title: '交建融媒',
         cover_image: './1_首页_files/__logo___1782371990204303370.png',
         published_at: '2026-06-01'
@@ -847,11 +1215,11 @@ window.SITE_ARTICLES = [
         published_at: '2026-05-20'
     },
 
-    // ===== 党建综合动态补充（category_id=51，补足条数触发列表分页） =====
+    // ===== 党建综合动态补充（category_id=551，补足条数触发列表分页） =====
     {
         id: 5161,
         hash_id: 'party-news-6',
-        category_id: 51,
+        category_id: 551,
         title: '基层党支部书记集中轮训班开班',
         summary: '提升基层党务工作者能力素质，夯实基层党建基础。',
         author: '党委工作部',
@@ -861,7 +1229,7 @@ window.SITE_ARTICLES = [
     {
         id: 5162,
         hash_id: 'party-news-7',
-        category_id: 51,
+        category_id: 551,
         title: '公司召开群团工作会议',
         summary: '凝聚群团组织合力，服务企业中心工作。',
         author: '工会',
@@ -871,7 +1239,7 @@ window.SITE_ARTICLES = [
     {
         id: 5163,
         hash_id: 'party-news-8',
-        category_id: 51,
+        category_id: 551,
         title: '公司开展廉洁文化宣传教育活动',
         summary: '筑牢拒腐防变思想防线，营造崇廉尚洁氛围。',
         author: '纪委办公室',
@@ -881,7 +1249,7 @@ window.SITE_ARTICLES = [
     {
         id: 5164,
         hash_id: 'party-news-9',
-        category_id: 51,
+        category_id: 551,
         title: '青年突击队奋战项目一线',
         summary: '党旗所指就是团旗所向，青年突击队在急难险重任务中冲锋在前。',
         author: '团委',
@@ -891,7 +1259,7 @@ window.SITE_ARTICLES = [
     {
         id: 5165,
         hash_id: 'party-news-10',
-        category_id: 51,
+        category_id: 551,
         title: '公司扎实推进基层党组织标准化建设',
         summary: '推动基层党建全面进步、全面过硬。',
         author: '党委工作部',
@@ -901,7 +1269,7 @@ window.SITE_ARTICLES = [
     {
         id: 5166,
         hash_id: 'party-news-11',
-        category_id: 51,
+        category_id: 551,
         title: '公司举办学习贯彻党的二十届四中全会精神专题辅导',
         summary: '推动全会精神入脑入心、见行见效。',
         author: '党委工作部',
