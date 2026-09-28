@@ -41,7 +41,7 @@ window.SITE_CATEGORIES = [
     },
     {
         id: 4,
-        name: '业务领域',
+        name: '公司业务',
         slug: 'business',
         parent_id: 0,
         is_nav: true,
@@ -478,38 +478,7 @@ window.SITE_CATEGORIES = [
         page_url: './7_人力资源.html?cat=hr-post',
         description: '面向高校毕业生的校园招聘职位',
         content: '<p>公司高度重视高校毕业生引进和培养，每年面向全国重点高校开展校园招聘。</p><p>校招岗位涵盖工程技术、科技研发、财务管理、企业管理等方向，为应届毕业生提供完善的培养体系和职业发展通道。</p>'
-    },
-
-    // ===== 人力资源内容栏目（挂在“企业专家”下，供页面7驱动主要任务/员工发展） =====
-    {
-        id: 121,
-        name: '主要任务',
-        slug: 'hr-task',
-        parent_id: 71,
-        is_nav: false,
-        sort_order: 1,
-        description: '深入实施人才强企战略，着力打造六支人才队伍'
-    },
-    {
-        id: 122,
-        name: '员工发展',
-        slug: 'hr-dev',
-        parent_id: 71,
-        is_nav: false,
-        sort_order: 2,
-        description: '健全员工成长成才机制，畅通职业发展通道',
-        images: './7_人力资源_files/cat20181106095223_1782383323504721056.jpg'
-    },
-
-    // ===== 其他栏目（首页媒体矩阵） =====
-    {
-        id: 480,
-        name: '媒体矩阵',
-        slug: 'media-matrix',
-        parent_id: 0,
-        is_nav: false,
-        sort_order: 50
-    }
+    } 
 ];
 
 window.SITE_ARTICLES = [
@@ -709,7 +678,7 @@ window.SITE_ARTICLES = [
         published_at: '2026-06-06'
     },
 
-    // ===== 业务领域二级子栏目文章（category_id=42~53，用于页面4图文列表） =====
+    // ===== 公司业务二级子栏目文章（category_id=42~53，用于页面4图文列表） =====
     {
         id: 421,
         hash_id: 'business-road-1',
@@ -1090,78 +1059,7 @@ window.SITE_ARTICLES = [
         title: '员工发展通道',
         summary: '健全员工成长成才机制',
         published_at: '2026-06-01'
-    },
-
-    // ===== 媒体矩阵（category_id=480，首页媒体矩阵图标） =====
-    {
-        id: 4801,
-        hash_id: 'media-1',
-        category_id: 480,
-        title: '官方微信公众号',
-        cover_image: './1_首页_files/2_1789883604813454065.jpg',
-        published_at: '2026-06-01'
-    },
-    {
-        id: 4802,
-        hash_id: 'media-2',
-        category_id: 480,
-        title: '官方微博',
-        cover_image: './1_首页_files/upload_1789885907524298167.png',
-        published_at: '2026-06-01'
-    },
-    {
-        id: 4803,
-        hash_id: 'media-3',
-        category_id: 480,
-        title: '抖音号',
-        published_at: '2026-06-01'
-    },
-    {
-        id: 4804,
-        hash_id: 'media-4',
-        category_id: 480,
-        title: '视频号',
-        published_at: '2026-06-01'
-    },
-    {
-        id: 4805,
-        hash_id: 'media-5',
-        category_id: 480,
-        title: '知乎号',
-        published_at: '2026-06-01'
-    },
-    {
-        id: 4806,
-        hash_id: 'media-6',
-        category_id: 480,
-        title: '交建通',
-        cover_image: './1_首页_files/__logo___1782372657051071516.png',
-        published_at: '2026-06-01'
-    },
-    {
-        id: 4807,
-        hash_id: 'media-7',
-        category_id: 480,
-        title: '中交四航局',
-        cover_image: './1_首页_files/B__1782372189008058349.png',
-        published_at: '2026-06-01'
-    },
-    {
-        id: 4808,
-        hash_id: 'media-8',
-        category_id: 480,
-        title: '中国交建',
-        cover_image: './1_首页_files/___1782372153161248504.png',
-        published_at: '2026-06-01'
-    },
-    {
-        id: 4809,
-        hash_id: 'media-9',
-        category_id: 480,
-        title: '交建融媒',
-        cover_image: './1_首页_files/__logo___1782371990204303370.png',
-        published_at: '2026-06-01'
-    },
+    }, 
 
     // ===== 公司要闻补充（category_id=31，补足条数触发列表分页） =====
     {
