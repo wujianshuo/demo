@@ -207,7 +207,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 2,
         page_url: './4_公司业务.html?cat=business-road',
-        images: './1_首页_files/1637910591_1781250399781234770.jpg',
+        images: './4_公司业务_files/1-1.jpg',
         description: '高速公路、国省道、市政道路等公路工程建设'
     },
     {
@@ -218,7 +218,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 3,
         page_url: './4_公司业务.html?cat=business-railway',
-        images: './1_首页_files/1637910591_1781250424599483335.jpg',
+        images: './4_公司业务_files/1-2.jpg',
         description: '高速铁路、普速铁路及站场工程建设'
     },
     {
@@ -229,7 +229,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 4,
         page_url: './4_公司业务.html?cat=business-rail',
-        images: './1_首页_files/1637910591_1781250448084972356.jpg',
+        images: './4_公司业务_files/1-3.jpg',
         description: '城市地铁、轻轨等轨道交通工程建设'
     },
     {
@@ -240,7 +240,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 5,
         page_url: './4_公司业务.html?cat=business-admin',
-        images: './1_首页_files/1637910591_1781250467957046340.jpg',
+        images: './4_公司业务_files/1-4.jpg',
         description: '城市道路、桥梁、管网等市政基础设施建设'
     },
     {
@@ -251,7 +251,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 6,
         page_url: './4_公司业务.html?cat=business-cat-bridge',
-        images: './1_首页_files/cat20181106095223_1782209593225684892.jpg',
+        images: './4_公司业务_files/1-5.jpg',
         description: '跨海大桥、长大隧道、沉管隧道等桥隧工程建设'
     },
     {
@@ -262,7 +262,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 7,
         page_url: './4_公司业务.html?cat=business-cat-ship',
-        images: './1_首页_files/1637910591_1781250399781234770.jpg',
+        images: './4_公司业务_files/1-6.jpg',
         description: '水利枢纽、船闸、船坞等水工建筑物建设'
     },
     {
@@ -273,7 +273,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 8,
         page_url: './4_公司业务.html?cat=business-cat-house',
-        images: './1_首页_files/1637910591_1781250424599483335.jpg',
+        images: './4_公司业务_files/1-7.jpg',
         description: '工业与民用建筑、城市更新等房建工程'
     },
     {
@@ -284,7 +284,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 9,
         page_url: './4_公司业务.html?cat=business-cat-ecology',
-        images: './1_首页_files/1637910591_1781250448084972356.jpg',
+        images: './4_公司业务_files/1-7.jpg',
         description: '生态修复、环境治理等绿色工程'
     },
     {
@@ -295,7 +295,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 10,
         page_url: './4_公司业务.html?cat=business-cat-river',
-        images: './1_首页_files/1637910591_1781250467957046340.jpg',
+        images: './4_公司业务_files/1-8.jpg',
         description: '河湖整治、水环境综合治理工程'
     },
     {
@@ -306,7 +306,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 11,
         page_url: './4_公司业务.html?cat=business-cat-utility',
-        images: './1_首页_files/cat20181106095223_1782209593225684892.jpg',
+        images: './4_公司业务_files/1-9.jpg',
         description: '城市地下综合管廊等基础设施工程'
     },
     {
@@ -317,7 +317,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 12,
         page_url: './4_公司业务.html?cat=business-cat-wind',
-        images: './1_首页_files/1637910591_1781250399781234770.jpg',
+        images: './4_公司业务_files/1-1.jpg',
         description: '海上风电等新能源工程'
     },
     {
@@ -328,7 +328,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 13,
         page_url: './4_公司业务.html?cat=business-cat-port_overseas',
-        images: './1_首页_files/1637910591_1781250424599483335.jpg',
+        images: './4_公司业务_files/1-2.jpg',
         description: '海外港口、码头等国际工程'
     },
 
@@ -489,7 +489,7 @@ window.SITE_ARTICLES = [
         category_id: 31,
         title: '深度解读企业战略与发展聚焦重点领域',
         summary: '公司深入学习贯彻上级决策部署，聚焦主责主业，持续推动企业高质量发展。',
-        cover_image: './1_首页_files/1637910591_1781250399781234770.jpg',
+        cover_image: './1_首页_files/1-1.jpg',
         published_at: '2026-06-12',
         is_image_news: true
     },
@@ -499,7 +499,7 @@ window.SITE_ARTICLES = [
         category_id: 31,
         title: '四航局重大工程项目节点顺利推进',
         summary: '重点项目现场掀起大干热潮，各项建设任务按计划稳步推进。',
-        cover_image: './1_首页_files/1637910591_1781250424599483335.jpg',
+        cover_image: './1_首页_files/1-1.jpg',
         published_at: '2026-06-10',
         is_image_news: true
     },
@@ -509,7 +509,7 @@ window.SITE_ARTICLES = [
         category_id: 31,
         title: '公司科技创新成果转化成效显著',
         summary: '多项自主研发技术在生产一线落地应用，赋能项目提质增效。',
-        cover_image: './1_首页_files/1637910591_1781250448084972356.jpg',
+        cover_image: './1_首页_files/1-1.jpg',
         published_at: '2026-06-08',
         is_image_news: true
     },
@@ -523,7 +523,7 @@ window.SITE_ARTICLES = [
         summary: '会议聚焦重点领域，深度解读企业战略与发展，部署年度宣传思想与品牌文化重点任务。',
         author: '办公室',
         source: '本站',
-        cover_image: './1_首页_files/1637910591_1781250399781234770.jpg',
+        cover_image: './1_首页_files/1-1.jpg',
         published_at: '2026-07-07',
         is_top: true
     },
@@ -535,7 +535,7 @@ window.SITE_ARTICLES = [
         summary: '围绕企业“十四五”发展战略，系统梳理重点领域攻坚方向与实施路径。',
         author: '办公室',
         source: '本站',
-        cover_image: './1_首页_files/1637910591_1781250424599483335.jpg',
+        cover_image: './1_首页_files/1-1.jpg',
         published_at: '2026-07-06'
     },
     {
@@ -546,7 +546,7 @@ window.SITE_ARTICLES = [
         summary: '强化红线意识，压实安全责任，全面部署年度安全生产重点工作。',
         author: '安全部',
         source: '本站',
-        cover_image: './1_首页_files/1637910591_1781250448084972356.jpg',
+        cover_image: './1_首页_files/1-1.jpg',
         published_at: '2026-06-30'
     },
     {
@@ -618,7 +618,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-shujun-1',
         category_id: 411,
         title: '大型疏浚吹填工程',
-        cover_image: './4_公司业务_files/upload_1789886368304789615.jpg',
+        cover_image: './4_公司业务_files/1-1.jpg',
         published_at: '2026-06-15'
     },
     {
@@ -626,7 +626,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-shujun-2',
         category_id: 411,
         title: '航道整治与维护疏浚',
-        cover_image: './1_首页_files/1637910591_1781250467957046340.jpg',
+        cover_image: './4_公司业务_files/1-2.jpg',
         published_at: '2026-06-10'
     },
     {
@@ -634,7 +634,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-daolu-1',
         category_id: 412,
         title: '高速公路改扩建工程',
-        cover_image: './1_首页_files/cat20181106095223_1782209593225684892.jpg',
+        cover_image: './4_公司业务_files/1-3.jpg',
         published_at: '2026-06-12'
     },
     {
@@ -642,7 +642,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-daolu-2',
         category_id: 412,
         title: '市政道路桥梁工程',
-        cover_image: './1_首页_files/1637910591_1781250424599483335.jpg',
+        cover_image: './4_公司业务_files/1-4.jpg',
         published_at: '2026-06-05'
     },
     {
@@ -650,7 +650,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-daosui-1',
         category_id: 413,
         title: '沉管隧道安装工程',
-        cover_image: './1_首页_files/1637910591_1781250399781234770.jpg',
+        cover_image: './4_公司业务_files/1-5.jpg',
         published_at: '2026-06-14'
     },
     {
@@ -658,7 +658,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-daosui-2',
         category_id: 413,
         title: '海底隧道工程',
-        cover_image: './1_首页_files/____2_1789721518834065399.jpg',
+        cover_image: './4_公司业务_files/1-6.jpg',
         published_at: '2026-06-08'
     },
     {
@@ -666,7 +666,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-gangkou-1',
         category_id: 414,
         title: '大型深水码头工程',
-        cover_image: './4_公司业务_files/upload_1789886368304789615.jpg',
+        cover_image: './4_公司业务_files/1-7.jpg',
         published_at: '2026-06-13'
     },
     {
@@ -674,7 +674,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-gangkou-2',
         category_id: 414,
         title: '集装箱码头改扩建',
-        cover_image: './1_首页_files/1637910591_1781250448084972356.jpg',
+        cover_image: './4_公司业务_files/1-8.jpg',
         published_at: '2026-06-06'
     },
 
@@ -684,7 +684,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-road-1',
         category_id: 42,
         title: '高速公路建设项目',
-        cover_image: './1_首页_files/1637910591_1781250399781234770.jpg',
+        cover_image: './4_公司业务_files/1-1.jpg',
         published_at: '2026-06-15'
     },
     {
@@ -692,7 +692,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-road-2',
         category_id: 42,
         title: '国省道干线公路工程',
-        cover_image: './1_首页_files/1637910591_1781250424599483335.jpg',
+        cover_image: './4_公司业务_files/1-2.jpg',
         published_at: '2026-06-06'
     },
     {
@@ -700,7 +700,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-railway-1',
         category_id: 43,
         title: '高速铁路站前工程',
-        cover_image: './1_首页_files/1637910591_1781250448084972356.jpg',
+        cover_image: './4_公司业务_files/1-3.jpg',
         published_at: '2026-06-12'
     },
     {
@@ -708,7 +708,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-railway-2',
         category_id: 43,
         title: '铁路站场改扩建工程',
-        cover_image: './1_首页_files/1637910591_1781250467957046340.jpg',
+        cover_image: '.4_公司业务_files/1-4.jpg',
         published_at: '2026-06-04'
     },
     {
@@ -716,7 +716,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-rail-1',
         category_id: 44,
         title: '城市轨道交通线路工程',
-        cover_image: './1_首页_files/cat20181106095223_1782209593225684892.jpg',
+        cover_image: './4_公司业务_files/1-5.jpg',
         published_at: '2026-06-13'
     },
     {
@@ -724,7 +724,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-rail-2',
         category_id: 44,
         title: '地铁车站及区间工程',
-        cover_image: './1_首页_files/1637910591_1781250399781234770.jpg',
+        cover_image: './4_公司业务_files/1-6.jpg',
         published_at: '2026-06-03'
     },
     {
@@ -732,7 +732,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-admin-1',
         category_id: 45,
         title: '城市主干道改造工程',
-        cover_image: './1_首页_files/1637910591_1781250424599483335.jpg',
+        cover_image: './4_公司业务_files/1-7.jpg',
         published_at: '2026-06-11'
     },
     {
@@ -740,7 +740,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-admin-2',
         category_id: 45,
         title: '市政管网综合工程',
-        cover_image: './1_首页_files/1637910591_1781250448084972356.jpg',
+        cover_image: './4_公司业务_files/1-8.jpg',
         published_at: '2026-06-02'
     },
     {
@@ -748,7 +748,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-bridge-1',
         category_id: 46,
         title: '跨海特大桥工程',
-        cover_image: './1_首页_files/1637910591_1781250467957046340.jpg',
+        cover_image: './4_公司业务_files/1-9.jpg',
         published_at: '2026-06-14'
     },
     {
@@ -756,7 +756,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-bridge-2',
         category_id: 46,
         title: '长大隧道工程',
-        cover_image: './1_首页_files/cat20181106095223_1782209593225684892.jpg',
+        cover_image: './4_公司业务_files/1-1.jpg',
         published_at: '2026-06-05'
     },
     {
@@ -764,7 +764,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-ship-1',
         category_id: 47,
         title: '大型船闸工程',
-        cover_image: './1_首页_files/1637910591_1781250399781234770.jpg',
+        cover_image: './4_公司业务_files/1-2.jpg',
         published_at: '2026-06-13'
     },
     {
@@ -772,7 +772,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-ship-2',
         category_id: 47,
         title: '水利枢纽工程',
-        cover_image: './1_首页_files/1637910591_1781250424599483335.jpg',
+        cover_image: './4_公司业务_files/1-3.jpg',
         published_at: '2026-06-04'
     },
     {
@@ -780,7 +780,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-house-1',
         category_id: 48,
         title: '大型公共建筑工程',
-        cover_image: './1_首页_files/1637910591_1781250448084972356.jpg',
+        cover_image: './4_公司业务_files/1-4.jpg',
         published_at: '2026-06-12'
     },
     {
@@ -788,7 +788,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-house-2',
         category_id: 48,
         title: '城市更新项目',
-        cover_image: './1_首页_files/1637910591_1781250467957046340.jpg',
+        cover_image: './4_公司业务_files/1-5.jpg',
         published_at: '2026-06-03'
     },
     {
@@ -796,7 +796,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-ecology-1',
         category_id: 49,
         title: '生态修复工程',
-        cover_image: './1_首页_files/cat20181106095223_1782209593225684892.jpg',
+        cover_image: './4_公司业务_files/1-6.jpg',
         published_at: '2026-06-11'
     },
     {
@@ -804,7 +804,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-ecology-2',
         category_id: 49,
         title: '环境治理工程',
-        cover_image: './1_首页_files/1637910591_1781250399781234770.jpg',
+        cover_image: './4_公司业务_files/1-7.jpg',
         published_at: '2026-06-02'
     },
     {
@@ -812,7 +812,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-river-1',
         category_id: 50,
         title: '河湖综合整治工程',
-        cover_image: './1_首页_files/1637910591_1781250424599483335.jpg',
+        cover_image: './4_公司业务_files/1-8.jpg',
         published_at: '2026-06-13'
     },
     {
@@ -820,7 +820,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-river-2',
         category_id: 50,
         title: '水环境治理工程',
-        cover_image: './1_首页_files/1637910591_1781250448084972356.jpg',
+        cover_image: './4_公司业务_files/1-9.jpg',
         published_at: '2026-06-04'
     },
     {
@@ -828,7 +828,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-utility-1',
         category_id: 51,
         title: '城市综合管廊工程',
-        cover_image: './1_首页_files/1637910591_1781250467957046340.jpg',
+        cover_image: './4_公司业务_files/1-1.jpg',
         published_at: '2026-06-12'
     },
     {
@@ -836,7 +836,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-utility-2',
         category_id: 51,
         title: '地下综合管廊配套工程',
-        cover_image: './1_首页_files/cat20181106095223_1782209593225684892.jpg',
+        cover_image: './4_公司业务_files/1-2.jpg',
         published_at: '2026-06-03'
     },
     {
@@ -844,7 +844,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-wind-1',
         category_id: 52,
         title: '海上风电场工程',
-        cover_image: './1_首页_files/1637910591_1781250399781234770.jpg',
+        cover_image: './4_公司业务_files/1-3.jpg',
         published_at: '2026-06-11'
     },
     {
@@ -852,7 +852,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-wind-2',
         category_id: 52,
         title: '风电场配套基础工程',
-        cover_image: './1_首页_files/1637910591_1781250424599483335.jpg',
+        cover_image: './4_公司业务_files/1-4.jpg',
         published_at: '2026-06-02'
     },
     {
@@ -860,7 +860,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-port-overseas-1',
         category_id: 53,
         title: '海外港口建设项目',
-        cover_image: './1_首页_files/1637910591_1781250448084972356.jpg',
+        cover_image: './4_公司业务_files/1-5.jpg',
         published_at: '2026-06-12'
     },
     {
@@ -868,7 +868,7 @@ window.SITE_ARTICLES = [
         hash_id: 'business-port-overseas-2',
         category_id: 53,
         title: '海外码头改扩建工程',
-        cover_image: './1_首页_files/1637910591_1781250467957046340.jpg',
+        cover_image: './4_公司业务_files/1-6.jpg',
         published_at: '2026-06-03'
     },
 
@@ -893,7 +893,7 @@ window.SITE_ARTICLES = [
         summary: '党建引领聚合力，把党的政治优势转化为企业发展优势。',
         author: '党委工作部',
         source: '本站',
-        cover_image: './1_首页_files/1637910591_1781250467957046340.jpg',
+        cover_image: './1_首页_files/1-1.jpg',
         published_at: '2026-06-26'
     },
     {
@@ -904,7 +904,7 @@ window.SITE_ARTICLES = [
         summary: '深入学习贯彻党的二十届四中全会精神，凝聚思想共识。',
         author: '党委工作部',
         source: '本站',
-        cover_image: './1_首页_files/cat20181106095223_1782209593225684892.jpg',
+        cover_image: './1_首页_files/1-1.jpg',
         published_at: '2026-06-19'
     },
     {
