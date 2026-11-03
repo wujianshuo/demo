@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0065)./4_公司业务.html?cat=business-port -->
+<!-- saved from url=(0065)./4_business.html?cat=business-port -->
 <html lang="zh-CN">
 
 <head>
@@ -7,8 +7,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>工程承包业务 - 中交第四航务工程局有限公司</title>
-    <link rel="icon" href="./1_首页_files/logo.png">
-    <link rel="stylesheet" href="./4_公司业务_files/main.css">
+    <link rel="icon" href="./1_home_files/logo.png">
+    <link rel="stylesheet" href="./4_business_files/main.css">
     <script src="./assets/site-data.js"></script>
     <script src="./assets/mock-fetch.js"></script>
     <script src="./assets/site-nav.js"></script>
@@ -442,8 +442,8 @@
     <header class="header">
         <div class="header-top">
             <div class="header-nav">
-                <a href="./1_首页.html" class="logo">
-        <img src="./1_首页_files/logo.png" alt="中交四航局第三工程有限公司" onerror="this.style.display=&#39;none&#39;">
+                <a href="./1_home.html" class="logo">
+        <img src="./1_home_files/logo.png" alt="中交四航局第三工程有限公司" onerror="this.style.display=&#39;none&#39;">
       </a>
                 <button class="mobile-toggle">☰</button>
                 <ul class="nav" id="main-nav"></ul>
@@ -458,11 +458,11 @@
 
     <div class="page-wrap" style="flex:1;">
         <!-- 栏目大图横幅：宽1350px x 高260px -->
-        <div class="honor-banner" id="honor-banner"><img src="./4_公司业务_files/1-7.jpg" alt=""></div>
+        <div class="honor-banner" id="honor-banner"><img src="./4_business_files/1-7.jpg" alt=""></div>
 
         <div style="width:100%;max-width:1350px;margin:0 auto;display:flex;gap:2%;align-items:flex-start;padding:32px 0;">
             <!-- 侧边栏：业务领域子栏目（不含「全部」按钮） -->
-            <aside class="page-side" id="business-side"><h4>公司业务</h4><a class="active" href="./4_公司业务.html?cat=business-port">港口及航运设施工程</a><a href="./4_公司业务.html?cat=business-road">公路工程</a><a href="./4_公司业务.html?cat=business-railway">铁路工程</a><a href="./4_公司业务.html?cat=business-rail">城市轨道交通工程</a><a href="./4_公司业务.html?cat=business-admin">市政工程</a><a href="./4_公司业务.html?cat=business-cat-bridge">隧道和桥梁工程</a><a href="./4_公司业务.html?cat=business-cat-ship">水利、船闸、船坞工程</a><a href="./4_公司业务.html?cat=business-cat-house">房屋建筑工程</a><a href="./4_公司业务.html?cat=business-cat-ecology">生态保护工程</a><a href="./4_公司业务.html?cat=business-cat-river">河湖治理工程</a><a href="./4_公司业务.html?cat=business-cat-utility">综合管廊工程</a><a href="./4_公司业务.html?cat=business-cat-port_overseas">海外港口及航运设施工程</a><a href="./4_公司业务.html?cat=business-cat-wind">海外风能发电工程</a></aside>
+            <aside class="page-side" id="business-side"><h4>公司业务</h4><a class="active" href="./4_business.html?cat=business-port">港口及航运设施工程</a><a href="./4_business.html?cat=business-road">公路工程</a><a href="./4_business.html?cat=business-railway">铁路工程</a><a href="./4_business.html?cat=business-rail">城市轨道交通工程</a><a href="./4_business.html?cat=business-admin">市政工程</a><a href="./4_business.html?cat=business-cat-bridge">隧道和桥梁工程</a><a href="./4_business.html?cat=business-cat-ship">水利、船闸、船坞工程</a><a href="./4_business.html?cat=business-cat-house">房屋建筑工程</a><a href="./4_business.html?cat=business-cat-ecology">生态保护工程</a><a href="./4_business.html?cat=business-cat-river">河湖治理工程</a><a href="./4_business.html?cat=business-cat-utility">综合管廊工程</a><a href="./4_business.html?cat=business-cat-port_overseas">海外港口及航运设施工程</a><a href="./4_business.html?cat=business-cat-wind">海外风能发电工程</a></aside>
 
             <div class="page-main">
                 <h1 id="business-title">工程承包业务</h1>
@@ -470,7 +470,7 @@
 
                 <!-- 当前子栏目的栏目图片 -->
                 <div class="business-catimg" id="business-catimg">
-                    <img src="./4_公司业务_files/1-7.jpg" alt="">
+                    <img src="./4_business_files/1-7.jpg" alt="">
                 </div>
 
 
@@ -644,7 +644,7 @@
                     trackIdx[s.id] = 0;
                     html += '<div class="business-sub-card">';
                     // 与导航栏保持一致：子栏目统一用 ?cat=<slug> 在本页内切换
-                    var sHref = s.page_url ? s.page_url : ('./4_公司业务.html?cat=' + encodeURIComponent(s.slug || s.id));
+                    var sHref = s.page_url ? s.page_url : ('./4_business.html?cat=' + encodeURIComponent(s.slug || s.id));
                     html += '<div class="sub-name" onclick="location.href=\'' + sHref + '\'">' + s.name + '</div>';
                     html += '<div class="business-slider">';
                     if (!arts.length) {
@@ -702,7 +702,7 @@
                 var catsArr = Array.isArray(cats) ? cats : (cats.data || []);
                 // 公司业务顶级栏目：page_url 指向本页（兼容历史 business.html 命名）
                 var topCat = catsArr.find(function(c) {
-                    var pu = (c.page_url || '').toLowerCase().split('?')[0].split('/').pop(); return pu === 'business.html' || pu === '4_公司业务.html';
+                    var pu = (c.page_url || '').toLowerCase().split('?')[0].split('/').pop(); return pu === 'business.html' || pu === '4_business.html';
                 });
                 if (!topCat) {
                     var rn = document.body.getAttribute('data-root-cat-name');
@@ -749,7 +749,7 @@
                     }
                 }
                 // 有独立页面的子栏目保持原有跳转设计；
-                // 指向本页 4_公司业务.html?... 的地址视为页内 tab 参数，不做跳转，避免自我重定向
+                // 指向本页 4_business.html?... 的地址视为页内 tab 参数，不做跳转，避免自我重定向
                 if (targetCat && targetCat.page_url && !/4_公司业务\.html/i.test(targetCat.page_url)) {
                     location.replace(targetCat.page_url);
                     return;
