@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./5_党的建设_files/main.css">
     <script src="./assets/site-data.js"></script>
     <script src="./assets/mock-fetch.js"></script>
+    <script src="./assets/site-nav.js"></script>
+    <script src="./assets/site-sidebar.js"></script>
     <style>
         /* 2026-09-10：全站统一容器 1350 (max-width:100%) + 侧边栏 14% ≈196px（原 fixed 180px 方案已废弃） */
 
@@ -42,66 +44,10 @@
             margin-top: 20px;
         }
 
-        .party-sidebar {
-            width: 14%;
-            min-width: 160px;
-            flex-shrink: 0;
-            position: sticky;
-            top: 100px;
-            background: #fff;
-            padding: 2% 1.5%;
-            font-size: clamp(14px, 1.2vw, 17px);
-            border: 1px solid var(--border);
-            border-radius: 0;
-            box-sizing: border-box;
-        }
-
-        .party-sidebar h4 {
-            font-size: clamp(16px, 1.5vw, 20px);
-            color: var(--primary);
-            margin-bottom: 14px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--primary);
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .party-sidebar a {
-            display: block;
-            padding: clamp(8px, 0.8vw, 12px);
-            color: var(--text);
-            text-decoration: none;
-            border-radius: 0;
-            transition: all 0.2s;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            white-space: normal;
-            text-align: left;
-            margin-bottom: 4px;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
-            line-height: 1.4;
-        }
-
-        .party-sidebar a:hover {
-            background: var(--primary-light);
-            color: var(--primary);
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-        }
-
-        .party-sidebar a.active {
-            background: var(--primary);
-            color: #fff;
-            font-weight: 600;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        }
-
         @media (max-width:1200px) {
             .party-outer {
                 width: 96%;
                 display: block;
-            }
-            .party-sidebar {
-                display: none;
             }
         }
     </style>
@@ -188,7 +134,7 @@
         #site-cat-banner {
             width: 100%;
             max-width: 1350px;
-            height: 260px;
+            height: auto;
             margin: 0 auto;
             overflow: hidden;
             background: #e8f0fe;
@@ -198,14 +144,14 @@
 
         #site-cat-banner img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
             display: block;
         }
 
         #site-cat-banner .scb-ph {
             width: 100%;
-            height: 100%;
+            min-height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -217,7 +163,7 @@
 
         @media (max-width:900px) {
             #site-cat-banner {
-                height: 180px;
+                height: auto;
             }
             #site-cat-banner .scb-ph {
                 font-size: 16px;
@@ -226,7 +172,7 @@
 
         @media (max-width:768px) {
             #site-cat-banner {
-                height: 140px;
+                height: auto;
             }
         }
     </style>
@@ -244,163 +190,9 @@
         <img src="./1_首页_files/logo.png" alt="中交四航局第三工程有限公司" onerror="this.style.display=&#39;none&#39;">
       </a>
                 <button class="mobile-toggle">☰</button>
-                <ul class="nav" id="main-nav">
-                    <li>
-                        <a href="./1_首页.html">首页</a>
-                    </li>
-
-                    <li>
-                        <a href="./2_关于四航三.html">关于四航三</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="./2_关于四航三.html?cat=about-overview">公司概况</a>
-                            </li>
-
-                            <li>
-                                <a href="./2_关于四航三.html?cat=about-history">历史传承</a>
-                            </li>
-
-                            <li>
-                                <a href="./2_关于四航三.html?cat=about-structure">组织架构</a>
-                            </li>
-
-                            <li>
-                                <a href="./2_关于四航三.html?cat=about-online">全球分布</a>
-                            </li>
-
-                            <li>
-                                <a href="./2_关于四航三.html?cat=about-layout">经营布局</a>
-                            </li>
-
-                            <li>
-                                <a href="./2_关于四航三.html?cat=about-honor">企业荣誉</a>
-                            </li>
-
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="./3_新闻中心.html">新闻中心</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="./3_新闻中心.html?cat=news-yaowen">公司要闻</a>
-                            </li>
-                            <li>
-                                <a href="./3_新闻中心.html?cat=news-media">媒体聚焦</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="./4_公司业务.html">公司业务</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-port">港口及航运设施工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-road">公路工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-railway">铁路工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-rail">城市轨道交通工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-admin">市政工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-bridge">隧道和桥梁工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-ship">水利、船闸、船坞工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-house">房屋建筑工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-ecology">生态保护工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-river">河湖治理工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-utility">综合管廊工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-wind">海外风能发电工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-port_overseas">海外港口及航运设施工程</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="active">
-                        <a href="./5_党的建设.html" style="color: var(--primary); font-weight: 700;">党的建设</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="./5_党的建设.html?cat=party-news">综合动态</a>
-                            </li>
-                            <li>
-                                <a href="./5_党的建设.html?cat=party-brand">党建品牌</a>
-                            </li>
-                            <li>
-                                <a href="./5_党的建设.html?cat=party-union">工团工作</a>
-                            </li>
-                            <li>
-                                <a href="./5_党的建设.html?cat=party-report">信访举报</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="./6_科技创新.html">科技创新</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="./6_科技创新.html?cat=tech-dynamic">科技动态</a>
-                            </li>
-                            <li>
-                                <a href="./6_科技创新.html?cat=tech-results">科技成果</a>
-                            </li>
-                            <li>
-                                <a href="./6_科技创新.html?cat=tech-equipment">装备研发</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="./7_人力资源.html">人力资源</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="./7_人力资源.html?cat=hr-expert">企业专家</a>
-                            </li>
-                            <li>
-                                <a href="./7_人力资源.html?cat=hr-info">招聘信息</a>
-                            </li>
-                            <li>
-                                <a href="./7_人力资源.html?cat=hr-team">人才队伍结构</a>
-                            </li>
-                            <li>
-                                <a href="./7_人力资源.html?cat=hr-post">校招职位管理</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="./8_品牌文化.html">品牌文化</a>
-                        <ul class="dropdown">
-                            <li><a href="/8_品牌文化.html?cat=corporate-culture">品牌文化</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
+                <ul class="nav" id="main-nav"></ul>
             </div>
 
-            <!-- <div class="lang-switch">
-      <a href="./3_新闻中心.html" class="active">中</a>
-      <a href="http://10.7.54.106:18120/sites/en/news.html">EN</a>
-    </div> -->
         </div>
     </header>
     <div id="site-cat-banner" style="display: block;">
@@ -412,20 +204,14 @@
 
 
     <div class="party-outer">
-        <aside class="party-sidebar" id="party-sidebar">
-            <h4>党的建设</h4>
-            <a href="./5_党的建设.html?cat=party-news" class="active">综合动态</a>
-            <a href="./5_党的建设.html?cat=party-brand" class="">党建品牌</a>
-            <a href="./5_党的建设.html?cat=party-union" class="">工团工作</a>
-            <a href="./5_党的建设.html?cat=party-report" class="">信访举报</a>
-        </aside>
+        <aside class="party-sidebar" id="party-sidebar"><h4>党的建设</h4><a class="active" href="./5_党的建设.html?cat=party-news">综合动态</a><a href="./5_党的建设.html?cat=party-brand">党建品牌</a><a href="./5_党的建设.html?cat=party-union">工团工作</a><a href="./5_党的建设.html?cat=party-youth">青年工作</a><a href="./5_党的建设.html?cat=party-report">信访举报</a></aside>
 
         <div class="party-main">
             <!-- Featured Articles Section -->
             <section class="section" id="party-featured-section">
-                <div id="featured-carousel" style="display:flex;gap:32px;height:450px;background:#fff;padding:24px;position:relative;overflow:hidden;">
-                    <div style="width:640px;flex-shrink:0;overflow:hidden;background:#e8f0fe;height:400px;position:relative;" id="featured-img-wrap">
-                        <img id="featured-img" src="./5_党的建设_files/cat20181106095223_1782117288265921549.jpg" alt="" style="width: 100%; height: 100%; object-fit: fill;">
+                <div id="featured-carousel" style="display:flex;gap:32px;height:auto;align-items:center;background:#fff;padding:24px;position:relative;overflow:hidden;">
+                    <div style="width:640px;flex-shrink:0;overflow:hidden;background:#e8f0fe;height:auto;align-self:center;position:relative;" id="featured-img-wrap">
+                        <img id="featured-img" src="./5_党的建设_files/cat20181106095223_1782117288265921549.jpg" alt="" style="width: 100%; height: auto; object-fit: contain;">
                         <div id="featured-arrow-prev" style="display: flex; position: absolute; left: 8px; top: 50%; transform: translateY(-50%); z-index: 2; cursor: pointer; width: 24px; height: 32px; align-items: center; justify-content: center;" onclick="featuredShift(-1)"><svg width="16" height="24" viewBox="0 0 16 24" fill="none"><path d="M12 4L5 12L12 20" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
                         <div id="featured-arrow-next" style="display: flex; position: absolute; right: 8px; top: 50%; transform: translateY(-50%); z-index: 2; cursor: pointer; width: 24px; height: 32px; align-items: center; justify-content: center;" onclick="featuredShift(1)"><svg width="16" height="24" viewBox="0 0 16 24" fill="none"><path d="M4 4L11 12L4 20" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
                         <div id="featured-fallback" style="display:none;position:absolute;inset:0;background:linear-gradient(135deg,#3b82f6,#7dd3fc);align-items:center;justify-content:center;padding:20px;text-align:center;box-sizing:border-box;"><span style="color:#fff;font-size:20px;font-weight:700;line-height:1.5;letter-spacing:2px;text-shadow:0 2px 8px rgba(0,0,0,0.3);display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;word-wrap:break-word;"></span></div>
@@ -434,7 +220,7 @@
                         <h2 id="featured-title" style="font-size:26px;font-weight:700;margin-bottom:12px;color:var(--text);line-height:1.5;height:78px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;word-wrap:break-word;flex-shrink:0;">四航局党委召开2026年宣传思想品牌文化工作、统战工作会议</h2>
                         <p id="featured-summary" style="font-size:15px;color:#999;line-height:1.8;height:162px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;margin-bottom:20px;flex-shrink:0;">四航局党委召开2026年宣传思想品牌文化工作、统战工作会议四航局党委召开2026年宣传思想品牌文化工作、统战工作会议四航局党委召开2026年宣传思想品牌文化工作、统战工作会议四航局党委召开2026年宣传思想品牌文化工作、统战工作会议</p>
                         <div style="margin-top:auto;">
-                            <a id="featured-link" href="./5_党的建设.html?aid=1fcYb34NXfc" style="display:inline-block;padding:10px 24px;background:var(--primary);color:#fff;border-radius:4px;text-decoration:none;font-size:14px;">阅读详情 →</a>
+                            <a id="featured-link" href="article.html?aid=party-news-1" style="display:inline-block;padding:10px 24px;background:var(--primary);color:#fff;border-radius:4px;text-decoration:none;font-size:14px;">阅读详情 →</a>
                         </div>
                         <div style="display:flex;align-items:center;justify-content:space-between;margin-top:20px;padding-bottom:4px;">
                             <button onclick="featuredShift(-1)" style="width:40px;height:40px;border:none;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text);transition:color 0.2s;flex-shrink:0;" onmouseover="this.style.color=&#39;var(--primary)&#39;" onmouseout="this.style.color=&#39;var(--text)&#39;">
@@ -453,13 +239,6 @@
             <section class="section" id="party-list-section" style="padding-top:0;padding-bottom:48px;">
                 <div id="party-list-container">
                     <div style="padding:24px;background:#fff;">
-                        <div onclick="location.href=&#39;article.html?aid=VRMCOrTu1aE&#39;" title="聚焦重点领域，深度解读企业战略与发展" style="display:flex;align-items:center;padding:16px 0;font-size:20px;cursor:pointer;color:#333;border-bottom:1px solid #f0f0f0;" onmouseover="this.style.color=&#39;#c9a84c&#39;" onmouseout="this.style.color=&#39;#333&#39;"><span style="width:68%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left;">聚焦重点领域，深度解读企业战略与发展</span><span style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#666;font-size:16px;margin-left:16px;">-</span><span style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#666;font-size:16px;margin-left:16px;">-</span><span style="width:12%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#999;font-size:16px;text-align:right;margin-left:16px;">2026-06-22</span></div>
-                        <div onclick="location.href=&#39;article.html?aid=nRxlivQTGVU&#39;" title="聚焦重点领域，深度解读企业战略与发展" style="display:flex;align-items:center;padding:16px 0;font-size:20px;cursor:pointer;color:#333;border-bottom:1px solid #f0f0f0;" onmouseover="this.style.color=&#39;#c9a84c&#39;" onmouseout="this.style.color=&#39;#333&#39;"><span style="width:68%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left;">聚焦重点领域，深度解读企业战略与发展</span><span style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#666;font-size:16px;margin-left:16px;">777</span><span style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#666;font-size:16px;margin-left:16px;">新华社</span><span style="width:12%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#999;font-size:16px;text-align:right;margin-left:16px;">2026-06-22</span></div>
-                        <div onclick="location.href=&#39;article.html?aid=229gINe7RyE&#39;" title="聚焦重点领域，深度解读企业战略与发展" style="display:flex;align-items:center;padding:16px 0;font-size:20px;cursor:pointer;color:#333;border-bottom:1px solid #f0f0f0;" onmouseover="this.style.color=&#39;#c9a84c&#39;" onmouseout="this.style.color=&#39;#333&#39;"><span style="width:68%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left;">聚焦重点领域，深度解读企业战略与发展</span><span style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#666;font-size:16px;margin-left:16px;">-</span><span style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#666;font-size:16px;margin-left:16px;">-</span><span style="width:12%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#999;font-size:16px;text-align:right;margin-left:16px;">2026-06-22</span></div>
-                        <div onclick="location.href=&#39;article.html?aid=dk6aPQZcnDk&#39;" title="四航局党委召开2026年第一次书记例会" style="display:flex;align-items:center;padding:16px 0;font-size:20px;cursor:pointer;color:#333;border-bottom:1px solid #f0f0f0;" onmouseover="this.style.color=&#39;#c9a84c&#39;" onmouseout="this.style.color=&#39;#333&#39;"><span style="width:68%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left;">四航局党委召开2026年第一次书记例会</span><span style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#666;font-size:16px;margin-left:16px;">-</span><span style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#666;font-size:16px;margin-left:16px;">-</span><span style="width:12%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#999;font-size:16px;text-align:right;margin-left:16px;">2026-06-22</span></div>
-                        <div onclick="location.href=&#39;article.html?aid=20K68HvAZGE&#39;" title="四航局党委召开2026年宣传思想品牌文化工作、统战工作会议聚焦重点领域，深度解读企业战略与发展聚焦重点领域，深度解读企业战略与发展" style="display:flex;align-items:center;padding:16px 0;font-size:20px;cursor:pointer;color:#333;border-bottom:1px solid #f0f0f0;" onmouseover="this.style.color=&#39;#c9a84c&#39;" onmouseout="this.style.color=&#39;#333&#39;"><span style="width:68%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left;">四航局党委召开2026年宣传思想品牌文化工作、统战工作会议聚焦重点领域，深度解读企业战略与发展聚焦重点领域，深度解读企业战略与发展</span><span style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#666;font-size:16px;margin-left:16px;">-</span><span style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#666;font-size:16px;margin-left:16px;">-</span><span style="width:12%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#999;font-size:16px;text-align:right;margin-left:16px;">2026-06-22</span></div>
-                        <div onclick="location.href=&#39;article.html?aid=bUo7CMm_iCA&#39;" title="聚焦重点领域，深度解读企业战略与发展" style="display:flex;align-items:center;padding:16px 0;font-size:20px;cursor:pointer;color:#333;border-bottom:1px solid #f0f0f0;" onmouseover="this.style.color=&#39;#c9a84c&#39;" onmouseout="this.style.color=&#39;#333&#39;"><span style="width:68%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left;">聚焦重点领域，深度解读企业战略与发展</span><span style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#666;font-size:16px;margin-left:16px;">-</span><span style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#666;font-size:16px;margin-left:16px;">-</span><span style="width:12%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#999;font-size:16px;text-align:right;margin-left:16px;">2026-06-22</span></div>
-                        <div onclick="location.href=&#39;article.html?aid=T6haMFMSB5w&#39;" title="四航局党委召开2026年第一次书记例会" style="display:flex;align-items:center;padding:16px 0;font-size:20px;cursor:pointer;color:#333;border-bottom:1px solid #f0f0f0;" onmouseover="this.style.color=&#39;#c9a84c&#39;" onmouseout="this.style.color=&#39;#333&#39;"><span style="width:68%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left;">四航局党委召开2026年第一次书记例会</span><span style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#666;font-size:16px;margin-left:16px;">777</span><span style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#666;font-size:16px;margin-left:16px;">-</span><span style="width:12%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#999;font-size:16px;text-align:right;margin-left:16px;">2026-06-22</span></div>
                         <div style="display:flex;justify-content:center;align-items:center;gap:16px;padding-top:20px;"><button onclick="window._ppPage(-1)" style="width:40px;height:40px;border:1px solid var(--border);background:#fff;border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#ccc;" disabled=""><svg width="20" height="20" viewBox="0 0 16 16"><path d="M10 4L6 8L10 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path></svg></button><button onclick="window._ppGo(0)" style="min-width:36px;height:36px;border:none;border-radius:6px;cursor:pointer;font-size:16px;background:var(--primary);color:#fff;font-weight:600;">1</button><button onclick="window._ppGo(1)" style="min-width:36px;height:36px;border:none;border-radius:6px;cursor:pointer;font-size:16px;background:#f5f5f5;color:var(--text);">2</button><button onclick="window._ppPage(1)" style="width:40px;height:40px;border:1px solid var(--border);background:#fff;border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text);"><svg width="20" height="20" viewBox="0 0 16 16"><path d="M6 4L10 8L6 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path></svg></button></div>
                     </div>
                 </div>
@@ -509,7 +288,6 @@
                     if (!partyCat) partyCat = cats.find(function(c) {
                         return c.name === '党的建设';
                     });
-                    var sidebar = document.getElementById('party-sidebar');
                     var siblings = [];
                     if (partyCat) {
                         siblings = cats.filter(function(c) {
@@ -530,13 +308,7 @@
                     }
                     if (!activeCat && siblings.length) activeCat = siblings[0];
                     if (!activeCat) return;
-                    if (sidebar) {
-                        var sHtml = '<h4>' + (partyCat ? partyCat.name : activeCat.name) + '</h4>';
-                        siblings.forEach(function(s) {
-                            sHtml += '<a href="./5_党的建设.html?cat=' + encodeURIComponent(s.slug) + '" class="' + (s.id === activeCat.id ? 'active' : '') + '">' + s.name + '</a>';
-                        });
-                        sidebar.innerHTML = sHtml;
-                    }
+                    // 侧边栏：由 assets/site-sidebar.js 统一渲染
                     // 直接按栏目取文章
                     fetch('/api/public/' + siteId + '/articles?category_id=' + activeCat.id + '&page_size=100')
                         .then(function(r) {
@@ -550,6 +322,7 @@
                             if (featuredArticles.length) {
                                 renderFeatured(0);
                                 var dotsDiv = document.getElementById('featured-dots');
+                    dotsDiv.textContent = '';   // 静态占位里已有圆点，重建前先清空，避免轮播圆点翻倍
                                 featuredArticles.forEach(function(_, i) {
                                     var sp = document.createElement('span');
                                     sp.style.cssText = 'display:inline-block;width:10px;height:10px;border-radius:50%;background:' + (i === 0 ? 'var(--primary)' : '#ddd') + ';cursor:pointer;transition:background 0.2s;';
@@ -569,7 +342,7 @@
                                 }
                             } else {
                                 document.getElementById('featured-img').src = '';
-                                document.getElementById('featured-title').textContent = '暂无置顶文章';
+                                document.getElementById('featured-title').textContent = '';
                                 document.getElementById('featured-summary').textContent = '';
                                 document.getElementById('featured-link').href = '#';
                             }
@@ -635,7 +408,7 @@
                             if (listArticles.length) {
                                 renderPage();
                             } else {
-                                listContainer.innerHTML = '<div style="padding:24px;text-align:center;color:#999;font-size:16px;background:#fff;">暂无文章</div>';
+                                listContainer.innerHTML = '';
                             }
                         });
                 });
@@ -646,14 +419,17 @@
             var a = featuredArticles[i];
             var img = document.getElementById('featured-img');
             var fb = document.getElementById('featured-fallback');
+            var wrap = document.getElementById('featured-img-wrap');
             if (a.cover_image) {
                 img.style.display = '';
                 img.src = a.cover_image;
                 if (fb) fb.style.display = 'none';
+                if (wrap) wrap.style.minHeight = '';
             } else {
                 img.style.display = 'none';
                 if (fb) {
                     fb.style.display = 'flex';
+                    if (wrap) wrap.style.minHeight = '320px';
                     fb.querySelector('span').textContent = a.title;
                 }
             }
@@ -694,12 +470,12 @@
                 <h4 style="color:#fff;margin-bottom:12px;font-size:16px;">快速链接</h4>
                 <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;font-size:15px;" class="footer-links">
                     <li>
-                        <a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交四航局">中交第四航务工程局有限公司
+                        <a style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交四航局">中交第四航务工程局有限公司
 
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交集团">中国交通建设集团有限公司
+                        <a style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交集团">中国交通建设集团有限公司
 
                         </a>
                     </li>
@@ -707,13 +483,13 @@
             </div>
 
             <div style="flex:34;min-width:0;" id="footer-contact-wrap">
-                <h4 style="color:#fff;margin-bottom:12px;font-size:16px;">企业联系方式</h4>
-                <p style="line-height: 1.8; margin: 0px; font-size: 15px; white-space: pre-wrap;" id="footer-contact">
-            地址：湛江市开发区乐山路23号恒兴大厦19楼 
-            邮编：524022
-            电话：86-759-3613137
-            技术支持：中交四航局第三工程有限公司信息中心
-                </p>
+                <h4 style="color:#fff;margin-bottom:8px;font-size:16px;">企业联系方式</h4>
+                <p style="line-height: 1.8; margin: 0px; font-size: 15px; white-space: pre-wrap;" id="footer-contact">地址：湛江市开发区乐山路23号恒兴大厦19楼-20楼
+邮编：524022
+电话：0759-3613137
+传真：0759-3613307
+邮箱：d001@cccc4.com
+技术支持：中交四航局第三工程有限公司</p>
             </div>
         </div>
         <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.4);font-size:13px;display:flex;justify-content:space-between;align-items:center;">

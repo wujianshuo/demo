@@ -141,10 +141,13 @@ img { max-width: 100%; height: auto; }
 
 /* ============ Hero Slider ============ */
 /* 2026-09-10：首页大图为独立区域，尺寸 1600×550（不纳入 90%/1300 内容容器） */
-.hero { position: relative; height: 550px; overflow: hidden; width: 100%; max-width: 1600px; margin: 0 auto; }
+.hero { position: relative; height: auto; overflow: hidden; width: 100%; max-width: 1600px; margin: 0 auto; }
 .hero .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.8s; pointer-events: none; }
+.hero .slide:first-of-type { position: relative; }
 .hero .slide.active { opacity: 1; pointer-events: auto; }
-.hero .slide img { width: 100%; height: 100%; object-fit: cover; }
+.hero .slide img { width: 100%; height: auto; object-fit: contain; display: block; }
+
+#featured-img { display: block; }
 .hero .slide-overlay {
   position: absolute;
   inset: 0;
@@ -203,7 +206,7 @@ img { max-width: 100%; height: auto; }
   cursor: pointer;
 }
 .news-card:hover { transform: translateY(-4px); }
-.news-card img { width: 100%; height: 214px; object-fit: cover; }
+.news-card img { width: 100%; height: 214px; object-fit: contain; background: #f2f5fa; }
 .news-card .card-body { padding: 16px; }
 .news-card .card-tag {
   display: inline-block;
@@ -312,7 +315,7 @@ img { max-width: 100%; height: auto; }
   height: 280px;
   background: #f0f0f0;
 }
-.business-card img { width: 100%; height: 100%; object-fit: cover; }
+.business-card img { width: 100%; height: 100%; object-fit: contain; }
 .business-card .overlay {
   position: absolute;
   inset: 0;
@@ -337,7 +340,7 @@ img { max-width: 100%; height: auto; }
   transition: transform 0.2s;
 }
 .resp-card:hover { transform: translateY(-4px); }
-.resp-card img { width: 100%; height: 140px; object-fit: cover; }
+.resp-card img { width: 100%; height: 140px; object-fit: contain; background: #f2f5fa; }
 .resp-card .body { padding: 12px; }
 .resp-card h4 { font-size: 14px; }
 
@@ -355,7 +358,7 @@ img { max-width: 100%; height: auto; }
   text-align: center;
   cursor: pointer;
 }
-.resp-report img { width: 100%; height: 200px; object-fit: cover; border-radius: 0; margin-bottom: 12px; }
+.resp-report img { width: 100%; height: 200px; object-fit: contain; background: #f2f5fa; border-radius: 0; margin-bottom: 12px; }
 .resp-report h4 { font-size: 15px; }
 
 /* ============ Tech ============ */
@@ -389,7 +392,7 @@ img { max-width: 100%; height: auto; }
   transition: transform 0.2s;
 }
 .culture-card:hover { transform: translateY(-4px); }
-.culture-card img { width: 100%; height: 200px; object-fit: cover; }
+.culture-card img { width: 100%; height: 200px; object-fit: contain; background: #f2f5fa; }
 .culture-card .body { padding: 16px; }
 .culture-card h3 { font-size: 17px; margin-bottom: 6px; }
 .culture-card p { font-size: 13px; color: var(--text-light); }
@@ -530,7 +533,7 @@ img { max-width: 100%; height: auto; }
 }
 
 @media (max-width: 768px) {
-  .hero { height: 380px; }
+  .hero { height: auto; }
   .hero .slide-overlay h2 { font-size: 24px; }
   .nav { display: none; }
   .nav.open { display: flex; flex-direction: column; position: absolute; top: 80px; left: 0; right: 0; background: var(--white); }
@@ -669,4 +672,159 @@ img { max-width: 100%; height: auto; }
   .biz-card .biz-more { position: absolute; right: 0; bottom: 0; margin-top: 0; }
   /* 2026-09-04n：移动端展开全文时同样给右下角“了解详情”按钮让位 */
   .biz-card.desc-open .biz-desc { display: block; max-width: calc(100% - 95px); }
+}
+
+/* ============ 侧边栏（全站统一，由 assets/site-sidebar.js 渲染） ============ */
+/* 2026-11-02：各容器页原内联的 .page-side/.news-sidebar/.party-sidebar/.hr-side/.detail-side 样式并入此处，保证全站一致 */
+.page-side,
+.news-sidebar,
+.party-sidebar,
+.hr-side,
+.detail-side {
+  width: 14%;
+  min-width: 160px;
+  flex-shrink: 0;
+  align-self: flex-start;
+  position: sticky;
+  top: 100px;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 2% 1.5%;
+  font-size: clamp(14px, 1.2vw, 17px);
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+.page-side h4, .news-sidebar h4, .party-sidebar h4, .hr-side h4, .detail-side h4 {
+  font-size: clamp(16px, 1.5vw, 20px);
+  color: var(--primary);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--primary);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.page-side a, .news-sidebar a, .party-sidebar a, .hr-side a, .detail-side a {
+  display: block;
+  padding: clamp(8px, 0.8vw, 12px);
+  margin-bottom: 4px;
+  color: var(--text);
+  text-decoration: none;
+  text-align: left;
+  line-height: 1.4;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  transition: all 0.2s;
+}
+.page-side a:hover, .news-sidebar a:hover, .party-sidebar a:hover, .hr-side a:hover, .detail-side a:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+.page-side a.active, .news-sidebar a.active, .party-sidebar a.active, .hr-side a.active, .detail-side a.active {
+  background: var(--primary);
+  color: var(--white);
+  font-weight: 600;
+}
+/* 二级栏目作为分组标题、三级栏目缩进（同官网「科技创新」侧栏） */
+.page-side a.side-group, .news-sidebar a.side-group, .party-sidebar a.side-group, .hr-side a.side-group, .detail-side a.side-group {
+  margin-top: 10px;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-weight: 700;
+}
+.page-side a.side-group-on, .news-sidebar a.side-group-on, .party-sidebar a.side-group-on, .hr-side a.side-group-on, .detail-side a.side-group-on {
+  box-shadow: inset 3px 0 0 var(--primary);
+}
+.page-side a.side-sub, .news-sidebar a.side-sub, .party-sidebar a.side-sub, .hr-side a.side-sub, .detail-side a.side-sub {
+  padding-left: 26px;
+  font-size: 14px;
+  color: var(--text-light);
+}
+.page-side a.side-sub.active, .news-sidebar a.side-sub.active, .party-sidebar a.side-sub.active, .hr-side a.side-sub.active, .detail-side a.side-sub.active {
+  background: var(--primary);
+  color: var(--white);
+}
+@media (max-width: 1200px) {
+  .page-side, .news-sidebar, .party-sidebar, .hr-side, .detail-side { display: none; }
+}
+
+/* ============ 首页「全球布局」板块（#biz-online）：单张地图整幅显示 ============ */
+/* 2026-11-02：该板块只放一张地图，改为按原图比例自适应，去掉 cover 裁切、底部压暗渐变与固定最小高度 */
+#biz-online .biz-cards { min-height: 0; }
+#biz-online .biz-card { min-height: 0; padding: 0; justify-content: flex-start; background: #fff; }
+#biz-online .biz-card::after { display: none; }
+#biz-online .biz-card .biz-bg { position: static; background-size: contain; }
+#biz-online .biz-card:hover .biz-bg { transform: none; }
+
+/* ============ 画册图片栅格（装备实力 / 成果证书） ============ */
+/* 2026-11-03：等比显示、不裁切不拉伸；图注取自画册原图注 */
+.page-content .photo-grid, .detail-main .photo-grid, .article-content .photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin: 18px 0 8px;
+}
+.page-content .photo-grid figure, .detail-main .photo-grid figure, .article-content .photo-grid figure {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.page-content .photo-grid img, .detail-main .photo-grid img, .article-content .photo-grid img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+  background: #f2f5fa;
+}
+.page-content .photo-grid figcaption, .detail-main .photo-grid figcaption, .article-content .photo-grid figcaption {
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.page-content .cert-grid, .detail-main .cert-grid, .article-content .cert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 260px));
+  gap: 18px;
+  margin: 16px 0 6px;
+}
+.page-content .cert-grid figure, .detail-main .cert-grid figure, .article-content .cert-grid figure {
+  margin: 0;
+  padding: 0;
+  background: #f2f5fa;
+  border: 1px solid var(--border);
+}
+.page-content .cert-grid img, .detail-main .cert-grid img, .article-content .cert-grid img {
+  width: auto;
+  max-width: 100%;
+  max-height: 230px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+.page-content .cert-grid figcaption, .detail-main .cert-grid figcaption, .article-content .cert-grid figcaption {
+  padding: 8px 10px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  background: #fff;
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 900px) {
+  .page-content .photo-grid, .detail-main .photo-grid, .article-content .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page-content .cert-grid, .detail-main .cert-grid, .article-content .cert-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .page-content .photo-grid, .detail-main .photo-grid, .article-content .photo-grid { grid-template-columns: 1fr; }
 }

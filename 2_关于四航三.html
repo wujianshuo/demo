@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0063)http://10.7.54.106:18120/sites/shj/page.html?cat=about-overview -->
 <html lang="zh-CN">
 
 <head>
@@ -9,6 +8,11 @@
     <title>公司概况 - 中交第四航务工程局有限公司</title>
     <link rel="icon" href="./1_首页_files/logo.png">
     <link rel="stylesheet" href="./2_关于四航三_files/main.css">
+    <script src='./assets/site-data.js'></script>
+    <script src='./assets/mock-fetch.js'></script>
+    <script src="./assets/site-nav.js"></script>
+    <script src="./assets/site-sidebar.js"></script>
+    <script src='./assets/column-gallery.js'></script>
     <style>
         .page-outer {
             width: 1350px;
@@ -18,61 +22,6 @@
             gap: 2%;
             align-items: flex-start;
             padding: 32px 0;
-        }
-
-        /* 2026-09-10：侧边栏统一样式（14% ≈182px，全站一致） */
-
-        .page-side {
-            width: 14%;
-            min-width: 160px;
-            flex-shrink: 0;
-            position: sticky;
-            top: 100px;
-            background: #fff;
-            padding: 2% 1.5%;
-            font-size: clamp(14px, 1.2vw, 17px);
-            border: 1px solid var(--border);
-            border-radius: 0;
-            box-sizing: border-box;
-        }
-
-        .page-side h4 {
-            font-size: clamp(16px, 1.5vw, 20px);
-            color: var(--primary);
-            margin-bottom: 14px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--primary);
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .page-side a {
-            display: block;
-            padding: clamp(8px, 0.8vw, 12px);
-            color: var(--text);
-            text-decoration: none;
-            border-radius: 0;
-            transition: all 0.2s;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            white-space: normal;
-            text-align: left;
-            margin-bottom: 4px;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
-            line-height: 1.4;
-        }
-
-        .page-side a:hover {
-            background: var(--primary-light);
-            color: var(--primary);
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-        }
-
-        .page-side a.active {
-            background: var(--primary);
-            color: #fff;
-            font-weight: 600;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
 
         .page-main {
@@ -102,6 +51,20 @@
             overflow-wrap: break-word;
         }
 
+        .page-content .sub-title {
+            margin: 28px 0 14px;
+            padding-left: 10px;
+            border-left: 4px solid var(--primary);
+            font-size: 18px;
+            font-weight: 600;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        .page-content > p > strong {
+            color: #222;
+        }
+
         .page-content img {
             max-width: 100%;
             height: auto;
@@ -120,8 +83,8 @@
         .page-content .resizable-media-wrapper img,
         .page-content .resizable-media-wrapper video {
             width: 100% !important;
-            height: 100% !important;
-            object-fit: fill;
+            height: auto !important;
+            object-fit: contain;
             display: block;
         }
 
@@ -146,12 +109,6 @@
 
         .page-content th {
             background: #f5f5f5;
-        }
-
-        @media (max-width:1200px) {
-            .page-side {
-                display: none;
-            }
         }
 
         @media (max-width:768px) {
@@ -242,7 +199,7 @@
         #site-cat-banner {
             width: 100%;
             max-width: 1350px;
-            height: 260px;
+            height: auto;
             margin: 0 auto;
             overflow: hidden;
             background: #e8f0fe;
@@ -252,14 +209,14 @@
 
         #site-cat-banner img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
             display: block;
         }
 
         #site-cat-banner .scb-ph {
             width: 100%;
-            height: 100%;
+            min-height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -271,7 +228,7 @@
 
         @media (max-width:900px) {
             #site-cat-banner {
-                height: 180px;
+                height: auto;
             }
             #site-cat-banner .scb-ph {
                 font-size: 16px;
@@ -280,7 +237,7 @@
 
         @media (max-width:768px) {
             #site-cat-banner {
-                height: 140px;
+                height: auto;
             }
         }
     </style>
@@ -298,164 +255,11 @@
         <img src="./1_首页_files/logo.png" alt="中交四航局第三工程有限公司" onerror="this.style.display=&#39;none&#39;">
       </a>
                 <button class="mobile-toggle">☰</button>
-                <ul class="nav" id="main-nav">
-                    <li>
-                        <a href="./1_首页.html">首页</a>
-                    </li>
-
-                    <li class="active">
-                        <a href="./2_关于四航三.html?cat=about-overview" style="color: var(--primary); font-weight: 700;">关于四航三</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="./2_关于四航三.html?cat=about-overview">公司概况</a>
-                            </li>
-
-                            <li>
-                                <a href="./2_关于四航三.html?cat=about-history">历史传承</a>
-                            </li>
-
-                            <li>
-                                <a href="./2_关于四航三.html?cat=about-structure">组织架构</a>
-                            </li>
-
-                            <li>
-                                <a href="./2_关于四航三.html?cat=about-online">全球分布</a>
-                            </li>
-
-                            <li>
-                                <a href="./2_关于四航三.html?cat=about-layout">经营布局</a>
-                            </li>
-
-                            <li>
-                                <a href="./2_关于四航三.html?cat=about-honor">企业荣誉</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="./3_新闻中心.html">新闻中心</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="./3_新闻中心.html?cat=news-yaowen">公司要闻</a>
-                            </li>
-                            <li>
-                                <a href="./3_新闻中心.html?cat=news-media">媒体聚焦</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="./4_公司业务.html">公司业务</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-port">港口及航运设施工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-road">公路工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-railway">铁路工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-rail">城市轨道交通工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-admin">市政工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-bridge">隧道和桥梁工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-ship">水利、船闸、船坞工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-house">房屋建筑工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-ecology">生态保护工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-river">河湖治理工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-utility">综合管廊工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-wind">海外风能发电工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-port_overseas">海外港口及航运设施工程</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="./5_党的建设.html">党的建设</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="./5_党的建设.html?cat=party-news">综合动态</a>
-                            </li>
-                            <li>
-                                <a href="./5_党的建设.html?cat=party-brand">党建品牌</a>
-                            </li>
-                            <li>
-                                <a href="./5_党的建设.html?cat=party-union">工团工作</a>
-                            </li>
-                            <li>
-                                <a href="./5_党的建设.html?cat=party-report">信访举报</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="./6_科技创新.html">科技创新</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="./6_科技创新.html?cat=tech-dynamic">科技动态</a>
-                            </li>
-                            <li>
-                                <a href="./6_科技创新.html?cat=tech-results">科技成果</a>
-                            </li>
-                            <li>
-                                <a href="./6_科技创新.html?cat=tech-equipment">装备研发</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="./7_人力资源.html">人力资源</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="./7_人力资源.html?cat=hr-expert">企业专家</a>
-                            </li>
-                            <li>
-                                <a href="./7_人力资源.html?cat=hr-info">招聘信息</a>
-                            </li>
-                            <li>
-                                <a href="./7_人力资源.html?cat=hr-team">人才队伍结构</a>
-                            </li>
-                            <li>
-                                <a href="./7_人力资源.html?cat=hr-post">校招职位管理</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="./8_品牌文化.html">品牌文化</a>
-                        <ul class="dropdown">
-                            <li><a href="/8_品牌文化.html?cat=corporate-culture">品牌文化</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-                <!-- <div class="lang-switch">
-      <a href="http://10.7.54.106:18120/sites/shj/page.html" class="active">中</a>
-      <a href="http://10.7.54.106:18120/sites/en/page.html">EN</a>
-    </div> -->
+                <ul class="nav" id="main-nav"></ul>
             </div>
     </header>
     <div id="site-cat-banner" style="display: block;">
-        <img src="./2_关于四航三_files/1_1789887509334280000.jpg" alt="关于四航">
+        <img src="./4_公司业务_files/1-3.jpg" alt="关于四航">
     </div>
 
     <!-- 导航栏结束 -->
@@ -464,24 +268,11 @@
     <!-- 侧边栏 -->
 
     <div class="page-outer">
-        <aside class="page-side" id="page-side">
-            <h4>关于四航三</h4>
-            <a href="./2_关于四航三.html?cat=about-overview" class=" active">公司概况</a>
-            <a href="./2_关于四航三.html?cat=about-history" class="">历史传承</a>
-            <a href="./2_关于四航三.html?cat=about-structure" class="">组织架构</a>
-            <a href="./2_关于四航三.html?cat=about-online" class="">全球分布</a>
-            <a href="./2_关于四航三.html?cat=about-layout" class="">经营布局</a>
-            <a href="./2_关于四航三.html?cat=about-honor" class="">企业荣誉</a>
-        </aside>
+        <aside class="page-side" id="page-side"><h4>关于四航三</h4><a class="active" href="./2_关于四航三.html?cat=about-overview">公司概况</a><a href="./2_关于四航三.html?cat=about-history">历史传承</a><a href="./2_关于四航三.html?cat=about-structure">组织架构</a><a href="./2_关于四航三.html?cat=about-online">全球分布</a><a href="./2_关于四航三.html?cat=about-layout">经营布局</a><a href="./2_关于四航三.html?cat=about-honor">企业荣誉</a></aside>
         <div class="page-main">
             <h1 id="page-title">公司概况</h1>
             <div class="page-content" id="page-content">
-                <p>
-                    回复环境科技 根据计划环境哈哈好看
-                </p>
-                <div class="resizable-media-wrapper" data-width="100%" style="display: block; overflow: hidden; max-width: 100%; min-width: 40px; min-height: 20px; width: 100%; margin: 12px auto;">
-                    <img src="./2_关于四航三_files/cat20181106095223_1789611037336865189.jpg" alt="cat20181106095223.jpg" title="" style="width: 100%; height: 100%; object-fit: fill; display: block;">
-                </div>
+            </div>
             </div>
         </div>
     </div>
@@ -550,44 +341,13 @@
 
                     // 渲染富文本内容
                     var pageBox = document.getElementById('page-content');
-                    pageBox.innerHTML = pageCat.content || '';
+                    var ownArts = window.columnOwnArticles ? window.columnOwnArticles(pageCat.id) : [];
+                    var galleryHtml = ownArts.length && window.columnGalleryHtml ? window.columnGalleryHtml(ownArts, pageCat) : '';
+                    // 正文在上、项目列表在下，两者都显示
+                    pageBox.innerHTML = (pageCat.content || '') + galleryHtml;
                     normalizeMedia(pageBox);
 
-                    // 侧边栏
-                    var side = document.getElementById('page-side');
-                    var parentId = pageCat.parent_id || pageCat.id;
-                    var parentCat = cats.find(function(c) {
-                        return c.id === parentId;
-                    });
-                    if (!parentCat) parentCat = pageCat;
-                    var siblings = cats.filter(function(c) {
-                        return c.parent_id === parentId;
-                    });
-                    siblings.sort(function(a, b) {
-                        return (a.sort_order || 0) - (b.sort_order || 0);
-                    });
-                    var html = '<h4>' + parentCat.name + '</h4>';
-                    siblings.forEach(function(s) {
-                        var isActive = s.id === pageCat.id ? ' active' : '';
-                        var href = '#';
-                        if (s.page_url) {
-                            href = s.page_url;
-                        } else if (s.nav_type === 'LINK' && s.link_url) {
-                            href = s.link_url;
-                        } else if (s.nav_type === 'DYNAMIC') {
-                            href = 'dynamic.html?cat=' + encodeURIComponent(s.slug);
-                        } else if (s.nav_type === 'PAGE') {
-                            href = 'page.html?cat=' + encodeURIComponent(s.slug);
-                        } else if (s.name === '品牌文化') {
-                            href = 'lmxq.html?cat=' + encodeURIComponent((cats.find(function(x) {
-                                return x.name === '品牌理念';
-                            }) || s).slug);
-                        } else {
-                            href = 'lmxq.html?cat=' + encodeURIComponent(s.slug);
-                        }
-                        html += '<a href="' + href + '" class="' + isActive + '">' + s.name + '</a>';
-                    });
-                    side.innerHTML = html;
+                    // 侧边栏：由 assets/site-sidebar.js 统一渲染
                 });
         })();
     </script>
@@ -598,12 +358,12 @@
                 <h4 style="color:#fff;margin-bottom:12px;font-size:16px;">快速链接</h4>
                 <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;font-size:15px;" class="footer-links">
                     <li>
-                        <a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交四航局">中交第四航务工程局有限公司
+                        <a style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交四航局">中交第四航务工程局有限公司
 
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交集团">中国交通建设集团有限公司
+                        <a style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交集团">中国交通建设集团有限公司
 
                         </a>
                     </li>
@@ -611,13 +371,13 @@
             </div>
 
             <div style="flex:34;min-width:0;" id="footer-contact-wrap">
-                <h4 style="color:#fff;margin-bottom:12px;font-size:16px;">企业联系方式</h4>
-                <p style="line-height: 1.8; margin: 0px; font-size: 15px; white-space: pre-wrap;" id="footer-contact">
-            地址：湛江市开发区乐山路23号恒兴大厦19楼 
-            邮编：524022
-            电话：86-759-3613137
-            技术支持：中交四航局第三工程有限公司信息中心
-                </p>
+                <h4 style="color:#fff;margin-bottom:8px;font-size:16px;">企业联系方式</h4>
+                <p style="line-height: 1.8; margin: 0px; font-size: 15px; white-space: pre-wrap;" id="footer-contact">地址：湛江市开发区乐山路23号恒兴大厦19楼-20楼
+邮编：524022
+电话：0759-3613137
+传真：0759-3613307
+邮箱：d001@cccc4.com
+技术支持：中交四航局第三工程有限公司</p>
             </div>
         </div>
         <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.4);font-size:13px;display:flex;justify-content:space-between;align-items:center;">

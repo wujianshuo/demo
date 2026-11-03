@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./7_人力资源_files/main.css">
     <script src="./assets/site-data.js"></script>
     <script src="./assets/mock-fetch.js"></script>
+    <script src="./assets/site-nav.js"></script>
+    <script src="./assets/site-sidebar.js"></script>
     <style>
         .cat-header {
             text-align: left;
@@ -50,62 +52,6 @@
             gap: 2%;
             align-items: flex-start;
             padding: 24px 0 48px;
-        }
-
-        /* 2026-09-10：侧边栏统一样式（14% ≈182px，全站一致）；margin-top:77px 为人力资源管理页顶部对齐补偿，保留 */
-
-        .hr-side {
-            width: 14%;
-            min-width: 160px;
-            flex-shrink: 0;
-            position: sticky;
-            top: 100px;
-            background: #fff;
-            padding: 2% 1.5%;
-            font-size: clamp(14px, 1.2vw, 17px);
-            border: 1px solid var(--border);
-            border-radius: 0;
-            box-sizing: border-box;
-            margin-top: 77px;
-        }
-
-        .hr-side h4 {
-            font-size: clamp(16px, 1.5vw, 20px);
-            color: var(--primary);
-            margin-bottom: 14px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--primary);
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .hr-side a {
-            display: block;
-            padding: clamp(8px, 0.8vw, 12px);
-            color: var(--text);
-            text-decoration: none;
-            border-radius: 0;
-            transition: all 0.2s;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            white-space: normal;
-            text-align: left;
-            margin-bottom: 4px;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
-            line-height: 1.4;
-        }
-
-        .hr-side a:hover {
-            background: var(--primary-light);
-            color: var(--primary);
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-        }
-
-        .hr-side a.active {
-            background: var(--primary);
-            color: #fff;
-            font-weight: 600;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
 
         /* main + deco 紧密排列 wrapper */
@@ -291,12 +237,6 @@
             display: block;
         }
 
-        @media (max-width:1200px) {
-            .hr-side {
-                display: none;
-            }
-        }
-
         @media (max-width:900px) {
             .hr-content-row {
                 flex-direction: column;
@@ -323,6 +263,78 @@
                 width: 96%;
             }
         }
+        /* 企业专家照片墙（对标 sh3.cccc4.com 人力资源 - 企业专家） */
+
+        .expert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .expert-card {
+            display: block;
+            width: 180px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            color: inherit;
+            text-decoration: none;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+
+        .expert-card:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-2px);
+        }
+
+        .expert-card img {
+            display: block;
+            width: 100%;
+            height: 240px;
+            object-fit: contain;
+            
+            background: var(--bg);
+        }
+
+        .expert-noimg {
+            height: 240px;
+            background: var(--bg);
+        }
+
+        .expert-name {
+            display: block;
+            padding: 12px 8px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            color: var(--text);
+        }
+
+        /* 栏目文章列表（人才队伍结构等） */
+
+        .hr-list a {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 14px 2px;
+            border-bottom: 1px dashed var(--border);
+            font-size: 15px;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .hr-list a:hover {
+            color: var(--primary);
+        }
+
+        .hr-list .hr-item-date {
+            flex-shrink: 0;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
     </style>
     <style>
         /* 2026-09-15：非首页统一为新闻中心页的扁平外观（页底浅灰 + 面板去边框/去阴影 + 内容区与顶部大图同宽） */
@@ -400,7 +412,7 @@
         #site-cat-banner {
             width: 100%;
             max-width: 1350px;
-            height: 260px;
+            height: auto;
             margin: 0 auto;
             overflow: hidden;
             background: #e8f0fe;
@@ -410,14 +422,14 @@
 
         #site-cat-banner img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
             display: block;
         }
 
         #site-cat-banner .scb-ph {
             width: 100%;
-            height: 100%;
+            min-height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -429,7 +441,7 @@
 
         @media (max-width:900px) {
             #site-cat-banner {
-                height: 180px;
+                height: auto;
             }
             #site-cat-banner .scb-ph {
                 font-size: 16px;
@@ -438,7 +450,7 @@
 
         @media (max-width:768px) {
             #site-cat-banner {
-                height: 140px;
+                height: auto;
             }
         }
     </style>
@@ -458,165 +470,11 @@
           <img src="./1_首页_files/logo.png" alt="中交四航局第三工程有限公司" onerror="this.style.display=&#39;none&#39;">
         </a>
                     <button class="mobile-toggle">☰</button>
-                    <ul class="nav" id="main-nav">
-                        <li>
-                            <a href="./1_首页.html">首页</a>
-                        </li>
-
-                        <li>
-                            <a href="./2_关于四航三.html">关于四航三</a>
-                            <ul class="dropdown">
-                                <li>
-                                    <a href="./2_关于四航三.html?cat=about-overview">公司概况</a>
-                                </li>
-
-                                <li>
-                                    <a href="./2_关于四航三.html?cat=about-history">历史传承</a>
-                                </li>
-
-                                <li>
-                                    <a href="./2_关于四航三.html?cat=about-structure">组织架构</a>
-                                </li>
-
-                                <li>
-                                    <a href="./2_关于四航三.html?cat=about-online">全球分布</a>
-                                </li>
-
-                                <li>
-                                    <a href="./2_关于四航三.html?cat=about-layout">经营布局</a>
-                                </li>
-
-                                <li>
-                                    <a href="./2_关于四航三.html?cat=about-honor">企业荣誉</a>
-                                </li>
-
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="./3_新闻中心.html">新闻中心</a>
-                            <ul class="dropdown">
-                                <li>
-                                    <a href="./3_新闻中心.html?cat=news-yaowen">公司要闻</a>
-                                </li>
-                                <li>
-                                    <a href="./3_新闻中心.html?cat=news-media">媒体聚焦</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="./4_公司业务.html">公司业务</a>
-                            <ul class="dropdown">
-                                <li>
-                                    <a href="./4_公司业务.html?cat=business-port">港口及航运设施工程</a>
-                                </li>
-                                <li>
-                                    <a href="./4_公司业务.html?cat=business-road">公路工程</a>
-                                </li>
-                                <li>
-                                    <a href="./4_公司业务.html?cat=business-railway">铁路工程</a>
-                                </li>
-                                <li>
-                                    <a href="./4_公司业务.html?cat=business-rail">城市轨道交通工程</a>
-                                </li>
-                                <li>
-                                    <a href="./4_公司业务.html?cat=business-admin">市政工程</a>
-                                </li>
-                                <li>
-                                    <a href="./4_公司业务.html?cat=business-cat-bridge">隧道和桥梁工程</a>
-                                </li>
-                                <li>
-                                    <a href="./4_公司业务.html?cat=business-cat-ship">水利、船闸、船坞工程</a>
-                                </li>
-                                <li>
-                                    <a href="./4_公司业务.html?cat=business-cat-house">房屋建筑工程</a>
-                                </li>
-                                <li>
-                                    <a href="./4_公司业务.html?cat=business-cat-ecology">生态保护工程</a>
-                                </li>
-                                <li>
-                                    <a href="./4_公司业务.html?cat=business-cat-river">河湖治理工程</a>
-                                </li>
-                                <li>
-                                    <a href="./4_公司业务.html?cat=business-cat-utility">综合管廊工程</a>
-                                </li>
-                                <li>
-                                    <a href="./4_公司业务.html?cat=business-cat-wind">海外风能发电工程</a>
-                                </li>
-                                <li>
-                                    <a href="./4_公司业务.html?cat=business-cat-port_overseas">海外港口及航运设施工程</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="./5_党的建设.html">党的建设</a>
-                            <ul class="dropdown">
-                                <li>
-                                    <a href="./5_党的建设.html?cat=party-news">综合动态</a>
-                                </li>
-                                <li>
-                                    <a href="./5_党的建设.html?cat=party-brand">党建品牌</a>
-                                </li>
-                                <li>
-                                    <a href="./5_党的建设.html?cat=party-union">工团工作</a>
-                                </li>
-                                <li>
-                                    <a href="./5_党的建设.html?cat=party-report">信访举报</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="./6_科技创新.html">科技创新</a>
-                            <ul class="dropdown">
-                                <li>
-                                    <a href="./6_科技创新.html?cat=tech-dynamic">科技动态</a>
-                                </li>
-                                <li>
-                                    <a href="./6_科技创新.html?cat=tech-results">科技成果</a>
-                                </li>
-                                <li>
-                                    <a href="./6_科技创新.html?cat=tech-equipment">装备研发</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="active">
-                            <a href="./7_人力资源.html" style="color: var(--primary); font-weight: 700;">人力资源</a>
-                            <ul class="dropdown">
-                                <li>
-                                    <a href="./7_人力资源.html?cat=hr-expert">企业专家</a>
-                                </li>
-                                <li>
-                                    <a href="./7_人力资源.html?cat=hr-info">招聘信息</a>
-                                </li>
-                                <li>
-                                    <a href="./7_人力资源.html?cat=hr-team">人才队伍结构</a>
-                                </li>
-                                <li>
-                                    <a href="./7_人力资源.html?cat=hr-post">校招职位管理</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="./8_品牌文化.html">品牌文化</a>
-                            <ul class="dropdown">
-                                <li><a href="/8_品牌文化.html?cat=corporate-culture">品牌文化</a></li>
-                            </ul>
-                        </li>
-
-                    </ul>
+                    <ul class="nav" id="main-nav"></ul>
                 </div>
 
 
 
-                <!-- <div class="lang-switch">
-        <a href="./3_新闻中心.html" class="active">中</a>
-        <a href="http://10.7.54.106:18120/sites/en/news.html">EN</a>
-      </div> -->
             </div>
         </header>
         <div id="site-cat-banner" style="display: block;">
@@ -629,13 +487,7 @@
 
         <div class="hr-outer">
             <!-- 左侧边栏 — 独立 -->
-            <aside class="hr-side" id="hr-side">
-                <h4>人力资源</h4>
-                <a href="./7_人力资源.html?cat=hr-expert" class=" active">企业专家</a>
-                <a href="./7_人力资源.html?cat=hr-info" class="">招聘信息</a>
-                <a href="./7_人力资源.html?cat=hr-team" class="">人才队伍结构</a>
-                <a href="./7_人力资源.html?cat=hr-post" class="">校招职位管理</a>
-            </aside>
+            <aside class="hr-side" id="hr-side"><h4>人力资源</h4><a class="active" href="./7_人力资源.html?cat=hr-expert">企业专家</a><a href="./7_人力资源.html?cat=hr-info">招聘信息</a><a href="./7_人力资源.html?cat=hr-team">人才队伍结构</a><a href="https://xiaoyuan.zhaopin.com/company/KA0136739990D90000004000?refcode=4440&amp;srccode=443001">校招职位管理</a></aside>
 
             <!-- 中间整体区域 -->
             <div style="flex:1; min-width:0;">
@@ -644,70 +496,15 @@
                 <div class="cat-header" id="hr-header" style="margin-bottom:24px;">
                     <h2>企业专家</h2>
                     <div class="cat-underline"></div>
-                    <p class="cat-desc" id="hr-desc"></p>
                 </div>
 
-                <!-- 主要任务: tabs + panel + deco -->
+                <!-- 栏目内容：企业专家照片墙 / 文章列表 / 栏目富文本，均由栏目数据驱动渲染 -->
                 <div class="hr-content-row">
                     <div class="hr-main">
-                        <div class="task-tabs" id="task-tabs">
-                            <div class="task-tab active" data-idx="0" onclick="window._hrSwitch(0)">
-                                <div class="tab-top" title="领导人员队伍">领导人员队伍</div>
-                                <div class="tab-sub" title="头雁工程">头雁工程</div>
-                            </div>
-                            <div class="task-tab" data-idx="1" onclick="window._hrSwitch(1)">
-                                <div class="tab-top" title="科技人才队伍">科技人才队伍</div>
-                                <div class="tab-sub" title="鲲鹏工程">鲲鹏工程</div>
-                            </div>
-                            <div class="task-tab" data-idx="2" onclick="window._hrSwitch(2)">
-                                <div class="tab-top" title="经营管理人才队伍">经营管理人才队伍</div>
-                                <div class="tab-sub" title="鹰隼工程">鹰隼工程</div>
-                            </div>
-                            <div class="task-tab" data-idx="3" onclick="window._hrSwitch(3)">
-                                <div class="tab-top" title="海外人才队伍">海外人才队伍</div>
-                                <div class="tab-sub" title="海鸥工程">海鸥工程</div>
-                            </div>
-                            <div class="task-tab" data-idx="4" onclick="window._hrSwitch(4)">
-                                <div class="tab-top" title="党群人才队伍">党群人才队伍</div>
-                                <div class="tab-sub" title="鸿鹄工程">鸿鹄工程</div>
-                            </div>
-                            <div class="task-tab" data-idx="5" onclick="window._hrSwitch(5)">
-                                <div class="tab-top" title="技能人才队伍">技能人才队伍</div>
-                                <div class="tab-sub" title="雨燕工程">雨燕工程</div>
-                            </div>
-                        </div>
                         <div class="task-panel">
-                            <div class="task-content" id="task-content">
-                                <div class="content-body">
-                                    <h3><strong>党管干部原则与市场化选人用人相结合</strong></h3>
-                                    <p><strong>头雁领航 群雁齐飞</strong></p>
-                                    <p>坚持党管干部原则与市场化选人用人相结合，打造政治过硬、具备领导现代化建设能力的领导人员队伍。深入实施"头雁工程"，建立完善领导干部选拔任用、考核评价、监督管理全链条机制。</p>
-                                    <p>加强领导人员政治能力训练和实践锻炼，推动领导干部在改革发展主战场、生产经营第一线、服务群众最前沿经受历练、增长才干。持续优化领导班子结构，大力发现培养选拔优秀年轻干部，统筹做好女干部、少数民族干部和党外干部培养选拔工作。</p>
-                                </div>
-                            </div>
+                            <div class="task-content" id="hr-view"></div>
                         </div>
                     </div>
-                    <div class="task-deco">
-                        <svg class="deco-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="100" cy="100" r="70" fill="none" stroke="#1a56db" stroke-width="2"></circle>
-            <circle cx="100" cy="100" r="50" fill="none" stroke="#1a56db" stroke-width="1.5"></circle>
-            <circle cx="100" cy="100" r="30" fill="#1a56db" opacity="0.3"></circle>
-            <line x1="30" y1="100" x2="170" y2="100" stroke="#1a56db" stroke-width="0.5" opacity="0.5"></line>
-            <line x1="100" y1="30" x2="100" y2="170" stroke="#1a56db" stroke-width="0.5" opacity="0.5"></line>
-            <path d="M70 30 L100 15 L130 30" fill="none" stroke="#1a56db" stroke-width="1.5"></path>
-            <path d="M55 140 Q100 160 145 140" fill="none" stroke="#1a56db" stroke-width="1.5"></path>
-          </svg>
-                    </div>
-                </div>
-
-                <!-- 关键举措1 — 与主要任务宽度一致 -->
-                <div style="padding-top:40px;padding-bottom:48px;">
-                    <div class="cat-header" style="margin-bottom:20px;" id="kj-header">
-                        <h2 id="kj-title">员工发展</h2>
-                        <div class="cat-underline"></div>
-                        <p class="cat-desc" id="kj-desc"></p>
-                    </div>
-                    <div class="banner-section" id="kj-banner"><a href="./7_人力资源.html?cat=hr-info"><img src="./7_人力资源_files/cat20181106095223_1782383323504721056.jpg" alt="员工发展"></a></div>
                 </div>
 
             </div>
@@ -722,12 +519,12 @@
                 <h4 style="color:#fff;margin-bottom:12px;font-size:16px;">快速链接</h4>
                 <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;font-size:15px;" class="footer-links">
                     <li>
-                        <a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交四航局">中交第四航务工程局有限公司
+                        <a style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交四航局">中交第四航务工程局有限公司
 
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交集团">中国交通建设集团有限公司
+                        <a style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交集团">中国交通建设集团有限公司
 
                         </a>
                     </li>
@@ -735,13 +532,13 @@
             </div>
 
             <div style="flex:34;min-width:0;" id="footer-contact-wrap">
-                <h4 style="color:#fff;margin-bottom:12px;font-size:16px;">企业联系方式</h4>
-                <p style="line-height: 1.8; margin: 0px; font-size: 15px; white-space: pre-wrap;" id="footer-contact">
-            地址：湛江市开发区乐山路23号恒兴大厦19楼 
-            邮编：524022
-            电话：86-759-3613137
-            技术支持：中交四航局第三工程有限公司信息中心
-                </p>
+                <h4 style="color:#fff;margin-bottom:8px;font-size:16px;">企业联系方式</h4>
+                <p style="line-height: 1.8; margin: 0px; font-size: 15px; white-space: pre-wrap;" id="footer-contact">地址：湛江市开发区乐山路23号恒兴大厦19楼-20楼
+邮编：524022
+电话：0759-3613137
+传真：0759-3613307
+邮箱：d001@cccc4.com
+技术支持：中交四航局第三工程有限公司</p>
             </div>
         </div>
         <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.4);font-size:13px;display:flex;justify-content:space-between;align-items:center;">
@@ -752,237 +549,91 @@
     <button class="back-top" aria-label="回到顶部">↑</button>
 
     <script>
-        (function loadAll() {
+        (function() {
+            'use strict';
             var siteId = document.body.getAttribute('data-site');
             if (!siteId) return;
+            var EXPERT_CAT_ID = 71;
+            var params = new URLSearchParams(window.location.search);
+            var catSlug = params.get('cat') || '';
+
+            function bySort(a, b) {
+                return (a.sort_order || 0) - (b.sort_order || 0);
+            }
+
+            function findCat(cats, id) {
+                return cats.filter(function(c) {
+                    return c.id === id;
+                })[0] || null;
+            }
+
+            function catHref(c) {
+                if (c.nav_type === 'LINK' && c.link_url) return c.link_url;
+                return c.page_url || './7_人力资源.html?cat=' + encodeURIComponent(c.slug);
+            }
+
+            // 侧边栏：由 assets/site-sidebar.js 统一渲染
+
+            function renderExpertGrid(list) {
+                var html = '<div class="expert-grid">';
+                list.forEach(function(a) {
+                    html += '<a class="expert-card" href="article.html?aid=' + encodeURIComponent(a.hash_id) + '">' +
+                        (a.cover_image ? '<img src="' + a.cover_image + '" alt="' + a.title + '">' : '<div class="expert-noimg"></div>') +
+                        '<span class="expert-name">' + a.title + '</span></a>';
+                });
+                return html + '</div>';
+            }
+
+            function renderArticleList(list) {
+                var html = '<div class="hr-list">';
+                list.forEach(function(a) {
+                    html += '<a href="article.html?aid=' + encodeURIComponent(a.hash_id) + '">' +
+                        '<span class="hr-item-title">' + a.title + '</span>' +
+                        '<span class="hr-item-date">' + (a.published_at || '').substring(0, 10) + '</span></a>';
+                });
+                return html + '</div>';
+            }
+
+            function renderView(view, active, list) {
+                if (list.length) {
+                    view.innerHTML = active.id === EXPERT_CAT_ID ? renderExpertGrid(list) : renderArticleList(list);
+                    return;
+                }
+                if (active.content) {
+                    view.innerHTML = '<div class="content-body">' + active.content + '</div>';
+                    return;
+                }
+                view.innerHTML = '';
+            }
 
             fetch('/api/public/' + siteId + '/categories').then(function(r) {
                 return r.json();
             }).then(function(cats) {
-                // 读取 ?cat= 参数，定位当前人力资源子栏目（默认"企业专家"）
-                var params = new URLSearchParams(window.location.search);
-                var catSlug = params.get('cat') || '';
-                var activeHrCat = catSlug ? cats.find(function(c) {
+                var active = catSlug ? cats.filter(function(c) {
                     return c.slug === catSlug;
-                }) : null;
-                if (!activeHrCat) activeHrCat = cats.find(function(c) {
-                    return c.id === 71;
+                })[0] : null;
+                if (!active) active = findCat(cats, EXPERT_CAT_ID);
+                if (!active) return;
+                var root = active;
+                while (root.parent_id) {
+                    var up = findCat(cats, root.parent_id);
+                    if (!up) break;
+                    root = up;
+                }
+                document.body.setAttribute('data-root-cat-name', root.name);
+                var header = document.getElementById('hr-header');
+                if (header) {
+                    header.innerHTML = '<h2>' + active.name + '</h2><div class="cat-underline"></div>' +
+                        (active.description ? '<p class="cat-desc">' + active.description + '</p>' : '');
+                }
+                document.title = active.name + ' - 中交四航局第三工程有限公司';
+                var view = document.getElementById('hr-view');
+                if (!view) return;
+                return fetch('/api/public/' + siteId + '/articles?category_id=' + active.id + '&page_size=200').then(function(r) {
+                    return r.json();
+                }).then(function(res) {
+                    renderView(view, active, (res && res.data) || res || []);
                 });
-                if (!activeHrCat) return;
-                var hrRootCat = activeHrCat;
-                while (hrRootCat.parent_id) {
-                    var up0 = cats.find(function(c) {
-                        return c.id === hrRootCat.parent_id;
-                    });
-                    if (!up0) break;
-                    hrRootCat = up0;
-                }
-
-                // 非"企业专家"子栏目：直接渲染富文本内容并结束
-                if (activeHrCat.id !== 71) {
-                    var side0 = document.getElementById('hr-side');
-                    if (side0) {
-                        var sibs0 = cats.filter(function(c) {
-                            return c.parent_id === hrRootCat.id;
-                        }).sort(function(a, b) {
-                            return (a.sort_order || 0) - (b.sort_order || 0);
-                        });
-                        var sh0 = '<h4>' + hrRootCat.name + '</h4>';
-                        sibs0.forEach(function(s) {
-                            sh0 += '<a href="' + (s.page_url || ('./7_人力资源.html?cat=' + encodeURIComponent(s.slug))) + '" class="' + (s.id === activeHrCat.id ? 'active' : '') + '">' + s.name + '</a>';
-                        });
-                        side0.innerHTML = sh0;
-                    }
-                    var hh0 = document.getElementById('hr-header');
-                    if (hh0) {
-                        hh0.innerHTML = '<h2>' + activeHrCat.name + '</h2><div class="cat-underline"></div>' +
-                            (activeHrCat.description ? '<p class="cat-desc">' + activeHrCat.description + '</p>' : '');
-                    }
-                    var row0 = document.querySelector('.hr-content-row');
-                    if (row0) {
-                        row0.innerHTML = '<div class="hr-main" style="flex:1;"><div class="task-panel"><div class="task-content"><div class="content-body">' +
-                            (activeHrCat.content || '<p>内容建设中，敬请期待。</p>') + '</div></div></div></div>';
-                    }
-                    var kjHead0 = document.getElementById('kj-header');
-                    var kjWrap0 = kjHead0 ? kjHead0.parentNode : null;
-                    if (kjWrap0) kjWrap0.style.display = 'none';
-                    return;
-                }
-
-                var taskCat = cats.find(function(c) {
-                    return c.id === 121;
-                });
-                if (!taskCat) return null;
-                // 先获取文章列表（content为空），再并行获取每篇详情
-                return fetch('/api/public/' + siteId + '/articles?category_id=' + taskCat.id + '&page_size=500')
-                    .then(function(r) {
-                        return r.json();
-                    })
-                    .then(function(res) {
-                        var list = (res && res.data) || res || [];
-                        if (!list.length) return {
-                            cats: cats,
-                            taskCat: taskCat,
-                            articles: []
-                        };
-                        // 并行获取每篇文章的详情（包含content）
-                        var detailPromises = list.map(function(a) {
-                            return fetch('/api/public/' + siteId + '/articles/' + a.id)
-                                .then(function(r) {
-                                    return r.json();
-                                })
-                                .catch(function() {
-                                    return a;
-                                }); // 失败回退用列表数据
-                        });
-                        return Promise.all(detailPromises).then(function(details) {
-                            return {
-                                cats: cats,
-                                taskCat: taskCat,
-                                articles: details
-                            };
-                        });
-                    });
-            }).then(function(results) {
-                if (!results) return;
-                var cats = results.cats;
-                var taskCat = results.taskCat;
-                var allArticles = results.articles;
-                if (taskCat && taskCat.description) {
-                    document.getElementById('hr-desc').textContent = taskCat.description;
-                }
-
-                // 侧边栏：固定以顶级栏目（人力资源）为父级，始终展示其二级子栏目
-                var side = document.getElementById('hr-side');
-                if (side && taskCat) {
-                    // 由当前内容栏目向上回溯到顶级栏目
-                    var rootCat = taskCat,
-                        up;
-                    while (rootCat.parent_id) {
-                        up = cats.find(function(c) {
-                            return c.id === rootCat.parent_id;
-                        });
-                        if (!up) break;
-                        rootCat = up;
-                    }
-                    var parentId = rootCat.id || taskCat.parent_id || taskCat.id;
-                    var parentCat = rootCat;
-                    // 当前内容栏目在侧边栏中所属的项（同层祖先），用于高亮
-                    var node = taskCat,
-                        anc;
-                    while (node.parent_id && node.parent_id !== parentId) {
-                        anc = cats.find(function(c) {
-                            return c.id === node.parent_id;
-                        });
-                        if (!anc) break;
-                        node = anc;
-                    }
-                    var activeId = (node.parent_id === parentId) ? node.id : taskCat.id;
-                    var siblings = cats.filter(function(c) {
-                        return c.parent_id === parentId;
-                    });
-                    siblings.sort(function(a, b) {
-                        return (a.sort_order || 0) - (b.sort_order || 0);
-                    });
-                    var sideHtml = '<h4>' + parentCat.name + '</h4>';
-                    siblings.forEach(function(s) {
-                        var isActive = s.id === activeId ? ' active' : '';
-                        var href = '#';
-                        if (s.page_url) {
-                            href = s.page_url;
-                        } else if (s.nav_type === 'LINK' && s.link_url) {
-                            href = s.link_url;
-                        } else if (s.nav_type === 'DYNAMIC') {
-                            href = 'dynamic.html?cat=' + encodeURIComponent(s.slug);
-                        } else if (s.nav_type === 'PAGE') {
-                            href = s.slug + '.html';
-                        } else if (s.name === '品牌文化') {
-                            href = 'lmxq.html?cat=' + encodeURIComponent((cats.find(function(x) {
-                                return x.name === '品牌理念';
-                            }) || s).slug);
-                        } else {
-                            href = 'lmxq.html?cat=' + encodeURIComponent(s.slug);
-                        }
-                        sideHtml += '<a href="' + href + '" class="' + isActive + '">' + s.name + '</a>';
-                    });
-                    side.innerHTML = sideHtml;
-                }
-
-                // 文章 — 排序与后台一致：is_top DESC, sort_order DESC, created_at DESC
-                var taskArticles = [];
-                if (taskCat) {
-                    taskArticles = allArticles;
-                    taskArticles.sort(function(a, b) {
-                        if (a.is_top && !b.is_top) return -1;
-                        if (!a.is_top && b.is_top) return 1;
-                        if ((a.sort_order || 0) !== (b.sort_order || 0)) return (b.sort_order || 0) - (a.sort_order || 0);
-                        return (new Date(b.published_at || b.created_at)) - (new Date(a.published_at || a.created_at));
-                    });
-                }
-
-                var maxTabs = 6;
-                var displayArticles = taskArticles.slice(0, maxTabs);
-
-                if (!displayArticles.length) {
-                    document.getElementById('task-tabs').innerHTML = '';
-                    document.getElementById('task-content').innerHTML = '<div class="task-empty">暂无文章</div>';
-                    return;
-                }
-
-                var tabsHtml = '';
-                displayArticles.forEach(function(a, i) {
-                    var summary = (a.summary || '').slice(0, 20);
-                    tabsHtml += '<div class="task-tab' + (i === 0 ? ' active' : '') + '" data-idx="' + i + '" onclick="window._hrSwitch(' + i + ')">' +
-                        '<div class="tab-top" title="' + (a.summary || '').replace(/"/g, '&quot;') + '">' + (summary || '&nbsp;') + '</div>' +
-                        '<div class="tab-sub" title="' + a.title.replace(/"/g, '&quot;') + '">' + a.title + '</div></div>';
-                });
-                document.getElementById('task-tabs').innerHTML = tabsHtml;
-
-                window._hrArticles = displayArticles;
-
-                window._hrSwitch = function(idx) {
-                    if (idx === window._hrIdx && document.querySelector('.task-tab.active')) return;
-                    window._hrIdx = idx;
-                    var a = window._hrArticles[idx];
-                    var tabs = document.querySelectorAll('.task-tab');
-                    tabs.forEach(function(t, i) {
-                        t.classList.toggle('active', i === idx);
-                    });
-
-                    // 保留原始 HTML 格式，只处理超长截断
-                    var rawContent = a.content || '';
-                    var plainLen = rawContent.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').trim().length;
-                    var contentLong = plainLen > 600;
-                    var displayContent = contentLong ? rawContent + '<p style="color:#999;margin-top:16px;">…内容较长，请点击下方按钮查看完整文章</p>' : rawContent;
-                    var btnHtml = contentLong ? '<a class="more-btn" href="article.html?aid=' + a.hash_id + '">查看详情 →</a>' : '';
-
-                    document.getElementById('task-content').innerHTML =
-                        '<div class="content-body">' + displayContent + '</div>' +
-                        btnHtml;
-                };
-
-                window._hrSwitch(0);
-
-                // ========== 关键举措 Banner ==========
-                var kjCat = cats.find(function(c) {
-                    return c.id === 122;
-                });
-                if (kjCat) {
-                    document.getElementById('kj-title').textContent = kjCat.name;
-                    if (kjCat.description) {
-                        document.getElementById('kj-desc').textContent = kjCat.description;
-                    }
-                    var banner = document.getElementById('kj-banner');
-                    if (banner) {
-                        var kjImg = kjCat.images ? kjCat.images.split(',')[0].trim() : '';
-                        if (kjImg) {
-                            var kjHref = './7_人力资源.html?cat=hr-info';
-                            banner.innerHTML = '<a href="' + kjHref + '"><img src="' + kjImg.trim() + '" alt="' + kjCat.name + '"></a>';
-                        } else {
-                            banner.innerHTML = '<div style="height:650px;display:flex;align-items:center;justify-content:center;background:#e8f0fe;color:#999;font-size:16px;">' + kjCat.name + '</div>';
-                        }
-                    }
-                }
             });
         })();
     </script>

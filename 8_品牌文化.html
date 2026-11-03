@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0066)http://10.7.54.106:18120/sites/shj/lmxq.html?cat=corporate-culture -->
 <html lang="zh-CN">
 
 <head>
@@ -7,8 +6,12 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>品牌文化 - 中交四航局第三工程有限公司</title>
-    <link rel="icon" href="D:\xiaowu\design_work\demo\8_品牌文化.html?cat=corporate-culture">
+    <link rel="icon" href="./1_首页_files/logo.png">
     <link rel="stylesheet" href="./8_品牌文化_files/main.css">
+    <script src='./assets/site-data.js'></script>
+    <script src='./assets/mock-fetch.js'></script>
+    <script src="./assets/site-nav.js"></script>
+    <script src="./assets/site-sidebar.js"></script>
     <style>
         .cat-header {
             text-align: left;
@@ -50,61 +53,6 @@
             padding: 32px 0;
         }
 
-        /* 2026-09-10：侧边栏统一样式（14% ≈182px，全站一致） */
-
-        .detail-side {
-            width: 14%;
-            min-width: 160px;
-            flex-shrink: 0;
-            position: sticky;
-            top: 100px;
-            background: #fff;
-            padding: 2% 1.5%;
-            font-size: clamp(14px, 1.2vw, 17px);
-            border: 1px solid var(--border);
-            border-radius: 0;
-            box-sizing: border-box;
-        }
-
-        .detail-side h4 {
-            font-size: clamp(16px, 1.5vw, 20px);
-            color: var(--primary);
-            margin-bottom: 14px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--primary);
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .detail-side a {
-            display: block;
-            padding: clamp(8px, 0.8vw, 12px);
-            color: var(--text);
-            text-decoration: none;
-            border-radius: 0;
-            transition: all 0.2s;
-            margin-bottom: 4px;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            white-space: normal;
-            text-align: left;
-            line-height: 1.4;
-        }
-
-        .detail-side a:hover {
-            background: var(--primary-light);
-            color: var(--primary);
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-        }
-
-        .detail-side a.active {
-            background: var(--primary);
-            color: #fff;
-            font-weight: 600;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        }
-
         .detail-main {
             flex: 1;
             min-width: 0;
@@ -123,6 +71,20 @@
             margin-bottom: 20px;
             padding-bottom: 12px;
             border-bottom: 2px solid var(--primary);
+        }
+
+        .detail-main .sub-title {
+            margin: 28px 0 14px;
+            padding-left: 10px;
+            border-left: 4px solid var(--primary);
+            font-size: 18px;
+            font-weight: 600;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        .detail-main > p > strong {
+            color: #222;
         }
 
         .detail-item {
@@ -171,12 +133,6 @@
 
         .detail-item .d-body .d-meta span {
             margin-right: 16px;
-        }
-
-        @media (max-width:1200px) {
-            .detail-side {
-                display: none;
-            }
         }
 
         @media (max-width:768px) {
@@ -261,7 +217,7 @@
         #site-cat-banner {
             width: 100%;
             max-width: 1350px;
-            height: 260px;
+            height: auto;
             margin: 0 auto;
             overflow: hidden;
             background: #e8f0fe;
@@ -271,14 +227,14 @@
 
         #site-cat-banner img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
             display: block;
         }
 
         #site-cat-banner .scb-ph {
             width: 100%;
-            height: 100%;
+            min-height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -290,7 +246,7 @@
 
         @media (max-width:900px) {
             #site-cat-banner {
-                height: 180px;
+                height: auto;
             }
             #site-cat-banner .scb-ph {
                 font-size: 16px;
@@ -299,13 +255,13 @@
 
         @media (max-width:768px) {
             #site-cat-banner {
-                height: 140px;
+                height: auto;
             }
         }
     </style>
 </head>
 
-<body data-site="shj">
+<body data-site="shj" data-root-cat-name="品牌文化">
 
     <div class="page-wrap" style="flex:1;">
         <header class="header">
@@ -315,161 +271,12 @@
         <img src="./1_首页_files/logo.png" alt="中交四航局第三工程有限公司" onerror="this.style.display=&#39;none&#39;">
       </a>
                 <button class="mobile-toggle">☰</button>
-                <ul class="nav" id="main-nav">
-                    <li class="active">
-                        <a href="./1_首页.html" style="color: var(--primary); font-weight: 700;">首页</a>
-                    </li>
-
-                    <li>
-                        <a href="./2_关于四航三.html">关于四航三</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="./2_关于四航三.html?cat=about-overview">公司概况</a>
-                            </li>
-
-                            <li>
-                                <a href="./2_关于四航三.html?cat=about-history">历史传承</a>
-                            </li>
-
-                            <li>
-                                <a href="./2_关于四航三.html?cat=about-structure">组织架构</a>
-                            </li>
-
-                            <li>
-                                <a href="./2_关于四航三.html?cat=about-online">全球分布</a>
-                            </li>
-
-                            <li>
-                                <a href="./2_关于四航三.html?cat=about-layout">经营布局</a>
-                            </li>
-
-                            <li>
-                                <a href="./2_关于四航三.html?cat=about-honor">企业荣誉</a>
-                            </li>
-
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="./3_新闻中心.html">新闻中心</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="./3_新闻中心.html?cat=news-yaowen">公司要闻</a>
-                            </li>
-                            <li>
-                                <a href="./3_新闻中心.html?cat=news-media">媒体聚焦</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="./4_公司业务.html">公司业务</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-port">港口及航运设施工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-road">公路工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-railway">铁路工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-rail">城市轨道交通工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-admin">市政工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-bridge">隧道和桥梁工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-ship">水利、船闸、船坞工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-house">房屋建筑工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-ecology">生态保护工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-river">河湖治理工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-utility">综合管廊工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-wind">海外风能发电工程</a>
-                            </li>
-                            <li>
-                                <a href="./4_公司业务.html?cat=business-cat-port_overseas">海外港口及航运设施工程</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="./5_党的建设.html">党的建设</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="./5_党的建设.html?cat=party-news">综合动态</a>
-                            </li>
-                            <li>
-                                <a href="./5_党的建设.html?cat=party-brand">党建品牌</a>
-                            </li>
-                            <li>
-                                <a href="./5_党的建设.html?cat=party-union">工团工作</a>
-                            </li>
-                            <li>
-                                <a href="./5_党的建设.html?cat=party-report">信访举报</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="./6_科技创新.html">科技创新</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="./6_科技创新.html?cat=tech-dynamic">科技动态</a>
-                            </li>
-                            <li>
-                                <a href="./6_科技创新.html?cat=tech-results">科技成果</a>
-                            </li>
-                            <li>
-                                <a href="./6_科技创新.html?cat=tech-equipment">装备研发</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="./7_人力资源.html">人力资源</a>
-                        <ul class="dropdown">
-                            <li>
-                                <a href="./7_人力资源.html?cat=hr-expert">企业专家</a>
-                            </li>
-                            <li>
-                                <a href="./7_人力资源.html?cat=hr-info">招聘信息</a>
-                            </li>
-                            <li>
-                                <a href="./7_人力资源.html?cat=hr-team">人才队伍结构</a>
-                            </li>
-                            <li>
-                                <a href="./7_人力资源.html?cat=hr-post">校招职位管理</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li><a href="./8_品牌文化.html">品牌文化</a>
-                        <ul class="dropdown">
-                            <li><a href="./8_品牌文化.html?cat=cat=about-band">品牌文化</a></li>
-                        </ul>
-                    </li>
-                        
-                    </ul>
+                <ul class="nav" id="main-nav"></ul>
                 </div>
                 
             </div>
         </header>
-        <div id="site-cat-banner" style="display: block;"><img src="./8_品牌文化_files/5_1790040994839622675.jpg" alt="品牌文化"></div>
+        <div id="site-cat-banner" style="display: block;"><img src="./4_公司业务_files/1-6.jpg" alt="品牌文化"></div>
 
         <!-- Grid Mode (no ?cat=) -->
         <div id="zhuanti-grid-mode" style="display: none;">
@@ -480,23 +287,14 @@
                     <p class="cat-desc" id="zhuanti-cat-desc"></p>
                 </div>
                 <div id="zhuanti-grid" style="display:grid;grid-template-columns:repeat(2, 560px);gap:24px;min-height:400px;justify-content:center;"></div>
-                <div id="zhuanti-empty" style="display:none;text-align:center;padding:80px 0;color:#999;font-size:16px;">暂无专题栏目</div>
+                <div id="zhuanti-empty" style="display:none;text-align:center;padding:80px 0;color:#999;font-size:16px;"></div>
                 <div id="zhuanti-pager" style="display:flex;justify-content:center;align-items:center;gap:16px;margin-top:32px;"></div>
             </section>
         </div>
 
         <!-- Detail Mode (with ?cat=) -->
         <div id="zhuanti-detail-mode" style="display: block;">
-            <div class="detail-outer">
-                <aside class="detail-side">
-                    <h4>品牌文化</h4>
-                    <a href="./8_品牌文化.html?cat=corporate-culture" class=" active">品牌文化</a>
-                  </aside>
-                <div class="detail-main">
-                    <h1>品牌文化</h1>
-                    <div style="text-align:center;color:#999;padding:40px;">暂无文章</div>
-                </div>
-            </div>
+            <div class="detail-outer"><aside class="detail-side"><h4 data-title-link="1" title="返回栏目首页" style="cursor: pointer;">品牌文化</h4><a class="active" href="./8_品牌文化.html?cat=corporate-culture">品牌文化</a><a href="./8_品牌文化.html?cat=brand-activities">品牌活动</a><a href="./8_品牌文化.html?cat=social-responsibility">社会责任</a></aside><div class="detail-main"><h1>品牌文化</h1><div style="flex:1;line-height:2;font-size:16px;color:#333;"><img src="./8_品牌文化_files/品牌文化.jpg" alt="品牌文化" style="width:100%;height:auto;display:block;"></div></div></div>
         </div>
 
         <script>
@@ -505,7 +303,7 @@
                 if (!siteId) return;
                 var params = new URLSearchParams(window.location.search);
                 var catId = parseInt(params.get('catId')) || 0;
-                var catName = params.get('cat') || '';
+                var catName = params.get('cat') || 'corporate-culture';
 
                 function sortArticles(list) {
                     return list.sort(function(a, b) {
@@ -544,37 +342,7 @@
                         var detailCat = results.detailCat;
                         var allArticles = results.articles;
 
-                        var parentCat = cats.find(function(c) {
-                            return c.id === detailCat.parent_id;
-                        }) || detailCat;
-                        var siblings = cats.filter(function(c) {
-                            return c.parent_id === detailCat.parent_id;
-                        }).sort(function(a, b) {
-                            return (a.sort_order || 0) - (b.sort_order || 0);
-                        });
-
-                        // Render sidebar
-                        var sideHtml = '<h4>' + parentCat.name + '</h4>';
-                        siblings.forEach(function(s) {
-                            var active = s.id === detailCat.id ? ' active' : '';
-                            var href = 'lmxq.html?cat=' + encodeURIComponent(s.slug);
-                            if (s.page_url) {
-                                href = s.page_url;
-                            } else if (s.nav_type === 'LINK' && s.link_url) {
-                                href = s.link_url;
-                            } else if (s.nav_type === 'DYNAMIC') {
-                                href = 'dynamic.html?cat=' + encodeURIComponent(s.slug);
-                            } else if (s.nav_type === 'PAGE') {
-                                href = s.slug + '.html';
-                            } else if (parentCat.nav_type === 'DYNAMIC') {
-                                href = 'dynamic.html?cat=' + encodeURIComponent(s.slug);
-                            } else if (s.name === '品牌文化') {
-                                href = 'lmxq.html?cat=' + encodeURIComponent((cats.find(function(x) {
-                                    return x.name === '品牌理念';
-                                }) || s).slug);
-                            }
-                            sideHtml += '<a href="' + href + '" class="' + active + '">' + s.name + '</a>';
-                        });
+                        // 侧边栏：由 assets/site-sidebar.js 统一渲染
 
                         var catArticles = sortArticles(allArticles);
                         var pageSize = 7;
@@ -615,11 +383,12 @@
                                 pagerHtml += '<button onclick="window._zpPage(1)" style="width:40px;height:40px;border:1px solid var(--border);background:#fff;border-radius:6px;cursor:pointer;color:' + (currentPage >= totalPages - 1 ? '#ccc' : 'var(--text)') + '" ' + (currentPage >= totalPages - 1 ? 'disabled' : '') + '><svg width="20" height="20" viewBox="0 0 16 16"><path d="M6 4L10 8L6 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></button></div>';
                             }
                             document.getElementById('zhuanti-detail-mode').innerHTML =
-                                '<div class="detail-outer"><aside class="detail-side">' + sideHtml + '</aside>' +
+                                '<div class="detail-outer"><aside class="detail-side"></aside>' +
                                 '<div class="detail-main"><h1>' + detailCat.name + '</h1>' +
-                                (catArticles.length ? '<div style="flex:1;">' + listHtml + '</div>' + pagerHtml : '<div style="text-align:center;color:#999;padding:40px;">暂无文章</div>') +
+                                (catArticles.length ? '<div style="flex:1;">' + listHtml + '</div>' + pagerHtml : (detailCat.content ? '<div style="flex:1;line-height:2;font-size:16px;color:#333;">' + detailCat.content + '</div>' : '<div style="text-align:center;color:#999;padding:40px;"></div>')) +
                                 '</div></div>';
                             document.getElementById('zhuanti-detail-mode').style.display = 'block';
+window.renderSiteSidebar(document.querySelector('#zhuanti-detail-mode .detail-side'), cats, detailCat);
                         }
 
                         window._zpPage = function(dir) {
@@ -670,8 +439,8 @@
                             if (!img) img = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='350'%3E%3Crect fill='%23e8f0fe' width='600' height='350'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999' font-size='24'%3E" + encodeURIComponent(cat.slug) + "%3C/text%3E%3C/svg%3E";
                             var desc = cat.description || '';
                             html += '<div style="background:#fff;overflow:hidden;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform=\'translateY(-4px)\';this.style.boxShadow=\'none\';" onmouseout="this.style.transform=\'translateY(0)\';this.style.boxShadow=\'none\';">' +
-                                '<a href="lmxq.html?cat=' + encodeURIComponent(cat.slug) + '" style="display:block;text-decoration:none;color:inherit;">' +
-                                '<div style="width:100%;height:350px;overflow:hidden;background:#e8f0fe;"><img src="' + img + '" alt="' + cat.name + '" style="width:100%;height:100%;object-fit:cover;" loading="lazy"></div>' +
+                                '<a href="./8_品牌文化.html?cat=' + encodeURIComponent(cat.slug) + '" style="display:block;text-decoration:none;color:inherit;">' +
+                                '<div style="width:100%;height:350px;overflow:hidden;background:#e8f0fe;"><img src="' + img + '" alt="' + cat.name + '" style="width:100%;height:100%;object-fit:contain;" loading="lazy"></div>' +
                                 '<div style="padding:20px;"><h3 style="font-size:20px;margin-bottom:8px;color:var(--text);">' + cat.name + '</h3>' +
                                 '<p style="font-size:14px;color:#999;line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;">' + desc + '</p></div></a></div>';
                         });
@@ -734,12 +503,12 @@
                 <h4 style="color:#fff;margin-bottom:12px;font-size:16px;">快速链接</h4>
                 <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;font-size:15px;" class="footer-links">
                     <li>
-                        <a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交四航局">中交第四航务工程局有限公司
+                        <a style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交四航局">中交第四航务工程局有限公司
 
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.ccccltd.cn/" target="_blank" style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交集团">中国交通建设集团有限公司
+                        <a style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交集团">中国交通建设集团有限公司
 
                         </a>
                     </li>
@@ -747,13 +516,13 @@
             </div>
 
             <div style="flex:34;min-width:0;" id="footer-contact-wrap">
-                <h4 style="color:#fff;margin-bottom:12px;font-size:16px;">企业联系方式</h4>
-                <p style="line-height: 1.8; margin: 0px; font-size: 15px; white-space: pre-wrap;" id="footer-contact">
-            地址：湛江市开发区乐山路23号恒兴大厦19楼 
-            邮编：524022
-            电话：86-759-3613137
-            技术支持：中交四航局第三工程有限公司信息中心
-                </p>
+                <h4 style="color:#fff;margin-bottom:8px;font-size:16px;">企业联系方式</h4>
+                <p style="line-height: 1.8; margin: 0px; font-size: 15px; white-space: pre-wrap;" id="footer-contact">地址：湛江市开发区乐山路23号恒兴大厦19楼-20楼
+邮编：524022
+电话：0759-3613137
+传真：0759-3613307
+邮箱：d001@cccc4.com
+技术支持：中交四航局第三工程有限公司</p>
             </div>
         </div>
         <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.4);font-size:13px;display:flex;justify-content:space-between;align-items:center;">
@@ -764,10 +533,10 @@
     <button class="back-top" aria-label="回到顶部">↑</button>
 
 
-    <script src="./8_品牌文化_files/nav.js.下载"></script>
     <script src="./8_品牌文化_files/cat-banner.js.下载"></script>
 
 
+    <script src='./assets/app.js'></script>
 </body>
 
 </html>

@@ -9,6 +9,7 @@
     <link rel="icon" href="./1_首页_files/logo.png">
     <link rel="stylesheet" href="./1_首页_files/main.css">
     <script src="./assets/site-data.js"></script>
+    <script src="./assets/site-nav.js"></script>
     <style>
         body {
             background: #f5f6f8;
@@ -68,6 +69,43 @@
             margin: 0 0 16px;
         }
 
+        .article-content .sub-title {
+            margin: 28px 0 12px;
+            padding-left: 10px;
+            border-left: 4px solid var(--primary);
+            font-size: 17px;
+            font-weight: 600;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        .article-content ul {
+            margin: 0 0 16px;
+            padding: 0;
+        }
+
+        .article-content li {
+            list-style: none;
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 8px;
+            font-size: 15px;
+            line-height: 1.9;
+            color: #444;
+        }
+
+        .article-content li::before {
+            content: '';
+            position: absolute;
+            left: 2px;
+            top: 13px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--primary);
+            opacity: 0.65;
+        }
+
         .article-content img {
             max-width: 100%;
             height: auto;
@@ -109,71 +147,7 @@
         <img src="./1_首页_files/logo.png" alt="中交四航局第三工程有限公司" onerror="this.style.display=&#39;none&#39;">
       </a>
                 <button class="mobile-toggle">☰</button>
-                <ul class="nav" id="main-nav">
-                    <li><a href="./1_首页.html">首页</a></li>
-                    <li>
-                        <a href="./2_关于四航三.html?cat=about-overview">关于四航三</a>
-                        <ul class="dropdown">
-                            <li><a href="./2_关于四航三.html?cat=about-overview">公司概况</a></li>
-                            <li><a href="./2_关于四航三.html?cat=about-history">历史传承</a></li>
-                            <li><a href="./2_关于四航三.html?cat=about-structure">组织架构</a></li>
-                            <li><a href="./2_关于四航三.html?cat=about-online">全球分布</a></li>
-                            <li><a href="./2_关于四航三.html?cat=about-layout">经营布局</a></li>
-                            <li><a href="./2_关于四航三.html?cat=about-honor">企业荣誉</a></li>
-                            <li><a href="./2_关于四航三.html?cat=about-band">品牌理念</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="./3_新闻中心.html">新闻中心</a>
-                        <ul class="dropdown">
-                            <li><a href="./3_新闻中心.html?cat=news-yaowen">公司要闻</a></li>
-                            <li><a href="./3_新闻中心.html?cat=news-media">媒体聚焦</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="./4_公司业务.html?cat=business-port">公司业务</a>
-                        <ul class="dropdown">
-                            <li><a href="./4_公司业务.html?cat=business-port">港口及航运设施工程</a></li>
-                            <li><a href="./4_公司业务.html?cat=business-road">公路工程</a></li>
-                            <li><a href="./4_公司业务.html?cat=business-railway">铁路工程</a></li>
-                            <li><a href="./4_公司业务.html?cat=business-rail">城市轨道交通工程</a></li>
-                            <li><a href="./4_公司业务.html?cat=business-admin">市政工程</a></li>
-                            <li><a href="./4_公司业务.html?cat=business-cat-bridge">隧道和桥梁工程</a></li>
-                            <li><a href="./4_公司业务.html?cat=business-cat-ship">水利、船闸、船坞工程</a></li>
-                            <li><a href="./4_公司业务.html?cat=business-cat-house">房屋建筑工程</a></li>
-                            <li><a href="./4_公司业务.html?cat=business-cat-ecology">生态保护工程</a></li>
-                            <li><a href="./4_公司业务.html?cat=business-cat-river">河湖治理工程</a></li>
-                            <li><a href="./4_公司业务.html?cat=business-cat-utility">综合管廊工程</a></li>
-                            <li><a href="./4_公司业务.html?cat=business-cat-wind">海外风能发电工程</a></li>
-                            <li><a href="./4_公司业务.html?cat=business-cat-port_overseas">海外港口及航运设施工程</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="./5_党的建设.html">党的建设</a>
-                        <ul class="dropdown">
-                            <li><a href="./5_党的建设.html?cat=party-news">综合动态</a></li>
-                            <li><a href="./5_党的建设.html?cat=party-brand">党建品牌</a></li>
-                            <li><a href="./5_党的建设.html?cat=party-union">工团工作</a></li>
-                            <li><a href="./5_党的建设.html?cat=party-report">信访举报</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="./6_科技创新.html">科技创新</a>
-                        <ul class="dropdown">
-                            <li><a href="./6_科技创新.html?cat=tech-dynamic">科技动态</a></li>
-                            <li><a href="./6_科技创新.html?cat=tech-results">科技成果</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="./7_人力资源.html">人力资源</a>
-                        <ul class="dropdown">
-                            <li><a href="./7_人力资源.html?cat=hr-expert">企业专家</a></li>
-                            <li><a href="./7_人力资源.html?cat=hr-info">招聘信息</a></li>
-                            <li><a href="./7_人力资源.html?cat=hr-team">人才队伍结构</a></li>
-                            <li><a href="./7_人力资源.html?cat=hr-post">校招职位管理</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                <ul class="nav" id="main-nav"></ul>
             </div>
         </div>
     </header>
@@ -227,12 +201,9 @@
 
             function buildContent(a) {
                 if (a.content) return a.content;
-                var paras = [];
-                if (a.summary) paras.push('<p>' + a.summary + '</p>');
-                paras.push('<p>中交四航局第三工程有限公司是世界500强企业中国交通建设股份有限公司旗下中交第四航务工程局有限公司的全资子公司，业务涵盖港口及航运设施工程、公路工程、隧道工程、市政工程、桥梁工程、水环境治理工程等多个领域。</p>');
-                paras.push('<p>公司始终坚持"品质立业、诚信履约"的经营理念，深入实施创新驱动发展战略，持续提升工程总承包和全过程管理能力，先后参与建设了一大批国家重点工程，为服务国家重大战略和区域经济社会发展作出了积极贡献。</p>');
-                paras.push('<p>面向未来，公司将锚定高质量发展目标，加快数字化转型和绿色低碳发展，努力建设成为行业领先的综合性工程企业。</p>');
-                return paras.join('');
+                var out = '';
+                if (a.summary) out += '<p>' + a.summary + '</p>';
+                return out;
             }
 
             if (!article) {

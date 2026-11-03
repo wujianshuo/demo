@@ -74,3 +74,51 @@
     window._hrSwitch = window._hrSwitch || function() {};
     window.showMoreLinks = window.showMoreLinks || function() {};
 })();
+/**
+ * 侧边栏栏目标题（h4）：点击进入本栏目容器页（回到栏目首页）
+ * 兼容各容器页静态侧边栏与接口渲染后的侧边栏。
+ */
+(function() {
+    'use strict';
+    var SIDES = ['.page-side', '.news-sidebar', '.party-sidebar', '.hr-side', '.detail-side'];
+
+    function selfPage() {
+        var name = window.location.pathname.split('/').pop();
+        return './' + (name ? decodeURIComponent(name) : '');
+    }
+
+    function bind(h) {
+        if (!h || h.getAttribute('data-title-link')) return;
+        h.setAttribute('data-title-link', '1');
+        h.title = '返回栏目首页';
+        h.style.cursor = 'pointer';
+        h.addEventListener('click', function() {
+            window.location.href = selfPage();
+        });
+    }
+
+    function scan() {
+        var hs = document.querySelectorAll(SIDES.join(" h4,") + " h4");
+        for (var i = 0; i < hs.length; i++) {
+            bind(hs[i]);
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', scan);
+    } else {
+        scan();
+    }
+
+    if ('MutationObserver' in window) {
+        var mo = new MutationObserver(scan);
+        mo.observe(document.documentElement, {
+            childList: true,
+            subtree: true
+        });
+        setTimeout(function() {
+            mo.disconnect();
+        }, 5000);
+    }
+})();
+
