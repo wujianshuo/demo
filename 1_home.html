@@ -11,6 +11,17 @@
     <script src="./assets/site-data.js"></script>
     <script src="./assets/mock-fetch.js"></script>
     <script src="./assets/site-nav.js"></script>
+    <style>
+        /* 2026-11-05 第十九次：新闻中心板块标题居中；要闻列表悬停恢复旧站动效（变金黄 + 字号 15px→19px）。
+           规则必须放在 head：#news-right 的内容由 JS 用 tabsHtml 重写 innerHTML，写在板块里的 style 会被冲掉。 */
+        #news .section-title { text-align: center; }
+        .news-item { transition: color .15s ease, font-size .15s ease; }
+        .news-item:hover { font-size: 19px !important; }
+        .news-item:hover span { color: var(--gold) !important; }
+        .news-item:hover .date { color: var(--gold) !important; font-size: 19px !important; }
+        .news-item:hover .news-dot { background: var(--primary) !important; }
+        .ntab-btn:hover { color: var(--gold) !important; }
+    </style>
 </head>
 
 <body data-site="shj" data-root-cat-name="首页">
@@ -185,14 +196,6 @@
                 </div>
             </div>
             <div style="flex:1;overflow:hidden;display:flex;flex-direction:column;min-width:0;min-height:0;background:#fff;" id="news-right">
-                <style>
-                    /* 2026-11-05：要闻列表悬停只做颜色反馈（原 18px→19px 会改变行高，导致列表抖动）；
-                       金色点缀统一改用 main.css 的 --gold 令牌。 */
-                    .news-item:hover .news-dot { background: var(--primary) !important }
-                    .news-item:hover span { color: var(--gold) !important }
-                    .news-item:hover .date { color: var(--gold) !important }
-                    .ntab-btn:hover { color: var(--gold) !important }
-                </style>
                 <div style="display:flex;justify-content:center;align-items:flex-end;border-bottom:2px solid var(--border);flex-shrink:0;padding:0 20px;">
                     <button class="ntab-btn" data-cat="16" style="border:none;background:none;font-size:25px;font-weight:700;cursor:pointer;color:var(--gold);padding:10px 12px;border-bottom:2px solid var(--gold);margin-bottom:-2px;transition:all 0.2s;" onmouseenter="this.parentNode.parentNode._switch(16)">
           公司要闻

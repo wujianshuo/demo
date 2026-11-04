@@ -1001,7 +1001,7 @@ img { max-width: 100%; height: auto; }
 .party-main img,
 .hr-main img,
 .business-catimg img {
-  max-width: 1054px;
+  max-width: min(1054px, 100%);
   height: auto;
 }
 
@@ -1160,7 +1160,7 @@ body { background: var(--page-bg); }
   box-sizing: border-box;
 }
 
-/* 栏目标题 / 文章大标题：28px 加粗 + 通栏 2px 主色下划线，左对齐 */
+/* 栏目标题 / 文章大标题：28px 加粗 + 通栏 2px 主色下划线，整行居中（2026-11-05 第十九次：原左对齐改居中） */
 .page-main h1,
 .detail-main h1,
 .article-card h1,
@@ -1169,19 +1169,19 @@ body { background: var(--page-bg); }
   font-weight: 700;
   line-height: 1.4;
   color: var(--text);
-  text-align: left;
+  text-align: center;
   margin: 0 0 24px;
   padding-bottom: 16px;
   border-bottom: 2px solid var(--primary);
 }
-.cat-header { text-align: left; margin: 0 0 24px; }
+.cat-header { text-align: center; margin: 0 0 24px; }
 .cat-header .cat-underline { display: none; }
 .cat-header .cat-desc {
   font-size: 15px;
   color: var(--text-muted);
   line-height: 1.8;
   max-width: 700px;
-  margin: 12px 0 0;
+  margin: 12px auto 0;
 }
 
 /* 正文小标题：全站同一规格（原 17px 与 18px 两种写法并存） */
@@ -1269,16 +1269,20 @@ body { background: var(--page-bg); }
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  height: 52px;
+  box-sizing: border-box;
   padding: 14px 0;
   border-bottom: 1px solid var(--border);
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.5;
+  transition: color .18s ease, font-size .18s ease;
   color: var(--text);
   text-decoration: none;
 }
+/* 悬停回到旧站效果：文字变金黄并放大（16px→18px），固定行盒高度避免列表抖动 */
 .hr-list a:hover,
 .news-rows a:hover,
-.party-rows a:hover { color: var(--primary); }
+.party-rows a:hover { color: var(--gold); font-size: 18px; }
 .hr-list a > span:first-child,
 .news-rows a > span:first-child,
 .party-rows a > span:first-child {
@@ -1348,4 +1352,24 @@ body { background: var(--page-bg); }
   .article-card h1,
   .cat-header h2 { font-size: 22px; }
   [class*="-outer"] { width: 96%; }
+}
+
+/* ============ 2026-11-05 第十九次：列表面板与窄屏收口（换行已确认为真实 CRLF） ============ */
+/* 列表面板：与栏目页其他白面板同一口径（32px 40px、直角、净宽 1054） */
+.rows-panel {
+  padding: 32px 40px;
+  background: var(--white);
+  border-radius: 0;
+  box-sizing: border-box;
+}
+/* 窄屏：多列表格与正文大图改为面板内横向滚动 / 等比收缩，避免撑破整页 */
+@media (max-width:900px) {
+  .page-content { overflow-x: auto; }
+}
+@media (max-width:640px) {
+  .rows-panel { padding: 20px; }
+  .news-rows .col-src,
+  .party-rows .col-src { display: none; }
+  .news-rows .col-date,
+  .party-rows .col-date { flex: 0 0 auto; }
 }
