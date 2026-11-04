@@ -186,7 +186,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 1,
         page_url: './4_business.html?cat=business-port',
-        images: './4_business_files/1-7.jpg',
+        images: './4_business_files/bw-02.jpg',
         description: '大型深水码头、航道整治、疏浚吹填、岛隧工程等港口及航运设施建设'
     },
     {
@@ -197,7 +197,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 2,
         page_url: './4_business.html?cat=business-road',
-        images: './4_business_files/1-8.jpg',
+        images: './4_business_files/bw-13.jpg',
         description: '高速公路、国省道、市政道路等公路工程建设'
     },
     {
@@ -208,7 +208,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 3,
         page_url: './4_business.html?cat=business-railway',
-        images: './4_business_files/1-8.jpg',
+        images: './4_business_files/bw-19.jpg',
         description: '高速铁路、普速铁路及站场工程建设'
     },
     {
@@ -219,7 +219,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 4,
         page_url: './4_business.html?cat=business-rail',
-        images: './4_business_files/1-8.jpg',
+        images: './4_business_files/bw-22.jpg',
         description: '城市地铁、轻轨等轨道交通工程建设'
     },
     {
@@ -230,7 +230,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 5,
         page_url: './4_business.html?cat=business-admin',
-        images: './4_business_files/1-3.jpg',
+        images: './4_business_files/bw-24.jpg',
         description: '城市道路、桥梁、管网等市政基础设施建设'
     },
     {
@@ -241,7 +241,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 6,
         page_url: './4_business.html?cat=business-cat-bridge',
-        images: './4_business_files/1-9.jpg',
+        images: './4_business_files/bw-28.jpg',
         description: '跨海大桥、长大隧道、沉管隧道等桥隧工程建设'
     },
     {
@@ -252,7 +252,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 7,
         page_url: './4_business.html?cat=business-cat-ship',
-        images: './4_business_files/1-7.jpg',
+        images: './4_business_files/bw-35.jpg',
         description: '水利枢纽、船闸、船坞等水工建筑物建设'
     },
     {
@@ -263,7 +263,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 8,
         page_url: './4_business.html?cat=business-cat-house',
-        images: './4_business_files/1-8.jpg',
+        images: './4_business_files/bw-41.jpg',
         description: '工业与民用建筑、城市更新等房建工程'
     },
     {
@@ -274,7 +274,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 9,
         page_url: './4_business.html?cat=business-cat-ecology',
-        images: './4_business_files/1-9.jpg',
+        images: './4_business_files/bw-46.jpg',
         description: '生态修复、环境治理等绿色工程'
     },
     {
@@ -285,7 +285,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 10,
         page_url: './4_business.html?cat=business-cat-river',
-        images: './4_business_files/1-9.jpg',
+        images: './4_business_files/bw-50.jpg',
         description: '河湖整治、水环境综合治理工程'
     },
     {
@@ -296,7 +296,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 11,
         page_url: './4_business.html?cat=business-cat-utility',
-        images: './4_business_files/1-8.jpg',
+        images: './4_business_files/bw-52.jpg',
         description: '城市地下综合管廊等基础设施工程'
     },
     {
@@ -307,7 +307,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 13,
         page_url: './4_business.html?cat=business-cat-wind',
-        images: './4_business_files/1-3.jpg',
+        images: './4_business_files/bw-62.jpg',
         description: '海上风电等新能源工程'
     },
     {
@@ -318,7 +318,7 @@ window.SITE_CATEGORIES = [
         is_nav: true,
         sort_order: 12,
         page_url: './4_business.html?cat=business-cat-port_overseas',
-        images: './4_business_files/1-3.jpg',
+        images: './4_business_files/bw-53.jpg',
         description: '海外港口、码头等国际工程'
     },
     {
