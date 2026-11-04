@@ -48,7 +48,7 @@ window.SITE_CATEGORIES = [
         sort_order: 4,
         nav_type: 'PAGE',
         page_url: './4_business.html',
-        images: './4_business_files/1-6.jpg'
+        images: './4_business_files/banner-biz.jpg'
     },
     {
         id: 5,
