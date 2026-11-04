@@ -750,7 +750,9 @@
                 }
                 // 有独立页面的子栏目保持原有跳转设计；
                 // 指向本页 4_business.html?... 的地址视为页内 tab 参数，不做跳转，避免自我重定向
-                if (targetCat && targetCat.page_url && !/4_公司业务\.html/i.test(targetCat.page_url)) {
+                var selfPage = String(location.pathname.split(String.fromCharCode(47)).pop() || '').toLowerCase();
+                var targetPath = String(targetCat.page_url).split('?')[0].split(String.fromCharCode(47)).pop().toLowerCase();
+                if (targetPath !== selfPage) {
                     location.replace(targetCat.page_url);
                     return;
                 }
