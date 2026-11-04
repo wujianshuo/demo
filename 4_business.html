@@ -751,8 +751,10 @@
                 // 有独立页面的子栏目保持原有跳转设计；
                 // 指向本页 4_business.html?... 的地址视为页内 tab 参数，不做跳转，避免自我重定向
                 var selfPage = String(location.pathname.split(String.fromCharCode(47)).pop() || '').toLowerCase();
-                var targetPath = String(targetCat.page_url).split('?')[0].split(String.fromCharCode(47)).pop().toLowerCase();
-                if (targetPath !== selfPage) {
+                var targetFile = (targetCat && targetCat.page_url)
+                    ? String(targetCat.page_url).split('?')[0].split(String.fromCharCode(47)).pop().toLowerCase()
+                    : '';
+                if (targetFile && targetFile !== selfPage) {
                     location.replace(targetCat.page_url);
                     return;
                 }
@@ -840,12 +842,12 @@
                 <h4 style="color:#fff;margin-bottom:12px;font-size:16px;">快速链接</h4>
                 <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;font-size:15px;" class="footer-links">
                     <li>
-                        <a style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交四航局">中交第四航务工程局有限公司
+                        <a style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交四航局" href="https://www.cccc4.com/">中交第四航务工程局有限公司
 
                         </a>
                     </li>
                     <li>
-                        <a style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交集团">中国交通建设集团有限公司
+                        <a style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交集团" href="https://www.ccccltd.cn/">中国交通建设集团有限公司
 
                         </a>
                     </li>
