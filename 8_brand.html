@@ -12,75 +12,22 @@
     <script src='./assets/mock-fetch.js'></script>
     <script src="./assets/site-nav.js"></script>
     <script src="./assets/site-sidebar.js"></script>
-    <style>
-        .cat-header {
-            text-align: left;
-            margin-bottom: 32px;
-        }
-
-        .cat-header h2 {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 6px;
-        }
-
-        .cat-header .cat-underline {
-            width: 50px;
-            height: 2px;
-            background: var(--primary);
-            margin: 0 0 8px;
-            border-radius: 0;
-        }
-
-        .cat-header .cat-desc {
-            font-size: 14px;
-            color: var(--text-light, #999);
-            max-width: 700px;
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        /* detail mode */
+    <style>        /* 2026-11-05：全站版式统一后，本页只保留文章条目行的独有布局；
+           栏目标题、白面板、大标题、卡片与分页按钮统一取自 *_files/main.css。 */
 
         .detail-outer {
-            width: 1350px;
-            max-width: 100%;
             margin: 0 auto;
             display: flex;
             gap: 2%;
             align-items: flex-start;
-            padding: 32px 0;
+            padding: 24px 0 48px;
         }
 
         .detail-main {
             flex: 1;
             min-width: 0;
-            background: #fff;
-            padding: 24px 32px;
-            border: 1px solid var(--border);
-            border-radius: 0;
-            min-height: 900px;
             display: flex;
             flex-direction: column;
-        }
-
-        .detail-main h1 {
-            font-size: 26px;
-            color: var(--text);
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid var(--primary);
-        }
-
-        .detail-main .sub-title {
-            margin: 28px 0 14px;
-            padding-left: 10px;
-            border-left: 4px solid var(--primary);
-            font-size: 18px;
-            font-weight: 600;
-            color: #222;
-            line-height: 1.6;
         }
 
         .detail-main > p > strong {
@@ -90,14 +37,14 @@
         .detail-item {
             display: flex;
             gap: 20px;
-            padding: 16px 0;
-            border-bottom: 1px solid #f0f0f0;
-            cursor: pointer;
             align-items: flex-start;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--line-soft);
+            cursor: pointer;
         }
 
         .detail-item:hover {
-            background: #fafafa;
+            background: var(--bg);
         }
 
         .detail-item .d-body {
@@ -108,6 +55,7 @@
         .detail-item .d-body h3 {
             font-size: 18px;
             color: var(--text);
+            line-height: 1.6;
             margin-bottom: 8px;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -116,9 +64,9 @@
         }
 
         .detail-item .d-body .d-summary {
-            font-size: 14px;
-            color: #999;
-            line-height: 1.6;
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.8;
             margin-bottom: 8px;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -128,7 +76,7 @@
 
         .detail-item .d-body .d-meta {
             font-size: 13px;
-            color: #aaa;
+            color: var(--text-muted);
         }
 
         .detail-item .d-body .d-meta span {
@@ -140,125 +88,7 @@
                 flex-direction: column;
             }
         }
-    </style>
-    <style>
-        /* 2026-09-15：非首页统一为新闻中心页的扁平外观（页底浅灰 + 面板去边框/去阴影 + 内容区与顶部大图同宽） */
-
-        body {
-            background: #f5f6f8;
-        }
-
-        .section {
-            background: transparent;
-            width: 100%;
-            max-width: 1350px;
-        }
-
-        [class*="-outer"],
-        .content-body,
-        .topics-wrapper,
-        .business-section,
-        .global-page {
-            width: 100%;
-            max-width: 1350px;
-        }
-
-        .breadcrumb {
-            max-width: 1350px !important;
-        }
-
-        [class*="-sidebar"],
-        [class*="-side"],
-        .detail-main,
-        .page-main,
-        .article-wrapper,
-        .task-panel,
-
-        .news-card,
-        .quick-link-card,
-        .resp-card,
-        .resp-report,
-        .tech-stat,
-        .culture-card,
-        .stat-box,
-        .project-card,
-
-        .honor-banner,
-        .honor-card,
-        .tech-result-card,
-        .report-card,
-        .honor-panel,
-        .banner-section,
-        .task-deco,
-        .biz-sub-card {
-            border: none;
-        }
-
-        [class*="-sidebar"] a,
-        [class*="-side"] a {
-            box-shadow: none;
-        }
-
-        [class*="-sidebar"] a:hover,
-        [class*="-sidebar"] a.active,
-        [class*="-side"] a:hover,
-        [class*="-side"] a.active,
-
-        .honor-card:hover,
-        .tech-result-card:hover,
-        .resp-card:hover,
-        .project-card:hover,
-        .quick-link-card:hover {
-            box-shadow: none;
-        }
-    </style>
-
-    <style>
-        #site-cat-banner {
-            width: 100%;
-            max-width: 1350px;
-            height: auto;
-            margin: 0 auto;
-            overflow: hidden;
-            background: #e8f0fe;
-            display: none;
-            box-sizing: border-box;
-        }
-
-        #site-cat-banner img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            display: block;
-        }
-
-        #site-cat-banner .scb-ph {
-            width: 100%;
-            min-height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #eef3fb, #dfe9f7);
-            color: #9db3cf;
-            font-size: 20px;
-            letter-spacing: 2px;
-        }
-
-        @media (max-width:900px) {
-            #site-cat-banner {
-                height: auto;
-            }
-            #site-cat-banner .scb-ph {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width:768px) {
-            #site-cat-banner {
-                height: auto;
-            }
-        }
-    </style>
+        </style>
 </head>
 
 <body data-site="shj" data-root-cat-name="品牌文化">
@@ -278,23 +108,10 @@
         </header>
         <div id="site-cat-banner" style="display: block;"><img src="./4_business_files/1-6.jpg" alt="品牌文化"></div>
 
-        <!-- Grid Mode (no ?cat=) -->
-        <div id="zhuanti-grid-mode" style="display: none;">
-            <section class="section" style="padding-top:24px;">
-                <div class="cat-header" id="zhuanti-cat-header">
-                    <h2 id="zhuanti-cat-title">专题专栏</h2>
-                    <div class="cat-underline"></div>
-                    <p class="cat-desc" id="zhuanti-cat-desc"></p>
-                </div>
-                <div id="zhuanti-grid" style="display:grid;grid-template-columns:repeat(2, 560px);gap:24px;min-height:400px;justify-content:center;"></div>
-                <div id="zhuanti-empty" style="display:none;text-align:center;padding:80px 0;color:#999;font-size:16px;"></div>
-                <div id="zhuanti-pager" style="display:flex;justify-content:center;align-items:center;gap:16px;margin-top:32px;"></div>
-            </section>
-        </div>
 
         <!-- Detail Mode (with ?cat=) -->
         <div id="zhuanti-detail-mode" style="display: block;">
-            <div class="detail-outer"><aside class="detail-side"><h4 data-title-link="1" title="返回栏目首页" style="cursor: pointer;">品牌文化</h4><a class="active" href="./8_brand.html?cat=corporate-culture">品牌文化</a><a href="./8_brand.html?cat=brand-activities">品牌活动</a><a href="./8_brand.html?cat=social-responsibility">社会责任</a></aside><div class="detail-main"><h1>品牌文化</h1><div style="flex:1;line-height:2;font-size:16px;color:#333;"><img src="./8_brand_files/brand-culture.jpg" alt="品牌文化" style="width:100%;height:auto;display:block;"></div></div></div>
+            <div class="detail-outer"><aside class="detail-side"><h4 data-title-link="1" title="返回栏目首页" style="cursor: pointer;">品牌文化</h4><a class="active" href="./8_brand.html?cat=corporate-culture">品牌文化</a><a href="./8_brand.html?cat=brand-activities">品牌活动</a><a href="./8_brand.html?cat=social-responsibility">社会责任</a></aside><div class="detail-main"><h1>品牌文化</h1><div style="flex:1;line-height:2;font-size:16px;color:var(--text);"><img src="./8_brand_files/brand-culture.jpg" alt="品牌文化" style="width:100%;height:auto;display:block;"></div></div></div>
         </div>
 
         <script>
@@ -315,7 +132,6 @@
 
                 if (catId || catName) {
                     // ===== Detail Mode =====
-                    document.getElementById('zhuanti-grid-mode').style.display = 'none';
                     fetch('/api/public/' + siteId + '/categories').then(function(r) {
                         return r.json();
                     }).then(function(cats) {
@@ -363,8 +179,8 @@
                             });
                             var pagerHtml = '';
                             if (totalPages > 1) {
-                                pagerHtml = '<div style="display:flex;justify-content:center;align-items:center;gap:16px;margin-top:24px;">' +
-                                    '<button onclick="window._zpPage(-1)" style="width:40px;height:40px;border:1px solid var(--border);background:#fff;border-radius:6px;cursor:pointer;color:' + (currentPage === 0 ? '#ccc' : 'var(--text)') + '" ' + (currentPage === 0 ? 'disabled' : '') + '><svg width="20" height="20" viewBox="0 0 16 16"><path d="M10 4L6 8L10 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></button>';
+                                pagerHtml = '<div class="site-pager">' +
+                    '<button onclick="window._zpPage(-1)"' + (currentPage === 0 ? ' disabled' : '') + '><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M10 4L6 8L10 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>';
                                 var pages = [];
                                 pages.push(0);
                                 for (var i = Math.max(1, currentPage - 2); i <= Math.min(totalPages - 2, currentPage + 2); i++) pages.push(i);
@@ -377,15 +193,15 @@
                                     if (k === 0 || v !== pages[k - 1]) unique.push(v);
                                 });
                                 unique.forEach(function(v, idx) {
-                                    if (idx > 0 && v > unique[idx - 1] + 1) pagerHtml += '<span style="font-size:14px;color:#999;">...</span>';
-                                    pagerHtml += '<button onclick="window._zpGo(' + v + ')" style="min-width:36px;height:36px;border:none;border-radius:6px;cursor:pointer;font-size:16px;' + (v === currentPage ? 'background:var(--primary);color:#fff;font-weight:600' : 'background:#f5f5f5;color:var(--text)') + '">' + (v + 1) + '</button>';
+                                    if (idx > 0 && v > unique[idx - 1] + 1) pagerHtml += '<span class="pager-ellipsis">...</span>';
+                                    pagerHtml += '<button' + (v === currentPage ? ' class="active"' : '') + ' onclick="window._zpGo(' + v + ')">' + (v + 1) + '</button>';
                                 });
-                                pagerHtml += '<button onclick="window._zpPage(1)" style="width:40px;height:40px;border:1px solid var(--border);background:#fff;border-radius:6px;cursor:pointer;color:' + (currentPage >= totalPages - 1 ? '#ccc' : 'var(--text)') + '" ' + (currentPage >= totalPages - 1 ? 'disabled' : '') + '><svg width="20" height="20" viewBox="0 0 16 16"><path d="M6 4L10 8L6 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></button></div>';
+                    pagerHtml += '<button onclick="window._zpPage(1)"' + (currentPage >= totalPages - 1 ? ' disabled' : '') + '><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div>';
                             }
                             document.getElementById('zhuanti-detail-mode').innerHTML =
                                 '<div class="detail-outer"><aside class="detail-side"></aside>' +
                                 '<div class="detail-main"><h1>' + detailCat.name + '</h1>' +
-                                (catArticles.length ? '<div style="flex:1;">' + listHtml + '</div>' + pagerHtml : (detailCat.content ? '<div style="flex:1;line-height:2;font-size:16px;color:#333;">' + detailCat.content + '</div>' : '<div style="text-align:center;color:#999;padding:40px;"></div>')) +
+                                (catArticles.length ? '<div style="flex:1;">' + listHtml + '</div>' + pagerHtml : (detailCat.content ? '<div style="flex:1;line-height:2;font-size:16px;color:var(--text);">' + detailCat.content + '</div>' : '<div style="text-align:center;color:#999;padding:40px;"></div>')) +
                                 '</div></div>';
                             document.getElementById('zhuanti-detail-mode').style.display = 'block';
 window.renderSiteSidebar(document.querySelector('#zhuanti-detail-mode .detail-side'), cats, detailCat);
@@ -407,89 +223,6 @@ window.renderSiteSidebar(document.querySelector('#zhuanti-detail-mode .detail-si
 
                         renderPage();
                     });
-                } else {
-                    // ===== Grid Mode (original) =====
-                    var allCats = [];
-                    var currentPage = 0;
-                    var pageSize = 4;
-
-                    function renderGrid() {
-                        var grid = document.getElementById('zhuanti-grid');
-                        var empty = document.getElementById('zhuanti-empty');
-                        var pager = document.getElementById('zhuanti-pager');
-                        var start = currentPage * pageSize;
-                        var pageItems = allCats.slice(start, start + pageSize);
-                        if (!pageItems.length && currentPage > 0) {
-                            currentPage = 0;
-                            pageItems = allCats.slice(0, pageSize);
-                        }
-                        if (!allCats.length) {
-                            grid.innerHTML = '';
-                            empty.style.display = 'block';
-                            pager.innerHTML = '';
-                            return;
-                        }
-                        empty.style.display = 'none';
-                        var html = '';
-                        pageItems.forEach(function(cat) {
-                            var imgs = (cat.images || '').split(',').map(function(s) {
-                                return s.trim();
-                            }).filter(Boolean);
-                            var img = imgs[0] || cat.cover_image || '';
-                            if (!img) img = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='350'%3E%3Crect fill='%23e8f0fe' width='600' height='350'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999' font-size='24'%3E" + encodeURIComponent(cat.slug) + "%3C/text%3E%3C/svg%3E";
-                            var desc = cat.description || '';
-                            html += '<div style="background:#fff;overflow:hidden;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform=\'translateY(-4px)\';this.style.boxShadow=\'none\';" onmouseout="this.style.transform=\'translateY(0)\';this.style.boxShadow=\'none\';">' +
-                                '<a href="./8_brand.html?cat=' + encodeURIComponent(cat.slug) + '" style="display:block;text-decoration:none;color:inherit;">' +
-                                '<div style="width:100%;height:350px;overflow:hidden;background:#e8f0fe;"><img src="' + img + '" alt="' + cat.name + '" style="width:100%;height:100%;object-fit:contain;" loading="lazy"></div>' +
-                                '<div style="padding:20px;"><h3 style="font-size:20px;margin-bottom:8px;color:var(--text);">' + cat.name + '</h3>' +
-                                '<p style="font-size:14px;color:#999;line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;">' + desc + '</p></div></a></div>';
-                        });
-                        grid.innerHTML = html;
-                        var totalPages = Math.ceil(allCats.length / pageSize);
-                        if (totalPages <= 1) {
-                            pager.innerHTML = '';
-                            return;
-                        }
-                        var pHtml = '';
-                        pHtml += '<button onclick="window._ztGo(' + (currentPage - 1) + ')" style="width:40px;height:40px;border:1px solid var(--border);background:#fff;border-radius:4px;cursor:pointer;color:' + (currentPage === 0 ? '#ccc' : 'var(--text)') + '" ' + (currentPage === 0 ? 'disabled' : '') + '><svg width="18" height="18" viewBox="0 0 16 16"><path d="M10 4L6 8L10 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>';
-                        for (var i = 0; i < totalPages; i++) {
-                            pHtml += '<button onclick="window._ztGo(' + i + ')" style="width:36px;height:36px;border:none;border-radius:4px;cursor:pointer;font-size:14px;' + (i === currentPage ? 'background:var(--primary);color:#fff;font-weight:600' : 'background:#f5f5f5;color:var(--text)') + '">' + (i + 1) + '</button>';
-                        }
-                        pHtml += '<button onclick="window._ztGo(' + (currentPage + 1) + ')" style="width:40px;height:40px;border:1px solid var(--border);background:#fff;border-radius:4px;cursor:pointer;color:' + (currentPage >= totalPages - 1 ? '#ccc' : 'var(--text)') + '" ' + (currentPage >= totalPages - 1 ? 'disabled' : '') + '><svg width="18" height="18" viewBox="0 0 16 16"><path d="M6 4L10 8L6 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>';
-                        pager.innerHTML = pHtml;
-                    }
-                    window._ztGo = function(page) {
-                        var tp = Math.ceil(allCats.length / pageSize);
-                        if (page < 0) page = 0;
-                        if (page >= tp) page = tp - 1;
-                        if (page === currentPage) return;
-                        currentPage = page;
-                        renderGrid();
-                    };
-                    fetch('/api/public/' + siteId + '/categories')
-                        .then(function(r) {
-                            return r.json();
-                        })
-                        .then(function(cats) {
-                            var zhuantiCat = cats.find(function(c) {
-                                return c.id === 19;
-                            });
-                            if (!zhuantiCat) {
-                                document.getElementById('zhuanti-empty').style.display = 'block';
-                                return;
-                            }
-                            if (zhuantiCat.description) document.getElementById('zhuanti-cat-desc').textContent = zhuantiCat.description;
-                            allCats = cats.filter(function(c) {
-                                return c.parent_id === zhuantiCat.id;
-                            }).sort(function(a, b) {
-                                return (a.sort_order || 0) - (b.sort_order || 0);
-                            });
-                            if (!allCats.length) {
-                                document.getElementById('zhuanti-empty').style.display = 'block';
-                                return;
-                            }
-                            renderGrid();
-                        });
                 }
             })();
         </script>
@@ -533,7 +266,6 @@ window.renderSiteSidebar(document.querySelector('#zhuanti-detail-mode .detail-si
     <button class="back-top" aria-label="回到顶部">↑</button>
 
 
-    <script src="./8_brand_files/cat-banner.js.download"></script>
 
 
     <script src='./assets/app.js'></script>

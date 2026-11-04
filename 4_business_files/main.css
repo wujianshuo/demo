@@ -10,11 +10,17 @@
   --accent: #e74c3c;
   --text: #333;
   --text-light: #666;
+  --text-muted: #999;
   --bg: #f5f7fa;
+  --page-bg: #f5f6f8;
   --white: #fff;
   --border: #e0e0e0;
+  --line-soft: #f0f0f0;
+  --placeholder: #f2f5fa;
+  --gold: #c9a84c;
   --shadow: 0 2px 12px rgba(0,0,0,0.08);
-  --radius: 8px;
+  --shadow-card: 0 6px 18px rgba(0,0,0,0.12);
+  --radius: 0; /* 2026-11-05：全站直角（原 8px 仅零星卡片使用，与多数组件不一致） */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -105,6 +111,14 @@ img { max-width: 100%; height: auto; }
   visibility: visible;
   transform: translateX(-50%) translateY(0);
 }
+
+/* 2026-11-04：最后一个导航项的下拉菜单改为右对齐，避免窄视口下超出视口宽度产生横向滚动条 */
+.nav > li:last-child .dropdown {
+  left: auto;
+  right: 0;
+  transform: translateY(-8px);
+}
+.nav > li:last-child:hover .dropdown { transform: translateY(0); }
 .nav .dropdown a {
   display: block;
   padding: 12px 20px;
@@ -229,7 +243,7 @@ img { max-width: 100%; height: auto; }
 .news-list { list-style: none; }
 .news-list li {
   padding: 10px 0;
-  border-bottom: 1px dashed var(--border);
+  border-bottom: 1px solid var(--border);
   font-size: 14px;
   cursor: pointer;
 }
@@ -468,19 +482,63 @@ img { max-width: 100%; height: auto; }
 .article-content ul, .article-content ol { margin: 12px 0; padding-left: 24px; }
 .article-content li { margin-bottom: 6px; }
 
-/* 2026-09-10：统一内容容器 = width:90% + max-width:1300px（原 max-width:1200px + padding:40px 5%） */
+/* 2026-11-04：正文排版基准 —— .page-content（关于四航三 / 科技创新）与 .content-body（人力资源等）共用同一套，
+   各容器页不再内联重复定义；只统一样式，不改任何文字内容。 */
+.page-content,
 .content-body {
-  width: 90%;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 40px 0;
+  font-size: 16px;
+  line-height: 2;
+  color: #333;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.content-body {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-.content-body h2 { font-size: 24px; margin: 32px 0 16px; color: var(--primary); }
-.content-body h3 { font-size: 18px; margin: 24px 0 12px; }
-.content-body p { margin-bottom: 16px; color: var(--text-light); line-height: 1.8; }
-.content-body .image-block { margin: 24px 0; text-align: center; }
-.content-body .image-block img { border-radius: 0; max-height: 400px; }
+.page-content .sub-title,
+.content-body .sub-title {
+  margin: 28px 0 14px;
+  padding-left: 10px;
+  border-left: 4px solid var(--primary);
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.6;
+}
+.page-content > p > strong,
+.content-body > p > strong { color: #222; }
+.page-content img,
+.content-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 12px auto;
+}
+.page-content table,
+.content-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+}
+.page-content th,
+.page-content td,
+.content-body th,
+.content-body td {
+  border: 1px solid #e0e0e0;
+  padding: 8px 12px;
+  text-align: left;
+}
+.page-content th,
+.content-body th { background: #f5f5f5; }
+.content-body h2 { font-size: 22px; margin: 28px 0 14px; color: #222; line-height: 1.6; }
+.content-body h3 { font-size: 18px; margin: 28px 0 14px; color: #222; line-height: 1.6; }
+.content-body p { margin-bottom: 16px; }
+.content-body .image-block { margin: 12px auto; text-align: center; }
+.content-body .image-block img { border-radius: 0; max-width: 100%; height: auto; }
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -729,20 +787,27 @@ img { max-width: 100%; height: auto; }
   color: var(--white);
   font-weight: 600;
 }
-/* 二级栏目作为分组标题、三级栏目缩进（同官网「科技创新」侧栏） */
+/* 2026-11-04：二级分组 / 三级子项（科技创新）外观与其他栏目侧边栏一致：同一字号、颜色、内边距与悬停高亮，
+   只用缩进区分层级，不再加蓝色底色块与左侧竖条。 */
 .page-side a.side-group, .news-sidebar a.side-group, .party-sidebar a.side-group, .hr-side a.side-group, .detail-side a.side-group {
-  margin-top: 10px;
-  background: var(--primary-light);
-  color: var(--primary);
-  font-weight: 700;
+  margin-top: 0;
+  background: transparent;
+  color: var(--text);
+  font-weight: 400;
 }
 .page-side a.side-group-on, .news-sidebar a.side-group-on, .party-sidebar a.side-group-on, .hr-side a.side-group-on, .detail-side a.side-group-on {
-  box-shadow: inset 3px 0 0 var(--primary);
+  box-shadow: none;
+}
+/* 分组自身即当前栏目时，与其他栏目侧边栏一样显示主色实底选中态 */
+.page-side a.side-group.active, .news-sidebar a.side-group.active, .party-sidebar a.side-group.active, .hr-side a.side-group.active, .detail-side a.side-group.active {
+  background: var(--primary);
+  color: var(--white);
+  font-weight: 600;
 }
 .page-side a.side-sub, .news-sidebar a.side-sub, .party-sidebar a.side-sub, .hr-side a.side-sub, .detail-side a.side-sub {
   padding-left: 26px;
-  font-size: 14px;
-  color: var(--text-light);
+  font-size: inherit;
+  color: var(--text);
 }
 .page-side a.side-sub.active, .news-sidebar a.side-sub.active, .party-sidebar a.side-sub.active, .hr-side a.side-sub.active, .detail-side a.side-sub.active {
   background: var(--primary);
@@ -840,4 +905,447 @@ img { max-width: 100%; height: auto; }
   .nav { display: none; }
   .nav.open { display: flex; flex-direction: column; position: absolute; top: 80px; left: 0; right: 0; background: var(--white); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); }
   .mobile-toggle { display: block; }
+}
+
+/* 2026-11-04：1101~1180px 之间 8 个一级栏目横排放不下，会撑出横向滚动条（导航右边界固定落在 1166px），
+   更窄时已切换为折叠导航，因此只在这一段内收紧导航项尺寸 */
+@media (min-width: 1101px) and (max-width: 1180px) {
+  .nav > li > a { padding: 28px 13px; font-size: 16px; }
+  .logo { margin-right: 10px; gap: 8px; }
+  .logo img { height: 48px; }
+}
+
+/* ============ 2026-11-04：栏目大图与正文统一规格（全站基准，各页不再内联重复） ============ */
+/* 顶部一级栏目大图：固定 1350x260，紧贴导航栏；图片等比放大后居中裁切填满（同官网 cat-banner 规格） */
+#site-cat-banner,
+.honor-banner {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 1350px;
+  height: 260px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  background: #e8f0fe;
+  border: none;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+#site-cat-banner img,
+.honor-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  display: block;
+}
+
+/* 标语条文字偏上（敢于担当 / 立于诚信系列）：裁切窗口上移，避免切掉标语字 */
+#site-cat-banner img[src$="1-5.jpg"],
+.honor-banner img[src$="1-5.jpg"],
+#site-cat-banner img[src$="6_1789883346026393018.jpg"],
+.honor-banner img[src$="6_1789883346026393018.jpg"] {
+  object-position: 50% 0%;
+}
+
+/* 无图占位同样占 260 高，切换栏目时页面高度不跳 */
+#site-cat-banner .scb-ph,
+.honor-banner .ph {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eef3fb, #dfe9f7);
+  color: #9db3cf;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 900px) {
+  #site-cat-banner,
+  .honor-banner { height: 260px; max-height: 180px; }
+}
+
+@media (max-width: 768px) {
+  #site-cat-banner,
+  .honor-banner { height: 260px; max-height: 140px; }
+}
+
+/* 大图 -> 正文统一 24px 间距，页底统一 48px */
+.page-outer,
+.news-outer,
+.party-outer,
+.hr-outer,
+.detail-outer {
+  padding-top: 24px;
+  padding-bottom: 48px;
+}
+
+/* 正文面板：左右内边距 40px（1350 容器 - 14% 侧栏 - 2% 间距 = 1134，净宽 1054） */
+.page-main,
+.detail-main {
+  padding-left: 40px;
+  padding-right: 40px;
+  min-height: 480px;
+  box-sizing: border-box;
+}
+
+/* 正文图片：宽度上限 1054px，等比缩放、水平居中，不裁切不拉伸 */
+.page-content img,
+.detail-main img,
+.article-content img,
+.news-main img,
+.party-main img,
+.hr-main img,
+.business-catimg img {
+  max-width: 1054px;
+  height: auto;
+}
+
+.page-content .resizable-media-wrapper,
+.detail-main .resizable-media-wrapper,
+.article-content .resizable-media-wrapper {
+  max-width: 1054px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* 窄屏：首页式头条轮播（新闻中心 / 党建）不再固定 640px 宽，改为上图下文，避免图片被裁切（页面为内联样式，需 !important） */
+@media (max-width: 900px) {
+  #featured-carousel {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+    height: auto !important;
+  }
+  #featured-img-wrap {
+    width: 100% !important;
+    align-self: stretch !important;
+  }
+  #featured-img-wrap {
+    height: auto !important;
+  }
+  #featured-img {
+    height: auto !important;
+    object-fit: contain !important;
+  }
+  #featured-carousel > div {
+    height: auto !important;
+  }
+  #featured-title, #featured-summary {
+    height: auto !important;
+  }
+}
+
+/* ============ 2026-11-04：卡片与图集的图片按图框填满（等比放大铺满，多余边缘裁切，不再留白） ============ */
+/* 画册图集（装备实力、业务领域、工程实景等）：图区统一 4:3，图片填满图区，图注贴底 */
+.page-content .photo-grid figure,
+.detail-main .photo-grid figure,
+.article-content .photo-grid figure {
+  display: flex;
+  flex-direction: column;
+}
+.page-content .photo-grid img,
+.detail-main .photo-grid img,
+.article-content .photo-grid img {
+  width: 100%;
+  height: auto;
+  flex: 1 1 auto;
+  min-height: 0;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  background: none;
+}
+.page-content .photo-grid figcaption,
+.detail-main .photo-grid figcaption,
+.article-content .photo-grid figcaption {
+  flex: none;
+}
+/* 证书类（竖版扫描件）：不裁切，图片铺满卡片宽度、框高贴合图片 */
+.page-content .cert-grid,
+.detail-main .cert-grid,
+.article-content .cert-grid {
+  align-items: start;
+}
+.page-content .cert-grid figure,
+.detail-main .cert-grid figure,
+.article-content .cert-grid figure {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+.page-content .cert-grid img,
+.detail-main .cert-grid img,
+.article-content .cert-grid img {
+  width: 100%;
+  max-width: none;
+  max-height: none;
+  height: auto;
+  object-fit: contain;
+  margin: 0;
+}
+/* 固定高度图框（社会责任、画册报告、企业文化）统一改为填满 */
+.resp-card img,
+.resp-report img,
+.culture-card img {
+  object-fit: cover;
+  background: none;
+}
+
+/* ============ 2026-11-04：栏目图集图框高度（宽随栅格约 247px，高按栏目固定，图片 cover 填满） ============ */
+.col-gallery .col-card img,
+.col-gallery .col-card .col-noimg {
+  height: 210px;
+  object-fit: cover;
+}
+/* 科研项目：247x185 */
+.col-gallery[data-cat-slug="tech-project"] .col-card img,
+.col-gallery[data-cat-slug="tech-project"] .col-card .col-noimg {
+  height: 185px;
+  object-fit: cover;
+}
+/* 企业荣誉：247x210 */
+.col-gallery[data-cat-slug="about-honor"] .col-card img,
+.col-gallery[data-cat-slug="about-honor"] .col-card .col-noimg {
+  height: 210px;
+  object-fit: cover;
+}
+
+/* ============ 2026-11-05 第十八次审查：全站版式统一规范（单一来源，各页不再重复定义） ============ */
+/* 统一定义非首页的页底、容器、白面板、栏目标题、卡片、列表行、分页按钮与图片填充方式；
+   各页面内联样式只保留本页独有布局，避免同一组件出现多套写法。 */
+
+/* 非首页页底与容器宽度（原先重复写在 6 个页面的同一段，现集中于此） */
+body { background: var(--page-bg); }
+.section { background: transparent; }
+[class*="-outer"],
+.content-body,
+.topics-wrapper,
+.business-section,
+.global-page { width: 1350px; max-width: 100%; }
+.breadcrumb { max-width: 1350px !important; }
+
+/* 正文容器内的自适应媒体（原 2_about / 6_tech 各写一份） */
+.page-content .resizable-media-wrapper,
+.detail-main .resizable-media-wrapper,
+.article-content .resizable-media-wrapper {
+  display: block;
+  max-width: 100% !important;
+  margin: 12px auto !important;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.page-content .resizable-media-wrapper img,
+.page-content .resizable-media-wrapper video,
+.detail-main .resizable-media-wrapper img,
+.detail-main .resizable-media-wrapper video,
+.article-content .resizable-media-wrapper img,
+.article-content .resizable-media-wrapper video { width: 100% !important; height: auto !important; object-fit: contain; display: block; }
+.page-content .resizable-media-wrapper audio,
+.detail-main .resizable-media-wrapper audio,
+.article-content .resizable-media-wrapper audio { width: 100% !important; height: 100% !important; display: block; }
+
+/* 白色内容面板：直角、无边框、无阴影、统一内边距 */
+.page-main,
+.task-panel,
+.detail-main {
+  background: var(--white);
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 32px 40px;
+  min-height: 480px;
+  box-sizing: border-box;
+}
+
+/* 栏目标题 / 文章大标题：28px 加粗 + 通栏 2px 主色下划线，左对齐 */
+.page-main h1,
+.detail-main h1,
+.article-card h1,
+.cat-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text);
+  text-align: left;
+  margin: 0 0 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--primary);
+}
+.cat-header { text-align: left; margin: 0 0 24px; }
+.cat-header .cat-underline { display: none; }
+.cat-header .cat-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 12px 0 0;
+}
+
+/* 正文小标题：全站同一规格（原 17px 与 18px 两种写法并存） */
+.page-content .sub-title,
+.content-body .sub-title,
+.detail-main .sub-title,
+.article-content .sub-title {
+  margin: 28px 0 14px;
+  padding-left: 10px;
+  border-left: 4px solid var(--primary);
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* 卡片：统一 1px 边框 + 直角 + 白底 + 悬浮反馈（上移 2px + 柔和阴影） */
+.col-card,
+.expert-card,
+.news-card,
+.honor-card,
+.resp-card,
+.culture-card,
+.quick-link-card,
+.tech-stat,
+.stat-box,
+.tech-result-card,
+.resp-report,
+.report-card,
+.project-card,
+.biz-sub-card,
+.business-sub-card,
+.topic-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+.col-card:hover,
+.expert-card:hover,
+.news-card:hover,
+.honor-card:hover,
+.resp-card:hover,
+.culture-card:hover,
+.quick-link-card:hover,
+.tech-stat:hover,
+.stat-box:hover,
+.tech-result-card:hover,
+.resp-report:hover,
+.report-card:hover,
+.project-card:hover,
+.biz-sub-card:hover,
+.topic-card:hover,
+.media-matrix .media-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+/* 侧边栏链接不参与卡片悬浮，避免与选中态底色冲突 */
+[class*="-sidebar"] a:hover,
+[class*="-side"] a:hover,
+.page-side a:hover,
+.detail-side a:hover { box-shadow: none; }
+
+/* 卡片图片：按图框填满，不再用 contain 加灰底造成留白（证书等扫描件保持完整显示） */
+.news-card img,
+.honor-card .card-img img,
+.business-card img,
+.business-slide .simg img,
+.resp-card img,
+.culture-card img,
+.resp-report img,
+.col-card img,
+.expert-card img { object-fit: cover; background: none; }
+.cert-grid img,
+.page-content .cert-grid img,
+.detail-main .cert-grid img,
+.article-content .cert-grid img { object-fit: contain; }
+
+/* 栏目文章列表行：统一 16px 标题 + 实线分隔 + 次要信息同一灰阶 */
+.hr-list a,
+.news-rows a,
+.party-rows a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  text-decoration: none;
+}
+.hr-list a:hover,
+.news-rows a:hover,
+.party-rows a:hover { color: var(--primary); }
+.hr-list a > span:first-child,
+.news-rows a > span:first-child,
+.party-rows a > span:first-child {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.hr-list .hr-item-date,
+.news-rows .col-src,
+.party-rows .col-src { flex: 0 0 110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 15px; color: var(--text-muted); }
+.hr-list .hr-item-date { text-align: right; }
+.news-rows .col-date,
+.party-rows .col-date { flex: 0 0 118px; text-align: right; font-size: 15px; color: var(--text-muted); }
+
+/* 分页：统一尺寸与直角（原 4px / 6px 圆角、36 / 38 / 40px 高度并存） */
+.site-pager,
+.business-pager { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 32px; }
+.site-pager button,
+.business-pager button {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 0;
+  background: var(--white);
+  color: var(--text);
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+}
+.site-pager button:hover:not(:disabled),
+.business-pager button:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+.site-pager button.active,
+.business-pager button.active { background: var(--primary); border-color: var(--primary); color: var(--white); font-weight: 600; }
+.site-pager button:disabled,
+.business-pager button:disabled { opacity: 0.45; cursor: not-allowed; }
+.site-pager .pager-ellipsis { font-size: 14px; color: var(--text-muted); }
+
+/* 首条推荐（新闻中心 / 党的建设）文字与按钮并入统一体系 */
+.featured-panel { display: flex; gap: 32px; align-items: center; background: var(--white); border: none; padding: 24px; overflow: hidden; }
+.featured-panel #featured-title { font-size: 26px; font-weight: 700; line-height: 1.5; color: var(--text); }
+.featured-panel #featured-summary { font-size: 15px; line-height: 1.8; color: var(--text-muted); }
+.featured-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 0;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+.featured-btn:hover { background: var(--primary-dark); color: var(--white); }
+
+/* 语言切换：全站同一圆角口径（直角） */
+.lang-switch a { border-radius: 0; }
+
+/* 窄屏回落 */
+@media (max-width: 768px) {
+  .page-main,
+  .task-panel,
+  .detail-main { padding: 20px; }
+  .page-main h1,
+  .detail-main h1,
+  .article-card h1,
+  .cat-header h2 { font-size: 22px; }
+  [class*="-outer"] { width: 96%; }
 }

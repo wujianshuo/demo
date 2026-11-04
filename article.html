@@ -10,42 +10,35 @@
     <link rel="stylesheet" href="./1_home_files/main.css">
     <script src="./assets/site-data.js"></script>
     <script src="./assets/site-nav.js"></script>
-    <style>
-        body {
-            background: #f5f6f8;
-        }
+    <style>        /* 2026-11-05：详情页并入全站统一体系——白面板直角无边框、大标题 28px + 通栏主色下划线（见 main.css）；
+           本页只保留无侧边栏时的阅读宽度（正文净宽同为 1054px）与文章正文细节。 */
 
         .article-wrap {
-            width: 1000px;
+            width: 1150px;
             max-width: 96%;
             margin: 0 auto;
             padding: 32px 0 60px;
         }
 
         .article-card {
-            background: #fff;
-            padding: 40px 48px;
-            border: 1px solid #e8eef7;
-        }
-
-        .article-card h1 {
-            font-size: 28px;
-            color: #333;
-            line-height: 1.5;
-            margin-bottom: 16px;
-            text-align: center;
+            background: var(--white);
+            border: none;
+            border-radius: 0;
+            padding: 32px 48px;
+            min-height: 480px;
+            box-sizing: border-box;
         }
 
         .article-meta {
-            text-align: center;
-            color: #999;
+            text-align: left;
+            color: var(--text-muted);
             font-size: 13px;
             padding-bottom: 20px;
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid var(--line-soft);
             margin-bottom: 24px;
         }
 
-        .article-meta span+span::before {
+        .article-meta span + span::before {
             content: '·';
             margin: 0 10px;
             color: #ccc;
@@ -60,7 +53,7 @@
         .article-content {
             font-size: 16px;
             line-height: 2;
-            color: #333;
+            color: var(--text);
             word-wrap: break-word;
             overflow-wrap: break-word;
         }
@@ -69,19 +62,9 @@
             margin: 0 0 16px;
         }
 
-        .article-content .sub-title {
-            margin: 28px 0 12px;
-            padding-left: 10px;
-            border-left: 4px solid var(--primary);
-            font-size: 17px;
-            font-weight: 600;
-            color: #222;
-            line-height: 1.6;
-        }
-
         .article-content ul {
             margin: 0 0 16px;
-            padding: 0;
+            padding-left: 24px;
         }
 
         .article-content li {
@@ -89,16 +72,16 @@
             position: relative;
             padding-left: 18px;
             margin-bottom: 8px;
-            font-size: 15px;
+            font-size: 16px;
             line-height: 1.9;
-            color: #444;
+            color: var(--text);
         }
 
         .article-content li::before {
             content: '';
             position: absolute;
             left: 2px;
-            top: 13px;
+            top: 14px;
             width: 6px;
             height: 6px;
             border-radius: 50%;
@@ -118,23 +101,19 @@
             margin-bottom: 16px;
             color: var(--primary);
             font-size: 14px;
-            text-decoration: none;
             cursor: pointer;
         }
 
         .article-back:hover {
-            opacity: 0.8;
+            color: var(--primary-dark);
         }
 
-        @media (max-width: 768px) {
+        @media (max-width:768px) {
             .article-card {
                 padding: 24px 20px;
             }
-            .article-card h1 {
-                font-size: 22px;
-            }
         }
-    </style>
+        </style>
 </head>
 
 <body data-site="shj">
@@ -212,7 +191,7 @@
                 return;
             }
 
-            document.title = article.title + ' - 中交四航局第三工程有限公司';
+            document.title = article.title + ' - ' + (window.SITE_NAME || '中交四航局第三工程有限公司');
             document.getElementById('article-title').textContent = article.title;
             document.getElementById('article-date').textContent = (article.published_at || article.created_at || '').substring(0, 10);
             document.getElementById('article-source').textContent = '来源：' + (article.source || '本站') + (article.author ? '　作者：' + article.author : '');

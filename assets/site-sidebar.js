@@ -141,7 +141,7 @@
             var kids = childrenOf(list, top.id);
             var onPath = chain.indexOf(top.id) >= 0;
             if (kids.length && !articleCount(top.id)) {
-                html += link('side-group' + (onPath ? ' side-group-on' : ''), hrefOf(list, top), top.name);
+                html += link('side-group' + (onPath ? ' side-group-on' : '') + (current && current.id === top.id ? ' active' : ''), hrefOf(list, top), top.name);
                 kids.forEach(function (k) {
                     html += link('side-sub' + (current && k.id === current.id ? ' active' : ''), hrefOf(list, k), k.name);
                 });
@@ -199,6 +199,14 @@
         });
     }
 
+    /* 浏览器标题统一由本脚本按当前栏目生成：「栏目名 - 站点名」，避免各页各写一套 */
+    function syncDocTitle(current, root) {
+        var siteName = window.SITE_NAME || '中交四航局第三工程有限公司';
+        var name = (current && current.name) ? current.name : (root ? root.name : '');
+        if (!name) return;
+        document.title = name + ' - ' + siteName;
+    }
+
     function render(el, list, currentCat) {
         if (!el) return;
         list = (list && list.length) ? list : catList();
@@ -214,6 +222,7 @@
         }
         if (!root) return;
         el.innerHTML = buildHtml(list, root, currentCat);
+        syncDocTitle(currentCat, root);
         bindAnchors(el);
     }
 

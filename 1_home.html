@@ -144,7 +144,7 @@
                     <h2 id="news-section-title" style="transform:translateY(-5px);">新闻中心</h2>
                     <!-- 2026-09-04d：标题字+装饰线整体视觉上移5px（用 transform，不动布局，左图与右栏横线对齐 y=58 不变）-->
                     <!-- 2026-09-04：去掉首页各模块下的栏目简介文字，原简介标签注释保留（如需恢复删除本注释行对即可）
-        <p id="news-section-desc" style="font-size:14px;color:#999;"></p> -->
+        <p id="news-section-desc" style="font-size:14px;color:var(--text-muted);"></p> -->
                 </div>
                 <div style="flex:0 0 400px;height:400px;overflow:hidden;position:relative;min-width:0;background-color:#fff;background-size:100% 100%;background-repeat:no-repeat;background-position:center;" id="news-left">
                     <canvas id="news-canvas" style="width:100%;height:100%;display:block;background:#fff;" width="640" height="400">
@@ -186,28 +186,15 @@
             </div>
             <div style="flex:1;overflow:hidden;display:flex;flex-direction:column;min-width:0;min-height:0;background:#fff;" id="news-right">
                 <style>
-                    .news-item:hover .news-dot {
-                        background: var(--primary)!important
-                    }
-
-                    .news-item:hover {
-                        font-size: 19px!important
-                    }
-
-                    .news-item:hover span {
-                        color: #c9a84c!important
-                    }
-
-                    .news-item:hover .date {
-                        font-size: 19px!important
-                    }
-
-                    .ntab-btn:hover {
-                        color: #c9a84c!important
-                    }
+                    /* 2026-11-05：要闻列表悬停只做颜色反馈（原 18px→19px 会改变行高，导致列表抖动）；
+                       金色点缀统一改用 main.css 的 --gold 令牌。 */
+                    .news-item:hover .news-dot { background: var(--primary) !important }
+                    .news-item:hover span { color: var(--gold) !important }
+                    .news-item:hover .date { color: var(--gold) !important }
+                    .ntab-btn:hover { color: var(--gold) !important }
                 </style>
                 <div style="display:flex;justify-content:center;align-items:flex-end;border-bottom:2px solid var(--border);flex-shrink:0;padding:0 20px;">
-                    <button class="ntab-btn" data-cat="16" style="border:none;background:none;font-size:25px;font-weight:700;cursor:pointer;color:#c9a84c;padding:10px 12px;border-bottom:2px solid #c9a84c;margin-bottom:-2px;transition:all 0.2s;" onmouseenter="this.parentNode.parentNode._switch(16)">
+                    <button class="ntab-btn" data-cat="16" style="border:none;background:none;font-size:25px;font-weight:700;cursor:pointer;color:var(--gold);padding:10px 12px;border-bottom:2px solid var(--gold);margin-bottom:-2px;transition:all 0.2s;" onmouseenter="this.parentNode.parentNode._switch(16)">
           公司要闻
         </button>
                     <span style="color:#ccc;margin:0 20px;font-size:16px;padding-bottom:10px;">
@@ -311,8 +298,8 @@
                             ctx.fillRect(0, 0, c.width, c.height);
                             var p = cache[a.id];
                             if (p && p.naturalWidth) {
-                                // 等比缩放后居中绘制，避免把照片拉伸变形，空出的部分保留底色
-                                var scale = Math.min(c.width / p.naturalWidth, c.height / p.naturalHeight);
+                                // 等比放大后居中绘制并铺满画布（超出部分裁边），避免图框留白
+                                var scale = Math.max(c.width / p.naturalWidth, c.height / p.naturalHeight);
                                 var dw = Math.round(p.naturalWidth * scale);
                                 var dh = Math.round(p.naturalHeight * scale);
                                 ctx.drawImage(p, Math.round((c.width - dw) / 2), Math.round((c.height - dh) / 2), dw, dh);
@@ -380,7 +367,7 @@
                             }, 5000);
                         }
                     } else if (left) {
-                        left.innerHTML = '<div style="height:100%;display:flex;align-items:center;justify-content:center;background:#f0f2f5;color:#999;font-size:14px;"></div>';
+                        left.innerHTML = '<div style="height:100%;display:flex;align-items:center;justify-content:center;background:#f0f2f5;color:var(--text-muted);font-size:14px;"></div>';
                     }
 
                     // 右侧：三个tab
@@ -397,10 +384,10 @@
                             if (!list.length) return '';
                             return '<ul class="news-list" style="list-style:none;">' + list.map(function(a, i) {
                                 if (i === 0) {
-                                    return '<li class="news-item" onclick="location.href=\'article.html?aid=' + a.hash_id + '\'" style="display:block;padding:7px 0;cursor:pointer;border-bottom:1px solid #f0f0f0;">' +
+                                    return '<li class="news-item" onclick="location.href=\'article.html?aid=' + a.hash_id + '\'" style="display:block;padding:7px 0;cursor:pointer;border-bottom:1px solid var(--line-soft);">' +
                                         '<div style="font-size:22px;font-weight:700;color:#333;margin-bottom:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + a.title + '</div>' +
-                                        '<div style="font-size:13px;color:#999;line-height:1.6;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;">' + (a.summary || '') + '</div>' +
-                                        '<span class="date" style="display:block;font-size:12px;color:#bbb;margin-top:4px;">' + fmtDate(a.published_at || a.created_at) + '</span></li>';
+                                        '<div style="font-size:13px;color:var(--text-muted);line-height:1.6;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;">' + (a.summary || '') + '</div>' +
+                                        '<span class="date" style="display:block;font-size:12px;color:var(--text-muted);margin-top:4px;">' + fmtDate(a.published_at || a.created_at) + '</span></li>';
                                 }
                                 return '<li class="news-item" onclick="location.href=\'article.html?aid=' + a.hash_id + '\'" style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;font-size:15px;cursor:pointer;border-bottom:none;"><span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-right:20px;"><span class="news-dot" style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#333;margin-right:8px;vertical-align:middle;flex-shrink:0;"></span>' + a.title + '</span><span class="date" style="flex-shrink:0;padding-left:12px;">' + fmtDate(a.published_at || a.created_at) + '</span></li>';
                             }).join('') + '</ul>';
@@ -410,8 +397,8 @@
                             activeTab = catId;
                             right.querySelectorAll('.ntab-btn').forEach(function(b) {
                                 var isActive = b.dataset.cat == catId;
-                                b.style.color = isActive ? '#c9a84c' : 'var(--text)';
-                                b.style.borderBottomColor = isActive ? '#c9a84c' : 'transparent';
+                                b.style.color = isActive ? 'var(--gold)' : 'var(--text)';
+                                b.style.borderBottomColor = isActive ? 'var(--gold)' : 'transparent';
                                 b.style.fontSize = isActive ? '25px' : '20px';
                                 b.style.fontWeight = isActive ? '700' : '600';
                             });
@@ -422,19 +409,19 @@
                                 moreBtn.href = mc ? './3_news.html?cat=' + encodeURIComponent(mc.slug) : './3_news.html';
                             }
                         }
-                        var tabsHtml = '<style>.news-item:hover .news-dot{background:var(--primary)!important}.news-item:hover{font-size:19px!important}.news-item:hover span{color:#c9a84c!important}.news-item:hover .date{font-size:19px!important}.ntab-btn:hover{color:#c9a84c!important}</style>' +
+                        var tabsHtml = /* 悬停样式统一在页首 <style> 内定义，不再运行时注入 */
                             '<div style="display:flex;justify-content:center;align-items:flex-end;border-bottom:2px solid var(--border);flex-shrink:0;padding:0 20px;">' +
                             tabCats.map(function(c, i) {
                                 var slash = i < tabCats.length - 1 ? '<span style="color:#ccc;margin:0 20px;font-size:16px;padding-bottom:10px;">/</span>' : '';
                                 var isActive = c.id === activeTab;
-                                return '<button class="ntab-btn" data-cat="' + c.id + '" style="border:none;background:none;font-size:' + (isActive ? '25px' : '20px') + ';font-weight:' + (isActive ? '700' : '600') + ';cursor:pointer;color:' + (isActive ? '#c9a84c' : 'var(--text)') + ';padding:10px 12px;border-bottom:2px solid ' + (isActive ? '#c9a84c' : 'transparent') + ';margin-bottom:-2px;transition:all 0.2s;" onmouseenter="this.parentNode.parentNode._switch(' + c.id + ')">' + c.name + '</button>' + slash;
+                                return '<button class="ntab-btn" data-cat="' + c.id + '" style="border:none;background:none;font-size:' + (isActive ? '25px' : '20px') + ';font-weight:' + (isActive ? '700' : '600') + ';cursor:pointer;color:' + (isActive ? 'var(--gold)' : 'var(--text)') + ';padding:10px 12px;border-bottom:2px solid ' + (isActive ? 'var(--gold)' : 'transparent') + ';margin-bottom:-2px;transition:all 0.2s;" onmouseenter="this.parentNode.parentNode._switch(' + c.id + ')">' + c.name + '</button>' + slash;
                             }).join('') +
                             '</div><div id="tab-content" style="flex:1;overflow-y:hidden;min-height:0;padding:12px 16px;">' + renderTabContent(activeTab) + '</div>' +
                             '<div style="padding:8px 16px 0;flex-shrink:0;"><a id="news-more-btn" href="./3_news.html?cat=' + encodeURIComponent(tabCats[0].slug) + '" style="display:inline-block;padding:8px 20px;background:var(--primary);color:#fff;text-decoration:none;font-size:13px;">查看更多 →</a></div>';
                         right.innerHTML = tabsHtml;
                         right._switch = switchTab;
                     } else if (right) {
-                        right.innerHTML = '<div style="height:100%;display:flex;align-items:center;justify-content:center;background:#f0f2f5;color:#999;font-size:14px;"></div>';
+                        right.innerHTML = '<div style="height:100%;display:flex;align-items:center;justify-content:center;background:#f0f2f5;color:var(--text-muted);font-size:14px;"></div>';
                     }
                 }).catch(function(e) {
                     console.error(e);

@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>科技创新 - 中交第四航务工程局有限公司</title>
+    <title>科技创新 - 中交四航局第三工程有限公司</title>
     <link rel="icon" href="./1_home_files/logo.png">
     <link rel="stylesheet" href="./6_tech_files/main.css">
     <script src='./assets/site-data.js'></script>
@@ -14,249 +14,43 @@
     <script src="./assets/site-nav.js"></script>
     <script src="./assets/site-sidebar.js"></script>
     <script src='./assets/column-gallery.js'></script>
-    <style>
+    <style>        /* 2026-11-05：全站版式统一后，本页只保留左右分栏布局与科技成果一览表的紧凑排版；
+           面板、栏目标题、正文排版与媒体样式统一取自 *_files/main.css。 */
+
         .page-outer {
-            width: 1350px;
-            max-width: 100%;
             margin: 0 auto;
             display: flex;
             gap: 2%;
             align-items: flex-start;
-            padding: 32px 0;
+            padding: 24px 0 48px;
         }
 
         .page-main {
             flex: 1;
             min-width: 0;
-            background: #fff;
-            padding: 32px 40px;
-            border: 1px solid var(--border);
-            border-radius: 0;
-            min-height: 900px;
         }
 
-        .page-main h1 {
-            font-size: 28px;
-            color: var(--text);
-            margin-bottom: 24px;
-            padding-bottom: 16px;
-            border-bottom: 2px solid var(--primary);
-            text-align: left;
-        }
-
-        .page-content {
-            font-size: 16px;
-            line-height: 2;
-            color: #333;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .page-content img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 12px auto;
-        }
-
-        .page-content .resizable-media-wrapper {
-            margin: 12px auto !important;
-            display: block;
-            max-width: 100% !important;
-            box-sizing: border-box;
-            overflow: hidden;
-        }
-
-        .page-content .resizable-media-wrapper img,
-        .page-content .resizable-media-wrapper video {
-            width: 100% !important;
-            height: auto !important;
-            object-fit: contain;
-            display: block;
-        }
-
-        .page-content .resizable-media-wrapper audio {
-            width: 100% !important;
-            height: 100% !important;
-            display: block;
-        }
+        /* 科技成果 / 工法 / 标准规范一览表列数多：整表收紧排版，避免在 1054px 正文宽内挤压换行 */
 
         .page-content table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 12px 0;
-        }
-
-        .page-content th,
-        .page-content td {
-            border: 1px solid #e0e0e0;
-            padding: 8px 12px;
-            text-align: left;
-        }
-
-        .page-content th {
-            background: #f5f5f5;
-        }
-
-        @media (max-width:768px) {
-            .page-outer {
-                width: 96%;
-            }
-            .page-main {
-                padding: 20px;
-            }
-            .page-main h1 {
-                font-size: 22px;
-            }
-        }
-        /* 官网科技成果类一览表：紧凑排版，避免多列挤压 */
-        .page-content table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 13px;
+            font-size: 14px;
             table-layout: auto;
         }
 
         .page-content th,
         .page-content td {
             padding: 6px 8px;
-            border: 1px solid var(--border);
-            text-align: left;
             vertical-align: top;
             word-break: break-word;
         }
 
         .page-content thead th {
-            background: var(--primary-light, #e8f0fe);
+            background: var(--primary-light);
             color: var(--text);
             font-weight: 700;
             white-space: nowrap;
         }
-
-        .page-content img {
-            max-width: 100%;
-            height: auto;
-        }
-
-    </style>
-    <style>
-        /* 2026-09-15：非首页统一为新闻中心页的扁平外观（页底浅灰 + 面板去边框/去阴影 + 内容区与顶部大图同宽） */
-
-        body {
-            background: #f5f6f8;
-        }
-
-        .section {
-            background: transparent;
-            width: 100%;
-            max-width: 1350px;
-        }
-
-        [class*="-outer"],
-        .content-body,
-        .topics-wrapper,
-        .business-section,
-        .global-page {
-            width: 100%;
-            max-width: 1350px;
-        }
-
-        .breadcrumb {
-            max-width: 1350px !important;
-        }
-
-        [class*="-sidebar"],
-        [class*="-side"],
-        .detail-main,
-        .page-main,
-        .article-wrapper,
-        .task-panel,
-
-        .news-card,
-        .quick-link-card,
-        .resp-card,
-        .resp-report,
-        .tech-stat,
-        .culture-card,
-        .stat-box,
-        .project-card,
-
-        .honor-banner,
-        .honor-card,
-        .tech-result-card,
-        .report-card,
-        .honor-panel,
-        .banner-section,
-        .task-deco,
-        .biz-sub-card {
-            border: none;
-        }
-
-        [class*="-sidebar"] a,
-        [class*="-side"] a {
-            box-shadow: none;
-        }
-
-        [class*="-sidebar"] a:hover,
-        [class*="-sidebar"] a.active,
-        [class*="-side"] a:hover,
-        [class*="-side"] a.active,
-
-        .honor-card:hover,
-        .tech-result-card:hover,
-        .resp-card:hover,
-        .project-card:hover,
-        .quick-link-card:hover {
-            box-shadow: none;
-        }
-    </style>
-
-    <style>
-        #site-cat-banner {
-            width: 100%;
-            max-width: 1350px;
-            height: auto;
-            margin: 0 auto;
-            overflow: hidden;
-            background: #e8f0fe;
-            display: none;
-            box-sizing: border-box;
-        }
-
-        #site-cat-banner img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            display: block;
-        }
-
-        #site-cat-banner .scb-ph {
-            width: 100%;
-            min-height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #eef3fb, #dfe9f7);
-            color: #9db3cf;
-            font-size: 20px;
-            letter-spacing: 2px;
-        }
-
-        @media (max-width:900px) {
-            #site-cat-banner {
-                height: auto;
-            }
-            #site-cat-banner .scb-ph {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width:768px) {
-            #site-cat-banner {
-                height: auto;
-            }
-        }
-    </style>
+        </style>
 </head>
 
 <body data-site="shj" data-root-cat-name="科技创新">
@@ -363,7 +157,6 @@
 
                     // 设置标题和导航高亮
                     document.getElementById('page-title').textContent = pageCat.name;
-                    document.title = pageCat.name + ' - 中交第四航务工程局有限公司';
                     // 设置根栏目名称用于导航高亮
                     (function findRoot(c) {
                         var p = cats.find(function(x) {
@@ -392,7 +185,7 @@
                 <h4 style="color:#fff;margin-bottom:12px;font-size:16px;">快速链接</h4>
                 <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;font-size:15px;" class="footer-links">
                     <li>
-                        <a style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交四航局" href="https://www.cccc4.com/">中交第四航务工程局有限公司
+                        <a style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交四航局" href="https://www.cccc4.com/">中交四航局第三工程有限公司
 
                         </a>
                     </li>

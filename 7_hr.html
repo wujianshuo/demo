@@ -13,40 +13,10 @@
     <script src="./assets/mock-fetch.js"></script>
     <script src="./assets/site-nav.js"></script>
     <script src="./assets/site-sidebar.js"></script>
-    <style>
-        .cat-header {
-            text-align: left;
-            margin-bottom: 28px;
-        }
-
-        .cat-header h2 {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 6px;
-        }
-
-        .cat-header .cat-underline {
-            width: 50px;
-            height: 2px;
-            background: var(--primary);
-            margin: 0 0 8px;
-            border-radius: 0;
-        }
-
-        .cat-header .cat-desc {
-            font-size: 14px;
-            color: var(--text-light, #999);
-            max-width: 700px;
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        /* outer: sidebar + (main+deco wrapper) */
+    <style>        /* 2026-11-05：全站版式统一后，本页只保留左右分栏布局与企业专家照片墙的图框尺寸；
+           面板、栏目标题、卡片外观、列表行统一取自 *_files/main.css。 */
 
         .hr-outer {
-            width: 1350px;
-            max-width: 100%;
             margin: 0 auto;
             display: flex;
             gap: 2%;
@@ -54,13 +24,10 @@
             padding: 24px 0 48px;
         }
 
-        /* main + deco 紧密排列 wrapper */
-
         .hr-content-row {
             flex: 1;
             min-width: 0;
             display: flex;
-            gap: 0;
             align-items: stretch;
         }
 
@@ -69,391 +36,70 @@
             min-width: 0;
         }
 
-        /* Tab */
-
-        .task-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 0;
-            margin-bottom: 0;
-            background: #0d47a1;
-            overflow: hidden;
-        }
-
-        .task-tab {
-            flex: 1;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.2s;
-            border-right: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 0;
-            min-width: 0;
-        }
-
-        .task-tab:last-child {
-            border-right: none;
-        }
-
-        .task-tab .tab-top {
-            padding: 10px 6px 4px;
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.8);
-            background: #0d47a1;
-            transition: background 0.2s;
-            line-height: 1.3;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .task-tab .tab-sub {
-            padding: 4px 6px 12px;
-            font-size: 16px;
-            font-weight: 700;
-            color: #fff;
-            background: #0d47a1;
-            transition: background 0.2s;
-            line-height: 1.3;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .task-tab:hover .tab-top,
-        .task-tab:hover .tab-sub {
-            background: #1565c0;
-        }
-
-        .task-tab.active .tab-top {
-            color: #fff;
-            background: var(--primary);
-        }
-
-        .task-tab.active .tab-sub {
-            color: #fff;
-            background: var(--primary);
-        }
-
-        /* 内容面板 — 右侧无圆角 */
-
-        .task-panel {
-            background: #fff;
-            border: 1px solid var(--border);
-            min-height: 420px;
-        }
-
         .task-content {
-            padding: 36px 40px;
-        }
-
-        .task-content h3 {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 6px;
-        }
-
-        .task-content .subtitle {
-            font-size: 15px;
-            color: var(--primary);
-            margin-bottom: 18px;
-            font-weight: 500;
-        }
-
-        .task-content .content-body {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.9;
-            text-align: justify;
-            margin-bottom: 20px;
-        }
-
-        .task-content .content-body img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 8px auto;
-        }
-
-        .task-content .more-btn {
-            display: inline-block;
-            padding: 8px 20px;
-            background: var(--primary);
-            color: #fff;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 13px;
-            transition: opacity 0.2s;
-        }
-
-        .task-content .more-btn:hover {
-            opacity: 0.85;
-        }
-
-        /* 装饰区 — 紧贴面板，左侧无圆角 */
-
-        .task-deco {
-            width: 200px;
-            flex-shrink: 0;
-            background: linear-gradient(135deg, #e8f0fe 0%, #d4e4fc 100%);
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .task-deco .deco-svg {
-            width: 70%;
-            height: 70%;
-            opacity: 0.25;
+            padding: 0;
         }
 
         .task-empty {
             text-align: center;
-            color: #999;
+            color: var(--text-muted);
             padding: 80px 0;
             font-size: 16px;
         }
 
-        /* 关键举措 banner */
+        /* 企业专家照片墙：栅格与栏目图集同规格（minmax 220px），卡片外观走 main.css 的统一卡片规则；
+           图框高度取人像比例（源图约 0.70），cover 填满且不裁切人脸。 */
 
-        .banner-section {
-            width: 100%;
-            overflow: hidden;
-            display: block;
-            padding: 0;
-            box-sizing: border-box;
-            border: 1px solid var(--border);
+        .expert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 18px 0 8px;
         }
 
-        .banner-section img {
-            width: 100%;
-            height: auto;
+        .expert-card {
             display: block;
+            width: 100%;
+            color: inherit;
+            text-decoration: none;
         }
 
-        .banner-section a {
+        .expert-card img {
             display: block;
+            width: 100%;
+            height: 340px;
+        }
+
+        .expert-noimg {
+            height: 340px;
+            background: var(--placeholder);
+        }
+
+        .expert-name {
+            display: block;
+            padding: 10px 12px 12px;
+            font-size: 15px;
+            line-height: 1.6;
+            text-align: center;
+            color: var(--text);
         }
 
         @media (max-width:900px) {
             .hr-content-row {
                 flex-direction: column;
             }
-            .task-deco {
-                width: 100%;
-                height: 140px;
-            }
-            .task-panel {}
         }
 
-        @media (max-width:768px) {
-            .task-tabs {
-                flex-wrap: wrap;
+        @media (max-width:640px) {
+            .expert-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
-            .task-tab {
-                flex: 1 1 33%;
-                min-width: 100px;
-            }
-            .task-content {
-                padding: 24px 20px;
-            }
-            .hr-outer {
-                width: 96%;
+            .expert-card img,
+            .expert-noimg {
+                height: 230px;
             }
         }
-        /* 企业专家照片墙（对标 sh3.cccc4.com 人力资源 - 企业专家） */
-
-        .expert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 20px;
-            justify-items: center;
-        }
-
-        .expert-card {
-            display: block;
-            width: 180px;
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            overflow: hidden;
-            color: inherit;
-            text-decoration: none;
-            transition: box-shadow 0.2s, transform 0.2s;
-        }
-
-        .expert-card:hover {
-            box-shadow: var(--shadow);
-            transform: translateY(-2px);
-        }
-
-        .expert-card img {
-            display: block;
-            width: 100%;
-            height: 240px;
-            object-fit: contain;
-            
-            background: var(--bg);
-        }
-
-        .expert-noimg {
-            height: 240px;
-            background: var(--bg);
-        }
-
-        .expert-name {
-            display: block;
-            padding: 12px 8px;
-            font-size: 16px;
-            font-weight: 600;
-            text-align: center;
-            color: var(--text);
-        }
-
-        /* 栏目文章列表（人才队伍结构等） */
-
-        .hr-list a {
-            display: flex;
-            justify-content: space-between;
-            gap: 16px;
-            padding: 14px 2px;
-            border-bottom: 1px dashed var(--border);
-            font-size: 15px;
-            color: var(--text);
-            text-decoration: none;
-        }
-
-        .hr-list a:hover {
-            color: var(--primary);
-        }
-
-        .hr-list .hr-item-date {
-            flex-shrink: 0;
-            color: var(--text-light);
-            font-size: 14px;
-        }
-
-    </style>
-    <style>
-        /* 2026-09-15：非首页统一为新闻中心页的扁平外观（页底浅灰 + 面板去边框/去阴影 + 内容区与顶部大图同宽） */
-
-        body {
-            background: #f5f6f8;
-        }
-
-        .section {
-            background: transparent;
-            width: 100%;
-            max-width: 1350px;
-        }
-
-        [class*="-outer"],
-        .content-body,
-        .topics-wrapper,
-        .business-section,
-        .global-page {
-            width: 100%;
-            max-width: 1350px;
-        }
-
-        .breadcrumb {
-            max-width: 1350px !important;
-        }
-
-        [class*="-sidebar"],
-        [class*="-side"],
-        .detail-main,
-        .page-main,
-        .article-wrapper,
-        .task-panel,
-
-        .news-card,
-        .quick-link-card,
-        .resp-card,
-        .resp-report,
-        .tech-stat,
-        .culture-card,
-        .stat-box,
-        .project-card,
-
-        .honor-banner,
-        .honor-card,
-        .tech-result-card,
-        .report-card,
-        .honor-panel,
-        .banner-section,
-        .task-deco,
-        .biz-sub-card {
-            border: none;
-        }
-
-        [class*="-sidebar"] a,
-        [class*="-side"] a {
-            box-shadow: none;
-        }
-
-        [class*="-sidebar"] a:hover,
-        [class*="-sidebar"] a.active,
-        [class*="-side"] a:hover,
-        [class*="-side"] a.active,
-
-        .honor-card:hover,
-        .tech-result-card:hover,
-        .resp-card:hover,
-        .project-card:hover,
-        .quick-link-card:hover {
-            box-shadow: none;
-        }
-    </style>
-
-    <style>
-        #site-cat-banner {
-            width: 100%;
-            max-width: 1350px;
-            height: auto;
-            margin: 0 auto;
-            overflow: hidden;
-            background: #e8f0fe;
-            display: none;
-            box-sizing: border-box;
-        }
-
-        #site-cat-banner img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            display: block;
-        }
-
-        #site-cat-banner .scb-ph {
-            width: 100%;
-            min-height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #eef3fb, #dfe9f7);
-            color: #9db3cf;
-            font-size: 20px;
-            letter-spacing: 2px;
-        }
-
-        @media (max-width:900px) {
-            #site-cat-banner {
-                height: auto;
-            }
-            #site-cat-banner .scb-ph {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width:768px) {
-            #site-cat-banner {
-                height: auto;
-            }
-        }
-    </style>
+        </style>
 </head>
 
 <body data-site="shj" data-root-cat-name="人力资源">
@@ -492,16 +138,15 @@
             <!-- 中间整体区域 -->
             <div style="flex:1; min-width:0;">
 
-                <!-- 主要任务标题 -->
-                <div class="cat-header" id="hr-header" style="margin-bottom:24px;">
-                    <h2>企业专家</h2>
-                    <div class="cat-underline"></div>
-                </div>
-
-                <!-- 栏目内容：企业专家照片墙 / 文章列表 / 栏目富文本，均由栏目数据驱动渲染 -->
+                <!-- 栏目标题与正文同处一个白色面板内（结构同其他栏目页的 .page-main > h1 + .page-content） -->
                 <div class="hr-content-row">
                     <div class="hr-main">
                         <div class="task-panel">
+                            <div class="cat-header" id="hr-header">
+                                <h2>企业专家</h2>
+                                <div class="cat-underline"></div>
+                            </div>
+                            <!-- 栏目内容：企业专家照片墙 / 文章列表 / 栏目富文本，均由栏目数据驱动渲染 -->
                             <div class="task-content" id="hr-view"></div>
                         </div>
                     </div>
@@ -626,7 +271,6 @@
                     header.innerHTML = '<h2>' + active.name + '</h2><div class="cat-underline"></div>' +
                         (active.description ? '<p class="cat-desc">' + active.description + '</p>' : '');
                 }
-                document.title = active.name + ' - 中交四航局第三工程有限公司';
                 var view = document.getElementById('hr-view');
                 if (!view) return;
                 return fetch('/api/public/' + siteId + '/articles?category_id=' + active.id + '&page_size=200').then(function(r) {

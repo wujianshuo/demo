@@ -6,23 +6,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>党的建设 - 中交第四航务工程局有限公司</title>
+    <title>党的建设 - 中交四航局第三工程有限公司</title>
     <link rel="icon" href="./1_home_files/logo.png">
     <link rel="stylesheet" href="./5_party_files/main.css">
     <script src="./assets/site-data.js"></script>
     <script src="./assets/mock-fetch.js"></script>
     <script src="./assets/site-nav.js"></script>
     <script src="./assets/site-sidebar.js"></script>
-    <style>
-        /* 2026-09-10：全站统一容器 1350 (max-width:100%) + 侧边栏 14% ≈196px（原 fixed 180px 方案已废弃） */
-
-        /* 2026-09-16c：本页容器改为与顶部大图同尺寸——固定 1350（<1350 视口自动收为满宽；≤1200 视口侧边栏隐藏） */
+    <style>        /* 2026-11-05：全站版式统一后，本页只保留左右分栏与板块间距（与新闻中心一致）；
+           页底、卡片、列表行、分页与按钮样式统一取自 *_files/main.css。 */
 
         .party-outer {
-            width: 1350px;
-            max-width: 100%;
             margin: 0 auto;
-            padding: 32px 0 48px;
+            padding: 24px 0 48px;
             display: flex;
             gap: 2%;
             align-items: flex-start;
@@ -40,8 +36,8 @@
             padding: 0;
         }
 
-        .party-main .section+.section {
-            margin-top: 20px;
+        .party-main .section + .section {
+            margin-top: 24px;
         }
 
         @media (max-width:1200px) {
@@ -50,132 +46,7 @@
                 display: block;
             }
         }
-    </style>
-    <style>
-        /* 2026-09-15：非首页统一为新闻中心页的扁平外观（页底浅灰 + 面板去边框/去阴影 + 内容区与顶部大图同宽） */
-
-        body {
-            background: #f5f6f8;
-        }
-
-        .section {
-            background: transparent;
-            width: 1350px;
-            max-width: 100%;
-        }
-
-        [class*="-outer"],
-        .content-body,
-        .topics-wrapper,
-        .business-section,
-        .global-page {
-            width: 1350px;
-            max-width: 100%;
-        }
-
-        .breadcrumb {
-            max-width: 1350px !important;
-        }
-
-        /* 2026-09-16：顶部一级栏目大图（cat-banner.js 注入的 #site-cat-banner，原生 100%/1600、高 260）单独设宽，固定 1350，与下部内容区同尺寸（窄屏自动收为满宽） */
-
-        body #site-cat-banner {
-            width: 1350px;
-            max-width: 100%;
-        }
-
-        [class*="-sidebar"],
-        [class*="-side"],
-        .detail-main,
-        .page-main,
-        .article-wrapper,
-        .task-panel,
-
-        .news-card,
-        .quick-link-card,
-        .resp-card,
-        .resp-report,
-        .tech-stat,
-        .culture-card,
-        .stat-box,
-        .project-card,
-
-        .honor-banner,
-        .honor-card,
-        .tech-result-card,
-        .report-card,
-        .honor-panel,
-        .banner-section,
-        .task-deco,
-        .biz-sub-card {
-            border: none;
-        }
-
-        [class*="-sidebar"] a,
-        [class*="-side"] a {
-            box-shadow: none;
-        }
-
-        [class*="-sidebar"] a:hover,
-        [class*="-sidebar"] a.active,
-        [class*="-side"] a:hover,
-        [class*="-side"] a.active,
-
-        .honor-card:hover,
-        .tech-result-card:hover,
-        .resp-card:hover,
-        .project-card:hover,
-        .quick-link-card:hover {
-            box-shadow: none;
-        }
-    </style>
-
-    <style>
-        #site-cat-banner {
-            width: 100%;
-            max-width: 1350px;
-            height: auto;
-            margin: 0 auto;
-            overflow: hidden;
-            background: #e8f0fe;
-            display: none;
-            box-sizing: border-box;
-        }
-
-        #site-cat-banner img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            display: block;
-        }
-
-        #site-cat-banner .scb-ph {
-            width: 100%;
-            min-height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #eef3fb, #dfe9f7);
-            color: #9db3cf;
-            font-size: 20px;
-            letter-spacing: 2px;
-        }
-
-        @media (max-width:900px) {
-            #site-cat-banner {
-                height: auto;
-            }
-            #site-cat-banner .scb-ph {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width:768px) {
-            #site-cat-banner {
-                height: auto;
-            }
-        }
-    </style>
+        </style>
 </head>
 
 <body data-site="shj" data-root-cat-name="党的建设">
@@ -210,17 +81,17 @@
             <!-- Featured Articles Section -->
             <section class="section" id="party-featured-section">
                 <div id="featured-carousel" style="display:flex;gap:32px;height:auto;align-items:center;background:#fff;padding:24px;position:relative;overflow:hidden;">
-                    <div style="width:640px;flex-shrink:0;overflow:hidden;background:#e8f0fe;height:auto;align-self:center;position:relative;" id="featured-img-wrap">
-                        <img id="featured-img" src="./5_party_files/cat20181106095223_1782117288265921549.jpg" alt="" style="width: 100%; height: auto; object-fit: contain;">
+                    <div style="width:640px;height:400px;flex-shrink:0;overflow:hidden;background:#fff;align-self:center;position:relative;" id="featured-img-wrap">
+                        <img id="featured-img" src="./5_party_files/cat20181106095223_1782117288265921549.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;">
                         <div id="featured-arrow-prev" style="display: flex; position: absolute; left: 8px; top: 50%; transform: translateY(-50%); z-index: 2; cursor: pointer; width: 24px; height: 32px; align-items: center; justify-content: center;" onclick="featuredShift(-1)"><svg width="16" height="24" viewBox="0 0 16 24" fill="none"><path d="M12 4L5 12L12 20" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
                         <div id="featured-arrow-next" style="display: flex; position: absolute; right: 8px; top: 50%; transform: translateY(-50%); z-index: 2; cursor: pointer; width: 24px; height: 32px; align-items: center; justify-content: center;" onclick="featuredShift(1)"><svg width="16" height="24" viewBox="0 0 16 24" fill="none"><path d="M4 4L11 12L4 20" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
                         <div id="featured-fallback" style="display:none;position:absolute;inset:0;background:linear-gradient(135deg,#3b82f6,#7dd3fc);align-items:center;justify-content:center;padding:20px;text-align:center;box-sizing:border-box;"><span style="color:#fff;font-size:20px;font-weight:700;line-height:1.5;letter-spacing:2px;text-shadow:0 2px 8px rgba(0,0,0,0.3);display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;word-wrap:break-word;"></span></div>
                     </div>
-                    <div style="flex:1;display:flex;flex-direction:column;padding:8px 0 0;height:400px;overflow:hidden;">
+                    <div style="flex:1;display:flex;flex-direction:column;padding:8px 0 0;height:auto;overflow:hidden;">
                         <h2 id="featured-title" style="font-size:26px;font-weight:700;margin-bottom:12px;color:var(--text);line-height:1.5;height:78px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;word-wrap:break-word;flex-shrink:0;">四航局党委召开2026年宣传思想品牌文化工作、统战工作会议</h2>
-                        <p id="featured-summary" style="font-size:15px;color:#999;line-height:1.8;height:162px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;margin-bottom:20px;flex-shrink:0;">四航局党委召开2026年宣传思想品牌文化工作、统战工作会议四航局党委召开2026年宣传思想品牌文化工作、统战工作会议四航局党委召开2026年宣传思想品牌文化工作、统战工作会议四航局党委召开2026年宣传思想品牌文化工作、统战工作会议</p>
+                        <p id="featured-summary" style="font-size:15px;color:#999;line-height:1.8;height:auto;overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;margin-bottom:20px;flex-shrink:0;">四航局党委召开2026年宣传思想品牌文化工作、统战工作会议四航局党委召开2026年宣传思想品牌文化工作、统战工作会议四航局党委召开2026年宣传思想品牌文化工作、统战工作会议四航局党委召开2026年宣传思想品牌文化工作、统战工作会议</p>
                         <div style="margin-top:auto;">
-                            <a id="featured-link" href="article.html?aid=party-news-1" style="display:inline-block;padding:10px 24px;background:var(--primary);color:#fff;border-radius:4px;text-decoration:none;font-size:14px;">阅读详情 →</a>
+                            <a id="featured-link" href="article.html?aid=party-news-1" style="display:inline-block;padding:10px 24px;background:var(--primary);color:#fff;border-radius:0;text-decoration:none;font-size:14px;">阅读详情 →</a>
                         </div>
                         <div style="display:flex;align-items:center;justify-content:space-between;margin-top:20px;padding-bottom:4px;">
                             <button onclick="featuredShift(-1)" style="width:40px;height:40px;border:none;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text);transition:color 0.2s;flex-shrink:0;" onmouseover="this.style.color=&#39;var(--primary)&#39;" onmouseout="this.style.color=&#39;var(--text)&#39;">
@@ -238,7 +109,7 @@
             <!-- Article List Section -->
             <section class="section" id="party-list-section" style="padding-top:0;padding-bottom:48px;">
                 <div id="party-list-container">
-                    <div style="padding:24px;background:#fff;">
+                    <div class="rows-panel">
                         <div style="display:flex;justify-content:center;align-items:center;gap:16px;padding-top:20px;"><button onclick="window._ppPage(-1)" style="width:40px;height:40px;border:1px solid var(--border);background:#fff;border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#ccc;" disabled=""><svg width="20" height="20" viewBox="0 0 16 16"><path d="M10 4L6 8L10 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path></svg></button><button onclick="window._ppGo(0)" style="min-width:36px;height:36px;border:none;border-radius:6px;cursor:pointer;font-size:16px;background:var(--primary);color:#fff;font-weight:600;">1</button><button onclick="window._ppGo(1)" style="min-width:36px;height:36px;border:none;border-radius:6px;cursor:pointer;font-size:16px;background:#f5f5f5;color:var(--text);">2</button><button onclick="window._ppPage(1)" style="width:40px;height:40px;border:1px solid var(--border);background:#fff;border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text);"><svg width="20" height="20" viewBox="0 0 16 16"><path d="M6 4L10 8L6 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path></svg></button></div>
                     </div>
                 </div>
@@ -356,35 +227,29 @@
                             function renderPage() {
                                 var start = currentPage * pageSize;
                                 var pageItems = listArticles.slice(start, start + pageSize);
-                                var listHtml = '<div style="padding:24px;background:#fff;">';
+                                var listHtml = '<div class="rows-panel party-rows">';
                                 pageItems.forEach(function(a) {
                                     var dt = (a.published_at || a.created_at) ? new Date(a.published_at || a.created_at).toISOString().slice(0, 10) : '';
-                                    listHtml += '<div onclick="location.href=\'article.html?aid=' + a.hash_id + '\'" title="' + a.title.replace(/"/g, '&quot;') + '" style="display:flex;align-items:center;padding:16px 0;font-size:20px;cursor:pointer;color:#333;border-bottom:1px solid #f0f0f0;" onmouseover="this.style.color=\'#c9a84c\'" onmouseout="this.style.color=\'#333\'">' +
-                                        '<span style="width:68%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left;">' + a.title + '</span>' +
-                                        '<span style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#666;font-size:16px;margin-left:16px;">' + (a.author || '-') + '</span>' +
-                                        '<span style="width:10%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#666;font-size:16px;margin-left:16px;">' + (a.source || '-') + '</span>' +
-                                        '<span style="width:12%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#999;font-size:16px;text-align:right;margin-left:16px;">' + dt + '</span>' +
-                                        '</div>';
+                                    listHtml += '<a href="article.html?aid=' + encodeURIComponent(a.hash_id) + '" title="' + String(a.title).replace(/"/g, '&quot;') + '">' +
+                                        '<span>' + a.title + '</span>' +
+                                        '<span class="col-src">' + (a.author || '-') + '</span>' +
+                                        '<span class="col-src">' + (a.source || '-') + '</span>' +
+                                        '<span class="col-date">' + dt + '</span></a>';
                                 });
                                 if (totalPages > 1) {
-                                    listHtml += '<div style="display:flex;justify-content:center;align-items:center;gap:16px;padding-top:20px;">';
-                                    listHtml += '<button onclick="window._ppPage(-1)" style="width:40px;height:40px;border:1px solid var(--border);background:#fff;border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:' + (currentPage === 0 ? '#ccc' : 'var(--text)') + ';" ' + (currentPage === 0 ? 'disabled' : '') + '><svg width="20" height="20" viewBox="0 0 16 16"><path d="M10 4L6 8L10 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></button>';
-                                    var pages = [];
-                                    pages.push(0);
+                                    listHtml += '<div class="site-pager">';
+                                    listHtml += '<button onclick="window._ppPage(-1)"' + (currentPage === 0 ? ' disabled' : '') + '><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M10 4L6 8L10 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>';
+                                    var pages = [0];
                                     for (var i = Math.max(1, currentPage - 2); i <= Math.min(totalPages - 2, currentPage + 2); i++) pages.push(i);
                                     if (totalPages > 1) pages.push(totalPages - 1);
-                                    pages.sort(function(a, b) {
-                                        return a - b;
-                                    });
+                                    pages.sort(function(a, b) { return a - b; });
                                     var uniq = [];
-                                    pages.forEach(function(v, k) {
-                                        if (k === 0 || v !== pages[k - 1]) uniq.push(v);
-                                    });
+                                    pages.forEach(function(v, k) { if (k === 0 || v !== pages[k - 1]) uniq.push(v); });
                                     uniq.forEach(function(v, idx) {
-                                        if (idx > 0 && v > uniq[idx - 1] + 1) listHtml += '<span style="font-size:14px;color:#999;">...</span>';
-                                        listHtml += '<button onclick="window._ppGo(' + v + ')" style="min-width:36px;height:36px;border:none;border-radius:6px;cursor:pointer;font-size:16px;' + (v === currentPage ? 'background:var(--primary);color:#fff;font-weight:600;' : 'background:#f5f5f5;color:var(--text);') + '">' + (v + 1) + '</button>';
+                                        if (idx > 0 && v > uniq[idx - 1] + 1) listHtml += '<span class="pager-ellipsis">...</span>';
+                                        listHtml += '<button' + (v === currentPage ? ' class="active"' : '') + ' onclick="window._ppGo(' + v + ')">' + (v + 1) + '</button>';
                                     });
-                                    listHtml += '<button onclick="window._ppPage(1)" style="width:40px;height:40px;border:1px solid var(--border);background:#fff;border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:' + (currentPage >= totalPages - 1 ? '#ccc' : 'var(--text)') + ';" ' + (currentPage >= totalPages - 1 ? 'disabled' : '') + '><svg width="20" height="20" viewBox="0 0 16 16"><path d="M6 4L10 8L6 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></button>';
+                                    listHtml += '<button onclick="window._ppPage(1)"' + (currentPage >= totalPages - 1 ? ' disabled' : '') + '><svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>';
                                     listHtml += '</div>';
                                 }
                                 listHtml += '</div>';
@@ -470,7 +335,7 @@
                 <h4 style="color:#fff;margin-bottom:12px;font-size:16px;">快速链接</h4>
                 <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;font-size:15px;" class="footer-links">
                     <li>
-                        <a style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交四航局" href="https://www.cccc4.com/">中交第四航务工程局有限公司
+                        <a style="color:rgba(255,255,255,0.6);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="中交四航局" href="https://www.cccc4.com/">中交四航局第三工程有限公司
 
                         </a>
                     </li>
