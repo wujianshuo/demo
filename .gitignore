@@ -6,3 +6,7 @@ _bak/
 .DS_Store
 Thumbs.db
 desktop.ini
+.claude/
+
+# 预览与打包临时产物
+zz_*
