@@ -943,7 +943,7 @@ window.SITE_ARTICLES = [
         source: '本站',
         cover_image: './1_home_files/1-4.jpg',
         published_at: '2026-10-12',
-        content: '<p>近日，四航局承建的海南国投洋浦港10万吨级公共粮油码头项目顺利完成3个码头结构段移交，受到中国新闻网、环球网、中国企业报、中国经济新闻网、中国水运网、中国商报网、人民交通网、中国交通在线、海南日报、大湾区时报、粤港澳新闻网、港澳商报网、中国品牌时报、香港商业新闻、香港世界导报、香港新闻在线、香港晨报、香港时报网、澳门晨报等十多家主流媒体的关注报道。</p><p>报道链接：https://mp.weixin.qq.com/s/rdr3npad6DekO0Dq64IV7w</p>'
+        content: '<p>近日，四航局承建的海南国投洋浦港10万吨级公共粮油码头项目顺利完成3个码头结构段移交，受到中国新闻网、环球网、中国企业报、中国经济新闻网、中国水运网、中国商报网、人民交通网、中国交通在线、海南日报、大湾区时报、粤港澳新闻网、港澳商报网、中国品牌时报、香港商业新闻、香港世界导报、香港新闻在线、香港晨报、香港时报网、澳门晨报等十多家主流媒体的关注报道。</p><p>报道链接：<a href="https://mp.weixin.qq.com/s/rdr3npad6DekO0Dq64IV7w" target="_blank" rel="noopener noreferrer">https://mp.weixin.qq.com/s/rdr3npad6DekO0Dq64IV7w</a></p>'
     },
     {
         id: 132,
@@ -953,7 +953,7 @@ window.SITE_ARTICLES = [
         source: '本站',
         cover_image: './3_news_files/2_1789883281281862438.jpg',
         published_at: '2026-10-01',
-        content: '<p>近日，四航局参建的海南东方八所港高排港区一期工程航道疏浚施工正式启动，受到环球网、中国日报网、中国水运网、中国经济新闻网、中国交通在线、人民交通网、中企资讯网、大湾区时报、港澳商报网、香港世界导报、香港时报网、香港新闻在线等十多家主流媒体的关注报道。</p><p>报道链接：https://mp.weixin.qq.com/s/kgdyUXzZaycFOXQTLcltAw</p>'
+        content: '<p>近日，四航局参建的海南东方八所港高排港区一期工程航道疏浚施工正式启动，受到环球网、中国日报网、中国水运网、中国经济新闻网、中国交通在线、人民交通网、中企资讯网、大湾区时报、港澳商报网、香港世界导报、香港时报网、香港新闻在线等十多家主流媒体的关注报道。</p><p>报道链接：<a href="https://mp.weixin.qq.com/s/kgdyUXzZaycFOXQTLcltAw" target="_blank" rel="noopener noreferrer">https://mp.weixin.qq.com/s/kgdyUXzZaycFOXQTLcltAw</a></p>'
     },
     {
         id: 133,
@@ -963,7 +963,7 @@ window.SITE_ARTICLES = [
         source: '本站',
         cover_image: './5_party_files/4_1789883310105727789.jpg',
         published_at: '2026-07-08',
-        content: '<p>5月16日，平陆运河航运枢纽主体工程建设完成，全力冲刺2026年通航目标，获央视新闻联播报道。</p><p>报道链接：</p><p>https://mp.weixin.qq.com/s/S-1rmJvIM7DAcnVa9Jp-AA?poc_token=HGoTTmqjP50I4VLtPDInOgPuGoREZWX3dn-OaoDl</p>'
+        content: '<p>5月16日，平陆运河航运枢纽主体工程建设完成，全力冲刺2026年通航目标，获央视新闻联播报道。</p><p>报道链接：</p><p><a href="https://mp.weixin.qq.com/s/S-1rmJvIM7DAcnVa9Jp-AA?poc_token=HGoTTmqjP50I4VLtPDInOgPuGoREZWX3dn-OaoDl" target="_blank" rel="noopener noreferrer">https://mp.weixin.qq.com/s/S-1rmJvIM7DAcnVa9Jp-AA?poc_token=HGoTTmqjP50I4VLtPDInOgPuGoREZWX3dn-OaoDl</a></p>'
     },
     {
         id: 6008,
@@ -973,7 +973,7 @@ window.SITE_ARTICLES = [
         source: '本站',
         cover_image: './6_tech_files/4_1789883330222183060.jpg',
         published_at: '2026-07-08',
-        content: '<p>近日，四航局承建的湛江港宝满港区集装箱码头一期扩建工程获评广东省公路水运工程“平安工地”典型项目，受到中国网、中国报道网、中国水运网、中国企业报、湛江云媒、粤港澳新闻网、香港经济新闻网、香港商业新闻网、澳门商报等多家主流媒体的关注报道。</p><p>报道链接：</p><p>https://mp.weixin.qq.com/s/bLa6WqRbwv5kmaPUGZ83cg</p>'
+        content: '<p>近日，四航局承建的湛江港宝满港区集装箱码头一期扩建工程获评广东省公路水运工程“平安工地”典型项目，受到中国网、中国报道网、中国水运网、中国企业报、湛江云媒、粤港澳新闻网、香港经济新闻网、香港商业新闻网、澳门商报等多家主流媒体的关注报道。</p><p>报道链接：</p><p><a href="https://mp.weixin.qq.com/s/bLa6WqRbwv5kmaPUGZ83cg" target="_blank" rel="noopener noreferrer">https://mp.weixin.qq.com/s/bLa6WqRbwv5kmaPUGZ83cg</a></p>'
     },
     {
         id: 6009,
@@ -983,7 +983,7 @@ window.SITE_ARTICLES = [
         source: '本站',
         cover_image: './2_about_files/1_1789887509334280000.jpg',
         published_at: '2026-07-08',
-        content: '<p>5月1日，四航局承建的平陆运河青年枢纽项目破堰放水，受到中央广播电视总台关注报道。</p><p>报道链接：</p><p>https://mp.weixin.qq.com/s/i0OIO-CaOI7ake4CPtvdjg</p>'
+        content: '<p>5月1日，四航局承建的平陆运河青年枢纽项目破堰放水，受到中央广播电视总台关注报道。</p><p>报道链接：</p><p><a href="https://mp.weixin.qq.com/s/i0OIO-CaOI7ake4CPtvdjg" target="_blank" rel="noopener noreferrer">https://mp.weixin.qq.com/s/i0OIO-CaOI7ake4CPtvdjg</a></p>'
     },
     {
         id: 6010,
@@ -993,7 +993,7 @@ window.SITE_ARTICLES = [
         source: '本站',
         cover_image: './7_hr_files/6_1789883346026393018.jpg',
         published_at: '2026-07-08',
-        content: '<p>近日，四航局承建的吴川塘尾分洪闸重建工程二期水下工程顺利通过验收，受到中国网、中国报道网、中国水运网、中国企业报、湛江云媒、粤港澳新闻网、香港经济新闻网、香港商业新闻网、澳门商报等多家主流媒体的关注报道。</p><p>报道链接：</p><p>https://mp.weixin.qq.com/s/8YIVTt3x3AZpkbQd0yW-ew</p>'
+        content: '<p>近日，四航局承建的吴川塘尾分洪闸重建工程二期水下工程顺利通过验收，受到中国网、中国报道网、中国水运网、中国企业报、湛江云媒、粤港澳新闻网、香港经济新闻网、香港商业新闻网、澳门商报等多家主流媒体的关注报道。</p><p>报道链接：</p><p><a href="https://mp.weixin.qq.com/s/8YIVTt3x3AZpkbQd0yW-ew" target="_blank" rel="noopener noreferrer">https://mp.weixin.qq.com/s/8YIVTt3x3AZpkbQd0yW-ew</a></p>'
     },
     {
         id: 6011,
@@ -1003,7 +1003,7 @@ window.SITE_ARTICLES = [
         source: '本站',
         cover_image: './1_home_files/1-1.jpg',
         published_at: '2026-07-08',
-        content: '<p>近日，四航局承建的湘江长沙综合枢纽三线船闸开展防洪度汛应急演练，受到新华网、央视网、人民日报全国党媒信息公开平台、中国日报网、新湖南、湖南经视、时刻新闻、华声在线、鲁网等多家主流媒体的关注报道。</p><p>报道链接：</p><p>https://mp.weixin.qq.com/s/pTAZeDIA1SerxeymxoSBrw</p>'
+        content: '<p>近日，四航局承建的湘江长沙综合枢纽三线船闸开展防洪度汛应急演练，受到新华网、央视网、人民日报全国党媒信息公开平台、中国日报网、新湖南、湖南经视、时刻新闻、华声在线、鲁网等多家主流媒体的关注报道。</p><p>报道链接：</p><p><a href="https://mp.weixin.qq.com/s/pTAZeDIA1SerxeymxoSBrw" target="_blank" rel="noopener noreferrer">https://mp.weixin.qq.com/s/pTAZeDIA1SerxeymxoSBrw</a></p>'
     },
     {
         id: 6012,
@@ -1013,7 +1013,7 @@ window.SITE_ARTICLES = [
         source: '本站',
         cover_image: './1_home_files/1-2.png',
         published_at: '2026-07-08',
-        content: '<p>3月18日，四航局承建的平陆运河青年枢纽开始无水单机单闸调试，标志着平陆运河正式进入船闸设备调试阶段，受到中央广播电视总台的关注报道。</p><p>报道链接：</p><p>https://mp.weixin.qq.com/s/2MARB--u5C3vwOpQszOjfw</p>'
+        content: '<p>3月18日，四航局承建的平陆运河青年枢纽开始无水单机单闸调试，标志着平陆运河正式进入船闸设备调试阶段，受到中央广播电视总台的关注报道。</p><p>报道链接：</p><p><a href="https://mp.weixin.qq.com/s/2MARB--u5C3vwOpQszOjfw" target="_blank" rel="noopener noreferrer">https://mp.weixin.qq.com/s/2MARB--u5C3vwOpQszOjfw</a></p>'
     },
     {
         id: 6013,
@@ -1023,7 +1023,7 @@ window.SITE_ARTICLES = [
         source: '本站',
         cover_image: './1_home_files/1-3.jpg',
         published_at: '2026-07-08',
-        content: '<p>近日，四航局承建的钦州港大榄坪港区大榄坪作业区4号5号泊位工程（码头水工及道路堆场）顺利通过交工验收，受到中国新闻网、中国报道网、中国水运网、人民交通网、中国交通在线、中国企业报、粤港澳新闻网、香港经济导报、香港经济新闻网、澳门商报等十多家主流媒体的关注报道。</p><p>报道链接：</p><p>https://mp.weixin.qq.com/s/GB2TPTqu_T3bGVE540Jqdw</p>'
+        content: '<p>近日，四航局承建的钦州港大榄坪港区大榄坪作业区4号5号泊位工程（码头水工及道路堆场）顺利通过交工验收，受到中国新闻网、中国报道网、中国水运网、人民交通网、中国交通在线、中国企业报、粤港澳新闻网、香港经济导报、香港经济新闻网、澳门商报等十多家主流媒体的关注报道。</p><p>报道链接：</p><p><a href="https://mp.weixin.qq.com/s/GB2TPTqu_T3bGVE540Jqdw" target="_blank" rel="noopener noreferrer">https://mp.weixin.qq.com/s/GB2TPTqu_T3bGVE540Jqdw</a></p>'
     },
     {
         id: 6014,
@@ -1033,7 +1033,7 @@ window.SITE_ARTICLES = [
         source: '本站',
         cover_image: './1_home_files/1-4.jpg',
         published_at: '2026-07-08',
-        content: '<p>近日，四航局重庆万州区北滨大道延伸段工程顺利建成通车，受到人民网、中国报道网、中国工业新闻网、中国企业报、凤凰网、山城日报、三峡传媒网、粤港澳新闻网、香港经济新闻网等多家主流媒体的关注报道。</p><p>报道链接：</p><p>https://mp.weixin.qq.com/s/ext3ZcCBzhTm91n9F1HdbA</p>'
+        content: '<p>近日，四航局重庆万州区北滨大道延伸段工程顺利建成通车，受到人民网、中国报道网、中国工业新闻网、中国企业报、凤凰网、山城日报、三峡传媒网、粤港澳新闻网、香港经济新闻网等多家主流媒体的关注报道。</p><p>报道链接：</p><p><a href="https://mp.weixin.qq.com/s/ext3ZcCBzhTm91n9F1HdbA" target="_blank" rel="noopener noreferrer">https://mp.weixin.qq.com/s/ext3ZcCBzhTm91n9F1HdbA</a></p>'
     },
     {
         id: 6015,
@@ -1731,7 +1731,7 @@ window.SITE_ARTICLES = [
         source: '本站',
         cover_image: './7_hr_files/structure-01.jpg',
         published_at: '2026-07-29',
-        content: '<p class="sub-title">图表说明</p><p><strong>统计口径：</strong>公司职工队伍总量及管理技术人员构成。</p><p><strong>主要数据：</strong>现有职工1151人，其中管理技术人员1052人。</p><p><strong>结构特点：</strong>管理技术人员约占91%，队伍以管理与技术岗位人员为主体。</p>'
+        content: ''
     },
     {
         id: 1322,
@@ -1741,7 +1741,7 @@ window.SITE_ARTICLES = [
         source: '本站',
         cover_image: './7_hr_files/structure-02.jpg',
         published_at: '2026-07-29',
-        content: '<p class="sub-title">图表说明</p><p><strong>统计口径：</strong>按学历层次统计的人员构成。</p><p><strong>主要数据：</strong>本科1039人、占97.19%，硕士30人、占2.81%。</p><p><strong>结构特点：</strong>以本科人才为主体，硕士人才提供创新支撑。</p>'
+        content: ''
     },
     {
         id: 1323,
@@ -1751,7 +1751,7 @@ window.SITE_ARTICLES = [
         source: '本站',
         cover_image: './7_hr_files/structure-03.jpg',
         published_at: '2026-07-29',
-        content: '<p class="sub-title">图表说明</p><p><strong>统计口径：</strong>按职称层级统计的人员构成。</p><p><strong>主要数据：</strong>正高级3人、副高级246人、中级369人、助理级403人。</p><p><strong>结构特点：</strong>呈金字塔形分布，中级及以下职称人员为主体，高级职称人员为技术带头力量。</p>'
+        content: ''
     },
     // ===== 业务板块项目（来源：中交四航局三公司画册 2025年12月版“我们的业务”章节） =====
 

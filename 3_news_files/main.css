@@ -1376,3 +1376,11 @@ body { background: var(--page-bg); }
   .news-rows .col-date,
   .party-rows .col-date { flex: 0 0 auto; }
 }
+
+/* ============ 2026-11-05 第二十三次：正文里的外链可点击（微信推文等） ============ */
+.article-content a {
+  color: var(--primary);
+  text-decoration: underline;
+  word-break: break-all;
+}
+.article-content a:hover { color: var(--primary-dark); }
