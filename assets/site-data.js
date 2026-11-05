@@ -5,7 +5,7 @@
  * 说明（离线本地版）：
  *  1. 顶级栏目 page_url 统一为本地相对路径（1_home.html ~ 7_hr.html）。
  *  2. 各二级子栏目均带 page_url = 其容器页 + ?cat=<slug>，供侧边栏/卡片正确跳转。
- *  3. 栏目 id 已消除重复：媒体矩阵=480，党的建设子栏目=551~554。
+ *  3. 栏目 id 已消除重复：媒体矩阵=480，党建工作子栏目=551~554。
  */
 /** 站点显示名（页面标题等统一取此值） */
 window.SITE_NAME = '中交四航局第三工程有限公司';
@@ -45,7 +45,7 @@ window.SITE_CATEGORIES = [
     },
     {
         id: 4,
-        name: '公司业务',
+        name: '核心业务',
         slug: 'business',
         parent_id: 0,
         is_nav: true,
@@ -56,7 +56,7 @@ window.SITE_CATEGORIES = [
     },
     {
         id: 5,
-        name: '党的建设',
+        name: '党建工作',
         slug: 'party',
         parent_id: 0,
         is_nav: true,
@@ -139,12 +139,12 @@ window.SITE_CATEGORIES = [
         name: '业务领域',
         slug: 'about-layout',
         parent_id: 2,
-        is_nav: true,
+        is_nav: false,
         sort_order: 5,
         page_url: './2_about.html?cat=about-layout',
         images: './4_business_files/1-5.jpg',
-        description: '公司各业务板块总览，与首页业务领域模块一一对应',
-        content: '<p>三公司业务涵盖港口及航运设施、公路、铁路、城市轨道交通、市政、隧道和桥梁、水利船闸船坞、房屋建筑、生态保护、河湖治理、综合管廊以及海外港口与海上风电等领域。下列板块与首页业务领域模块一一对应，点击可查看该板块的工程实绩。</p><div class="photo-grid"><figure><a href="./4_business.html?cat=business-port"><img src="./4_business_files/bw-02.jpg" alt="港口及航运设施工程"><figcaption>港口及航运设施工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-road"><img src="./4_business_files/bw-13.jpg" alt="公路工程"><figcaption>公路工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-railway"><img src="./4_business_files/bw-19.jpg" alt="铁路工程"><figcaption>铁路工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-rail"><img src="./4_business_files/bw-22.jpg" alt="城市轨道交通工程"><figcaption>城市轨道交通工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-admin"><img src="./4_business_files/bw-24.jpg" alt="市政工程"><figcaption>市政工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-bridge"><img src="./4_business_files/bw-28.jpg" alt="隧道和桥梁工程"><figcaption>隧道和桥梁工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-ship"><img src="./4_business_files/bw-35.jpg" alt="水利、船闸、船坞工程"><figcaption>水利、船闸、船坞工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-house"><img src="./4_business_files/bw-41.jpg" alt="房屋建筑工程"><figcaption>房屋建筑工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-ecology"><img src="./4_business_files/bw-46.jpg" alt="生态保护工程"><figcaption>生态保护工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-river"><img src="./4_business_files/bw-50.jpg" alt="河湖治理工程"><figcaption>河湖治理工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-utility"><img src="./4_business_files/bw-52.jpg" alt="综合管廊工程"><figcaption>综合管廊工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-port_overseas"><img src="./4_business_files/bw-53.jpg" alt="海外港口及航运设施工程"><figcaption>海外港口及航运设施工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-wind"><img src="./4_business_files/bw-62.jpg" alt="海外风能发电工程"><figcaption>海外风能发电工程</figcaption></a></figure></div>'
+        description: '公司各业务板块总览，与首页核心业务模块一一对应',
+        content: '<p>三公司业务涵盖港口及航运设施、公路、铁路、城市轨道交通、市政、隧道和桥梁、水利船闸船坞、房屋建筑、生态保护、河湖治理、综合管廊以及海外港口与海上风电等领域。下列板块与首页核心业务模块一一对应，点击可查看该板块的工程实绩。</p><div class="photo-grid"><figure><a href="./4_business.html?cat=business-port"><img src="./4_business_files/bw-02.jpg" alt="港口及航运设施工程"><figcaption>港口及航运设施工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-road"><img src="./4_business_files/bw-13.jpg" alt="公路工程"><figcaption>公路工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-railway"><img src="./4_business_files/bw-19.jpg" alt="铁路工程"><figcaption>铁路工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-rail"><img src="./4_business_files/bw-22.jpg" alt="城市轨道交通工程"><figcaption>城市轨道交通工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-admin"><img src="./4_business_files/bw-24.jpg" alt="市政工程"><figcaption>市政工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-bridge"><img src="./4_business_files/bw-28.jpg" alt="隧道和桥梁工程"><figcaption>隧道和桥梁工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-ship"><img src="./4_business_files/bw-35.jpg" alt="水利、船闸、船坞工程"><figcaption>水利、船闸、船坞工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-house"><img src="./4_business_files/bw-41.jpg" alt="房屋建筑工程"><figcaption>房屋建筑工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-ecology"><img src="./4_business_files/bw-46.jpg" alt="生态保护工程"><figcaption>生态保护工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-river"><img src="./4_business_files/bw-50.jpg" alt="河湖治理工程"><figcaption>河湖治理工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-utility"><img src="./4_business_files/bw-52.jpg" alt="综合管廊工程"><figcaption>综合管廊工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-port_overseas"><img src="./4_business_files/bw-53.jpg" alt="海外港口及航运设施工程"><figcaption>海外港口及航运设施工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-wind"><img src="./4_business_files/bw-62.jpg" alt="海外风能发电工程"><figcaption>海外风能发电工程</figcaption></a></figure></div>'
     },
     {
         id: 26,
@@ -181,7 +181,7 @@ window.SITE_CATEGORIES = [
         images: './4_business_files/1-4.jpg'
     },
 
-    // ===== 公司业务（id=4） =====
+    // ===== 核心业务（id=4，原栏目名：公司业务） =====
     {
         id: 41,
         name: '港口及航运设施工程',
@@ -366,7 +366,7 @@ window.SITE_CATEGORIES = [
         images: './4_business_files/1-7.jpg'
     },
 
-    // ===== 党的建设（id=5） =====
+    // ===== 党建工作（id=5，原栏目名：党的建设） =====
     {
         id: 551,
         name: '综合动态',

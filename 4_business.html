@@ -268,7 +268,7 @@
     </style>
 </head>
 
-<body data-site="shj" data-root-cat-name="公司业务">
+<body data-site="shj" data-root-cat-name="核心业务">
 
     <!-- 导航栏开始 -->
 
@@ -292,8 +292,8 @@
         <div class="honor-banner" id="honor-banner"><img src="./4_business_files/1-6.jpg" alt=""></div>
 
         <div style="width:100%;max-width:1350px;margin:0 auto;display:flex;gap:2%;align-items:flex-start;padding:24px 0 48px;">
-            <!-- 侧边栏：业务领域子栏目（不含「全部」按钮） -->
-            <aside class="page-side" id="business-side"><h4>公司业务</h4><a class="active" href="./4_business.html?cat=business-port">港口及航运设施工程</a><a href="./4_business.html?cat=business-road">公路工程</a><a href="./4_business.html?cat=business-railway">铁路工程</a><a href="./4_business.html?cat=business-rail">城市轨道交通工程</a><a href="./4_business.html?cat=business-admin">市政工程</a><a href="./4_business.html?cat=business-cat-bridge">隧道和桥梁工程</a><a href="./4_business.html?cat=business-cat-ship">水利、船闸、船坞工程</a><a href="./4_business.html?cat=business-cat-house">房屋建筑工程</a><a href="./4_business.html?cat=business-cat-ecology">生态保护工程</a><a href="./4_business.html?cat=business-cat-river">河湖治理工程</a><a href="./4_business.html?cat=business-cat-utility">综合管廊工程</a><a href="./4_business.html?cat=business-cat-port_overseas">海外港口及航运设施工程</a><a href="./4_business.html?cat=business-cat-wind">海外风能发电工程</a></aside>
+            <!-- 侧边栏：核心业务子栏目（不含「全部」按钮） -->
+            <aside class="page-side" id="business-side"><h4>核心业务</h4><a class="active" href="./4_business.html?cat=business-port">港口及航运设施工程</a><a href="./4_business.html?cat=business-road">公路工程</a><a href="./4_business.html?cat=business-railway">铁路工程</a><a href="./4_business.html?cat=business-rail">城市轨道交通工程</a><a href="./4_business.html?cat=business-admin">市政工程</a><a href="./4_business.html?cat=business-cat-bridge">隧道和桥梁工程</a><a href="./4_business.html?cat=business-cat-ship">水利、船闸、船坞工程</a><a href="./4_business.html?cat=business-cat-house">房屋建筑工程</a><a href="./4_business.html?cat=business-cat-ecology">生态保护工程</a><a href="./4_business.html?cat=business-cat-river">河湖治理工程</a><a href="./4_business.html?cat=business-cat-utility">综合管廊工程</a><a href="./4_business.html?cat=business-cat-port_overseas">海外港口及航运设施工程</a><a href="./4_business.html?cat=business-cat-wind">海外风能发电工程</a></aside>
 
             <div class="page-main">
                 <h1 id="business-title">工程承包业务</h1>
@@ -529,7 +529,7 @@
                 return r.json();
             }).then(function(cats) {
                 var catsArr = Array.isArray(cats) ? cats : (cats.data || []);
-                // 公司业务顶级栏目：page_url 指向本页（兼容历史 business.html 命名）
+                // 核心业务顶级栏目：page_url 指向本页（兼容历史 business.html 命名）
                 var topCat = catsArr.find(function(c) {
                     var pu = (c.page_url || '').toLowerCase().split('?')[0].split('/').pop(); return pu === 'business.html' || pu === '4_business.html';
                 });
@@ -542,7 +542,7 @@
                     });
                 }
                 if (!topCat) topCat = catsArr.find(function(c) {
-                    return c.name === '业务领域';
+                    return c.slug === 'business';
                 });
                 if (!topCat) return;
 
@@ -554,7 +554,7 @@
                     });
 
                 // 目标栏目：?cat=/?tab= 命中子栏目则页内切换
-                // 业务领域不再作为单独页面：无参数时默认显示第一个子栏目
+                // 核心业务不再作为单独页面：无参数时默认显示第一个子栏目
                 var want = getParam('cat') || getParam('tab');
                 var targetCat = null;
                 if (want) {
@@ -592,7 +592,7 @@
                 var titleEl = document.getElementById('business-title');
                 if (titleEl) titleEl.textContent = viewCat.name;
 
-                // 顶部大横幅：业务领域（顶级栏目）栏目图
+                // 顶部大横幅：核心业务（顶级栏目）栏目图
                 var bannerEl = document.getElementById('honor-banner');
                 if (bannerEl) {
                     var bImg = firstImg(topCat);

@@ -474,7 +474,7 @@
         }
         if (!biz) { grid.innerHTML = ''; return; }
         if (titleEl) titleEl.textContent = biz.name;
-        // 显示"公司业务"下全部子栏目；无栏目图(images)的子栏目（如海外业务、科技研发）带 biz-empty 类呈淡蓝底
+        // 显示"核心业务下全部子栏目；无栏目图(images)的子栏目（如海外业务、科技研发）带 biz-empty 类呈淡蓝底
         var kids = cats.filter(function(c){ return c.parent_id === biz.id; })
         .sort(function(a, b){ return (a.sort_order || 0) - (b.sort_order || 0) || a.id - b.id; });
         if (!kids.length) { grid.innerHTML = ''; return; }
@@ -519,10 +519,10 @@
     <!-- 全球布局模块结束 -->
 
         
-    <!-- ===== 2026-09-04e 应需求新增首页"公司业务"模块：渲染"公司业务"下全部子栏目横向排列（无栏目图者显示主题蓝底）；默认第一张/鼠标悬停那张为 1/3 大图（名称下显示描述、"了解详情"在右下角），其余为小图（仅名称+"了解详情"）。点击跳转子栏目页。删除本 start/end 注释对即可移除。start ===== -->
+    <!-- ===== 2026-09-04e 应需求新增首页"核心业务模块：渲染"核心业务下全部子栏目横向排列（无栏目图者显示主题蓝底）；默认第一张/鼠标悬停那张为 1/3 大图（名称下显示描述、"了解详情"在右下角），其余为小图（仅名称+"了解详情"）。点击跳转子栏目页。删除本 start/end 注释对即可移除。start ===== -->
     <section class="section" id="biz-section">
     <div class="section-title">
-        <h2 id="biz-section-title">公司业务</h2>
+        <h2 id="biz-section-title">核心业务</h2>
     </div>
     <div id="biz-cards" class="biz-cards">
         <div class="biz-card active" style="flex-grow: 45;">
@@ -548,11 +548,11 @@
     fetch('/api/public/' + siteId + '/categories').then(function(r){ return r.json(); }).then(function(cats){
         var biz = null;
         for (var i = 0; i < cats.length; i++) {
-        if (cats[i].name === '公司业务') { biz = cats[i]; break; }
+        if (cats[i].slug === 'business') { biz = cats[i]; break; }
         }
         if (!biz) { grid.innerHTML = ''; return; }
         if (titleEl) titleEl.textContent = biz.name;
-        // 显示"公司业务"下全部子栏目；无栏目图(images)的子栏目（如海外业务、科技研发）带 biz-empty 类呈淡蓝底
+        // 显示"核心业务下全部子栏目；无栏目图(images)的子栏目（如海外业务、科技研发）带 biz-empty 类呈淡蓝底
         var kids = cats.filter(function(c){ return c.parent_id === biz.id; })
         .sort(function(a, b){ return (a.sort_order || 0) - (b.sort_order || 0) || a.id - b.id; });
         if (!kids.length) { grid.innerHTML = ''; return; }
@@ -593,7 +593,7 @@
     });
     })();
     </script>
-    <!-- ===== 2026-09-04e 公司业务模块 end ===== -->
+    <!-- ===== 2026-09-04e "核心业务模块 end ===== -->
 
     <script>
         (function() {

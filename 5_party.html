@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>党的建设 - 中交四航局第三工程有限公司</title>
+    <title>党建工作 - 中交四航局第三工程有限公司</title>
     <link rel="icon" href="./1_home_files/logo.png">
     <link rel="stylesheet" href="./5_party_files/main.css">
     <script src="./assets/site-data.js"></script>
@@ -49,7 +49,7 @@
         </style>
 </head>
 
-<body data-site="shj" data-root-cat-name="党的建设">
+<body data-site="shj" data-root-cat-name="党建工作">
 
 
     <!-- 导航栏开始 -->
@@ -67,7 +67,7 @@
         </div>
     </header>
     <div id="site-cat-banner" style="display: block;">
-        <img src="./5_party_files/4_1789883310105727789.jpg" alt="党的建设">
+        <img src="./5_party_files/4_1789883310105727789.jpg" alt="党建工作">
     </div>
 
     <!-- 导航栏结束 -->
@@ -75,7 +75,7 @@
 
 
     <div class="party-outer">
-        <aside class="party-sidebar" id="party-sidebar"><h4 data-title-link="1" title="返回栏目首页" style="cursor: pointer;">党的建设</h4><a class="active" href="./5_party.html?cat=party-news">综合动态</a><a href="./5_party.html?cat=party-brand">党建品牌</a><a href="./5_party.html?cat=party-union">工团工作</a><a href="./5_party.html?cat=party-report">信访举报</a></aside>
+        <aside class="party-sidebar" id="party-sidebar"><h4 data-title-link="1" title="返回栏目首页" style="cursor: pointer;">党建工作</h4><a class="active" href="./5_party.html?cat=party-news">综合动态</a><a href="./5_party.html?cat=party-brand">党建品牌</a><a href="./5_party.html?cat=party-union">工团工作</a><a href="./5_party.html?cat=party-report">信访举报</a></aside>
 
         <div class="party-main">
             <!-- Featured Articles Section -->
@@ -146,7 +146,7 @@
                     var params = new URLSearchParams(window.location.search);
                     var activeCatName = params.get('cat');
 
-                    // 定位党的建设根栏目：优先 page_url 标记，兼容不同站点栏目 ID 差异
+                    // 定位党建工作根栏目：优先 page_url 标记，兼容不同站点栏目 ID 差异
                     var partyCat = cats.find(function(c) {
                         return c.page_url === 'party.html';
                     });
@@ -157,7 +157,7 @@
                         });
                     }
                     if (!partyCat) partyCat = cats.find(function(c) {
-                        return c.name === '党的建设';
+                        return c.slug === 'party';
                     });
                     var siblings = [];
                     if (partyCat) {
