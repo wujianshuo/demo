@@ -1160,7 +1160,7 @@ body { background: var(--page-bg); }
   box-sizing: border-box;
 }
 
-/* 栏目标题 / 文章大标题：28px 加粗 + 通栏 2px 主色下划线，整行居中（2026-11-05 第十九次：原左对齐改居中） */
+/* 栏目标题 / 文章大标题：28px 加粗 + 通栏 2px 主色下划线，左对齐（2026-11-05 第二十一次：栏目页标题按官网回到左对齐，详情页文章标题另议） */
 .page-main h1,
 .detail-main h1,
 .article-card h1,
@@ -1168,20 +1168,21 @@ body { background: var(--page-bg); }
   font-size: 28px;
   font-weight: 700;
   line-height: 1.4;
+
   color: var(--text);
-  text-align: center;
+  text-align: left;
   margin: 0 0 24px;
   padding-bottom: 16px;
   border-bottom: 2px solid var(--primary);
 }
-.cat-header { text-align: center; margin: 0 0 24px; }
+.cat-header { text-align: left; margin: 0 0 24px; }
 .cat-header .cat-underline { display: none; }
 .cat-header .cat-desc {
   font-size: 15px;
   color: var(--text-muted);
   line-height: 1.8;
   max-width: 700px;
-  margin: 12px auto 0;
+  margin: 12px 0 0;
 }
 
 /* 正文小标题：全站同一规格（原 17px 与 18px 两种写法并存） */
