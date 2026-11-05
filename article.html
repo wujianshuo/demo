@@ -38,11 +38,8 @@
             margin-bottom: 24px;
         }
 
-        .article-meta span + span::before {
-            content: '·';
-            margin: 0 10px;
-            color: #ccc;
-        }
+        /* 段间用一个全角空格分隔，与官网详情页 meta 行一致 */
+        .article-meta span + span::before { content: '　'; margin: 0; }
 
         .article-cover {
             display: block;
@@ -138,7 +135,9 @@
             <h1 id="article-title">加载中…</h1>
             <div class="article-meta">
                 <span id="article-date"></span>
+                <span id="article-author"></span>
                 <span id="article-source"></span>
+                <span id="article-views"></span>
             </div>
             <img class="article-cover" id="article-cover" alt="" style="display:none;">
             <div class="article-content" id="article-content"></div>
@@ -187,14 +186,22 @@
 
             if (!article) {
                 document.getElementById('article-title').textContent = '文章不存在或已下线';
+            document.querySelector('.article-meta').style.display = 'none';
                 document.getElementById('article-content').innerHTML = '<p style="color:#999;">抱歉，您访问的文章不存在或已下线，请返回列表查看其他内容。</p>';
                 return;
             }
 
             document.title = article.title + ' - ' + (window.SITE_NAME || '中交四航局第三工程有限公司');
             document.getElementById('article-title').textContent = article.title;
-            document.getElementById('article-date').textContent = (article.published_at || article.created_at || '').substring(0, 10);
-            document.getElementById('article-source').textContent = '来源：' + (article.source || '本站') + (article.author ? '　作者：' + article.author : '');
+            /* 官网详情页 meta 口径：日期取本条发布日期，作者 / 来源 / 浏览为站点统一署名口径 */
+            var AM = window.ARTICLE_META || {};
+            var metaAuthor = article.author || AM.author;
+            var metaSource = (article.source && article.source !== '本站') ? article.source : AM.source;
+            var metaViews = AM.views;
+            document.getElementById('article-date').textContent = '日期：' + ((article.published_at || article.created_at || '').substring(0, 10) || '—');
+            document.getElementById('article-author').textContent = '作者：' + metaAuthor;
+            document.getElementById('article-source').textContent = '来源：' + metaSource;
+            document.getElementById('article-views').textContent = '浏览：' + metaViews;
             var cover = document.getElementById('article-cover');
             if (article.cover_image) {
                 cover.src = article.cover_image;

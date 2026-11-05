@@ -9,6 +9,8 @@
  */
 /** 站点显示名（页面标题等统一取此值） */
 window.SITE_NAME = '中交四航局第三工程有限公司';
+/** 详情页与列表页统一的署名口径，与官网条目 meta 一致（作者 / 来源 / 浏览） */
+window.ARTICLE_META = { author: '郧靖月、黄梓涛', source: '航通公司', views: '117' };
 window.SITE_CATEGORIES = [
     // ===== 顶级栏目 =====
     {
