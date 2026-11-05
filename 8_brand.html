@@ -174,7 +174,7 @@
                                 listHtml += '<div class="detail-item" onclick="location.href=\'article.html?aid=' + a.hash_id + '\'">' +
                                     '<div class="d-body"><h3>' + a.title + '</h3>' +
                                     '<div class="d-summary">' + (a.summary || '') + '</div>' +
-                                    '<div class="d-meta"><span>作者：' + (a.author || (window.ARTICLE_META || {}).author) + '</span><span>来源：' + ((a.source && a.source !== '本站') ? a.source : (window.ARTICLE_META || {}).source) + '</span><span>日期：' + dt + '</span></div>' +
+                                    '<div class="d-meta">' + (a.author ? '<span>作者：' + a.author + '</span>' : '') + (a.source ? '<span>来源：' + a.source + '</span>' : '') + (dt ? '<span>日期：' + dt + '</span>' : '') + '</div>' +
                                     '</div></div>';
                             });
                             var pagerHtml = '';

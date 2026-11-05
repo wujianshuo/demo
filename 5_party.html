@@ -232,8 +232,8 @@
                                     var dt = (a.published_at || a.created_at) ? new Date(a.published_at || a.created_at).toISOString().slice(0, 10) : '';
                                     listHtml += '<a href="article.html?aid=' + encodeURIComponent(a.hash_id) + '" title="' + String(a.title).replace(/"/g, '&quot;') + '">' +
                                         '<span>' + a.title + '</span>' +
-                                        '<span class="col-src">' + (a.author || (window.ARTICLE_META || {}).author) + '</span>' +
-                                        '<span class="col-src">' + ((a.source && a.source !== '本站') ? a.source : (window.ARTICLE_META || {}).source) + '</span>' +
+                                        '<span class="col-src">' + (a.author || '') + '</span>' +
+                                        '<span class="col-src">' + (a.source || '-') + '</span>' +
                                         '<span class="col-date">' + dt + '</span></a>';
                                 });
                                 if (totalPages > 1) {

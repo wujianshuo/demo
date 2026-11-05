@@ -134,10 +134,7 @@
             <a class="article-back" onclick="history.back()">← 返回</a>
             <h1 id="article-title">加载中…</h1>
             <div class="article-meta">
-                <span id="article-date"></span>
-                <span id="article-author"></span>
-                <span id="article-source"></span>
-                <span id="article-views"></span>
+
             </div>
             <img class="article-cover" id="article-cover" alt="" style="display:none;">
             <div class="article-content" id="article-content"></div>
@@ -193,15 +190,19 @@
 
             document.title = article.title + ' - ' + (window.SITE_NAME || '中交四航局第三工程有限公司');
             document.getElementById('article-title').textContent = article.title;
-            /* 官网详情页 meta 口径：日期取本条发布日期，作者 / 来源 / 浏览为站点统一署名口径 */
-            var AM = window.ARTICLE_META || {};
-            var metaAuthor = article.author || AM.author;
-            var metaSource = (article.source && article.source !== '本站') ? article.source : AM.source;
-            var metaViews = AM.views;
-            document.getElementById('article-date').textContent = '日期：' + ((article.published_at || article.created_at || '').substring(0, 10) || '—');
-            document.getElementById('article-author').textContent = '作者：' + metaAuthor;
-            document.getElementById('article-source').textContent = '来源：' + metaSource;
-            document.getElementById('article-views').textContent = '浏览：' + metaViews;
+            /* 详情页 meta：只显示本条真实存在的字段（日期 / 作者 / 来源 / 浏览），缺字段不编造占位 */
+            var metaSegs = [];
+            var metaDate = (article.published_at || article.created_at || '').substring(0, 10);
+            if (metaDate) metaSegs.push('日期：' + metaDate);
+            if (article.author) metaSegs.push('作者：' + article.author);
+            if (article.source) metaSegs.push('来源：' + article.source);
+            if (article.views) metaSegs.push('浏览：' + article.views);
+            var metaEl = document.querySelector('.article-meta');
+            if (metaSegs.length) {
+                metaEl.innerHTML = metaSegs.map(function (s) { return '<span>' + s + '</span>'; }).join('');
+            } else {
+                metaEl.style.display = 'none';
+            }
             var cover = document.getElementById('article-cover');
             if (article.cover_image) {
                 cover.src = article.cover_image;
