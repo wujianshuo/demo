@@ -179,7 +179,7 @@ window.SITE_CATEGORIES = [
         sort_order: 1,
         page_url: './4_business.html?cat=business-port',
         images: './4_business_files/bw-02.jpg',
-        description: '大型深水码头、航道整治、疏浚吹填、岛隧工程等港口及航运设施建设'
+        description: '沿海与内河码头、深水泊位、航道整治、疏浚吹填、岛隧工程及港口配套设施建设'
     },
     {
         id: 42,
@@ -190,7 +190,7 @@ window.SITE_CATEGORIES = [
         sort_order: 2,
         page_url: './4_business.html?cat=business-road',
         images: './4_business_files/bw-13.jpg',
-        description: '高速公路、国省道、市政道路等公路工程建设'
+        description: '高速公路、国省干线、山区公路、互通立交及公路配套工程建设'
     },
     {
         id: 43,
@@ -201,7 +201,7 @@ window.SITE_CATEGORIES = [
         sort_order: 3,
         page_url: './4_business.html?cat=business-railway',
         images: './4_business_files/bw-19.jpg',
-        description: '高速铁路、普速铁路及站场工程建设'
+        description: '高速铁路、普速铁路、站场枢纽及铁路配套工程建设'
     },
     {
         id: 44,
@@ -212,7 +212,7 @@ window.SITE_CATEGORIES = [
         sort_order: 4,
         page_url: './4_business.html?cat=business-rail',
         images: './4_business_files/bw-22.jpg',
-        description: '城市地铁、轻轨等轨道交通工程建设'
+        description: '城市地铁、轻轨、车辆段及盾构区间等轨道交通工程建设'
     },
     {
         id: 45,
@@ -223,7 +223,7 @@ window.SITE_CATEGORIES = [
         sort_order: 5,
         page_url: './4_business.html?cat=business-admin',
         images: './4_business_files/bw-24.jpg',
-        description: '城市道路、桥梁、管网等市政基础设施建设'
+        description: '城市道路、桥梁、隧道、管网改造及片区综合开发等市政基础设施建设'
     },
     {
         id: 46,
@@ -234,7 +234,7 @@ window.SITE_CATEGORIES = [
         sort_order: 6,
         page_url: './4_business.html?cat=business-cat-bridge',
         images: './4_business_files/bw-28.jpg',
-        description: '跨海大桥、长大隧道、沉管隧道等桥隧工程建设'
+        description: '跨海大桥、特大桥梁、长大隧道、沉管隧道及顶管工程建设'
     },
     {
         id: 47,
@@ -245,7 +245,7 @@ window.SITE_CATEGORIES = [
         sort_order: 7,
         page_url: './4_business.html?cat=business-cat-ship',
         images: './4_business_files/bw-35.jpg',
-        description: '水利枢纽、船闸、船坞等水工建筑物建设'
+        description: '水利枢纽、船闸、船坞、航道护岸及其他水工构筑物建设'
     },
     {
         id: 48,
@@ -256,7 +256,7 @@ window.SITE_CATEGORIES = [
         sort_order: 8,
         page_url: './4_business.html?cat=business-cat-house',
         images: './4_business_files/bw-41.jpg',
-        description: '工业与民用建筑、城市更新等房建工程'
+        description: '工业厂房、民用建筑、公共设施和城市更新等房屋工程建设'
     },
     {
         id: 49,
@@ -267,7 +267,7 @@ window.SITE_CATEGORIES = [
         sort_order: 9,
         page_url: './4_business.html?cat=business-cat-ecology',
         images: './4_business_files/bw-46.jpg',
-        description: '生态修复、环境治理等绿色工程'
+        description: '岸线修复、湿地与海域生态修复、环境治理等绿色工程建设'
     },
     {
         id: 50,
@@ -278,7 +278,7 @@ window.SITE_CATEGORIES = [
         sort_order: 10,
         page_url: './4_business.html?cat=business-cat-river',
         images: './4_business_files/bw-50.jpg',
-        description: '河湖整治、水环境综合治理工程'
+        description: '江河湖海整治、堤岸防护、清淤扩容与水环境综合治理'
     },
     {
         id: 51,
@@ -289,7 +289,7 @@ window.SITE_CATEGORIES = [
         sort_order: 11,
         page_url: './4_business.html?cat=business-cat-utility',
         images: './4_business_files/bw-52.jpg',
-        description: '城市地下综合管廊等基础设施工程'
+        description: '城市地下综合管廊、地下空间开发及市政管线迁改工程'
     },
     {
         id: 52,
@@ -300,7 +300,7 @@ window.SITE_CATEGORIES = [
         sort_order: 13,
         page_url: './4_business.html?cat=business-cat-wind',
         images: './4_business_files/bw-62.jpg',
-        description: '海上风电等新能源工程'
+        description: '海外海上风电、陆上风电及其他新能源工程建设'
     },
     {
         id: 53,
@@ -311,7 +311,7 @@ window.SITE_CATEGORIES = [
         sort_order: 12,
         page_url: './4_business.html?cat=business-cat-port_overseas',
         images: './4_business_files/bw-53.jpg',
-        description: '海外港口、码头等国际工程'
+        description: '海外港口、码头、临海设施等国际工程，含尼日利亚瓦里港、安哥拉洛比托港等项目'
     },
     {
         id: 411,
@@ -384,17 +384,6 @@ window.SITE_CATEGORIES = [
         sort_order: 3,
         page_url: './5_party.html?cat=party-union',
         images: './4_business_files/1-1.jpg'
-    },
-    {
-        id: 554,
-        name: '信访举报',
-        slug: 'party-report',
-        parent_id: 5,
-        is_nav: true,
-        sort_order: 5,
-        page_url: './5_party.html?cat=party-report',
-        images: './4_business_files/1-1.jpg',
-        content: ''
     },
 
     // ===== 科技创新（id=6） =====
@@ -597,42 +586,6 @@ window.SITE_CATEGORIES = [
 window.SITE_ARTICLES = [
     // ===== 企业荣誉（category_id=26，12 篇） =====
     {
-        id: 6039,
-        hash_id: 'honor-1',
-        category_id: 26,
-        title: '全国文明单位',
-        source: '本站',
-        cover_image: './2_about_files/honor-01.jpg',
-        content: '<p class="sub-title">荣誉说明</p><p><strong>荣誉名称：</strong>全国文明单位。</p><p><strong>荣誉类别：</strong>全国性精神文明建设荣誉。</p><p><strong>奖牌证书所示：</strong>奖牌落款为中央精神文明建设指导委员会，时间2020年12月。</p><p><strong>奖项简介：</strong>由中央精神文明建设指导委员会评选表彰，是群众性精神文明建设活动的最高综合性荣誉。</p>'
-    },
-    {
-        id: 6040,
-        hash_id: 'honor-2',
-        category_id: 26,
-        title: '鲁班奖',
-        source: '本站',
-        cover_image: './2_about_files/honor-02.jpg',
-        content: '<p class="sub-title">荣誉说明</p><p><strong>荣誉名称：</strong>鲁班奖。</p><p><strong>荣誉类别：</strong>国家级建设工程质量荣誉。</p><p><strong>奖牌证书所示：</strong>奖杯为鲁班形象铜质奖杯。</p><p><strong>奖项简介：</strong>中国建筑业协会评选的全国建设工程质量荣誉奖，被视为行业工程质量最高奖。</p>'
-    },
-    {
-        id: 6041,
-        hash_id: 'honor-3',
-        category_id: 26,
-        title: '詹天佑奖',
-        source: '本站',
-        cover_image: './2_about_files/honor-03.jpg',
-        content: '<p class="sub-title">荣誉说明</p><p><strong>荣誉名称：</strong>詹天佑奖。</p><p><strong>荣誉类别：</strong>土木工程领域全国性科技荣誉。</p><p><strong>奖牌证书所示：</strong>奖杯为詹天佑人物雕像及底座铭牌。</p><p><strong>奖项简介：</strong>我国土木工程领域的全国性奖项，授予在科技创新与工程实践方面表现突出的项目。</p>'
-    },
-    {
-        id: 6042,
-        hash_id: 'honor-4',
-        category_id: 26,
-        title: '全国工人先锋号',
-        source: '本站',
-        cover_image: './2_about_files/honor-04.jpg',
-        content: '<p class="sub-title">荣誉说明</p><p><strong>荣誉名称：</strong>全国工人先锋号。</p><p><strong>荣誉类别：</strong>全国性职工集体荣誉。</p><p><strong>奖牌证书所示：</strong>奖牌落款为中华全国总工会。</p><p><strong>奖项简介：</strong>由中华全国总工会授予先进集体的全国性荣誉，表彰在生产服务、创新创造中表现突出的班组和团队。</p>'
-    },
-    {
         id: 6043,
         hash_id: 'honor-5',
         category_id: 26,
@@ -640,6 +593,15 @@ window.SITE_ARTICLES = [
         source: '本站',
         cover_image: './2_about_files/honor-05.jpg',
         content: '<p class="sub-title">荣誉说明</p><p><strong>荣誉名称：</strong>国家优质工程金奖。</p><p><strong>荣誉类别：</strong>国家级工程质量荣誉（金奖）。</p><p><strong>奖牌证书所示：</strong>奖牌载明工程名称为广东湛江钢铁基地项目，参建单位为中交四航局第三工程有限公司，落款中国施工企业管理协会、二〇一九年十二月。</p><p><strong>奖项简介：</strong>国家优质工程奖中的高等级奖项，是我国工程建设领域国家级质量荣誉。</p>'
+    },
+    {
+        id: 6047,
+        hash_id: 'honor-9',
+        category_id: 26,
+        title: '国家优质工程金质奖',
+        source: '本站',
+        cover_image: './2_about_files/honor-09.jpg',
+        content: '<p class="sub-title">荣誉说明</p><p><strong>荣誉名称：</strong>国家优质工程金质奖。</p><p><strong>荣誉类别：</strong>国家级工程质量荣誉（金质奖）。</p><p><strong>奖牌证书所示：</strong>奖牌为金质奖章及红色铭牌。</p><p><strong>奖项简介：</strong>国家优质工程奖中的高等级奖项，代表该年度评选中的优质工程水平。</p>'
     },
     {
         id: 6044,
@@ -669,22 +631,40 @@ window.SITE_ARTICLES = [
         content: '<p class="sub-title">荣誉说明</p><p><strong>荣誉名称：</strong>国家优质工程银质奖。</p><p><strong>荣誉类别：</strong>国家级工程质量荣誉（银质奖）。</p><p><strong>奖牌证书所示：</strong>奖牌标注年度为2010—2011。</p><p><strong>奖项简介：</strong>国家优质工程奖设金质奖、银质奖等等级，银质奖为其中面向优质完工工程的等级奖项。</p>'
     },
     {
-        id: 6047,
-        hash_id: 'honor-9',
+        id: 6040,
+        hash_id: 'honor-2',
         category_id: 26,
-        title: '国家优质工程金质奖',
+        title: '鲁班奖',
         source: '本站',
-        cover_image: './2_about_files/honor-09.jpg',
-        content: '<p class="sub-title">荣誉说明</p><p><strong>荣誉名称：</strong>国家优质工程金质奖。</p><p><strong>荣誉类别：</strong>国家级工程质量荣誉（金质奖）。</p><p><strong>奖牌证书所示：</strong>奖牌为金质奖章及红色铭牌。</p><p><strong>奖项简介：</strong>国家优质工程奖中的高等级奖项，代表该年度评选中的优质工程水平。</p>'
+        cover_image: './2_about_files/honor-02.jpg',
+        content: '<p class="sub-title">荣誉说明</p><p><strong>荣誉名称：</strong>鲁班奖。</p><p><strong>荣誉类别：</strong>国家级建设工程质量荣誉。</p><p><strong>奖牌证书所示：</strong>奖杯为鲁班形象铜质奖杯。</p><p><strong>奖项简介：</strong>中国建筑业协会评选的全国建设工程质量荣誉奖，被视为行业工程质量最高奖。</p>'
     },
     {
-        id: 6048,
-        hash_id: 'honor-10',
+        id: 6041,
+        hash_id: 'honor-3',
         category_id: 26,
-        title: '优秀企业管理银奖',
+        title: '詹天佑奖',
         source: '本站',
-        cover_image: './2_about_files/honor-10.jpg',
-        content: '<p class="sub-title">荣誉说明</p><p><strong>荣誉名称：</strong>优秀企业管理银奖。</p><p><strong>荣誉类别：</strong>企业管理成果类荣誉。</p><p><strong>奖牌证书所示：</strong>奖牌为“优秀企业管理银奖”铭牌。</p><p><strong>奖项简介：</strong>面向企业经营管理创新成果的评优奖项，表彰在管理提升、效益改善等方面成效突出的企业。</p>'
+        cover_image: './2_about_files/honor-03.jpg',
+        content: '<p class="sub-title">荣誉说明</p><p><strong>荣誉名称：</strong>詹天佑奖。</p><p><strong>荣誉类别：</strong>土木工程领域全国性科技荣誉。</p><p><strong>奖牌证书所示：</strong>奖杯为詹天佑人物雕像及底座铭牌。</p><p><strong>奖项简介：</strong>我国土木工程领域的全国性奖项，授予在科技创新与工程实践方面表现突出的项目。</p>'
+    },
+    {
+        id: 6039,
+        hash_id: 'honor-1',
+        category_id: 26,
+        title: '全国文明单位',
+        source: '本站',
+        cover_image: './2_about_files/honor-01.jpg',
+        content: '<p class="sub-title">荣誉说明</p><p><strong>荣誉名称：</strong>全国文明单位。</p><p><strong>荣誉类别：</strong>全国性精神文明建设荣誉。</p><p><strong>奖牌证书所示：</strong>奖牌落款为中央精神文明建设指导委员会，时间2020年12月。</p><p><strong>奖项简介：</strong>由中央精神文明建设指导委员会评选表彰，是群众性精神文明建设活动的最高综合性荣誉。</p>'
+    },
+    {
+        id: 6042,
+        hash_id: 'honor-4',
+        category_id: 26,
+        title: '全国工人先锋号',
+        source: '本站',
+        cover_image: './2_about_files/honor-04.jpg',
+        content: '<p class="sub-title">荣誉说明</p><p><strong>荣誉名称：</strong>全国工人先锋号。</p><p><strong>荣誉类别：</strong>全国性职工集体荣誉。</p><p><strong>奖牌证书所示：</strong>奖牌落款为中华全国总工会。</p><p><strong>奖项简介：</strong>由中华全国总工会授予先进集体的全国性荣誉，表彰在生产服务、创新创造中表现突出的班组和团队。</p>'
     },
     {
         id: 6049,
@@ -703,6 +683,15 @@ window.SITE_ARTICLES = [
         source: '本站',
         cover_image: './2_about_files/honor-12.jpg',
         content: '<p class="sub-title">荣誉说明</p><p><strong>荣誉名称：</strong>2011年全国交通运输企业文化建设优秀单位。</p><p><strong>荣誉类别：</strong>交通运输行业企业文化荣誉。</p><p><strong>奖牌证书所示：</strong>奖牌落款为中国交通企业管理协会、交通行业优秀企业管理成果评审委员会，时间二〇一一年十月。</p><p><strong>奖项简介：</strong>交通运输行业企业文化建设年度评优，表彰企业文化体系建设与实践成效突出的企业。</p>'
+    },
+    {
+        id: 6048,
+        hash_id: 'honor-10',
+        category_id: 26,
+        title: '优秀企业管理银奖',
+        source: '本站',
+        cover_image: './2_about_files/honor-10.jpg',
+        content: '<p class="sub-title">荣誉说明</p><p><strong>荣誉名称：</strong>优秀企业管理银奖。</p><p><strong>荣誉类别：</strong>企业管理成果类荣誉。</p><p><strong>奖牌证书所示：</strong>奖牌为“优秀企业管理银奖”铭牌。</p><p><strong>奖项简介：</strong>面向企业经营管理创新成果的评优奖项，表彰在管理提升、效益改善等方面成效突出的企业。</p>'
     },
     // ===== 公司要闻（category_id=31，21 篇） =====
     {
@@ -1505,16 +1494,6 @@ window.SITE_ARTICLES = [
         cover_image: './5_party_files/party-img-13.jpg',
         published_at: '2021-12-16',
         content: '<p>湛江区域项目总经理部 崔水来</p><p>12月15日，公司工会主席陈昌霞到中交滨海广场开展“送温暖”慰问活动。</p><p>陈昌霞深入项目施工现场，为一线员工送上慰问物资和关怀，感谢项目全体员工为中交滨海广场项目的建设和企业发展所作的贡献，预祝所有员工元旦快乐、安康幸福。</p><p>他表示，公司工会、基层工会是广大职工的“娘家人”，将积极落实“职工有困难找工会”关爱工作，着力为职工解难事、办实事。他仔细叮嘱一线员工，在施工作业过程中，要坚持安全第一，确保安全防范措施落实到位，保证生产安全和员工自己的安全。</p>'
-    },
-    // ===== 信访举报（category_id=554，1 篇） =====
-    {
-        id: 5541,
-        hash_id: 'party-report-1',
-        category_id: 554,
-        title: '信访举报',
-        source: '本站',
-        published_at: '2023-01-19',
-        content: '<p>举报电话：0759-3613238</p><p>举报邮箱：shjd0033@ccccltd.cn</p><p>通信地址：广东省湛江市开发区乐山路23号恒兴大厦20楼四航局三公司纪委办公室</p>'
     },
     // ===== 科研项目（category_id=68，6 篇） =====
     {
