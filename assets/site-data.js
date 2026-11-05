@@ -135,18 +135,6 @@ window.SITE_CATEGORIES = [
         content: '<p class="sub-title">业务布局说明</p><p>下图为三公司市场业务布局示意图。公司立足华南、辐射全国、走向世界：国内业务覆盖广东、海南、广西、重庆、四川、江西、福建、浙江、上海、江苏、云南、贵州、湖南、湖北、吉林、西藏等省（自治区、直辖市），海外业务已进入苏丹、安哥拉、喀麦隆、尼日利亚、纳米比亚、科特迪瓦、加纳、贝宁、越南、瑙鲁等国家建筑市场，形成国内外相互支撑的市场格局。</p><p><img src="./1_home_files/global-layout.jpg" alt="全球布局"></p><p class="sub-title">国内市场</p><p>公司本部所在地湛江市为广东省域副中心城市，是粤西和北部湾城市群中心城市、全国首批沿海开放城市、首批“一带一路”海上合作支点城市、首批全国海洋经济创新发展示范城市。</p><p>三公司在国内10多个省（自治区、直辖市）承建了各种形式的码头泊位200多个，深水防波堤、护岸10000多米，码头后方配套设施、道路、堆场200多万平方米；业务从最初的水工项目发展到市政、路桥、高速铁路、水利水电、城际轨道、房地产开发、海上风电、水环境治理等多个领域，参建了湛江港项目、宝钢湛江钢铁项目、海南工程、江苏连云港项目、平陆运河项目、江西万安船闸、云桂铁路、珠海城轨、海口白驹大道、广连高速等大型重点项目。</p><p class="sub-title">海外市场</p><p>公司海外业务覆盖苏丹、安哥拉、喀麦隆、尼日利亚、纳米比亚、科特迪瓦、加纳、贝宁、越南、瑙鲁等国家，深入参与“一带一路”建设，形成互为支持的境外区域市场。</p>'
     },
     {
-        id: 25,
-        name: '业务领域',
-        slug: 'about-layout',
-        parent_id: 2,
-        is_nav: false,
-        sort_order: 5,
-        page_url: './2_about.html?cat=about-layout',
-        images: './4_business_files/1-5.jpg',
-        description: '公司各业务板块总览，与首页核心业务模块一一对应',
-        content: '<p>三公司业务涵盖港口及航运设施、公路、铁路、城市轨道交通、市政、隧道和桥梁、水利船闸船坞、房屋建筑、生态保护、河湖治理、综合管廊以及海外港口与海上风电等领域。下列板块与首页核心业务模块一一对应，点击可查看该板块的工程实绩。</p><div class="photo-grid"><figure><a href="./4_business.html?cat=business-port"><img src="./4_business_files/bw-02.jpg" alt="港口及航运设施工程"><figcaption>港口及航运设施工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-road"><img src="./4_business_files/bw-13.jpg" alt="公路工程"><figcaption>公路工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-railway"><img src="./4_business_files/bw-19.jpg" alt="铁路工程"><figcaption>铁路工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-rail"><img src="./4_business_files/bw-22.jpg" alt="城市轨道交通工程"><figcaption>城市轨道交通工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-admin"><img src="./4_business_files/bw-24.jpg" alt="市政工程"><figcaption>市政工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-bridge"><img src="./4_business_files/bw-28.jpg" alt="隧道和桥梁工程"><figcaption>隧道和桥梁工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-ship"><img src="./4_business_files/bw-35.jpg" alt="水利、船闸、船坞工程"><figcaption>水利、船闸、船坞工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-house"><img src="./4_business_files/bw-41.jpg" alt="房屋建筑工程"><figcaption>房屋建筑工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-ecology"><img src="./4_business_files/bw-46.jpg" alt="生态保护工程"><figcaption>生态保护工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-river"><img src="./4_business_files/bw-50.jpg" alt="河湖治理工程"><figcaption>河湖治理工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-utility"><img src="./4_business_files/bw-52.jpg" alt="综合管廊工程"><figcaption>综合管廊工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-port_overseas"><img src="./4_business_files/bw-53.jpg" alt="海外港口及航运设施工程"><figcaption>海外港口及航运设施工程</figcaption></a></figure><figure><a href="./4_business.html?cat=business-cat-wind"><img src="./4_business_files/bw-62.jpg" alt="海外风能发电工程"><figcaption>海外风能发电工程</figcaption></a></figure></div>'
-    },
-    {
         id: 26,
         name: '企业荣誉',
         slug: 'about-honor',
